@@ -48,11 +48,6 @@
         [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10]];
         
         [self addEntity:en];
-        
-        NSArray *array;
-        
-        array = [self getEntitiesWithSelectorRule:GPRuleAnd(GPRuleNot(GPRuleType(2)), GPRuleID(1))];
-        array = [self getEntitiesWithSelectorRule:GPRuleComponent([GPComponent class])];
     }
     return self;
 }

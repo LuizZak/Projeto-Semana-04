@@ -89,7 +89,7 @@
         
         comp.currentCooldown = comp.skillCooldown;
         
-        SKAction *act = [SKAction moveTo:comp.startPoint duration:0.2];
+        SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
         
         [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
         [self.currentDrag.node runAction:act];

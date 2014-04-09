@@ -10,7 +10,6 @@
 
 @implementation ComponentDraggableAttack
 
-
 - (id)initWithSkillCooldown:(float)skillCooldown
 {
     self = [super init];

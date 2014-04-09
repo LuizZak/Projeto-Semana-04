@@ -10,12 +10,7 @@
 
 @implementation ComponentDraggableAttack
 
-<<<<<<< HEAD
-
 - (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage
-=======
-- (id)initWithSkillCooldown:(float)skillCooldown
->>>>>>> FETCH_HEAD
 {
     self = [super init];
     if (self)

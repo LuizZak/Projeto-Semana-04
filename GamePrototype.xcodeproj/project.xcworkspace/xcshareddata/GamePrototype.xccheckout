@@ -5,31 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-<<<<<<< HEAD
-	<string>DBA756E5-B00F-4F07-A59A-017D8B2C1163</string>
-=======
-	<string>2DD12E62-C18E-4D4D-9BA2-B0D095F4CAD5</string>
->>>>>>> FETCH_HEAD
+	<string>8AC17352-EC73-4D79-B2E7-B6012FD8843B</string>
 	<key>IDESourceControlProjectName</key>
 	<string>GamePrototype</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-<<<<<<< HEAD
 		<key>99092C28-8B8F-4417-A4CF-06B263358272</key>
-=======
-		<key>882EB7EF-1533-47D0-A829-F097FDE3F09B</key>
->>>>>>> FETCH_HEAD
 		<string>https://github.com/LuizZak/Projeto-Semana-04.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>GamePrototype.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-<<<<<<< HEAD
 		<key>99092C28-8B8F-4417-A4CF-06B263358272</key>
-=======
-		<key>882EB7EF-1533-47D0-A829-F097FDE3F09B</key>
->>>>>>> FETCH_HEAD
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -37,22 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-<<<<<<< HEAD
 	<string>99092C28-8B8F-4417-A4CF-06B263358272</string>
-=======
-	<string>882EB7EF-1533-47D0-A829-F097FDE3F09B</string>
->>>>>>> FETCH_HEAD
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-<<<<<<< HEAD
 			<string>99092C28-8B8F-4417-A4CF-06B263358272</string>
-=======
-			<string>882EB7EF-1533-47D0-A829-F097FDE3F09B</string>
->>>>>>> FETCH_HEAD
 			<key>IDESourceControlWCCName</key>
 			<string>Projeto-Semana-04</string>
 		</dict>

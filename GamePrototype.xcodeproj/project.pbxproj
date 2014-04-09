@@ -32,6 +32,9 @@
 		B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */; };
 		B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */; };
 		B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DE218F47E17007B82C4 /* GPSelectorRules.m */; };
+		B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA018F5D11A0079F74D /* ComponentHealth.m */; };
+		B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */; };
+		B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,13 @@
 		B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEntitySelector.m; sourceTree = "<group>"; };
 		B34B2DE118F47E17007B82C4 /* GPSelectorRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSelectorRules.h; sourceTree = "<group>"; };
 		B34B2DE218F47E17007B82C4 /* GPSelectorRules.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSelectorRules.m; sourceTree = "<group>"; };
+		B35DDF9F18F5D11A0079F74D /* ComponentHealth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentHealth.h; sourceTree = "<group>"; };
+		B35DDFA018F5D11A0079F74D /* ComponentHealth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHealth.m; sourceTree = "<group>"; };
+		B35DDFA218F5D9970079F74D /* CommonImports.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonImports.h; sourceTree = "<group>"; };
+		B35DDFA318F5DE580079F74D /* SystemHealthIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemHealthIndicator.h; sourceTree = "<group>"; };
+		B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemHealthIndicator.m; sourceTree = "<group>"; };
+		B35DDFA618F5E4FF0079F74D /* ComponentHealthIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentHealthIndicator.h; sourceTree = "<group>"; };
+		B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHealthIndicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +160,7 @@
 				B32AE37618F4702C006F8635 /* Systems */,
 				B32AE37518F47027006F8635 /* Components */,
 				B32AE36818F46721006F8635 /* Entities */,
+				B35DDFA218F5D9970079F74D /* CommonImports.h */,
 				B32AE33A18F465CC006F8635 /* AppDelegate.h */,
 				B32AE33B18F465CC006F8635 /* AppDelegate.m */,
 				B32AE33D18F465CC006F8635 /* Main_iPhone.storyboard */,
@@ -205,6 +216,10 @@
 			children = (
 				B32DB96018F4959E001ECCD2 /* ComponentDraggableAttack.h */,
 				B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */,
+				B35DDF9F18F5D11A0079F74D /* ComponentHealth.h */,
+				B35DDFA018F5D11A0079F74D /* ComponentHealth.m */,
+				B35DDFA618F5E4FF0079F74D /* ComponentHealthIndicator.h */,
+				B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -214,6 +229,8 @@
 			children = (
 				B32DB95D18F49557001ECCD2 /* SystemAttackDrag.h */,
 				B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */,
+				B35DDFA318F5DE580079F74D /* SystemHealthIndicator.h */,
+				B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -285,6 +302,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "LUIZ FERNANDO SILVA";
 				TargetAttributes = {
+					B32AE32518F465CB006F8635 = {
+						DevelopmentTeam = A6UF8D555U;
+					};
 					B32AE35018F465CC006F8635 = {
 						TestTargetID = B32AE32518F465CB006F8635;
 					};
@@ -346,7 +366,10 @@
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
+				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
+				B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
+				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,
 				B32AE33818F465CC006F8635 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,10 +507,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
 				INFOPLIST_FILE = "GamePrototype/GamePrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -498,10 +524,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
 				INFOPLIST_FILE = "GamePrototype/GamePrototype-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				WRAPPER_EXTENSION = app;
 			};

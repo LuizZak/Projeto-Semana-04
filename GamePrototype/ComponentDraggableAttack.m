@@ -11,12 +11,13 @@
 @implementation ComponentDraggableAttack
 
 
-- (id)initWithSkillCooldown:(float)skillCooldown
+- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage
 {
     self = [super init];
     if (self)
     {
         self.skillCooldown = skillCooldown;
+        self.damage = damage;
     }
     return self;
 }

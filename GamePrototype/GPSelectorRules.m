@@ -33,7 +33,7 @@
 - (BOOL)applyRule:(GPEntity *)entity
 {
     // Checa se o tipo da entidade bate com o tipo passado
-    return entity.type == self.type;
+    return (entity.type & self.type) != 0;
 }
 
 @end
@@ -76,13 +76,13 @@ GPSelectorRule* GPRuleComponent(Class componentClass)
     sel.componentClass = componentClass;
     return sel;
 }
-GPSelectorRule* GPRuleID(int ID)
+GPSelectorRule* GPRuleID(entityid_t ID)
 {
     GPSRIDSelector *sel = [[GPSRIDSelector alloc] init];
     sel.ID = ID;
     return sel;
 }
-GPSelectorRule* GPRuleType(int type)
+GPSelectorRule* GPRuleType(entitytype_t type)
 {
     GPSRTypeSelector *sel = [[GPSRTypeSelector alloc] init];
     sel.type = type;

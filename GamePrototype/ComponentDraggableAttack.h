@@ -13,7 +13,8 @@
 @property CGPoint startPoint;
 @property float currentCooldown;
 @property float skillCooldown;
+@property float damage;
 
-- (id)initWithSkillCooldown:(float)skillCooldown;
+- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage;
 
 @end

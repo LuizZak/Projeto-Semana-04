@@ -20,14 +20,14 @@
 @interface GPSRIDSelector : GPSelectorRule
 
 // ID da entidade para selecionar
-@property int ID;
+@property entityid_t ID;
 
 @end
 
 @interface GPSRTypeSelector : GPSelectorRule
 
 // Tipo da entidade para selecionar
-@property int type;
+@property entitytype_t type;
 
 @end
 
@@ -59,8 +59,8 @@
 // Funções estruturadas relacionadas são definidas a partir daqui
 GPSelectorRule* GPRuleAll();
 GPSelectorRule* GPRuleComponent(Class componentClass);
-GPSelectorRule* GPRuleID(int ID);
-GPSelectorRule* GPRuleType(int type);
+GPSelectorRule* GPRuleID(entityid_t ID);
+GPSelectorRule* GPRuleType(entitytype_t type);
 GPSelectorRule* GPRuleOr(GPSelectorRule *rule1, GPSelectorRule *rule2);
 GPSelectorRule* GPRuleAnd(GPSelectorRule *rule1, GPSelectorRule *rule2);
 GPSelectorRule* GPRuleNot(GPSelectorRule *rule);

@@ -7,6 +7,7 @@
 //
 
 #import "SystemAttackDrag.h"
+#import "ComponentHealth.h"
 #import "ComponentDraggableAttack.h"
 
 @implementation SystemAttackDrag
@@ -18,6 +19,9 @@
     if(self)
     {
         selector = GPEntitySelectorCreate(GPRuleComponent([ComponentDraggableAttack class]));
+        self.enemySelector = GPEntitySelectorCreate(GPRuleAnd(GPRuleComponent([ComponentHealth class]), GPRuleType(ENEMY_TYPE)));
+        self.enemiesArray = [NSMutableArray array];
+        
     }
     
     return self;
@@ -47,7 +51,19 @@
         comp.startPoint = entity.node.position;
     }
     
+    if([self.enemySelector applyRuleToEntity:entity])
+    {
+        [self.enemiesArray addObject:entity];
+    }
+    
     return ret;
+}
+
+- (BOOL)gameSceneDidRemoveEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+{
+    [self.enemiesArray removeObject:entity];
+    
+    return [super gameSceneDidRemoveEntity:gameScene entity:entity];
 }
 
 - (void)gameSceneDidReceiveTouchesBegan:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
@@ -64,6 +80,7 @@
             if(comp.currentCooldown <= 0)
             {
                 self.currentDrag = entity;
+                self.dragOffset = CGPointMake(pt.x - self.currentDrag.node.position.x, pt.y - self.currentDrag.node.position.y);
                 return;
             }
         }
@@ -77,7 +94,7 @@
     
     if(self.currentDrag != nil)
     {
-        self.currentDrag.node.position = pt;
+        self.currentDrag.node.position = CGPointMake(pt.x - self.dragOffset.x, pt.y - self.dragOffset.y);
     }
 }
 
@@ -85,17 +102,44 @@
 {
     if(self.currentDrag != nil)
     {
+        UITouch *tch = [touches anyObject];
+        CGPoint pt = [tch locationInNode:gameScene];
+        
         ComponentDraggableAttack *comp = (ComponentDraggableAttack*)[self.currentDrag getComponent:[ComponentDraggableAttack class]];
         
-        comp.currentCooldown = comp.skillCooldown;
+        // Checa se o jogador largou a skill em cima de um inimigo
+        for(GPEntity *entity in self.enemiesArray)
+        {
+            if([entity.node containsPoint:pt])
+            {
+                comp.currentCooldown = comp.skillCooldown;
+                
+                [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
+                [(SKSpriteNode*)entity.node setColor:[UIColor magentaColor]];
+                
+                [self damageEntity:entity damage:comp.damage];
+                
+                break;
+            }
+        }
         
         SKAction *act = [SKAction moveTo:comp.startPoint duration:0.2];
-        
-        [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
         [self.currentDrag.node runAction:act];
     }
     
     self.currentDrag = nil;
+}
+
+- (void)damageEntity:(GPEntity*)entity damage:(float)damage
+{
+    ComponentHealth *hc = (ComponentHealth*)[entity getComponent:[ComponentHealth class]];
+    
+    hc.health -= damage;
+    
+    if(hc.health <= 0)
+    {
+        hc.health = 0;
+    }
 }
 
 @end

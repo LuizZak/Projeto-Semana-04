@@ -30,6 +30,8 @@
         myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
                                        CGRectGetMidY(self.frame));
         
+        self.anchorPoint = CGPointMake(0.0, 0.0);
+        
         [self addChild:myLabel];
         
         [self addSystem:[[SystemAttackDrag alloc] initWithGameScene:self]];
@@ -52,7 +54,7 @@
         [self addEntity:en];
         
         en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(100, 213);
+        en.node.position = CGPointMake(0.0, 0.0);
         [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30]];
         
         [self addEntity:en];

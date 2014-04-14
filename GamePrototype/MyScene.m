@@ -56,6 +56,10 @@
         [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30]];
         
         [self addEntity:en];
+        
+        SKSpriteNode *spr = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(100, 100)];
+        spr.anchorPoint = CGPointMake(0, 0);
+        [self addChild:spr];
     }
     return self;
 }

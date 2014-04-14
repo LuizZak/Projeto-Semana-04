@@ -10,29 +10,8 @@
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 
-
 // LifeBar
 @implementation LifeBar
-
-@end
-
-// RuleLifeBarEnabled
-@implementation RuleLifeBarEnabled
-
-- (BOOL)applyRule:(GPEntity *)entity
-{
-    BOOL ret = false;
-    
-    ComponentHealthIndicator *hci = (ComponentHealthIndicator*)[entity getComponent:[ComponentHealthIndicator class]];
-    ComponentHealth *hc = (ComponentHealth*)[entity getComponent:[ComponentHealth class]];
-    
-    if(hci != nil && hc != nil)
-    {
-        ret = YES;
-    }
-    
-    return ret;
-}
 
 @end
 
@@ -45,7 +24,7 @@
     
     if(self)
     {
-        selector = GPEntitySelectorCreate([[RuleLifeBarEnabled alloc] init]);
+        selector = GPEntitySelectorCreate(GPRuleAnd(GPRuleComponent([ComponentHealth class]), GPRuleComponent([ComponentHealthIndicator class])));
         self.lifeBarsArray = [NSMutableArray array];
     }
     

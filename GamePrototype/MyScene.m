@@ -36,8 +36,8 @@
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
         
         [self createEnemy:260 y:250];
-        [self createEnemy:260 y:290];
         [self createEnemy:260 y:330];
+        [self createEnemy:260 y:410];
         
         [self createSkill:40 y:213 cooldown:1 damage:3];
         [self createSkill:110 y:213 cooldown:5 damage:10];
@@ -52,11 +52,11 @@
 
 - (void)createEnemy:(float)x y:(float)y
 {
-    SKNode *enemyNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(30, 30)];
+    SKNode *enemyNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(60, 60)];
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
     
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:100 maxhealth:100]];
-    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:60 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     enemy.type = ENEMY_TYPE;
     
     enemyNode.position = CGPointMake(x, y);

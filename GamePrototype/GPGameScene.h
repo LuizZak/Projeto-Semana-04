@@ -50,6 +50,8 @@
 
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity;
+// Adiciona uma entidade à cena, como filha do nó passado
+- (void)addEntity:(GPEntity*)entity toNode:(SKNode*)node;
 // Remove uma entidade da cena
 - (void)removeEntity:(GPEntity*)entity;
 // Retorna uma entidade na cena que corresponde ao ID passado

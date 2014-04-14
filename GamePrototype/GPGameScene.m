@@ -48,9 +48,14 @@
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity
 {
+    [self addEntity:entity toNode:self];
+}
+// Adiciona uma entidade à cena, sendo uma filha do nó passado
+- (void)addEntity:(GPEntity*)entity toNode:(SKNode*)node
+{
     [entities addObject:entity];
     
-    [self addChild:entity.node];
+    [node addChild:entity.node];
     
     // Notifica os notifiers
     for(id<GPGameSceneNotifier> notifier in notifiers)

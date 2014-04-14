@@ -122,17 +122,10 @@
                 break;
             }
         }
-<<<<<<< HEAD
         
         SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
         
         [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
-        
-=======
-        SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
-        
-        [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
->>>>>>> FETCH_HEAD
         [self.currentDrag.node runAction:act];
     }
     

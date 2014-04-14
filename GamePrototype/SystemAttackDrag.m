@@ -112,14 +112,19 @@
         {
             if([entity.node containsPoint:pt])
             {
-                comp.currentCooldown = comp.skillCooldown;
+                ComponentHealth *health = (ComponentHealth*)[entity getComponent:[ComponentHealth class]];
                 
-                [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
-                [(SKSpriteNode*)entity.node setColor:[UIColor magentaColor]];
-                
-                [self damageEntity:entity damage:comp.damage];
-                
-                break;
+                if(health.health > 0)
+                {
+                    comp.currentCooldown = comp.skillCooldown;
+                    
+                    [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
+                    [(SKSpriteNode*)entity.node setColor:[UIColor magentaColor]];
+                    
+                    [self damageEntity:entity damage:comp.damage];
+                    
+                    break;
+                }
             }
         }
         

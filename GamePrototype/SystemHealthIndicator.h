@@ -18,11 +18,6 @@
 
 @end
 
-// Regra de selector que só seleciona entidades que possuem um componente de vida visível
-@interface RuleLifeBarEnabled : GPSelectorRule
-
-@end
-
 // Sistema Health Indicator, serve para mostrar uma barra de vida em cima de entidades com vida
 @interface SystemHealthIndicator : GPSystem
 

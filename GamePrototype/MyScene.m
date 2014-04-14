@@ -39,23 +39,9 @@
         [self createEnemy:260 y:290];
         [self createEnemy:260 y:330];
         
-        GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(20, 213);
-        [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:1 damage:3]];
-        
-        [self addEntity:en];
-        
-        en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(60, 213);
-        [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10]];
-        
-        [self addEntity:en];
-        
-        en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(100, 213);
-        [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30]];
-        
-        [self addEntity:en];
+        [self createSkill:40 y:213 cooldown:1 damage:3];
+        [self createSkill:110 y:213 cooldown:5 damage:10];
+        [self createSkill:180 y:213 cooldown:10 damage:30];
         
         SKSpriteNode *spr = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(100, 100)];
         spr.anchorPoint = CGPointMake(0, 0);
@@ -76,6 +62,15 @@
     enemyNode.position = CGPointMake(x, y);
     
     [self addEntity:enemy];
+}
+
+- (void)createSkill:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage
+{
+    GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(60, 60)]];
+    en.node.position = CGPointMake(x, y);
+    [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage]];
+    
+    [self addEntity:en];
 }
 
 @end

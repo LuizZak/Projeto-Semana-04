@@ -29,14 +29,6 @@
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
         
         [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
-        
-        for(int x = 1; x <= 768; x++)
-        {
-            if(768 % x == 0 && 1024 % x == 0)
-            {
-                NSLog(@"%i", x);
-            }
-        }
     }
     return self;
 }

@@ -10,6 +10,14 @@
 #import "GPEntitySelector.h"
 
 // Define algumas subclasses da classe GPSelectorRule
+@interface GPSRNone : NSObject
+
+// Aplica a regra atual para a entidade fornecida e retorna se a entidade
+// passou na regra ou não
+- (BOOL)applyRule:(GPEntity*)entity;
+
+@end
+
 @interface GPSRComponentSelector : GPSelectorRule
 
 // Classe do componente para selecionar
@@ -58,6 +66,7 @@
 
 // Funções estruturadas relacionadas são definidas a partir daqui
 GPSelectorRule* GPRuleAll();
+GPSelectorRule* GPRuleNone();
 GPSelectorRule* GPRuleComponent(Class componentClass);
 GPSelectorRule* GPRuleID(entityid_t ID);
 GPSelectorRule* GPRuleType(entitytype_t type);

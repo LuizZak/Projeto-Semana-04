@@ -18,6 +18,16 @@
 
 @end
 
+@implementation GPSRNone
+
+- (BOOL)applyRule:(GPEntity *)entity
+{
+    // Checa se a entidade contém o componente passado
+    return NO;
+}
+
+@end
+
 @implementation GPSRIDSelector
 
 - (BOOL)applyRule:(GPEntity *)entity
@@ -69,6 +79,10 @@
 GPSelectorRule* GPRuleAll()
 {
     return [[GPSelectorRule alloc] init];
+}
+GPSelectorRule* GPRuleNone()
+{
+    
 }
 GPSelectorRule* GPRuleComponent(Class componentClass)
 {

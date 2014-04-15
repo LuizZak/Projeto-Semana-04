@@ -23,6 +23,7 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
+    skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
     WorldMap * scene = [WorldMap sceneWithSize:skView.bounds.size];

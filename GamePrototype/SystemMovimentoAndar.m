@@ -30,11 +30,18 @@
         self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
         self.dPad.hidden = YES;
         self.dPad.size = CGSizeMake(200.0, 200.0);
-        
-        [gameScene addChild:self.dPad];
+        self.dPad.zPosition = 10;
     }
     
     return self;
+}
+
+- (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+{
+    [self.dPad removeFromParent];
+    [gameScene addChild:self.dPad];
+    
+    return [super gameSceneDidAddEntity:gameScene entity:entity];
 }
 
 - (void)update:(NSTimeInterval)interval

@@ -27,14 +27,12 @@
         
         [self addChild:myLabel];*/
         
-        [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
-        
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
-        
-        [self createMap];
-        
         // Adiciona o sistema de mapa
         [self addSystem:[[SystemMap alloc] initWithGameScene:self]];
+        
+        [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        [self createMap];
     }
     return self;
 }
@@ -60,9 +58,15 @@
     
     NSMutableArray *grid = [NSMutableArray array];
     
-    for(int x = 0; x < 30; x++)
+    for(int y = 0; y < 30; y++)
     {
-        [grid addObject:[NSMutableArray array]];
+        NSMutableArray *row = [NSMutableArray array];
+        [grid addObject:row];
+        
+        for(int x = 0; x < 30; x++)
+        {
+            [row addObject:[NSNumber numberWithInt:0]];
+        }
     }
     
     ComponentMapaGrid *comp = [[ComponentMapaGrid alloc] init];

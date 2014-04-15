@@ -9,6 +9,12 @@
 #import "SystemMovimentoAndar.h"
 #import "ComponentHealth.h"
 
+#define DIR_TOP 1
+#define DIR_RIGHT 0
+#define DIR_LEFT 2
+#define DIR_BOTTOM 3
+
+
 @implementation SystemMovimentoAndar
 
 - (id)initWithGameScene:(GPGameScene *)gameScene
@@ -25,10 +31,61 @@
     return self;
 }
 
+- (void)update:(NSTimeInterval)interval
+{
+    if(self.holdingTouch)
+    {
+        float dx = self.currentPoint.x - self.selectedPlace.x;
+        float dy = self.currentPoint.y - self.selectedPlace.y;
+        
+        // Só move o personagem se o usuário mexer o dedo uam certa distância
+        if(sqrt(dx * dx + dy * dy) > 10)
+        {
+            // 2 = left, 0 = right
+            int dirx = DIR_LEFT;
+            // 3 = bottom, 1 = top
+            int diry = DIR_BOTTOM;
+            
+            if(dx > 0)
+                dirx = DIR_RIGHT;
+            if(dy > 0)
+                diry = DIR_TOP;
+            
+            int dir = diry;
+            
+            if(fabsf(dx) > fabsf(dy))
+                dir = dirx;
+            
+            for(GPEntity *entity in entitiesArray)
+            {
+                if (dir == DIR_TOP)
+                {
+                    [entity.node setPosition:CGPointMake([entity.node position].x, [entity.node position].y + 5.0)];
+                }
+                else if (dir == DIR_RIGHT)
+                {
+                    [entity.node setPosition:CGPointMake([entity.node position].x + 5.0, [entity.node position].y)];
+                }
+                else if (dir == DIR_BOTTOM)
+                {
+                    [entity.node setPosition:CGPointMake([entity.node position].x, [entity.node position].y - 5.0)];
+                }
+                else if (dir == DIR_LEFT)
+                {
+                    [entity.node setPosition:CGPointMake([entity.node position].x - 5.0, [entity.node position].y)];
+                }
+            }
+        }
+    }
+}
+
 - (void)gameSceneDidReceiveTouchesBegan:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *tch = [touches anyObject];
     self.selectedPlace = [tch locationInNode:gameScene];
+    self.currentPoint = self.selectedPlace;
+    
+    self.holdingTouch = YES;
 }
 
 - (void)gameSceneDidReceiveTouchesMoved:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
@@ -36,29 +93,12 @@
     UITouch *tch = [touches anyObject];
     CGPoint pt = [tch locationInNode:gameScene];
     
-    float diferenceY = pt.y - self.selectedPlace.y;
-    float diferenceX = pt.x - self.selectedPlace.x;
-    
-    for(GPEntity *entity in entitiesArray)
-    {
-        if (pt.y > (self.selectedPlace.y + 50) && diferenceY > 0)
-        {
-            [entity.node setPosition:CGPointMake([entity.node position].x, [entity.node position].y + 5.0)];
-        }else if (pt.x > (self.selectedPlace.x + 50) && diferenceX > 0)
-        {
-            [entity.node setPosition:CGPointMake([entity.node position].x + 5.0, [entity.node position].y)];
-        }else if (pt.y < (self.selectedPlace.y + 50) && diferenceY < 0)
-        {
-            [entity.node setPosition:CGPointMake([entity.node position].x, [entity.node position].y - 5.0)];
-        }else if (pt.x < (self.selectedPlace.x + 50) && diferenceX < 0)
-        {
-            [entity.node setPosition:CGPointMake([entity.node position].x - 5.0, [entity.node position].y)];
-        }
-    }
+    self.currentPoint = pt;
 }
 
 - (void)gameSceneDidReceiveTouchesEnd:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    self.holdingTouch = NO;
 }
 
 @end

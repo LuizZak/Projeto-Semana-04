@@ -17,5 +17,10 @@
 
 // The place touched
 @property CGPoint selectedPlace;
+// O ponto em que o usuário está com o dedo agora
+@property CGPoint currentPoint;
+
+// Se o usuário está segurando o touch
+@property BOOL holdingTouch;
 
 @end

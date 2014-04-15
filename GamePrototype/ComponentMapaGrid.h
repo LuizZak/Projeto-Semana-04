@@ -10,6 +10,12 @@
 
 @interface ComponentMapaGrid : GPComponent
 
-@property NSMutableArray *grid;
+@property NSMutableArray *mapGrid;
+
+@property int mapWidth;
+@property int mapHeight;
+
+@property int tileWidth;
+@property int tileHeight;
 
 @end

@@ -26,9 +26,9 @@
         
         [self addChild:myLabel];*/
         
-        [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
-        
         [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        
+        [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
     }
     return self;
 }
@@ -59,7 +59,10 @@
         [grid addObject:[NSMutableArray array]];
     }
     
-    [mapEntity addComponent:[[ComponentMapaGrid alloc] init]];
+    ComponentMapaGrid *comp = [[ComponentMapaGrid alloc] init];
+    comp.mapGrid = grid;
+    
+    [mapEntity addComponent:comp];
     
     [self addEntity:mapEntity];
 }

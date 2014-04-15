@@ -8,6 +8,7 @@
 
 #import "SystemMovimentoAndar.h"
 #import "ComponentHealth.h"
+#import "WorldMap.h"
 
 #define DIR_TOP 1
 #define DIR_RIGHT 0
@@ -79,6 +80,12 @@
                 {
                     [entity.node setPosition:CGPointMake([entity.node position].x - 5.0, [entity.node position].y)];
                 }
+            }
+            
+            // Chama metodo que criara a batalha
+            if([(WorldMap*)self.gameScene randomBattle])
+            {
+                self.holdingTouch = NO;
             }
         }
     }

@@ -64,4 +64,24 @@
     [self addEntity:mapEntity];
 }
 
+- (BOOL)randomBattle
+{
+    int random = arc4random() % 50;
+    
+    if (random == 6)
+    {
+        [self goToBattle];
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)goToBattle
+{
+    SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
+    MyScene *battleScene = [[MyScene alloc] initWithSize:self.size];
+    [self.scene.view presentScene: battleScene transition: reveal];
+}
+
 @end

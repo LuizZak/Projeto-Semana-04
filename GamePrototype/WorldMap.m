@@ -7,7 +7,6 @@
 //
 
 #import "WorldMap.h"
-#import "ComponentMapaGrid.h"
 #import "SystemMovimentoAndar.h"
 
 @implementation WorldMap
@@ -29,14 +28,6 @@
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
         
         [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
-        
-        for(int x = 1; x <= 768; x++)
-        {
-            if(768 % x == 0 && 1024 % x == 0)
-            {
-                NSLog(@"%i", x);
-            }
-        }
     }
     return self;
 }
@@ -51,25 +42,6 @@
     enemyNode.position = CGPointMake(x, y);
     
     [self addEntity:enemy];
-}
-
-- (void)createMap
-{
-    SKNode *mapNode = [SKNode node];
-    GPEntity *mapEntity = [[GPEntity alloc] initWithNode:mapNode];
-    
-    mapEntity.ID = MAP_ID;
-    
-    NSMutableArray *grid = [NSMutableArray array];
-    
-    for(int x = 0; x < 30; x++)
-    {
-        
-    }
-    
-    [mapEntity addComponent:[[ComponentMapaGrid alloc] init]];
-    
-    [self addEntity:mapEntity];
 }
 
 @end

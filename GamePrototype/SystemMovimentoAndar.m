@@ -24,7 +24,8 @@
     if(self)
     {
         selector = GPEntitySelectorCreate(GPRuleType(ENEMY_TYPE));
-        self.deadZone = 15;
+        //self.enemiesArray = [NSMutableArray array]; 
+        
     }
     
     return self;
@@ -38,7 +39,7 @@
         float dy = self.currentPoint.y - self.selectedPlace.y;
         
         // Só move o personagem se o usuário mexer o dedo uam certa distância
-        if(sqrt(dx * dx + dy * dy) > self.deadZone)
+        if(sqrt(dx * dx + dy * dy) > 20)
         {
             // 2 = left, 0 = right
             int dirx = DIR_LEFT;

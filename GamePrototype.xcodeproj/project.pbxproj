@@ -32,7 +32,6 @@
 		B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE36D18F467E3006F8635 /* GPComponent.m */; };
 		B32AE37118F46B35006F8635 /* GPSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE37018F46B35006F8635 /* GPSystem.m */; };
 		B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE37318F46BB2006F8635 /* GPGameScene.m */; };
-		B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = B32B9BBD18FDA34800BF4B2C /* ComponentMapaGrid.m */; };
 		B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */; };
 		B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */; };
 		B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */; };
@@ -90,8 +89,6 @@
 		B32AE37018F46B35006F8635 /* GPSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSystem.m; sourceTree = "<group>"; };
 		B32AE37218F46BB2006F8635 /* GPGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPGameScene.h; sourceTree = "<group>"; };
 		B32AE37318F46BB2006F8635 /* GPGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPGameScene.m; sourceTree = "<group>"; };
-		B32B9BBC18FDA34800BF4B2C /* ComponentMapaGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMapaGrid.h; sourceTree = "<group>"; };
-		B32B9BBD18FDA34800BF4B2C /* ComponentMapaGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapaGrid.m; sourceTree = "<group>"; };
 		B32DB95C18F48DA4001ECCD2 /* GamePrototype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamePrototype.h; sourceTree = "<group>"; };
 		B32DB95D18F49557001ECCD2 /* SystemAttackDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemAttackDrag.h; sourceTree = "<group>"; };
 		B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemAttackDrag.m; sourceTree = "<group>"; };
@@ -178,11 +175,7 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				5E8A846218FDA5F80081583D /* Images */,
-=======
-				B32B9BBB18FDA02300BF4B2C /* iPad */,
->>>>>>> FETCH_HEAD
 				B34B2DDD18F470E7007B82C4 /* Engine */,
 				B32AE37618F4702C006F8635 /* Systems */,
 				B32AE37518F47027006F8635 /* Components */,
@@ -249,8 +242,6 @@
 				B35DDFA018F5D11A0079F74D /* ComponentHealth.m */,
 				B35DDFA618F5E4FF0079F74D /* ComponentHealthIndicator.h */,
 				B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */,
-				B32B9BBC18FDA34800BF4B2C /* ComponentMapaGrid.h */,
-				B32B9BBD18FDA34800BF4B2C /* ComponentMapaGrid.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -266,13 +257,6 @@
 				5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */,
 			);
 			name = Systems;
-			sourceTree = "<group>";
-		};
-		B32B9BBB18FDA02300BF4B2C /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		B34B2DDD18F470E7007B82C4 /* Engine */ = {
@@ -406,7 +390,6 @@
 				B32AE34818F465CC006F8635 /* MyScene.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
-				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
@@ -555,11 +538,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
 				INFOPLIST_FILE = "GamePrototype/GamePrototype-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -574,11 +555,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
 				INFOPLIST_FILE = "GamePrototype/GamePrototype-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

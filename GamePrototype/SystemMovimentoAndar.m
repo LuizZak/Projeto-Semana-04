@@ -24,7 +24,7 @@
     if(self)
     {
         selector = GPEntitySelectorCreate(GPRuleType(ENEMY_TYPE));
-        self.deadZone = 15;
+        self.deadZone = 30;
     }
     
     return self;
@@ -85,6 +85,7 @@
     self.currentPoint = self.selectedPlace;
     
     self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
+    self.dPad.size = CGSizeMake(200.0, 200.0);
     self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
     [gameScene addChild:self.dPad];
     

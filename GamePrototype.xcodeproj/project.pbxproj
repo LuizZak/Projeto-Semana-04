@@ -332,7 +332,7 @@
 				ORGANIZATIONNAME = "LUIZ FERNANDO SILVA";
 				TargetAttributes = {
 					B32AE32518F465CB006F8635 = {
-						DevelopmentTeam = A6UF8D555U;
+						DevelopmentTeam = 2E2NEW4A56;
 					};
 					B32AE35018F465CC006F8635 = {
 						TestTargetID = B32AE32518F465CB006F8635;

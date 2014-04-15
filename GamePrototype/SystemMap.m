@@ -46,6 +46,8 @@
             SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(64, 64)];
             
             tileNode.position = CGPointMake(x * 64, y * 64);
+            
+            [self.gameScene addChild:tileNode];
         }
     }
 }

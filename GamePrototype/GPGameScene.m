@@ -130,7 +130,7 @@
 {
     [systems removeObject:system];
     
-    // Adiciona este sistema como notifier
+    // Remove este sistema como notifier
     [notifiers removeObject:system];
 }
 

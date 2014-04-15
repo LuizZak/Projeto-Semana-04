@@ -8,6 +8,7 @@
 
 #import "WorldMap.h"
 #import "ComponentMapaGrid.h"
+#import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
 
 @implementation WorldMap
@@ -29,6 +30,11 @@
         [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
         
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
+        
+        [self createMap];
+        
+        // Adiciona o sistema de mapa
+        [self addSystem:[[SystemMap alloc] initWithGameScene:self]];
     }
     return self;
 }

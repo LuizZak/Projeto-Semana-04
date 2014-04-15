@@ -24,8 +24,7 @@
     if(self)
     {
         selector = GPEntitySelectorCreate(GPRuleType(ENEMY_TYPE));
-        //self.enemiesArray = [NSMutableArray array]; 
-        
+        self.deadZone = 15;
     }
     
     return self;
@@ -39,7 +38,7 @@
         float dy = self.currentPoint.y - self.selectedPlace.y;
         
         // Só move o personagem se o usuário mexer o dedo uam certa distância
-        if(sqrt(dx * dx + dy * dy) > 20)
+        if(sqrt(dx * dx + dy * dy) > self.deadZone)
         {
             // 2 = left, 0 = right
             int dirx = DIR_LEFT;
@@ -85,10 +84,6 @@
     self.selectedPlace = [tch locationInNode:gameScene];
     self.currentPoint = self.selectedPlace;
     
-    self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
-    self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
-    [gameScene addChild:self.dPad];
-    
     self.holdingTouch = YES;
 }
 
@@ -102,8 +97,6 @@
 
 - (void)gameSceneDidReceiveTouchesEnd:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.dPad removeFromParent];
-    
     self.holdingTouch = NO;
 }
 

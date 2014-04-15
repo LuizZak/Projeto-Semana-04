@@ -7,6 +7,8 @@
 //
 
 #import "GamePrototype.h"
+#import "WorldMap.h"
+#import "GameData.h"
 
 @interface MyScene : GPGameScene
 

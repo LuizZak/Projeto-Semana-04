@@ -86,6 +86,7 @@
             if([(WorldMap*)self.gameScene randomBattle])
             {
                 self.holdingTouch = NO;
+                self.dPad.hidden = YES;
             }
         }
     }

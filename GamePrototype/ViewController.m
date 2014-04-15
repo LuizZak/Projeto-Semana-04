@@ -25,8 +25,9 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [WorldMap sceneWithSize:skView.bounds.size];
+    WorldMap * scene = [WorldMap sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
+    [[GameData gameData] saveWorld:scene];
     
     // Present the scene.
     [skView presentScene:scene];

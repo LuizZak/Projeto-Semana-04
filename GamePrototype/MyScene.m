@@ -51,6 +51,13 @@
     return self;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
+    //WorldMap *battleScene = [[WorldMap alloc] initWithSize:self.size];
+    [self.scene.view presentScene:[[GameData gameData] world] transition: reveal];
+}
+
 - (void)createEnemy:(float)x y:(float)y
 {
     SKNode *enemyNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(30, 30)];

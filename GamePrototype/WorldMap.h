@@ -11,6 +11,7 @@
 #import "GPGameScene.h"
 #import "MyScene.h"
 #import "CommonImports.h"
+#import "GameData.h"
 
 @interface WorldMap : GPGameScene
 

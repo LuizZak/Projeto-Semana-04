@@ -183,7 +183,6 @@
 				B34B2DDD18F470E7007B82C4 /* Engine */,
 				B32AE37618F4702C006F8635 /* Systems */,
 				B32AE37518F47027006F8635 /* Components */,
-				B32AE36818F46721006F8635 /* Entities */,
 				B35DDFA218F5D9970079F74D /* CommonImports.h */,
 				B32AE33A18F465CC006F8635 /* AppDelegate.h */,
 				B32AE33B18F465CC006F8635 /* AppDelegate.m */,
@@ -228,13 +227,6 @@
 				B32AE35B18F465CC006F8635 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B32AE36818F46721006F8635 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Entities;
 			sourceTree = "<group>";
 		};
 		B32AE37518F47027006F8635 /* Components */ = {

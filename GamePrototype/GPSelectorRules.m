@@ -82,7 +82,7 @@ GPSelectorRule* GPRuleAll()
 }
 GPSelectorRule* GPRuleNone()
 {
-    
+    return [[GPSRNone alloc] init];
 }
 GPSelectorRule* GPRuleComponent(Class componentClass)
 {

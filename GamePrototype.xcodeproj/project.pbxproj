@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15C518FC66B80000BC5A /* WorldMap.m */; };
 		5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */; };
+		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
+		5E8A846C18FDABFA0081583D /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846A18FDABFA0081583D /* dpad.png */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
 		B32AE32E18F465CB006F8635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32D18F465CB006F8635 /* UIKit.framework */; };
@@ -55,6 +57,8 @@
 		5E4A15C518FC66B80000BC5A /* WorldMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldMap.m; sourceTree = "<group>"; };
 		5E4A15CB18FC7A0C0000BC5A /* SystemMovimentoAndar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMovimentoAndar.h; sourceTree = "<group>"; };
 		5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMovimentoAndar.m; sourceTree = "<group>"; };
+		5E8A846918FDABFA0081583D /* dpad.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad.fla; sourceTree = "<group>"; };
+		5E8A846A18FDABFA0081583D /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32AE32B18F465CB006F8635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +135,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E8A846818FDABA90081583D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5E8A846918FDABFA0081583D /* dpad.fla */,
+				5E8A846A18FDABFA0081583D /* dpad.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		B32AE31D18F465CB006F8635 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +178,7 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				5E8A846818FDABA90081583D /* Images */,
 				B32B9BBB18FDA02300BF4B2C /* iPad */,
 				B34B2DDD18F470E7007B82C4 /* Engine */,
 				B32AE37618F4702C006F8635 /* Systems */,
@@ -358,6 +372,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
+				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
+				5E8A846C18FDABFA0081583D /* dpad.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,

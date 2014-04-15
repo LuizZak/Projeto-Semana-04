@@ -25,6 +25,12 @@
     {
         selector = GPEntitySelectorCreate(GPRuleType(ENEMY_TYPE));
         self.deadZone = 30;
+        
+        self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
+        self.dPad.hidden = YES;
+        self.dPad.size = CGSizeMake(200.0, 200.0);
+        
+        [gameScene addChild:self.dPad];
     }
     
     return self;
@@ -84,10 +90,8 @@
     self.selectedPlace = [tch locationInNode:gameScene];
     self.currentPoint = self.selectedPlace;
     
-    self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
-    self.dPad.size = CGSizeMake(200.0, 200.0);
+    self.dPad.hidden = NO;
     self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
-    [gameScene addChild:self.dPad];
     
     self.holdingTouch = YES;
 }
@@ -102,7 +106,7 @@
 
 - (void)gameSceneDidReceiveTouchesEnd:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [self.dPad removeFromParent];
+    self.dPad.hidden = YES;
     self.holdingTouch = NO;
 }
 

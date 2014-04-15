@@ -28,4 +28,7 @@
 // Chamado pela cena, para atualizar o sistema
 - (void)update:(NSTimeInterval)interval;
 
+// Força o sistema a recarregar as entidades guardadas nele
+- (void)reloadEntities:(NSArray*)array;
+
 @end

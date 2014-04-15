@@ -119,6 +119,9 @@
 {
     [systems addObject:system];
     
+    // Força o sistema a carregas as entidades relevantes
+    [system reloadEntities:entities];
+    
     // Adiciona este sistema como notifier
     [notifiers addObject:system];
 }

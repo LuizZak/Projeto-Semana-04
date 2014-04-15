@@ -46,4 +46,17 @@
     
 }
 
+- (void)reloadEntities:(NSArray *)array
+{
+    [entitiesArray removeAllObjects];
+    
+    for(GPEntity *entity in array)
+    {
+        if([selector applyRuleToEntity:entity])
+        {
+            [entitiesArray addObject:entity];
+        }
+    }
+}
+
 @end

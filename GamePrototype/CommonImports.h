@@ -10,6 +10,7 @@
 #define GamePrototype_CommonImports_h
 
 #define PLAYER_ID 1
+#define MAP_ID 2
 
 #define ENEMY_TYPE 0x1 << 0
 

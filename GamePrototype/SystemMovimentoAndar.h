@@ -20,6 +20,9 @@
 // O ponto em que o usuário está com o dedo agora
 @property CGPoint currentPoint;
 
+// Raio do deadzone do controle
+@property float deadZone;
+
 // Se o usuário está segurando o touch
 @property BOOL holdingTouch;
 

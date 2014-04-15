@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15C518FC66B80000BC5A /* WorldMap.m */; };
+		5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
 		B32AE32E18F465CB006F8635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32D18F465CB006F8635 /* UIKit.framework */; };
@@ -48,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E4A15C418FC66B80000BC5A /* WorldMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldMap.h; sourceTree = "<group>"; };
+		5E4A15C518FC66B80000BC5A /* WorldMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldMap.m; sourceTree = "<group>"; };
+		5E4A15CB18FC7A0C0000BC5A /* SystemMovimentoAndar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMovimentoAndar.h; sourceTree = "<group>"; };
+		5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMovimentoAndar.m; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32AE32B18F465CB006F8635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -169,6 +175,8 @@
 				B32AE34418F465CC006F8635 /* ViewController.m */,
 				B32AE34618F465CC006F8635 /* MyScene.h */,
 				B32AE34718F465CC006F8635 /* MyScene.m */,
+				5E4A15C418FC66B80000BC5A /* WorldMap.h */,
+				5E4A15C518FC66B80000BC5A /* WorldMap.m */,
 				B32AE34B18F465CC006F8635 /* Images.xcassets */,
 				B32AE33218F465CC006F8635 /* Supporting Files */,
 			);
@@ -231,6 +239,8 @@
 				B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */,
 				B35DDFA318F5DE580079F74D /* SystemHealthIndicator.h */,
 				B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */,
+				5E4A15CB18FC7A0C0000BC5A /* SystemMovimentoAndar.h */,
+				5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -303,7 +313,7 @@
 				ORGANIZATIONNAME = "LUIZ FERNANDO SILVA";
 				TargetAttributes = {
 					B32AE32518F465CB006F8635 = {
-						DevelopmentTeam = A6UF8D555U;
+						DevelopmentTeam = 5VZQT99B3Q;
 					};
 					B32AE35018F465CC006F8635 = {
 						TestTargetID = B32AE32518F465CB006F8635;
@@ -363,10 +373,12 @@
 				B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */,
 				B32AE34818F465CC006F8635 /* MyScene.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
+				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
+				5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */,
 				B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,

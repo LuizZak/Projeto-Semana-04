@@ -23,4 +23,7 @@
 // Se o usuário está segurando o touch
 @property BOOL holdingTouch;
 
+// Cria a Imagem do Dpad
+@property SKSpriteNode* dPad;
+
 @end

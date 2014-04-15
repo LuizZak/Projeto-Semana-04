@@ -85,6 +85,10 @@
     self.selectedPlace = [tch locationInNode:gameScene];
     self.currentPoint = self.selectedPlace;
     
+    self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
+    self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
+    [gameScene addChild:self.dPad];
+    
     self.holdingTouch = YES;
 }
 
@@ -98,6 +102,8 @@
 
 - (void)gameSceneDidReceiveTouchesEnd:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [self.dPad removeFromParent];
+    
     self.holdingTouch = NO;
 }
 

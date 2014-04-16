@@ -105,6 +105,7 @@
     
     // Mecher com o grid aqui dentro
     
+    
     if (random == 6)
     {
         [self goToBattle];

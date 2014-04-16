@@ -21,7 +21,7 @@
     
     if(self)
     {
-        selector = GPEntitySelectorCreate(GPRuleComponent([ComponentMovement class]));
+        selector = GPEntitySelectorCreate(GPRuleAnd(GPRuleComponent([ComponentMovement class]), GPRuleID(PLAYER_ID)));
         
         self.deadZone = 30;
         
@@ -70,21 +70,23 @@
             
             for(GPEntity *entity in entitiesArray)
             {
+                ComponentMovement *mov = (ComponentMovement*)[entity getComponent:[ComponentMovement class]];
+                
                 if (dir == DIR_TOP)
                 {
-                    [entity.node setPosition:CGPointMake([entity.node position].x, [entity.node position].y + 5.0)];
+                    mov.forceY += 5;
                 }
                 else if (dir == DIR_RIGHT)
                 {
-                    [entity.node setPosition:CGPointMake([entity.node position].x + 5.0, [entity.node position].y)];
+                    mov.forceX += 5;
                 }
                 else if (dir == DIR_BOTTOM)
                 {
-                    [entity.node setPosition:CGPointMake([entity.node position].x, [entity.node position].y - 5.0)];
+                    mov.forceY += -5;
                 }
                 else if (dir == DIR_LEFT)
                 {
-                    [entity.node setPosition:CGPointMake([entity.node position].x - 5.0, [entity.node position].y)];
+                    mov.forceX += -5;
                 }
             }
             

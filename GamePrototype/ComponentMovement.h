@@ -13,6 +13,16 @@
 // A direção que a entidade está virada
 @property int facingDirection;
 
+// A fricção horizontal da entidade
+@property float frictionX;
+// A fricção vertical da entidade
+@property float frictionY;
+
+// A força horizontal atual da entidade
+@property float forceX;
+// A força vertical atual da entidade
+@property float forceY;
+
 // A velocidade horizontal da entidade
 @property float velX;
 // A velocidade vertical da entidade

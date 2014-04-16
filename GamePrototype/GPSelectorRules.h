@@ -10,7 +10,7 @@
 #import "GPEntitySelector.h"
 
 // Define algumas subclasses da classe GPSelectorRule
-@interface GPSRNone : NSObject
+@interface GPSRNone : GPSelectorRule
 
 // Aplica a regra atual para a entidade fornecida e retorna se a entidade
 // passou na regra ou não

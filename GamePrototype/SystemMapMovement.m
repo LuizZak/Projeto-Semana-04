@@ -32,7 +32,7 @@
         CGPoint point = entity.node.position;
         
         // Checa se a entidade está parada em cima de um grid cell
-        if((mov.forceX != 0 || mov.forceY) && fmodf(point.x, 64) == 0 && fmodf(point.y, 64) == 0)
+        if((mov.forceX != 0 || mov.forceY != 0) && fmodf(point.x, 64) == 0 && fmodf(point.y, 64) == 0)
         {
             //NSLog(@"%lf %lf", point.x, point.y);
             

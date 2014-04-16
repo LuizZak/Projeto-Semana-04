@@ -11,6 +11,7 @@
 
 #define PLAYER_ID 1
 #define MAP_ID 2
+#define CAMERA_ID 3
 
 #define ENEMY_TYPE 0x1 << 0
 

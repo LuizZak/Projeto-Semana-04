@@ -12,6 +12,7 @@
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
 #import "SystemMapMovement.h"
+#import "SystemCamera.h"
 
 @implementation WorldMap
 
@@ -34,6 +35,8 @@
         [self addSystem:[[SystemMap alloc] initWithGameScene:self]];
         // Adiciona o sistema de movimentação de entidades no mapa
         [self addSystem:[[SystemMapMovement alloc] initWithGameScene:self]];
+        // Adiciona o sistema de câmera
+        [self addSystem:[[SystemCamera alloc] initWithGameScene:self]];
         
         [self createPlayer:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
         
@@ -55,6 +58,27 @@
 }
 
 - (void)createPlayer:(float)x y:(float)y
+{
+    SKNode *playerNode = [SKNode node];
+    SKSpriteNode *playerGfx = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
+    playerGfx.size = CGSizeMake(64, 64);
+    playerGfx.anchorPoint = CGPointMake(0, 0);
+    
+    [playerNode addChild:playerGfx];
+    
+    GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
+    
+    player.ID = PLAYER_ID;
+    
+    // Adiciona os componentes relevantes
+    [player addComponent:[[ComponentMovement alloc] init]];
+    
+    playerNode.position = CGPointMake(x, y);
+    
+    [self addEntity:player];
+}
+
+- (void)createCamera:(float)x y:(float)y following:(GPEntity*)entityToFollow
 {
     SKSpriteNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
     playerNode.size = CGSizeMake(64, 64);

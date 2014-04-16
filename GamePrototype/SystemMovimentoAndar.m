@@ -66,6 +66,7 @@
             
             int dir = diry;
             
+            // Se o dedo está mais para horizontal do que para vertical, troca a direção
             if(fabsf(dx) > fabsf(dy))
                 dir = dirx;
             

@@ -34,7 +34,7 @@
         // Checa se a entidade está parada em cima de um grid cell
         if((mov.forceX != 0 || mov.forceY) && fmodf(point.x, 64) == 0 && fmodf(point.y, 64) == 0)
         {
-            NSLog(@"%lf %lf", point.x, point.y);
+            //NSLog(@"%lf %lf", point.x, point.y);
             
             // Move o personagem para o próximo tile válido
             int ntx = ((int)(point.x / 64) + mov.forceX) * 64;

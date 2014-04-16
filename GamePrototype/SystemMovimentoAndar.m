@@ -91,11 +91,11 @@
             }
             
             // Chama metodo que criara a batalha
-            /*if([(WorldMap*)self.gameScene randomBattle])
+            if([(WorldMap*)self.gameScene randomBattle])
             {
                 self.holdingTouch = NO;
                 self.dPad.hidden = YES;
-            }*/
+            }
         }
     }
 }

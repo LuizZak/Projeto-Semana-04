@@ -56,7 +56,8 @@
 
 - (void)createPlayer:(float)x y:(float)y
 {
-    SKSpriteNode *playerNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(64, 64)];
+    SKSpriteNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
+    playerNode.size = CGSizeMake(64, 64);
     playerNode.anchorPoint = CGPointMake(0, 0);
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     

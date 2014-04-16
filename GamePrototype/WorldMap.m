@@ -56,7 +56,7 @@
 
 - (void)createPlayer:(float)x y:(float)y
 {
-    SKNode *playerNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)];
+    SKNode *playerNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(64, 64)];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
     player.ID = PLAYER_ID;

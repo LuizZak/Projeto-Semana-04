@@ -62,8 +62,12 @@
 
 - (GPEntity*)createPlayer:(float)x y:(float)y
 {
+    // Carregando a animação
+    NSArray *dragonFrames = [self loadSpriteSheetFromImageWithName:@"dragon" startingAt:1];
+    
     SKNode *playerNode = [SKNode node];
-    SKSpriteNode *playerGfx = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
+    SKSpriteNode *playerGfx = [SKSpriteNode spriteNodeWithTexture:dragonFrames[5]];
+    [playerGfx runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:dragonFrames timePerFrame:0.05 resize:NO restore:YES]]];
     playerGfx.size = CGSizeMake(64, 64);
     playerGfx.zRotation = -M_PI / 2;
     
@@ -159,6 +163,23 @@
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
     MyScene *battleScene = [[MyScene alloc] initWithSize:self.size];
     [self.scene.view presentScene: battleScene transition: reveal];
+}
+
+-(NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
+{
+    NSMutableArray *animationFrames = [NSMutableArray array];
+    SKTextureAtlas *animationAtlas = [SKTextureAtlas atlasNamed:name];
+    
+    for(int i = firstNum; i <= animationAtlas.textureNames.count; i++)
+    {
+        // Nomes das imagens com números de 4 dígitos, por exemplo "0001"
+        NSString *partName = [NSString stringWithFormat:@"%@%04i", name, i];
+        SKTexture *part = [animationAtlas textureNamed:partName];
+        
+        [animationFrames addObject:part];
+    }
+    
+    return animationFrames;
 }
 
 @end

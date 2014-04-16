@@ -47,7 +47,7 @@
 		B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F739118FF03AF00949342 /* tile-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738F18FF03AF00949342 /* tile-grass.png */; };
-		FC3F73C118FF168400949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C018FF168400949342 /* dragon.atlas */; };
+		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC66C37718FDB7C00015062B /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC66C37618FDB7C00015062B /* dpad.png */; };
 /* End PBXBuildFile section */
 
@@ -131,7 +131,7 @@
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F738F18FF03AF00949342 /* tile-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grass.png"; sourceTree = "<group>"; };
 		FC3F73BF18FF143500949342 /* Tiles.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tiles.fla; sourceTree = "<group>"; };
-		FC3F73C018FF168400949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = dragon.atlas; path = ../dragon.atlas; sourceTree = "<group>"; };
+		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC66C37618FDB7C00015062B /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +163,7 @@
 		5E8A846818FDABA90081583D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FC3F73C018FF168400949342 /* dragon.atlas */,
+				FC3F73C618FF24E900949342 /* dragon.atlas */,
 				5E8A846918FDABFA0081583D /* dpad.fla */,
 				FC3F73BF18FF143500949342 /* Tiles.fla */,
 				FC66C37618FDB7C00015062B /* dpad.png */,
@@ -381,7 +381,7 @@
 				ORGANIZATIONNAME = "LUIZ FERNANDO SILVA";
 				TargetAttributes = {
 					B32AE32518F465CB006F8635 = {
-						DevelopmentTeam = 2E2NEW4A56;
+						DevelopmentTeam = A6UF8D555U;
 					};
 					B32AE35018F465CC006F8635 = {
 						TestTargetID = B32AE32518F465CB006F8635;
@@ -417,7 +417,7 @@
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
 				FC3F739118FF03AF00949342 /* tile-grass.png in Resources */,
-				FC3F73C118FF168400949342 /* dragon.atlas in Resources */,
+				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,

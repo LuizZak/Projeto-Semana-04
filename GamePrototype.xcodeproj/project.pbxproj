@@ -11,6 +11,7 @@
 		5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */; };
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
+		5ECF638218FF252900029917 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF638118FF252900029917 /* Menu.m */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
 		B32AE32E18F465CB006F8635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32D18F465CB006F8635 /* UIKit.framework */; };
@@ -69,6 +70,8 @@
 		5E8A846918FDABFA0081583D /* dpad.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad.fla; sourceTree = "<group>"; };
 		5E8A846E18FDC6110081583D /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		5E8A846F18FDC6110081583D /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
+		5ECF638018FF252900029917 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
+		5ECF638118FF252900029917 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32AE32B18F465CB006F8635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -182,6 +185,19 @@
 			name = Singletons;
 			sourceTree = "<group>";
 		};
+		5ECF637F18FF24F900029917 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B32AE34618F465CC006F8635 /* MyScene.h */,
+				B32AE34718F465CC006F8635 /* MyScene.m */,
+				5E4A15C418FC66B80000BC5A /* WorldMap.h */,
+				5E4A15C518FC66B80000BC5A /* WorldMap.m */,
+				5ECF638018FF252900029917 /* Menu.h */,
+				5ECF638118FF252900029917 /* Menu.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		B32AE31D18F465CB006F8635 = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +232,7 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				5ECF637F18FF24F900029917 /* Scenes */,
 				5E8A846D18FDC5960081583D /* Singletons */,
 				5E8A846818FDABA90081583D /* Images */,
 				B32B9BBB18FDA02300BF4B2C /* iPad */,
@@ -229,10 +246,6 @@
 				B32AE34018F465CC006F8635 /* Main_iPad.storyboard */,
 				B32AE34318F465CC006F8635 /* ViewController.h */,
 				B32AE34418F465CC006F8635 /* ViewController.m */,
-				B32AE34618F465CC006F8635 /* MyScene.h */,
-				B32AE34718F465CC006F8635 /* MyScene.m */,
-				5E4A15C418FC66B80000BC5A /* WorldMap.h */,
-				5E4A15C518FC66B80000BC5A /* WorldMap.m */,
 				B32AE34B18F465CC006F8635 /* Images.xcassets */,
 				B32AE33218F465CC006F8635 /* Supporting Files */,
 			);
@@ -449,6 +462,7 @@
 				B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */,
 				B32E644618FF099F00040D47 /* ComponentCamera.m in Sources */,
 				B32AE34818F465CC006F8635 /* MyScene.m in Sources */,
+				5ECF638218FF252900029917 /* Menu.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,

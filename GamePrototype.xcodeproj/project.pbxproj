@@ -49,6 +49,7 @@
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F739118FF03AF00949342 /* tile-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738F18FF03AF00949342 /* tile-grass.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
+		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
 		FC66C37718FDB7C00015062B /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC66C37618FDB7C00015062B /* dpad.png */; };
 /* End PBXBuildFile section */
 
@@ -133,8 +134,9 @@
 		B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHealthIndicator.m; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F738F18FF03AF00949342 /* tile-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grass.png"; sourceTree = "<group>"; };
-		FC3F73BF18FF143500949342 /* Tiles.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tiles.fla; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
+		FC3F73C818FF264D00949342 /* tilesAndDragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = tilesAndDragon.fla; sourceTree = "<group>"; };
+		FC3F73C918FF280E00949342 /* dpadClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpadClicked.png; sourceTree = "<group>"; };
 		FC66C37618FDB7C00015062B /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +170,8 @@
 			children = (
 				FC3F73C618FF24E900949342 /* dragon.atlas */,
 				5E8A846918FDABFA0081583D /* dpad.fla */,
-				FC3F73BF18FF143500949342 /* Tiles.fla */,
+				FC3F73C818FF264D00949342 /* tilesAndDragon.fla */,
+				FC3F73C918FF280E00949342 /* dpadClicked.png */,
 				FC66C37618FDB7C00015062B /* dpad.png */,
 				FC3F738E18FF03AF00949342 /* player.png */,
 				FC3F738F18FF03AF00949342 /* tile-grass.png */,
@@ -429,6 +432,7 @@
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
+				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
 				FC3F739118FF03AF00949342 /* tile-grass.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,

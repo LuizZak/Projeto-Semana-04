@@ -31,7 +31,10 @@
         // Adiciona o sistema de mapa
         [self addSystem:[[SystemMap alloc] initWithGameScene:self]];
         
-        [self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        //[self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        
+        [self createPlayer:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        
         [self createMap];
     }
     return self;
@@ -47,6 +50,18 @@
     enemyNode.position = CGPointMake(x, y);
     
     [self addEntity:enemy];
+}
+
+- (void)createPlayer:(float)x y:(float)y
+{
+    SKNode *playerNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)];
+    GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
+    
+    player.ID = PLAYER_ID;
+    
+    playerNode.position = CGPointMake(x, y);
+    
+    [self addEntity:player];
 }
 
 - (void)createMap

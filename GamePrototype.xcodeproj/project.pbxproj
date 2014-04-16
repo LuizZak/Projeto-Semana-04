@@ -37,6 +37,7 @@
 		B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */; };
 		B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */; };
 		B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E643A18FEF58400040D47 /* ComponentMovement.m */; };
+		B32E643E18FEF66700040D47 /* SystemMApMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E643D18FEF66700040D47 /* SystemMApMovement.m */; };
 		B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */; };
 		B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DE218F47E17007B82C4 /* GPSelectorRules.m */; };
 		B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA018F5D11A0079F74D /* ComponentHealth.m */; };
@@ -105,6 +106,8 @@
 		B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentDraggableAttack.m; sourceTree = "<group>"; };
 		B32E643918FEF58400040D47 /* ComponentMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMovement.h; sourceTree = "<group>"; };
 		B32E643A18FEF58400040D47 /* ComponentMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMovement.m; sourceTree = "<group>"; };
+		B32E643C18FEF66700040D47 /* SystemMApMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMApMovement.h; sourceTree = "<group>"; };
+		B32E643D18FEF66700040D47 /* SystemMApMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMApMovement.m; sourceTree = "<group>"; };
 		B34B2DDE18F475EE007B82C4 /* GPEntitySelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEntitySelector.h; sourceTree = "<group>"; };
 		B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEntitySelector.m; sourceTree = "<group>"; };
 		B34B2DE118F47E17007B82C4 /* GPSelectorRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSelectorRules.h; sourceTree = "<group>"; };
@@ -276,6 +279,8 @@
 				5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */,
 				B32B9BBF18FDB68A00BF4B2C /* SystemMap.h */,
 				B32B9BC018FDB68A00BF4B2C /* SystemMap.m */,
+				B32E643C18FEF66700040D47 /* SystemMApMovement.h */,
+				B32E643D18FEF66700040D47 /* SystemMApMovement.m */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				5E8A847018FDC6110081583D /* GameData.m in Sources */,
 				B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */,
 				B32AE37118F46B35006F8635 /* GPSystem.m in Sources */,
+				B32E643E18FEF66700040D47 /* SystemMApMovement.m in Sources */,
 				B32AE36B18F46736006F8635 /* GPEntity.m in Sources */,
 				B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */,
 				B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */,

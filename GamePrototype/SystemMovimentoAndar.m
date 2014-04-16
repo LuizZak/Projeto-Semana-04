@@ -11,7 +11,6 @@
 #import "WorldMap.h"
 #import "CommonImports.h"
 
-
 @implementation SystemMovimentoAndar
 
 - (id)initWithGameScene:(GPGameScene *)gameScene

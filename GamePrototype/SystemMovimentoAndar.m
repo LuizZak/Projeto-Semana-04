@@ -9,11 +9,7 @@
 #import "SystemMovimentoAndar.h"
 #import "ComponentHealth.h"
 #import "WorldMap.h"
-
-#define DIR_TOP 1
-#define DIR_RIGHT 0
-#define DIR_LEFT 2
-#define DIR_BOTTOM 3
+#import "CommonImports.h"
 
 
 @implementation SystemMovimentoAndar
@@ -38,6 +34,7 @@
 
 - (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
 {
+    // Joga o Dpad para cima de todas as entidades
     [self.dPad removeFromParent];
     [gameScene addChild:self.dPad];
     

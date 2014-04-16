@@ -49,10 +49,11 @@
     // Pega o c
     ComponentMapaGrid *comp = (ComponentMapaGrid*)[entitiesArray[0] getComponent:[ComponentMapaGrid class]];
     
-    [entitiesArray[0] node].zPosition = -100;
-    
     // Pega o node da entidade
     SKNode *mapContainer = [entitiesArray[0] node];
+    
+    mapContainer.zPosition = -100;
+    
     // Limpa o node do mapa
     [mapContainer removeAllChildren];
     
@@ -66,7 +67,7 @@
             
             tileNode.position = CGPointMake(x * 64, y * 64);
             
-            [self.gameScene addChild:tileNode];
+            [mapContainer addChild:tileNode];
         }
     }
 }

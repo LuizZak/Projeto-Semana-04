@@ -8,8 +8,10 @@
 
 #import "WorldMap.h"
 #import "ComponentMapaGrid.h"
+#import "ComponentMovement.h"
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
+#import "SystemMapMovement.h"
 
 @implementation WorldMap
 
@@ -30,8 +32,8 @@
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
         // Adiciona o sistema de mapa
         [self addSystem:[[SystemMap alloc] initWithGameScene:self]];
-        
-        //[self createEnemy:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        // Adiciona o sistema de movimentação de entidades no mapa
+        [self addSystem:[[SystemMapMovement alloc] initWithGameScene:self]];
         
         [self createPlayer:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
         
@@ -58,6 +60,9 @@
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
     player.ID = PLAYER_ID;
+    
+    // Adiciona os componentes relevantes
+    [player addComponent:[[ComponentMovement alloc] init]];
     
     playerNode.position = CGPointMake(x, y);
     

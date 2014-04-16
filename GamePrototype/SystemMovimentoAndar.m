@@ -8,6 +8,7 @@
 
 #import "SystemMovimentoAndar.h"
 #import "ComponentHealth.h"
+#import "ComponentMapaGrid.h"
 #import "WorldMap.h"
 #import "CommonImports.h"
 
@@ -20,6 +21,8 @@
     if(self)
     {
         selector = GPEntitySelectorCreate(GPRuleType(ENEMY_TYPE));
+        
+        self.mapSelector = GPEntitySelectorCreate(GPRuleAnd(GPRuleID(MAP_ID), GPRuleComponent([ComponentMapaGrid class])));
         self.deadZone = 30;
         
         self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
@@ -36,6 +39,11 @@
     // Joga o Dpad para cima de todas as entidades
     [self.dPad removeFromParent];
     [gameScene addChild:self.dPad];
+    
+    if([self.mapSelector applyRuleToEntity:entity])
+    {
+        self.mapEntity = entity;
+    }
     
     return [super gameSceneDidAddEntity:gameScene entity:entity];
 }

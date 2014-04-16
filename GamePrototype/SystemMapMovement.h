@@ -8,6 +8,6 @@
 
 #import "GPSystem.h"
 
-@interface SystemMApMovement : GPSystem
+@interface SystemMapMovement : GPSystem
 
 @end

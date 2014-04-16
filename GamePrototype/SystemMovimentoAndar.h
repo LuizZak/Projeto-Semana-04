@@ -12,8 +12,8 @@
 @interface SystemMovimentoAndar : GPSystem
 
 // List of enemies
-@property GPEntitySelector *enemySelector;
-@property NSMutableArray *enemiesArray;
+@property GPEntitySelector *mapSelector;
+@property GPEntity *mapEntity;
 
 // The place touched
 @property CGPoint selectedPlace;

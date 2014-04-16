@@ -63,12 +63,12 @@
         for(int x = 0; x < [comp.mapGrid[y] count]; x++)
         {
             // Cria o sprite node
-            //SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(64, 64)];
             SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-grass"];
             
             tileNode.anchorPoint = CGPointZero;
             
             tileNode.size = CGSizeMake(64, 64);
+            tileNode.position = CGPointMake(x * 64, y * 64);
             
             [mapContainer addChild:tileNode];
         }

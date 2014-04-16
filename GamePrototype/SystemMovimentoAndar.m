@@ -74,28 +74,28 @@
                 
                 if (dir == DIR_TOP)
                 {
-                    mov.forceY += 5;
+                    mov.forceY += 1;
                 }
                 else if (dir == DIR_RIGHT)
                 {
-                    mov.forceX += 5;
+                    mov.forceX += 1;
                 }
                 else if (dir == DIR_BOTTOM)
                 {
-                    mov.forceY += -5;
+                    mov.forceY += -1;
                 }
                 else if (dir == DIR_LEFT)
                 {
-                    mov.forceX += -5;
+                    mov.forceX += -1;
                 }
             }
             
             // Chama metodo que criara a batalha
-            if([(WorldMap*)self.gameScene randomBattle])
+            /*if([(WorldMap*)self.gameScene randomBattle])
             {
                 self.holdingTouch = NO;
                 self.dPad.hidden = YES;
-            }
+            }*/
         }
     }
 }

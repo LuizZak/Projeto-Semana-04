@@ -34,8 +34,8 @@
     }
     else if(entitiesArray.count != 0)
     {
-        [entitiesArray[0] removeFromParent];
-        [self.gameScene insertChild:entitiesArray[0] atIndex:0];
+        [[entitiesArray[0] node] removeFromParent];
+        [self.gameScene insertChild:[entitiesArray[0] node] atIndex:0];
     }
     
     return ret;
@@ -65,16 +65,12 @@
             // Cria o sprite node
             //SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithColor:[UIColor greenColor] size:CGSizeMake(64, 64)];
             SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-grass"];
-            SKSpriteNode *frontTileNode = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:0 green:0.95f blue:0 alpha:1] size:CGSizeMake(60, 60)];
             
             tileNode.anchorPoint = CGPointZero;
-            frontTileNode.anchorPoint = CGPointZero;
             
             tileNode.size = CGSizeMake(64, 64);
-            tileNode.position = frontTileNode.position = CGPointMake(x * 64, y * 64);
             
             [mapContainer addChild:tileNode];
-            //[mapContainer addChild:frontTileNode];
         }
     }
 }

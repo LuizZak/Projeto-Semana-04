@@ -44,9 +44,13 @@
     NSMutableArray *systems;
     // Lista de notifiers
     NSMutableArray *notifiers;
+    // Nó raiz da cena
+    SKNode *worldNode;
 }
 
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
+
+@property (readonly) SKNode *worldNode;
 
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity;

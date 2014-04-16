@@ -18,8 +18,16 @@
         entities = [NSMutableArray array];
         systems = [NSMutableArray array];
         notifiers = [NSMutableArray array];
+        worldNode = [SKNode node];
+        
+        [self addChild:worldNode];
     }
     return self;
+}
+
+- (SKNode*)worldNode
+{
+    return worldNode;
 }
 
 - (void)updateWithTimeSinceLastUpdate:(CFTimeInterval)timeSinceLast
@@ -48,7 +56,7 @@
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity
 {
-    [self addEntity:entity toNode:self];
+    [self addEntity:entity toNode:worldNode];
 }
 // Adiciona uma entidade à cena, sendo uma filha do nó passado
 - (void)addEntity:(GPEntity*)entity toNode:(SKNode*)node

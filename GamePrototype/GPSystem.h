@@ -28,6 +28,11 @@
 // Chamado pela cena, para atualizar o sistema
 - (void)update:(NSTimeInterval)interval;
 
+// Chamado pela cena, quando as ações tiverem sido processadas
+- (void)didEvaluateActions;
+// Chamado pela cena, quando a simulação de física for atualizada
+- (void)didSimulatePhysics;
+
 // Força o sistema a recarregar as entidades guardadas nele
 - (void)reloadEntities:(NSArray*)array;
 

@@ -39,7 +39,9 @@
         cameraEntity.node.position = cameraComp.following.node.position;
     }
     
-    cameraEntity.node.position = CGPointMake(cameraEntity.node.position.x / 2, cameraEntity.node.position.y / 2);
+    CGRect screenBounds = self.gameScene.frame;
+    
+    cameraEntity.node.position = CGPointMake(-cameraEntity.node.position.x + screenBounds.size.width / 2, -cameraEntity.node.position.y + screenBounds.size.height / 2);
     
     self.gameScene.worldNode.position = cameraEntity.node.position;
 }

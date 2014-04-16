@@ -53,6 +53,26 @@
     [self updateWithTimeSinceLastUpdate:timeSinceLast];
 }
 
+- (void)didEvaluateActions
+{
+    [super didEvaluateActions];
+    
+    for(GPSystem *system in systems)
+    {
+        [system didEvaluateActions];
+    }
+}
+
+- (void)didSimulatePhysics
+{
+    [super didSimulatePhysics];
+    
+    for(GPSystem *system in systems)
+    {
+        [system didSimulatePhysics];
+    }
+}
+
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity
 {

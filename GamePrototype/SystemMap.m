@@ -28,14 +28,10 @@
 {
     BOOL ret = [super gameSceneDidAddEntity:gameScene entity:entity];
     
+    // Recarrega o mapa
     if(ret)
     {
         [self loadMap];
-    }
-    else if(entitiesArray.count != 0)
-    {
-        [[entitiesArray[0] node] removeFromParent];
-        [self.gameScene insertChild:[entitiesArray[0] node] atIndex:0];
     }
     
     return ret;

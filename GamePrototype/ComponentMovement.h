@@ -13,6 +13,11 @@
 // A direção que a entidade está virada
 @property int facingDirection;
 
+// Offset horizontal para aplicar no nó
+@property float offsetX;
+// Offset vertical para aplicar no nó
+@property float offsetY;
+
 // A fricção horizontal da entidade
 @property float frictionX;
 // A fricção vertical da entidade

@@ -62,7 +62,7 @@
     SKNode *playerNode = [SKNode node];
     SKSpriteNode *playerGfx = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
     playerGfx.size = CGSizeMake(64, 64);
-    playerGfx.anchorPoint = CGPointMake(0, 0);
+    playerGfx.zRotation = -M_PI / 2;
     
     [playerNode addChild:playerGfx];
     
@@ -71,7 +71,14 @@
     player.ID = PLAYER_ID;
     
     // Adiciona os componentes relevantes
-    [player addComponent:[[ComponentMovement alloc] init]];
+    ComponentMovement *comp = [[ComponentMovement alloc] init];
+    comp.offsetX = 32;
+    comp.offsetY = 32;
+    [player addComponent:comp];
+    
+    // Ajusta a posição pedida para o tile
+    x = roundf(x / 64) * 64 + comp.offsetX;
+    y = roundf(y / 64) * 64 + comp.offsetY;
     
     playerNode.position = CGPointMake(x, y);
     

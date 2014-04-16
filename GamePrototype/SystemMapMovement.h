@@ -7,6 +7,7 @@
 //
 
 #import "GPSystem.h"
+#import "CommonImports.h"
 
 @interface SystemMapMovement : GPSystem
 

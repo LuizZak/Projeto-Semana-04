@@ -8,6 +8,7 @@
 
 #import "SystemMapMovement.h"
 #import "ComponentMovement.h"
+#import "SystemMovimentoAndar.h"
 
 @implementation SystemMapMovement
 
@@ -30,6 +31,8 @@
     {
         ComponentMovement *mov = (ComponentMovement*)[entity getComponent:[ComponentMovement class]];
         CGPoint point = entity.node.position;
+        point.x -= mov.offsetX;
+        point.y -= mov.offsetY;
         
         // Checa se a entidade está parada em cima de um grid cell
         if((mov.forceX != 0 || mov.forceY != 0) && fmodf(point.x, 64) == 0 && fmodf(point.y, 64) == 0)
@@ -37,8 +40,12 @@
             //NSLog(@"%lf %lf", point.x, point.y);
             
             // Move o personagem para o próximo tile válido
-            int ntx = ((int)(point.x / 64) + mov.forceX) * 64;
-            int nty = ((int)(point.y / 64) + mov.forceY) * 64;
+            int ntx = ((int)(point.x / 64) + mov.forceX) * 64 + mov.offsetX;
+            int nty = ((int)(point.y / 64) + mov.forceY) * 64 + mov.offsetY;
+            
+            float rot = atan2f(mov.forceY, mov.forceX);
+            
+            entity.node.zRotation = rot;
             
             // Cria um SKAction para mover o tile
             SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.2f];

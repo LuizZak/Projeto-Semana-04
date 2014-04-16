@@ -55,6 +55,7 @@
         {
             // 2 = left, 0 = right
             int dirx = DIR_LEFT;
+            
             // 3 = bottom, 1 = top
             int diry = DIR_BOTTOM;
             

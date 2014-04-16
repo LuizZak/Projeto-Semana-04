@@ -45,6 +45,14 @@
 {
     
 }
+- (void)didEvaluateActions
+{
+    
+}
+- (void)didSimulatePhysics
+{
+    
+}
 
 - (void)reloadEntities:(NSArray *)array
 {

@@ -24,7 +24,8 @@
     return self;
 }
 
-- (void)update:(NSTimeInterval)interval
+//- (void)update:(NSTimeInterval)interval
+- (void)didEvaluateActions
 {
     // Atualiza a posição da câmera
     GPEntity *cameraEntity = entitiesArray[0];

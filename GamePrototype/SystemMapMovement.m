@@ -48,7 +48,7 @@
             entity.node.zRotation = rot;
             
             // Cria um SKAction para mover o tile
-            SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.2f];
+            SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
             
             [entity.node runAction:moveAction];
         }

@@ -11,10 +11,6 @@
 
 @interface SystemMovimentoAndar : GPSystem
 
-// List of enemies
-@property GPEntitySelector *mapSelector;
-@property GPEntity *mapEntity;
-
 // The place touched
 @property CGPoint selectedPlace;
 // O ponto em que o usuário está com o dedo agora

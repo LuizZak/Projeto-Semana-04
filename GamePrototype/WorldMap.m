@@ -101,6 +101,10 @@
 {
     int random = arc4random() % 50;
     
+    ComponentMapaGrid *mapGrid = (ComponentMapaGrid*)[[self getEntityByID:MAP_ID] getComponent:[ComponentMapaGrid class]];
+    
+    // Mecher com o grid aqui dentro
+    
     if (random == 6)
     {
         [self goToBattle];

@@ -9,6 +9,7 @@
 #import "WorldMap.h"
 #import "ComponentMapaGrid.h"
 #import "ComponentMovement.h"
+#import "ComponentCamera.h"
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
 #import "SystemMapMovement.h"
@@ -38,9 +39,11 @@
         // Adiciona o sistema de câmera
         [self addSystem:[[SystemCamera alloc] initWithGameScene:self]];
         
-        [self createPlayer:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
+        GPEntity *playerEntity = [self createPlayer:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
         
         [self createMap];
+        
+        [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
     }
     return self;
 }
@@ -57,7 +60,7 @@
     [self addEntity:enemy];
 }
 
-- (void)createPlayer:(float)x y:(float)y
+- (GPEntity*)createPlayer:(float)x y:(float)y
 {
     SKNode *playerNode = [SKNode node];
     SKSpriteNode *playerGfx = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
@@ -83,23 +86,26 @@
     playerNode.position = CGPointMake(x, y);
     
     [self addEntity:player];
+    
+    return player;
 }
 
-- (void)createCamera:(float)x y:(float)y following:(GPEntity*)entityToFollow
+- (void)createCamera:(float)x y:(float)y withBounds:(CGRect)bounds following:(GPEntity*)entityToFollow
 {
-    SKSpriteNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"player"];
-    playerNode.size = CGSizeMake(64, 64);
-    playerNode.anchorPoint = CGPointMake(0, 0);
-    GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
+    SKNode *cameraNode = [SKNode node];
+    GPEntity *camera = [[GPEntity alloc] initWithNode:cameraNode];
     
-    player.ID = PLAYER_ID;
+    camera.ID = CAMERA_ID;
     
     // Adiciona os componentes relevantes
-    [player addComponent:[[ComponentMovement alloc] init]];
+    ComponentCamera *cameraComp = [[ComponentCamera alloc] init];
+    cameraComp.cameraBounds = bounds;
+    cameraComp.following = entityToFollow;
+    [camera addComponent:cameraComp];
     
-    playerNode.position = CGPointMake(x, y);
+    cameraNode.position = CGPointMake(x, y);
     
-    [self addEntity:player];
+    [self addEntity:camera];
 }
 
 - (void)createMap

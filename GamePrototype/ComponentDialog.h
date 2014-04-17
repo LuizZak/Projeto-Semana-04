@@ -16,6 +16,8 @@ typedef void (^VoidBlock)();
 @property NSString *textDialog;
 // A cor do texto para exibir
 @property UIColor *textColor;
+// O delay entre cada caractére
+@property float charDelay;
 
 // Referência para o próximo diálogo a exibir após este
 @property ComponentDialog *nextDialog;

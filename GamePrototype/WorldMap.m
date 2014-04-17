@@ -43,15 +43,18 @@
         [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
         ComponentDialog *cmp = [[ComponentDialog alloc] init];
         cmp.textColor = [UIColor whiteColor];
-        cmp.textDialog = @"aeHOOOOO     sua mãe é uma gordona!";
+        cmp.charDelay = -1;
+        cmp.textDialog = @"Texto primeiro!";
         
         ComponentDialog *cmp2 = [[ComponentDialog alloc] init];
         cmp2.textColor = [UIColor whiteColor];
-        cmp2.textDialog = @"E sua irmã uma dadeira!";
+        cmp2.charDelay = 0.05f;
+        cmp2.textDialog = @"Mexa o personagem com o toque!";
         
         ComponentDialog *cmp3 = [[ComponentDialog alloc] init];
         cmp3.textColor = [UIColor whiteColor];
-        cmp3.textDialog = @"Nem vo comentá do seu pai, aquele sugador de cacetas!";
+        cmp3.charDelay = 0.05f;
+        cmp3.textDialog = @"Viva Final Fantasy (que eu nunca joguei)!";
         
         cmp.nextDialog = cmp2;
         cmp2.nextDialog = cmp3;

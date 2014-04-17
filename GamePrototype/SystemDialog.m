@@ -40,7 +40,7 @@
             {
                 [self changeDialogTextSize:currentTextChar + 1];
                 
-                currentCharDelay = charDelay;
+                currentCharDelay = charDelay - currentCharDelay;
             }
         }
     }
@@ -60,7 +60,9 @@
             
             // Chama o bloco pós diálogo
             if(comp.afterDialogBlock != nil)
+            {
                 comp.afterDialogBlock();
+            }
             
             if(comp.nextDialog != nil)
             {
@@ -199,23 +201,28 @@
         self.currentComponent.beforeDialogBlock();
     }
     
+    charDelay = compDialog.charDelay;
     currentTextChar = 0;
     currentCharDelay = charDelay;
     
     self.currentComponent = compDialog;
     
-    SKLabelNode *lblNode = self.labelNode;
+    // Atualiza o label node
+    [self fitTextOn:self.labelNode text:compDialog.textDialog width:dialogWidth];
+    self.labelNode.color = compDialog.textColor;
     
-    lblNode.text = compDialog.textDialog;
-    
-    [self fitTextOn:lblNode text:compDialog.textDialog width:dialogWidth];
-    
-    lblNode.color = compDialog.textColor;
-    
+    // Exibe a janela
     self.dialogNode.hidden = NO;
     self.showingDialog = YES;
     
-    [self changeDialogTextSize:0];
+    // Esconde o tap to continue
+    self.tapToContinueNode.hidden = YES;
+    
+    // Se o delay dos caractéres for igual a -1, exibe o texto inteiro agora
+    if(charDelay != -1)
+        [self changeDialogTextSize:0];
+    else
+        [self changeDialogTextSize:self.currentText.length];
 }
 
 - (void)hideDialog

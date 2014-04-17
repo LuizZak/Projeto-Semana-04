@@ -11,4 +11,8 @@
 
 @interface SystemMapMovement : GPSystem
 
+@property GPEntitySelector *mapSelector;
+
+@property GPEntity *mapEntity;
+
 @end

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15C518FC66B80000BC5A /* WorldMap.m */; };
 		5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */; };
-		5E5FE0C219004A1900A039AA /* SystemBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5FE0C119004A1900A039AA /* SystemBattle.m */; };
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
 		5ECF638218FF252900029917 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF638118FF252900029917 /* Menu.m */; };
@@ -42,6 +41,8 @@
 		B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E643D18FEF66700040D47 /* SystemMapMovement.m */; };
 		B32E644318FF098900040D47 /* SystemCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E644218FF098900040D47 /* SystemCamera.m */; };
 		B32E644618FF099F00040D47 /* ComponentCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E644518FF099F00040D47 /* ComponentCamera.m */; };
+		B33EBCC219004F410027882B /* SystemDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B33EBCC119004F410027882B /* SystemDialog.m */; };
+		B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B33EBCC419004F6B0027882B /* ComponentDialog.m */; };
 		B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */; };
 		B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */ = {isa = PBXBuildFile; fileRef = B34B2DE218F47E17007B82C4 /* GPSelectorRules.m */; };
 		B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA018F5D11A0079F74D /* ComponentHealth.m */; };
@@ -74,8 +75,6 @@
 		5E4A15C518FC66B80000BC5A /* WorldMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldMap.m; sourceTree = "<group>"; };
 		5E4A15CB18FC7A0C0000BC5A /* SystemMovimentoAndar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMovimentoAndar.h; sourceTree = "<group>"; };
 		5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMovimentoAndar.m; sourceTree = "<group>"; };
-		5E5FE0C019004A1900A039AA /* SystemBattle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemBattle.h; sourceTree = "<group>"; };
-		5E5FE0C119004A1900A039AA /* SystemBattle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemBattle.m; sourceTree = "<group>"; };
 		5E8A846918FDABFA0081583D /* dpad.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad.fla; sourceTree = "<group>"; };
 		5E8A846E18FDC6110081583D /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		5E8A846F18FDC6110081583D /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
@@ -129,6 +128,10 @@
 		B32E644218FF098900040D47 /* SystemCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemCamera.m; sourceTree = "<group>"; };
 		B32E644418FF099F00040D47 /* ComponentCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentCamera.h; sourceTree = "<group>"; };
 		B32E644518FF099F00040D47 /* ComponentCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentCamera.m; sourceTree = "<group>"; };
+		B33EBCC019004F410027882B /* SystemDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemDialog.h; sourceTree = "<group>"; };
+		B33EBCC119004F410027882B /* SystemDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemDialog.m; sourceTree = "<group>"; };
+		B33EBCC319004F6B0027882B /* ComponentDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentDialog.h; sourceTree = "<group>"; };
+		B33EBCC419004F6B0027882B /* ComponentDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentDialog.m; sourceTree = "<group>"; };
 		B34B2DDE18F475EE007B82C4 /* GPEntitySelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEntitySelector.h; sourceTree = "<group>"; };
 		B34B2DDF18F475EE007B82C4 /* GPEntitySelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEntitySelector.m; sourceTree = "<group>"; };
 		B34B2DE118F47E17007B82C4 /* GPSelectorRules.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSelectorRules.h; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 				B32E643A18FEF58400040D47 /* ComponentMovement.m */,
 				B32E644418FF099F00040D47 /* ComponentCamera.h */,
 				B32E644518FF099F00040D47 /* ComponentCamera.m */,
+				B33EBCC319004F6B0027882B /* ComponentDialog.h */,
+				B33EBCC419004F6B0027882B /* ComponentDialog.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -338,8 +343,8 @@
 				B32E643D18FEF66700040D47 /* SystemMapMovement.m */,
 				B32E644118FF098900040D47 /* SystemCamera.h */,
 				B32E644218FF098900040D47 /* SystemCamera.m */,
-				5E5FE0C019004A1900A039AA /* SystemBattle.h */,
-				5E5FE0C119004A1900A039AA /* SystemBattle.m */,
+				B33EBCC019004F410027882B /* SystemDialog.h */,
+				B33EBCC119004F410027882B /* SystemDialog.m */,
 			);
 			name = Systems;
 			sourceTree = "<group>";
@@ -483,11 +488,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E5FE0C219004A1900A039AA /* SystemBattle.m in Sources */,
 				B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */,
 				5E8A847018FDC6110081583D /* GameData.m in Sources */,
 				B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */,
 				B32AE37118F46B35006F8635 /* GPSystem.m in Sources */,
+				B33EBCC219004F410027882B /* SystemDialog.m in Sources */,
 				B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */,
 				B32AE36B18F46736006F8635 /* GPEntity.m in Sources */,
 				B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */,
@@ -498,6 +503,7 @@
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,
+				B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B32E644318FF098900040D47 /* SystemCamera.m in Sources */,

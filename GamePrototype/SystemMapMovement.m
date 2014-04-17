@@ -8,6 +8,7 @@
 
 #import "SystemMapMovement.h"
 #import "ComponentMovement.h"
+#import "ComponentMapaGrid.h"
 
 @implementation SystemMapMovement
 
@@ -18,9 +19,23 @@
     if(self)
     {
         selector = GPEntitySelectorCreate(GPRuleComponent([ComponentMovement class]));
+        
+        self.mapSelector = GPEntitySelectorCreate(GPRuleAnd(GPRuleID(MAP_ID), GPRuleComponent([ComponentMapaGrid class])));
     }
     
     return self;
+}
+
+- (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+{
+    BOOL ret = [super gameSceneDidAddEntity:gameScene entity:entity];
+    
+    if([self.mapSelector applyRuleToEntity:entity])
+    {
+        self.mapEntity = entity;
+    }
+    
+    return ret;
 }
 
 - (void)update:(NSTimeInterval)interval
@@ -42,12 +57,19 @@
             int ntx = ((int)(point.x / 64) + mov.forceX) * 64 + mov.offsetX;
             int nty = ((int)(point.y / 64) + mov.forceY) * 64 + mov.offsetY;
             
+            int gridCellNX = (ntx - mov.offsetX) / 64;
+            int gridCellNY = (nty - mov.offsetY) / 64;
+            
             // Gira o nó da entidade
             entity.node.zRotation = atan2f(mov.forceY, mov.forceX);
             
-            // Cria um SKAction para mover o nó da entidade
-            SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
-            [entity.node runAction:moveAction];
+            // Checa se o bloco pode ser andado por cima
+            if([self walkable:gridCellNX y:gridCellNY])
+            {
+                // Cria um SKAction para mover o nó da entidade
+                SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
+                [entity.node runAction:moveAction];
+            }
         }
         
         mov.forceX = 0;
@@ -66,6 +88,21 @@
         
         entity.node.position = CGPointMake(entity.node.position.x + mov.velX, entity.node.position.y + mov.velY);*/
     }
+}
+
+- (BOOL)walkable:(int)x y:(int)y
+{
+    ComponentMapaGrid *mapGrid = (ComponentMapaGrid*)[self.mapEntity getComponent:[ComponentMapaGrid class]];
+    
+    // Checagem de bounds do mapa
+    if(x < 0 || y < 0 || y >= mapGrid.mapGrid.count || x >= [mapGrid.mapGrid[y] count])
+        return NO;
+    
+    // Checagem de terreno
+    if(mapGrid != nil)
+        return [mapGrid.mapGrid[y][x] intValue] == 0;
+    else
+        return NO;
 }
 
 @end

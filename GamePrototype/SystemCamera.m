@@ -43,7 +43,29 @@
     
     cameraEntity.node.position = CGPointMake(-cameraEntity.node.position.x + screenBounds.size.width / 2, -cameraEntity.node.position.y + screenBounds.size.height / 2);
     
-    self.gameScene.worldNode.position = cameraEntity.node.position;
+    CGPoint cameraPoint = cameraEntity.node.position;
+    
+    // Reforça os bounds da câmera
+    // Horizontal
+    if(-cameraPoint.x < cameraComp.cameraBounds.origin.x)
+    {
+        cameraPoint.x = -cameraComp.cameraBounds.origin.x;
+    }
+    if(-cameraPoint.x + screenBounds.size.width > cameraComp.cameraBounds.origin.x + cameraComp.cameraBounds.size.width)
+    {
+        cameraPoint.x = -(cameraComp.cameraBounds.origin.x + cameraComp.cameraBounds.size.width - screenBounds.size.width);
+    }
+    // Vertical
+    if(-cameraPoint.y < cameraComp.cameraBounds.origin.y)
+    {
+        cameraPoint.y = -(cameraComp.cameraBounds.origin.y);
+    }
+    if(-cameraPoint.y + screenBounds.size.height > cameraComp.cameraBounds.origin.y + cameraComp.cameraBounds.size.height)
+    {
+        cameraPoint.y = -(cameraComp.cameraBounds.origin.y + cameraComp.cameraBounds.size.height - screenBounds.size.height);
+    }
+    
+    self.gameScene.worldNode.position = cameraPoint;
 }
 
 @end

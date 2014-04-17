@@ -48,10 +48,15 @@
 		B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */; };
 		B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
-		FC3F739118FF03AF00949342 /* tile-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738F18FF03AF00949342 /* tile-grass.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
 		FC66C37718FDB7C00015062B /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC66C37618FDB7C00015062B /* dpad.png */; };
+		FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD51900711800D24C87 /* tile-earth.png */; };
+		FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD61900711800D24C87 /* tile-grass.png */; };
+		FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD91900712200D24C87 /* tile-castle-grass.png */; };
+		FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */; };
+		FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDD1900712C00D24C87 /* tile-mountain.png */; };
+		FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDE1900712C00D24C87 /* tile-cave.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,11 +141,17 @@
 		B35DDFA618F5E4FF0079F74D /* ComponentHealthIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentHealthIndicator.h; sourceTree = "<group>"; };
 		B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHealthIndicator.m; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
-		FC3F738F18FF03AF00949342 /* tile-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grass.png"; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
-		FC3F73C818FF264D00949342 /* tilesAndDragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = tilesAndDragon.fla; sourceTree = "<group>"; };
+		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
 		FC3F73C918FF280E00949342 /* dpadClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpadClicked.png; sourceTree = "<group>"; };
 		FC66C37618FDB7C00015062B /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		FC8E1CD4190070FE00D24C87 /* tiles.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiles.fla; sourceTree = "<group>"; };
+		FC8E1CD51900711800D24C87 /* tile-earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earth.png"; sourceTree = "<group>"; };
+		FC8E1CD61900711800D24C87 /* tile-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grass.png"; sourceTree = "<group>"; };
+		FC8E1CD91900712200D24C87 /* tile-castle-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-castle-grass.png"; sourceTree = "<group>"; };
+		FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-castle-earth.png"; sourceTree = "<group>"; };
+		FC8E1CDD1900712C00D24C87 /* tile-mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-mountain.png"; sourceTree = "<group>"; };
+		FC8E1CDE1900712C00D24C87 /* tile-cave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-cave.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,11 +184,17 @@
 			children = (
 				FC3F73C618FF24E900949342 /* dragon.atlas */,
 				5E8A846918FDABFA0081583D /* dpad.fla */,
-				FC3F73C818FF264D00949342 /* tilesAndDragon.fla */,
+				FC3F73C818FF264D00949342 /* dragon.fla */,
+				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
+				FC8E1CD61900711800D24C87 /* tile-grass.png */,
+				FC8E1CD51900711800D24C87 /* tile-earth.png */,
+				FC8E1CD91900712200D24C87 /* tile-castle-grass.png */,
+				FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */,
+				FC8E1CDD1900712C00D24C87 /* tile-mountain.png */,
+				FC8E1CDE1900712C00D24C87 /* tile-cave.png */,
 				FC3F73C918FF280E00949342 /* dpadClicked.png */,
 				FC66C37618FDB7C00015062B /* dpad.png */,
 				FC3F738E18FF03AF00949342 /* player.png */,
-				FC3F738F18FF03AF00949342 /* tile-grass.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -433,15 +450,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */,
 				FC3F739018FF03AF00949342 /* player.png in Resources */,
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
+				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
-				FC3F739118FF03AF00949342 /* tile-grass.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
+				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
+				FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */,
+				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
+				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

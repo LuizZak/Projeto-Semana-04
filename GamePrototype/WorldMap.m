@@ -10,10 +10,12 @@
 #import "ComponentMapaGrid.h"
 #import "ComponentMovement.h"
 #import "ComponentCamera.h"
+#import "ComponentDialog.h"
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
 #import "SystemMapMovement.h"
 #import "SystemCamera.h"
+#import "SystemDialog.h"
 
 @implementation WorldMap
 
@@ -22,14 +24,6 @@
     if (self = [super initWithSize:size])
     {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        
-        /*SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];*/
         
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
         // Adiciona o sistema de mapa
@@ -44,6 +38,32 @@
         [self createMap];
         
         [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
+        
+        // TESTE DE CAIXA DE DIÁLOGO
+        [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
+        ComponentDialog *cmp = [[ComponentDialog alloc] init];
+        cmp.textColor = [UIColor whiteColor];
+        cmp.textDialog = @"aeHOOOOO     sua mãe é uma gordona!";
+        
+        ComponentDialog *cmp2 = [[ComponentDialog alloc] init];
+        cmp2.textColor = [UIColor whiteColor];
+        cmp2.textDialog = @"E sua irmã uma dadeira!";
+        
+        ComponentDialog *cmp3 = [[ComponentDialog alloc] init];
+        cmp3.textColor = [UIColor whiteColor];
+        cmp3.textDialog = @"Nem vo comentá do seu pai, aquele sugador de cacetas!";
+        
+        cmp.nextDialog = cmp2;
+        cmp2.nextDialog = cmp3;
+        
+        cmp3.afterDialogBlock = ^(void) {
+            NSLog(@"After block");
+        };
+        
+        GPEntity *entity = [[GPEntity alloc] initWithNode:[SKNode node]];
+        [entity addComponent:cmp];
+        
+        [self addEntity:entity];
     }
     return self;
 }

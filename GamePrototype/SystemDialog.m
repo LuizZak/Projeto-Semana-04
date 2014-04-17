@@ -58,6 +58,10 @@
         {
             ComponentDialog *comp = self.currentComponent;
             
+            // Chama o bloco pós diálogo
+            if(comp.afterDialogBlock != nil)
+                comp.afterDialogBlock();
+            
             if(comp.nextDialog != nil)
             {
                 [self showDialogForComponent:comp.nextDialog];
@@ -190,6 +194,11 @@
 
 - (void)showDialogForComponent:(ComponentDialog*)compDialog
 {
+    if(self.currentComponent.beforeDialogBlock != nil)
+    {
+        self.currentComponent.beforeDialogBlock();
+    }
+    
     currentTextChar = 0;
     currentCharDelay = charDelay;
     

@@ -25,14 +25,6 @@
     {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
-        /*SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];*/
-        
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
         // Adiciona o sistema de mapa
         [self addSystem:[[SystemMap alloc] initWithGameScene:self]];
@@ -46,7 +38,6 @@
         [self createMap];
         
         [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
-        
         
         // TESTE DE CAIXA DE DIÁLOGO
         [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
@@ -64,6 +55,10 @@
         
         cmp.nextDialog = cmp2;
         cmp2.nextDialog = cmp3;
+        
+        cmp3.afterDialogBlock = ^(void) {
+            NSLog(@"After block");
+        };
         
         GPEntity *entity = [[GPEntity alloc] initWithNode:[SKNode node]];
         [entity addComponent:cmp];

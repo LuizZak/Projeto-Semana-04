@@ -8,6 +8,8 @@
 
 #import "GPComponent.h"
 
+typedef void (^VoidBlock)();
+
 @interface ComponentDialog : GPComponent
 
 // O texto para exibir
@@ -17,5 +19,11 @@
 
 // Referência para o próximo diálogo a exibir após este
 @property ComponentDialog *nextDialog;
+
+// Bloco para executar quando o diálogo for exibido
+@property (nonatomic, copy) VoidBlock beforeDialogBlock;
+
+// Bloco para executar após o diálogo ser fechado
+@property (nonatomic, copy) VoidBlock afterDialogBlock;
 
 @end

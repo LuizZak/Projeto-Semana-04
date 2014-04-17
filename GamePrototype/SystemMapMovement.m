@@ -8,7 +8,6 @@
 
 #import "SystemMapMovement.h"
 #import "ComponentMovement.h"
-#import "SystemMovimentoAndar.h"
 
 @implementation SystemMapMovement
 
@@ -43,14 +42,12 @@
             int ntx = ((int)(point.x / 64) + mov.forceX) * 64 + mov.offsetX;
             int nty = ((int)(point.y / 64) + mov.forceY) * 64 + mov.offsetY;
             
-            float rot = atan2f(mov.forceY, mov.forceX);
+            // Gira o nó da entidade
+            entity.node.zRotation = atan2f(mov.forceY, mov.forceX);
             
-            entity.node.zRotation = rot;
-            
-            // Cria um SKAction para mover o tile
+            // Cria um SKAction para mover o nó da entidade
             SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
-            
-            [entity.node runAction:moveAction];
+            [entity.node runAction:moveAction withKey:@"MAP_MOVE"];
         }
         
         mov.forceX = 0;

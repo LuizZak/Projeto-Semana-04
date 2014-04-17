@@ -47,7 +47,7 @@
             
             // Cria um SKAction para mover o nó da entidade
             SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
-            [entity.node runAction:moveAction withKey:@"MAP_MOVE"];
+            [entity.node runAction:moveAction];
         }
         
         mov.forceX = 0;

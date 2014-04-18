@@ -25,7 +25,14 @@
 // Inicia esta instância de sistema com a cena fornecida
 - (id)initWithGameScene:(GPGameScene*)gameScene;
 
-
+// Notifica que o sistema será adicionado a uma cena
+- (void)willAddToScnee:(GPGameScene*)gameScene;
+// Notifica que o sistema foi adicionado a uma cena
+- (void)didAddToScene;
+// Notifica que o sistema será removido de uma cena
+- (void)willRemoveFromScene;
+// Notifica que o sistema foi removido de uma cena
+- (void)didRemoveFromScene;
 
 // Chamado pela cena, para atualizar o sistema
 - (void)update:(NSTimeInterval)interval;
@@ -37,5 +44,10 @@
 
 // Força o sistema a recarregar as entidades guardadas nele
 - (void)reloadEntities:(NSArray*)array;
+
+// Chamado quando o sistema tem de testar uma entidade para adicionar na sua lista interna de entidades relevantes
+- (BOOL)testEntityToAdd:(GPEntity*)entity;
+// Chamado quando o sistema tem de testar uma entidade para remover da sua lista interna de entidades relevantes
+- (BOOL)testEntityToRemove:(GPEntity*)entity;
 
 @end

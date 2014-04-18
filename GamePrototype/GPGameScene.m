@@ -145,6 +145,8 @@
 // Adiciona um sistema à cena
 - (void)addSystem:(GPSystem*)system
 {
+    [system willAddToScnee:self];
+    
     [systems addObject:system];
     
     // Força o sistema a carregas as entidades relevantes
@@ -152,14 +154,20 @@
     
     // Adiciona este sistema como notifier
     [notifiers addObject:system];
+    
+    [system didAddToScene];
 }
 // Remove um sistema da cena
 - (void)removeSystem:(GPSystem*)system
 {
+    [system willRemoveFromScene];
+    
     [systems removeObject:system];
     
     // Remove este sistema como notifier
     [notifiers removeObject:system];
+    
+    [system didRemoveFromScene];
 }
 
 // Eventos de interface

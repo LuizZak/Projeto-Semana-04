@@ -19,6 +19,8 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;

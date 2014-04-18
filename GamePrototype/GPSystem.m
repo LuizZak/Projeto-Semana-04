@@ -25,7 +25,7 @@
 
 - (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
 {
-    if([selector applyRuleToEntity:entity])
+    if([self testEntityToAdd:entity])
     {
         [entitiesArray addObject:entity];
         return YES;
@@ -36,9 +36,30 @@
 
 - (BOOL)gameSceneDidRemoveEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
 {
-    [entitiesArray removeObject:entity];
+    if([self testEntityToRemove:entity])
+    {
+        [entitiesArray removeObject:entity];
+    }
     
     return YES;
+}
+
+- (void)willAddToScnee:(GPGameScene*)gameScene
+{
+    
+}
+- (void)didAddToScene
+{
+    
+}
+- (void)willRemoveFromScene
+{
+    
+}
+- (void)didRemoveFromScene
+{
+    // Remove as referências as entidades ligadas
+    [entitiesArray removeAllObjects];
 }
 
 - (void)update:(NSTimeInterval)interval
@@ -60,11 +81,20 @@
     
     for(GPEntity *entity in array)
     {
-        if([selector applyRuleToEntity:entity])
+        if([self testEntityToAdd:entity])
         {
             [entitiesArray addObject:entity];
         }
     }
+}
+
+- (BOOL)testEntityToAdd:(GPEntity*)entity
+{
+    return [selector applyRuleToEntity:entity];
+}
+- (BOOL)testEntityToRemove:(GPEntity*)entity
+{
+    return [entitiesArray containsObject:entity];
 }
 
 @end

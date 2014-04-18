@@ -104,6 +104,14 @@
     return ret;
 }
 
+- (void)willRemoveFromScene
+{
+    [super willRemoveFromScene];
+    
+    // Destroi a caixa de diálogo
+    [self destroyDialog];
+}
+
 - (void)changeDialogTextSize:(int)newTextLength
 {
     currentTextChar = newTextLength;
@@ -162,6 +170,15 @@
     self.continueLabelAction = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction waitForDuration:0.5f], [SKAction fadeAlphaTo:0 duration:0], [SKAction waitForDuration:0.5f], [SKAction fadeAlphaTo:1 duration:0]]]];
     
     [self.gameScene addChild:self.dialogNode];
+}
+
+// Destroi a caixa de diálogo
+- (void)destroyDialog
+{
+    // Fecha o diálogo primeiro
+    [self hideDialog];
+    
+    [self.dialogNode removeFromParent];
 }
 
 // Getter do isTextFullyShown

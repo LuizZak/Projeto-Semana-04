@@ -60,10 +60,6 @@
         cmp.nextDialog = cmp2;
         cmp2.nextDialog = cmp3;
         
-        cmp3.afterDialogBlock = ^(void) {
-            NSLog(@"After block");
-        };
-        
         GPEntity *entity = [[GPEntity alloc] initWithNode:[SKNode node]];
         [entity addComponent:cmp];
         

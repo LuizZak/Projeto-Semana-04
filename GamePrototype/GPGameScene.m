@@ -169,6 +169,17 @@
     
     [system didRemoveFromScene];
 }
+// Retorna um sistema específico adicionado à cena
+- (GPSystem*)getSystem:(Class)systemClass
+{
+    for (GPSystem *system in systems) {
+        if([system isKindOfClass:systemClass])
+            return system;
+    }
+    
+    return nil;
+}
+
 
 // Eventos de interface
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

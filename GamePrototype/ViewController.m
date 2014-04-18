@@ -17,7 +17,7 @@
     [super viewDidLoad];
 }
 
-- (void)viewWillLayoutSubviews
+- (void)viewDidAppear:(BOOL)animated
 {
     // Configure the view.
     SKView * skView = (SKView *)self.view;

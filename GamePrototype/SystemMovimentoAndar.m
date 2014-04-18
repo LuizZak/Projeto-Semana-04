@@ -25,7 +25,10 @@
         
         self.deadZone = 30;
         
-        self.dPad = [SKSpriteNode spriteNodeWithImageNamed:@"dpad.png"];
+        self.textureDPad = [SKTexture textureWithImageNamed:@"dpad.png"];
+        self.textureDPadPressed = [SKTexture textureWithImageNamed:@"dpadClicked.png"];
+        
+        self.dPad = [SKSpriteNode spriteNodeWithTexture:self.textureDPad];
         self.dPad.hidden = YES;
         self.dPad.size = CGSizeMake(200.0, 200.0);
         self.dPad.zPosition = 10;
@@ -50,9 +53,15 @@
         float dx = self.currentPoint.x - self.selectedPlace.x;
         float dy = self.currentPoint.y - self.selectedPlace.y;
         
+        // Atualiza o ícone do DPad
+        self.dPad.texture = self.textureDPad;
+        
         // Só move o personagem se o usuário mexer o dedo uam certa distância
         if(sqrt(dx * dx + dy * dy) > self.deadZone)
         {
+            // Atualiza o ícone do DPad
+            self.dPad.texture = self.textureDPadPressed;
+            
             // 2 = left, 0 = right
             int dirx = DIR_LEFT;
             
@@ -69,6 +78,23 @@
             // Se o dedo está mais para horizontal do que para vertical, troca a direção
             if(fabsf(dx) > fabsf(dy))
                 dir = dirx;
+            
+            // Gira o DPad dependendo da direção apertada
+            switch(dir)
+            {
+                case DIR_RIGHT:
+                    self.dPad.zRotation = 0;
+                    break;
+                case DIR_TOP:
+                    self.dPad.zRotation = M_PI / 2;
+                    break;
+                case DIR_LEFT:
+                    self.dPad.zRotation = M_PI;
+                    break;
+                case DIR_BOTTOM:
+                    self.dPad.zRotation = M_PI * 1.5f;
+                    break;
+            }
             
             for(GPEntity *entity in entitiesArray)
             {
@@ -91,13 +117,6 @@
                     mov.forceX += -1;
                 }
             }
-            
-            // Chama metodo que criara a batalha
-            /*if([(WorldMap*)self.gameScene randomBattle])
-            {
-                self.holdingTouch = NO;
-                self.dPad.hidden = YES;
-            }*/
         }
     }
 }

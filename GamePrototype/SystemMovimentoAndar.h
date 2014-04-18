@@ -23,6 +23,12 @@
 @property BOOL holdingTouch;
 
 // Cria a imagem do Dpad
-@property SKSpriteNode* dPad;
+@property SKSpriteNode *dPad;
+
+// Textura do DPad normal
+@property SKTexture *textureDPad;
+
+// Textura do DPad pressionado
+@property SKTexture *textureDPadPressed;
 
 @end

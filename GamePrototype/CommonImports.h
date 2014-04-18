@@ -20,4 +20,9 @@
 #define DIR_LEFT 2
 #define DIR_BOTTOM 3
 
+#define TILE_GRASS 0
+#define TILE_MONTAIN 1
+#define TILE_EARTH 2
+#define TILE_CAVE 3
+
 #endif

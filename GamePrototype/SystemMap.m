@@ -54,12 +54,35 @@
     [mapContainer removeAllChildren];
     
     // Cria os nós de tiles e atribui a eles os gráficos respectivos
+    // 0 - Grama
+    // 1 - Montanha
+    // 2 - Terra
+    // 3 - Caverna
     for(int y = 0; y < comp.mapGrid.count; y++)
     {
         for(int x = 0; x < [comp.mapGrid[y] count]; x++)
         {
+            int tileID = [comp.mapGrid[y][x] intValue];
+            
             // Cria o sprite node
-            SKSpriteNode *tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-grass"];
+            SKSpriteNode *tileNode;
+            
+            if(tileID == TILE_GRASS)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-grass"];
+            }
+            else if(tileID == TILE_MONTAIN)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-mountain"];
+            }
+            else if(tileID == TILE_EARTH)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-earth"];
+            }
+            else if(tileID == TILE_CAVE)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-cave"];
+            }
             
             tileNode.anchorPoint = CGPointZero;
             

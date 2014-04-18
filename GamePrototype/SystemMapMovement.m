@@ -98,9 +98,11 @@
     if(x < 0 || y < 0 || y >= mapGrid.mapGrid.count || x >= [mapGrid.mapGrid[y] count])
         return NO;
     
+    int tileID = [mapGrid.mapGrid[y][x] intValue];
+    
     // Checagem de terreno
     if(mapGrid != nil)
-        return [mapGrid.mapGrid[y][x] intValue] == 0;
+        return tileID == TILE_GRASS || tileID == TILE_EARTH;
     else
         return NO;
 }

@@ -141,12 +141,15 @@
     
     NSMutableArray *grid = [NSMutableArray array];
     
-    for(int y = 0; y < 30; y++)
+    int mapWidth = 30;
+    int mapHeight = 30;
+    
+    for(int y = 0; y < mapWidth; y++)
     {
         NSMutableArray *row = [NSMutableArray array];
         [grid addObject:row];
         
-        for(int x = 0; x < 30; x++)
+        for(int x = 0; x < mapHeight; x++)
         {
             [row addObject:[NSNumber numberWithInt:0]];
         }
@@ -194,7 +197,7 @@
     {
         for(int x = 0; x < 30; x++)
         {
-            grid[y][x] = [NSNumber numberWithInt:gridMapa[y][x]];
+            grid[y][x] = [NSNumber numberWithInt:gridMapa[mapHeight - y - 1][x]];
         }
     }
     

@@ -25,6 +25,8 @@
 // Inicia esta instância de sistema com a cena fornecida
 - (id)initWithGameScene:(GPGameScene*)gameScene;
 
+
+
 // Chamado pela cena, para atualizar o sistema
 - (void)update:(NSTimeInterval)interval;
 

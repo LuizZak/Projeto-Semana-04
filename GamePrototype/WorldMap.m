@@ -25,6 +25,7 @@
     {
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
+        // Adiciona o sistema de mover o personagem com o dedo
         [self addSystem:[[SystemMovimentoAndar alloc] initWithGameScene:self]];
         // Adiciona o sistema de mapa
         [self addSystem:[[SystemMap alloc] initWithGameScene:self]];

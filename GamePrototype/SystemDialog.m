@@ -52,7 +52,7 @@
     {
         if(!self.isTextFullyShown)
         {
-            [self changeDialogTextSize:self.currentText.length];
+            [self changeDialogTextSize:(int)self.currentText.length];
         }
         else
         {
@@ -222,7 +222,7 @@
     if(charDelay != -1)
         [self changeDialogTextSize:0];
     else
-        [self changeDialogTextSize:self.currentText.length];
+        [self changeDialogTextSize:(int)self.currentText.length];
 }
 
 - (void)hideDialog

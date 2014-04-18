@@ -122,7 +122,7 @@
     
     for(GPEntity *entity in entities)
     {
-        if(entity.type == type)
+        if((entity.type & type) != 0)
             [array addObject:entity];
     }
     

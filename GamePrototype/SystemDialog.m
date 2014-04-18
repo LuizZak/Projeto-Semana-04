@@ -76,9 +76,9 @@
     }
 }
 
-- (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+- (BOOL)testEntityToAdd:(GPEntity *)entity
 {
-    BOOL ret = [super gameSceneDidAddEntity:gameScene entity:entity];
+    BOOL ret = [super testEntityToAdd:entity];
     
     if(ret)
     {
@@ -89,9 +89,9 @@
     return ret;
 }
 
-- (BOOL)gameSceneDidRemoveEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+- (BOOL)testEntityToRemove:(GPEntity *)entity
 {
-    BOOL ret = [super gameSceneDidRemoveEntity:gameScene entity:entity];
+    BOOL ret = [super testEntityToRemove:entity];
     
     if(ret)
     {

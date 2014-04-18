@@ -24,13 +24,15 @@
     return self;
 }
 
-- (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+- (BOOL)testEntityToAdd:(GPEntity *)entity
 {
-    BOOL ret = [super gameSceneDidAddEntity:gameScene entity:entity];
+    BOOL ret = [super testEntityToAdd:entity];
     
     // Recarrega o mapa
     if(ret)
     {
+        self.mapEntity = entity;
+        
         [self loadMap];
     }
     
@@ -39,14 +41,14 @@
 
 - (void)loadMap
 {
-    if(entitiesArray.count == 0)
+    if(self.mapEntity == nil)
         return;
     
     // Pega o c
-    ComponentMapaGrid *comp = (ComponentMapaGrid*)[entitiesArray[0] getComponent:[ComponentMapaGrid class]];
+    ComponentMapaGrid *comp = (ComponentMapaGrid*)[self.mapEntity getComponent:[ComponentMapaGrid class]];
     
     // Pega o node da entidade
-    SKNode *mapContainer = [entitiesArray[0] node];
+    SKNode *mapContainer = [self.mapEntity node];
     
     mapContainer.zPosition = -100;
     

@@ -10,4 +10,7 @@
 
 @interface SystemMap : GPSystem
 
+// Entidade que guarda o mapa
+@property GPEntity *mapEntity;
+
 @end

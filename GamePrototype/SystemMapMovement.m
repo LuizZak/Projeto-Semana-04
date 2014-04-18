@@ -26,9 +26,9 @@
     return self;
 }
 
-- (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
+- (BOOL)testEntityToAdd:(GPEntity *)entity
 {
-    BOOL ret = [super gameSceneDidAddEntity:gameScene entity:entity];
+    BOOL ret = [super testEntityToAdd:entity];
     
     if([self.mapSelector applyRuleToEntity:entity])
     {

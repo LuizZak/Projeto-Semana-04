@@ -13,6 +13,7 @@
 typedef unsigned long long entityid_t;
 typedef unsigned long long entitytype_t;
 
+@class GPGameScene;
 // Representa uma entidade do jogo
 @interface GPEntity : NSObject
 {
@@ -30,6 +31,9 @@ typedef unsigned long long entitytype_t;
 // O nó que esta entidade acomoda
 @property (readonly) SKNode *node;
 
+// A cena em que esta entidade está localizada
+@property GPGameScene *gameScene;
+
 // Inicia esta entidade com o SKNode passado
 - (id)initWithNode:(SKNode*)node;
 
@@ -44,5 +48,8 @@ typedef unsigned long long entitytype_t;
 
 // Retorna se esta entidade contém o componente referido pela classe passada
 - (BOOL)hasComponent:(Class)componentClass;
+
+// Remove o componente nesta entidade que tem a classe especificada
+- (void)removeComponentWithClass:(Class)componentClass;
 
 @end

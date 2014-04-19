@@ -85,6 +85,8 @@
     
     [node addChild:entity.node];
     
+    entity.gameScene = self;
+    
     // Notifica os notifiers
     for(id<GPGameSceneNotifier> notifier in notifiers)
     {
@@ -97,6 +99,9 @@
     [entities removeObject:entity];
     
     [entity.node removeFromParent];
+    
+    if(entity.gameScene == self)
+        entity.gameScene = nil;
     
     // Notifica os notifiers
     for(id<GPGameSceneNotifier> notifier in notifiers)
@@ -140,6 +145,15 @@
 - (NSArray*)getEntitiesWithSelectorRule:(GPSelectorRule*)rule
 {
     return [self getEntitiesWithSelector:GPEntitySelectorCreate(rule)];
+}
+
+// Notifica que a entidade passada foi modificada (componentes, id ou tipo foram modificados)
+- (void)entityModified:(GPEntity *)entity
+{
+    for (GPSystem *system in systems)
+    {
+        [system entityModified:entity];
+    }
 }
 
 // Adiciona um sistema à cena

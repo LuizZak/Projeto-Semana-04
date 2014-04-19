@@ -43,6 +43,13 @@
         
         [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
         
+        
+        // ! TESTE !
+        playerEntity = [self createPlayer:(playerSpawnX + 4) * 64 y:playerSpawnY * 64];
+        playerEntity.ID = 0;
+        
+        [self entityModified:playerEntity];
+        
         // TESTE DE CAIXA DE DIÁLOGO
         [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
         ComponentDialog *cmp = [[ComponentDialog alloc] init];

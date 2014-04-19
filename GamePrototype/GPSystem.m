@@ -88,6 +88,23 @@
     }
 }
 
+- (void)entityModified:(GPEntity *)entity
+{
+    if([entitiesArray containsObject:entity])
+    {
+        // Testa se a entidade não cabe mais ao selector
+        if([selector applyRuleToEntity:entity] && [self testEntityToRemove:entity])
+        {
+            [entitiesArray removeObject:entity];
+        }
+    }
+    // Adiciona a entidade se ela passar no selector
+    else if([self testEntityToAdd:entity])
+    {
+        [entitiesArray addObject:entity];
+    }
+}
+
 - (BOOL)testEntityToAdd:(GPEntity*)entity
 {
     return [selector applyRuleToEntity:entity];

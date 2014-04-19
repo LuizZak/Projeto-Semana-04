@@ -40,6 +40,8 @@
 
 - (void)update:(NSTimeInterval)interval
 {
+    ComponentMapaGrid *mapGrid = (ComponentMapaGrid*)[self.mapEntity getComponent:[ComponentMapaGrid class]];
+    
     // Movimenta as entidades pela tela
     for (GPEntity *entity in entitiesArray)
     {
@@ -67,13 +69,20 @@
             if([self walkable:gridCellNX y:gridCellNY])
             {
                 // Notifica o delegate
-                if(self.delegate != nil && [self.delegate respondsToSelector:@selector(systemMapMovement:entity:willWalkTo:)])
+                if(self.delegate != nil && [self.delegate respondsToSelector:@selector(systemMapMovement:entity:willWalkTo:tileID:)])
                 {
-                    [self.delegate systemMapMovement:self entity:entity willWalkTo:CGPointMake(gridCellNX, gridCellNY)];
+                    [self.delegate systemMapMovement:self entity:entity willWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:[mapGrid.mapGrid[gridCellNX][gridCellNY] intValue]];
                 }
                 
                 // Cria um SKAction para mover o nó da entidade
                 SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
+                
+                // Adiciona um block para executar o delegate após o movimento do nó
+                if(self.delegate != nil && [self.delegate respondsToSelector:@selector(systemMapMovement:entity:didWalkTo:tileID:)])
+                {
+                    moveAction = [SKAction sequence:@[moveAction, [SKAction runBlock:^(void) { [self.delegate systemMapMovement:self entity:entity didWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:[mapGrid.mapGrid[gridCellNX][gridCellNY] intValue]]; } queue:dispatch_get_main_queue()]]];
+                }
+                
                 [entity.node runAction:moveAction];
             }
         }

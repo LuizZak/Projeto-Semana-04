@@ -66,6 +66,8 @@
 - (NSArray*)getEntitiesWithSelector:(GPEntitySelector*)selector;
 // Retorna uma lista de entidades que foram filtradas com a regra de selecionador fornecida
 - (NSArray*)getEntitiesWithSelectorRule:(GPSelectorRule*)rule;
+// Notifica que a entidade passada foi modificada (componentes, id ou tipo foram modificados)
+- (void)entityModified:(GPEntity*)entity;
 
 // Adiciona um sistema à cena
 - (void)addSystem:(GPSystem*)system;

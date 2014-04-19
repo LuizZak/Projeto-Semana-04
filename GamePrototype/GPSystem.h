@@ -45,6 +45,9 @@
 // Força o sistema a recarregar as entidades guardadas nele
 - (void)reloadEntities:(NSArray*)array;
 
+// Chamado pela classe GPGameScene, notifica quando uma entidade foi modificada (componentes, ID ou tipo foram modficados)
+- (void)entityModified:(GPEntity*)entity;
+
 // Chamado quando o sistema tem de testar uma entidade para adicionar na sua lista interna de entidades relevantes
 - (BOOL)testEntityToAdd:(GPEntity*)entity;
 // Chamado quando o sistema tem de testar uma entidade para remover da sua lista interna de entidades relevantes

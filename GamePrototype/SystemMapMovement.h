@@ -16,7 +16,10 @@
 @optional
 
 // Indica que uma entidade vai passar por cima do tile especificado
-- (void)systemMapMovement:(SystemMapMovement*)system entity:(GPEntity*)entity willWalkTo:(CGPoint)point;
+- (void)systemMapMovement:(SystemMapMovement*)system entity:(GPEntity*)entity willWalkTo:(CGPoint)point tileID:(int)tileID;
+
+// Indica que uma entidade acabou de chegar num tile específico
+- (void)systemMapMovement:(SystemMapMovement *)system entity:(GPEntity *)entity didWalkTo:(CGPoint)point tileID:(int)tileID;
 
 @end
 

@@ -51,4 +51,9 @@
     return [self getComponent:componentClass] != nil;
 }
 
+- (void)removeComponentWithClass:(Class)componentClass
+{
+    [self removeComponent:[self getComponent:componentClass]];
+}
+
 @end

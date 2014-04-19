@@ -34,9 +34,12 @@
         // Adiciona o sistema de câmera
         [self addSystem:[[SystemCamera alloc] initWithGameScene:self]];
         
-        GPEntity *playerEntity = [self createPlayer:CGRectGetMidX(self.frame) y:CGRectGetMidY(self.frame)];
-        
         [self createMap];
+        
+        int playerSpawnX = 15;
+        int playerSpawnY = 15;
+        
+        GPEntity *playerEntity = [self createPlayer:playerSpawnX * 64 y:playerSpawnY * 64];
         
         [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
         
@@ -93,8 +96,8 @@
     
     [playerNode addChild:playerGfx];
     
+    // Cria a entidade
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
-    
     player.ID = PLAYER_ID;
     
     // Adiciona os componentes relevantes

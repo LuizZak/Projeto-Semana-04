@@ -66,6 +66,12 @@
             // Checa se o bloco pode ser andado por cima
             if([self walkable:gridCellNX y:gridCellNY])
             {
+                // Notifica o delegate
+                if(self.delegate != nil && [self.delegate respondsToSelector:@selector(systemMapMovement:entity:willWalkTo:)])
+                {
+                    [self.delegate systemMapMovement:self entity:entity willWalkTo:CGPointMake(gridCellNX, gridCellNY)];
+                }
+                
                 // Cria um SKAction para mover o nó da entidade
                 SKAction *moveAction = [SKAction moveTo:CGPointMake(ntx, nty) duration:0.25f];
                 [entity.node runAction:moveAction];

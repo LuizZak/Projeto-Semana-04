@@ -8,6 +8,7 @@
 
 #import "GPSystem.h"
 
+// Sistema de mapa
 @interface SystemMap : GPSystem
 
 // Entidade que guarda o mapa

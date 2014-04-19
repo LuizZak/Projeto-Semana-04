@@ -11,6 +11,14 @@
 // Componente de movimentação em mapa
 @interface ComponentMapMovement : ComponentMovement
 
+// A direção que a entidade está virada
+@property int facingDirection;
+
+// Offset horizontal para aplicar no nó
+@property float offsetX;
+// Offset vertical para aplicar no nó
+@property float offsetY;
+
 // A posição X no grid do mapa
 @property int currentGridX;
 // A posição Y no grid do mapa

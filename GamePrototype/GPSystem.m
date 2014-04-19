@@ -93,7 +93,7 @@
     if([entitiesArray containsObject:entity])
     {
         // Testa se a entidade não cabe mais ao selector
-        if([selector applyRuleToEntity:entity] && [self testEntityToRemove:entity])
+        if(![selector applyRuleToEntity:entity] && [self testEntityToRemove:entity])
         {
             [entitiesArray removeObject:entity];
         }

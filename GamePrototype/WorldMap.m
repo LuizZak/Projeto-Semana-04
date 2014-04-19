@@ -8,7 +8,7 @@
 
 #import "WorldMap.h"
 #import "ComponentMapaGrid.h"
-#import "ComponentMovement.h"
+#import "ComponentMapMovement.h"
 #import "ComponentCamera.h"
 #import "ComponentDialog.h"
 #import "SystemMap.h"
@@ -49,6 +49,7 @@
         playerEntity.ID = 0;
         
         [self entityModified:playerEntity];
+        
         
         // TESTE DE CAIXA DE DIÁLOGO
         [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
@@ -108,9 +109,12 @@
     player.ID = PLAYER_ID;
     
     // Adiciona os componentes relevantes
-    ComponentMovement *comp = [[ComponentMovement alloc] init];
+    ComponentMapMovement *comp = [[ComponentMapMovement alloc] init];
     comp.offsetX = 32;
     comp.offsetY = 32;
+    comp.currentGridX = roundf(x / 64);
+    comp.currentGridY = roundf(y / 64);
+    comp.blocksOtherEntities = NO;
     [player addComponent:comp];
     
     // Ajusta a posição pedida para o tile

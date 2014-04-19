@@ -7,7 +7,7 @@
 //
 
 #import "SystemMapMovement.h"
-#import "ComponentMovement.h"
+#import "ComponentMapMovement.h"
 #import "ComponentMapaGrid.h"
 
 @implementation SystemMapMovement
@@ -18,7 +18,7 @@
     
     if(self)
     {
-        selector = GPEntitySelectorCreate(GPRuleComponent([ComponentMovement class]));
+        selector = GPEntitySelectorCreate(GPRuleComponent([ComponentMapMovement class]));
         
         self.mapSelector = GPEntitySelectorCreate(GPRuleAnd(GPRuleID(MAP_ID), GPRuleComponent([ComponentMapaGrid class])));
     }
@@ -45,7 +45,7 @@
     // Movimenta as entidades pela tela
     for (GPEntity *entity in entitiesArray)
     {
-        ComponentMovement *mov = (ComponentMovement*)[entity getComponent:[ComponentMovement class]];
+        ComponentMapMovement *mov = (ComponentMapMovement*)[entity getComponent:[ComponentMapMovement class]];
         CGPoint point = entity.node.position;
         point.x -= mov.offsetX;
         point.y -= mov.offsetY;
@@ -83,6 +83,10 @@
                     moveAction = [SKAction sequence:@[moveAction, [SKAction runBlock:^(void) { [self.delegate systemMapMovement:self entity:entity didWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:[mapGrid.mapGrid[gridCellNX][gridCellNY] intValue]]; } queue:dispatch_get_main_queue()]]];
                 }
                 
+                // Atualiza a posição no grid da entidade
+                mov.currentGridX = gridCellNX;
+                mov.currentGridY = gridCellNY;
+                
                 [entity.node runAction:moveAction];
             }
         }
@@ -114,6 +118,17 @@
         return NO;
     
     int tileID = [mapGrid.mapGrid[y][x] intValue];
+    
+    // Checagem de entidades
+    for(GPEntity *entity in entitiesArray)
+    {
+        ComponentMapMovement *comp = (ComponentMapMovement*)[entity getComponent:[ComponentMapMovement class]];
+        
+        if(comp.blocksOtherEntities && comp.currentGridX == x && comp.currentGridY == y)
+        {
+            return NO;
+        }
+    }
     
     // Checagem de terreno
     if(mapGrid != nil)

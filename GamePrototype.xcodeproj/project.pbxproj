@@ -12,6 +12,7 @@
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
 		5ECF638218FF252900029917 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF638118FF252900029917 /* Menu.m */; };
+		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
 		B32AE32E18F465CB006F8635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32D18F465CB006F8635 /* UIKit.framework */; };
@@ -80,6 +81,8 @@
 		5E8A846F18FDC6110081583D /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
 		5ECF638018FF252900029917 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
 		5ECF638118FF252900029917 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		A02B81C01902201900D5A417 /* ComponentMapMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMapMovement.h; sourceTree = "<group>"; };
+		A02B81C11902201900D5A417 /* ComponentMapMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapMovement.m; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32AE32B18F465CB006F8635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -320,6 +323,8 @@
 				B32B9BBD18FDA34800BF4B2C /* ComponentMapaGrid.m */,
 				B32E643918FEF58400040D47 /* ComponentMovement.h */,
 				B32E643A18FEF58400040D47 /* ComponentMovement.m */,
+				A02B81C01902201900D5A417 /* ComponentMapMovement.h */,
+				A02B81C11902201900D5A417 /* ComponentMapMovement.m */,
 				B32E644418FF099F00040D47 /* ComponentCamera.h */,
 				B32E644518FF099F00040D47 /* ComponentCamera.m */,
 				B33EBCC319004F6B0027882B /* ComponentDialog.h */,
@@ -493,6 +498,7 @@
 				B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */,
 				B32AE37118F46B35006F8635 /* GPSystem.m in Sources */,
 				B33EBCC219004F410027882B /* SystemDialog.m in Sources */,
+				A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */,
 				B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */,
 				B32AE36B18F46736006F8635 /* GPEntity.m in Sources */,
 				B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */,

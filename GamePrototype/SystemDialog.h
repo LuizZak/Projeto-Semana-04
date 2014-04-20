@@ -34,6 +34,9 @@
 // Nó da diálogo atual
 @property SKNode *dialogNode;
 
+// Nó do avatar do personagem
+@property SKSpriteNode *avatarNode;
+
 // Nó usado para indicar que o usuário pode tocar na tela para continuar
 @property SKLabelNode *tapToContinueNode;
 

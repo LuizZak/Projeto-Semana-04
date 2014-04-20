@@ -13,6 +13,7 @@
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
 		5ECF638218FF252900029917 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF638118FF252900029917 /* Menu.m */; };
 		A0005D68190433CE003A60F1 /* DSMultilineLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */; };
+		A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A0005D6A19044064003A60F1 /* dragonAvatar.png */; };
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
@@ -84,6 +85,8 @@
 		5ECF638118FF252900029917 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
 		A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSMultilineLabelNode.m; sourceTree = "<group>"; };
 		A0005D67190433CE003A60F1 /* DSMultilineLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMultilineLabelNode.h; sourceTree = "<group>"; };
+		A0005D691904405A003A60F1 /* dragonAvatar.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonAvatar.fla; sourceTree = "<group>"; };
+		A0005D6A19044064003A60F1 /* dragonAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragonAvatar.png; sourceTree = "<group>"; };
 		A02B81C01902201900D5A417 /* ComponentMapMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMapMovement.h; sourceTree = "<group>"; };
 		A02B81C11902201900D5A417 /* ComponentMapMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapMovement.m; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +197,9 @@
 				FC3F73C618FF24E900949342 /* dragon.atlas */,
 				5E8A846918FDABFA0081583D /* dpad.fla */,
 				FC3F73C818FF264D00949342 /* dragon.fla */,
+				A0005D691904405A003A60F1 /* dragonAvatar.fla */,
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
+				A0005D6A19044064003A60F1 /* dragonAvatar.png */,
 				FC8E1CD61900711800D24C87 /* tile-grass.png */,
 				FC8E1CD51900711800D24C87 /* tile-earth.png */,
 				FC8E1CD91900712200D24C87 /* tile-castle-grass.png */,
@@ -478,6 +483,7 @@
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
+				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
 			);

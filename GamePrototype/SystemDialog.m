@@ -118,7 +118,13 @@
     
     self.labelNode.text = [self.currentText substringToIndex:currentTextChar];
     
-    self.labelNode.position = CGPointMake(-dialogWidth / 2 + internalMargin + self.labelNode.frame.size.width / 2, dialogHeight / 2 - self.labelNode.frame.size.height / 2 - internalMargin / 2);
+    // Calcula um offset dependendo de se há um avatar sendo exibido no momento
+    int offsetX = 0;
+    
+    if(!self.avatarNode.hidden)
+        offsetX = self.avatarNode.frame.size.width + 5;
+    
+    self.labelNode.position = CGPointMake(-dialogWidth / 2 + internalMargin + self.labelNode.frame.size.width / 2 + offsetX, dialogHeight / 2 - self.labelNode.frame.size.height / 2 - internalMargin / 2);
     
     if(currentTextChar == self.currentText.length)
     {
@@ -136,12 +142,13 @@
     dialogWidth = self.gameScene.frame.size.width - 50;
     dialogHeight = 200;
     
-    internalMargin = 15;
+    internalMargin = 10;
     
     self.dialogNode = [SKNode node];
     SKSpriteNode *bgNode = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(dialogWidth, dialogHeight)];
+    
+    // TextNode
     DSMultilineLabelNode *textNode = [DSMultilineLabelNode labelNodeWithFontNamed:@"GillSans"];
-    // Ajusta o textNode
     textNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     textNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeBaseline;
     textNode.position = CGPointMake(-dialogWidth / 2 + internalMargin, dialogHeight / 2 - internalMargin - 20);
@@ -150,8 +157,15 @@
     bgNode.name = @"bgNode";
     textNode.name = @"textNode";
     
+    // Avatar
+    self.avatarNode = [SKSpriteNode spriteNodeWithColor:[UIColor whiteColor] size:CGSizeMake(180, 180)];
+    self.avatarNode.position = CGPointMake(-dialogWidth / 2 + self.avatarNode.frame.size.width / 2 + internalMargin, -dialogHeight / 2 + self.avatarNode.frame.size.height / 2 + internalMargin);
+    
+    
+    // DialogNode
     self.dialogNode.position = CGPointMake(CGRectGetMidX(self.gameScene.frame), 125);
     
+    [self.dialogNode addChild:self.avatarNode];
     [self.dialogNode addChild:bgNode];
     [self.dialogNode addChild:textNode];
     
@@ -201,8 +215,6 @@
     self.labelNode.paragraphWidth = targetWidth;
     self.labelNode.text = text;
     
-    self.labelNode.position = CGPointMake(-dialogWidth / 2 + internalMargin + self.labelNode.frame.size.width / 2, dialogHeight / 2 - self.labelNode.frame.size.height / 2 - internalMargin / 2);
-    
     self.currentText = targetLabelNode.text;
 }
 
@@ -229,8 +241,30 @@
     
     self.currentComponent = compDialog;
     
+    if(compDialog.avatarTexture != nil)
+    {
+        [self.avatarNode setTexture:compDialog.avatarTexture];
+        self.avatarNode.hidden = NO;
+    }
+    else
+    {
+        self.avatarNode.hidden = YES;
+    }
+    
+    // Calcula um offset de largura dependendo de se há um avatar sendo exibido no momento
+    int offsetWidth = 0;
+    if(!self.avatarNode.hidden)
+        offsetWidth = self.avatarNode.frame.size.width + 5;
+    
     // Atualiza o label node
-    [self fitTextOn:self.labelNode text:compDialog.textDialog width:dialogWidth - internalMargin];
+    if(compDialog.characterName != nil)
+    {
+        [self fitTextOn:self.labelNode text:[NSString stringWithFormat:@"%@: %@", compDialog.characterName, compDialog.textDialog] width:dialogWidth - internalMargin - offsetWidth];
+    }
+    else
+    {
+        [self fitTextOn:self.labelNode text:compDialog.textDialog width:dialogWidth - internalMargin - offsetWidth];
+    }
     self.labelNode.color = compDialog.textColor;
     
     // Exibe a janela
@@ -242,7 +276,17 @@
     
     // Se o delay dos caractéres for igual a -1, exibe o texto inteiro agora
     if(charDelay != -1)
-        [self changeDialogTextSize:0];
+    {
+        // Se houver um nome de personagem atrelado ao diálogo, já inicia com o nome
+        if(compDialog.characterName != nil)
+        {
+            [self changeDialogTextSize:compDialog.characterName.length + 2];
+        }
+        else
+        {
+            [self changeDialogTextSize:0];
+        }
+    }
     else
         [self changeDialogTextSize:(int)self.currentText.length];
 }

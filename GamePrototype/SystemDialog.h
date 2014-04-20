@@ -8,6 +8,7 @@
 
 #import "GPSystem.h"
 #import "ComponentDialog.h"
+#import "DSMultilineLabelNode.h"
 
 // Sistema que cuida dos diálogos do jogo
 @interface SystemDialog : GPSystem
@@ -20,6 +21,8 @@
     float currentCharDelay;
     // Delay entre a exibição do caractérie atual e o próximo
     float charDelay;
+    // Margem interna da caixa de diálogo
+    int internalMargin;
 }
 
 // Entidade que descreve o diálogo sendo exibido atualmente
@@ -47,6 +50,6 @@
 @property (readonly) BOOL isTextFullyShown;
 
 // Pega o label node sendo usado para exibir o diálogo
-@property (readonly) SKLabelNode *labelNode;
+@property (readonly) DSMultilineLabelNode *labelNode;
 
 @end

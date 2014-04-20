@@ -16,9 +16,6 @@
 
 @interface WorldMap : GPGameScene <SystemMapMovementDelegate>
 
-// Metodo que calcula quando ira aparecer inimigos
-- (BOOL)randomBattle;
-
 // Metodo que chama a cena de batalha
 - (void)goToBattle;
 

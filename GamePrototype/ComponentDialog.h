@@ -7,6 +7,7 @@
 //
 
 #import "GPComponent.h"
+#import <SpriteKit/SpriteKit.h>
 
 typedef void (^VoidBlock)();
 
@@ -16,6 +17,11 @@ typedef void (^VoidBlock)();
 @property NSString *textDialog;
 // A cor do texto para exibir
 @property UIColor *textColor;
+// O avatar do personagem para exibir
+@property SKTexture *avatarTexture;
+// Um nome para o personagem que está fazendo a fala
+@property NSString *characterName;
+
 // O delay entre cada caractére
 @property float charDelay;
 

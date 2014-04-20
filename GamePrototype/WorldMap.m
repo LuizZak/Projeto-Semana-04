@@ -15,6 +15,7 @@
 #import "SystemMovimentoAndar.h"
 #import "SystemCamera.h"
 #import "SystemDialog.h"
+#import "DSMultilineLabelNode.h"
 
 @implementation WorldMap
 
@@ -55,6 +56,7 @@
         
         // TESTE DE CAIXA DE DIÁLOGO
         [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
+        
         ComponentDialog *cmp = [[ComponentDialog alloc] init];
         cmp.textColor = [UIColor whiteColor];
         cmp.charDelay = -1;
@@ -68,7 +70,7 @@
         ComponentDialog *cmp3 = [[ComponentDialog alloc] init];
         cmp3.textColor = [UIColor whiteColor];
         cmp3.charDelay = 0.05f;
-        cmp3.textDialog = @"Viva Final Fantasy (que eu nunca joguei)!";
+        cmp3.textDialog = @"Viva Final Fantasy (que eu nunca joguei)! ~~ testando textos grandes para exibição e tals...";
         
         cmp.nextDialog = cmp2;
         cmp2.nextDialog = cmp3;

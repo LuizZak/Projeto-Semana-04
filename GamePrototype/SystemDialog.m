@@ -118,6 +118,8 @@
     
     self.labelNode.text = [self.currentText substringToIndex:currentTextChar];
     
+    self.labelNode.position = CGPointMake(-dialogWidth / 2 + internalMargin + self.labelNode.frame.size.width / 2, dialogHeight / 2 - self.labelNode.frame.size.height / 2 - internalMargin / 2);
+    
     if(currentTextChar == self.currentText.length)
     {
         self.tapToContinueNode.hidden = NO;
@@ -134,11 +136,11 @@
     dialogWidth = self.gameScene.frame.size.width - 50;
     dialogHeight = 200;
     
-    int internalMargin = 15;
+    internalMargin = 15;
     
     self.dialogNode = [SKNode node];
     SKSpriteNode *bgNode = [SKSpriteNode spriteNodeWithColor:[UIColor blackColor] size:CGSizeMake(dialogWidth, dialogHeight)];
-    SKLabelNode *textNode = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
+    DSMultilineLabelNode *textNode = [DSMultilineLabelNode labelNodeWithFontNamed:@"GillSans"];
     // Ajusta o textNode
     textNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeLeft;
     textNode.verticalAlignmentMode = SKLabelVerticalAlignmentModeBaseline;
@@ -188,15 +190,107 @@
 }
 
 // Getter do labelNode
-- (SKLabelNode*)labelNode
+- (DSMultilineLabelNode*)labelNode
 {
-    return (SKLabelNode*)[self.dialogNode childNodeWithName:@"textNode"];
+    return (DSMultilineLabelNode*)[self.dialogNode childNodeWithName:@"textNode"];
 }
 
 // Ajusta o texto passado no label node fornecido para caber numa largura especificada
-- (void)fitTextOn:(SKLabelNode*)targetLabelNode text:(NSString*)text width:(int)width
+- (void)fitTextOn:(DSMultilineLabelNode*)targetLabelNode text:(NSString*)text width:(int)targetWidth
 {
-    targetLabelNode.text = text;
+    self.labelNode.paragraphWidth = targetWidth;
+    self.labelNode.text = text;
+    
+    self.labelNode.position = CGPointMake(-dialogWidth / 2 + internalMargin + self.labelNode.frame.size.width / 2, dialogHeight / 2 - self.labelNode.frame.size.height / 2 - internalMargin / 2);
+    
+    // Separa o texto em palavras menores
+    /*NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@". ,!?\n\r"];
+    
+    // Texto final
+    NSString *finalText = @"";
+    
+    int currentChar = 0;
+    NSString *currentWord = @"";
+    NSString *currentLine = @"";
+    
+    // Zera o texto
+    targetLabelNode.text = @"";
+    
+    // Insere os caractéres um a um e quebra a linha
+    while(true)
+    {
+        // Checa se o caractére atual é um de quebra de linha ou o fim da string foi alcançado
+        if([charSet characterIsMember:[text characterAtIndex:currentChar]] || currentChar == text.length - 1)
+        {
+            // Termina a palavra atual se existir alguma
+            if(![currentWord isEqualToString:@""])
+            {
+                // Mede a string
+                targetLabelNode.text = [NSString stringWithFormat:@"%@%@", currentLine, currentWord];
+                int textWidth = targetLabelNode.frame.size.width;
+                
+                if(textWidth > targetWidth)
+                {
+                    // Adiciona a linha ao texto final
+                    finalText = [NSString stringWithFormat:@"%@%@\n", finalText, currentLine];
+                    
+                    // Adiciona a palavra atual e o separador para a próxima linha a ser adicionada, e reseta a palavra atual
+                    currentLine = [NSString stringWithFormat:@"%@%c", currentWord, [text characterAtIndex:currentChar]];
+                    currentWord = @"";
+                }
+                else
+                {
+                    // Adiciona a quebra de palavra na string também
+                    currentLine = [NSString stringWithFormat:@"%@%@%c", currentLine, currentWord, [text characterAtIndex:currentChar]];
+                    
+                    currentWord = @"";
+                }
+                
+                if(currentChar == text.length - 1)
+                {
+                    finalText = [NSString stringWithFormat:@"%@%@", finalText, currentLine];
+                    currentLine = @"";
+                }
+            }
+            // Se a palavra atual estiver vazia, adiciona a quebra de palavra
+            else
+            {
+                // Tenta quebrar a linha se necessário
+                targetLabelNode.text = [NSString stringWithFormat:@"%@%c", currentLine, [text characterAtIndex:currentChar]];
+                int width = targetLabelNode.frame.size.width;
+                
+                if(width > targetWidth)
+                {
+                    finalText = [NSString stringWithFormat:@"%@\n", currentLine];
+                    currentLine = @"";
+                }
+                
+                // Adiciona a quebra de linha na linha também
+                currentLine = [NSString stringWithFormat:@"%@%c", currentLine, [text characterAtIndex:currentChar]];
+            }
+        }
+        else
+        {
+            // Acumula letras na palavra atual
+            currentWord = [NSString stringWithFormat:@"%@%c", currentWord, [text characterAtIndex:currentChar]];
+        }
+        
+        // Itera mais um caractére
+        currentChar++;
+        
+        // Termina de iterar no último caractére
+        if(currentChar >= text.length)
+        {
+            if(![currentLine isEqualToString:@""])
+            {
+                finalText = [NSString stringWithFormat:@"%@%@", finalText, currentLine];
+            }
+            
+            break;
+        }
+    }
+    
+    targetLabelNode.text = finalText;*/
     
     self.currentText = targetLabelNode.text;
 }

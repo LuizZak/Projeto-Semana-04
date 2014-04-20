@@ -203,95 +203,6 @@
     
     self.labelNode.position = CGPointMake(-dialogWidth / 2 + internalMargin + self.labelNode.frame.size.width / 2, dialogHeight / 2 - self.labelNode.frame.size.height / 2 - internalMargin / 2);
     
-    // Separa o texto em palavras menores
-    /*NSCharacterSet *charSet = [NSCharacterSet characterSetWithCharactersInString:@". ,!?\n\r"];
-    
-    // Texto final
-    NSString *finalText = @"";
-    
-    int currentChar = 0;
-    NSString *currentWord = @"";
-    NSString *currentLine = @"";
-    
-    // Zera o texto
-    targetLabelNode.text = @"";
-    
-    // Insere os caractéres um a um e quebra a linha
-    while(true)
-    {
-        // Checa se o caractére atual é um de quebra de linha ou o fim da string foi alcançado
-        if([charSet characterIsMember:[text characterAtIndex:currentChar]] || currentChar == text.length - 1)
-        {
-            // Termina a palavra atual se existir alguma
-            if(![currentWord isEqualToString:@""])
-            {
-                // Mede a string
-                targetLabelNode.text = [NSString stringWithFormat:@"%@%@", currentLine, currentWord];
-                int textWidth = targetLabelNode.frame.size.width;
-                
-                if(textWidth > targetWidth)
-                {
-                    // Adiciona a linha ao texto final
-                    finalText = [NSString stringWithFormat:@"%@%@\n", finalText, currentLine];
-                    
-                    // Adiciona a palavra atual e o separador para a próxima linha a ser adicionada, e reseta a palavra atual
-                    currentLine = [NSString stringWithFormat:@"%@%c", currentWord, [text characterAtIndex:currentChar]];
-                    currentWord = @"";
-                }
-                else
-                {
-                    // Adiciona a quebra de palavra na string também
-                    currentLine = [NSString stringWithFormat:@"%@%@%c", currentLine, currentWord, [text characterAtIndex:currentChar]];
-                    
-                    currentWord = @"";
-                }
-                
-                if(currentChar == text.length - 1)
-                {
-                    finalText = [NSString stringWithFormat:@"%@%@", finalText, currentLine];
-                    currentLine = @"";
-                }
-            }
-            // Se a palavra atual estiver vazia, adiciona a quebra de palavra
-            else
-            {
-                // Tenta quebrar a linha se necessário
-                targetLabelNode.text = [NSString stringWithFormat:@"%@%c", currentLine, [text characterAtIndex:currentChar]];
-                int width = targetLabelNode.frame.size.width;
-                
-                if(width > targetWidth)
-                {
-                    finalText = [NSString stringWithFormat:@"%@\n", currentLine];
-                    currentLine = @"";
-                }
-                
-                // Adiciona a quebra de linha na linha também
-                currentLine = [NSString stringWithFormat:@"%@%c", currentLine, [text characterAtIndex:currentChar]];
-            }
-        }
-        else
-        {
-            // Acumula letras na palavra atual
-            currentWord = [NSString stringWithFormat:@"%@%c", currentWord, [text characterAtIndex:currentChar]];
-        }
-        
-        // Itera mais um caractére
-        currentChar++;
-        
-        // Termina de iterar no último caractére
-        if(currentChar >= text.length)
-        {
-            if(![currentLine isEqualToString:@""])
-            {
-                finalText = [NSString stringWithFormat:@"%@%@", finalText, currentLine];
-            }
-            
-            break;
-        }
-    }
-    
-    targetLabelNode.text = finalText;*/
-    
     self.currentText = targetLabelNode.text;
 }
 
@@ -319,7 +230,7 @@
     self.currentComponent = compDialog;
     
     // Atualiza o label node
-    [self fitTextOn:self.labelNode text:compDialog.textDialog width:dialogWidth];
+    [self fitTextOn:self.labelNode text:compDialog.textDialog width:dialogWidth - internalMargin];
     self.labelNode.color = compDialog.textColor;
     
     // Exibe a janela

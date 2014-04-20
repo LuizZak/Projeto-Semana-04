@@ -11,9 +11,10 @@
 #import "GPGameScene.h"
 #import "MyScene.h"
 #import "CommonImports.h"
+#import "SystemMapMovement.h"
 #import "GameData.h"
 
-@interface WorldMap : GPGameScene
+@interface WorldMap : GPGameScene <SystemMapMovementDelegate>
 
 // Metodo que calcula quando ira aparecer inimigos
 - (BOOL)randomBattle;

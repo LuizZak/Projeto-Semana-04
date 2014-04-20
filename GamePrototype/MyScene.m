@@ -43,7 +43,7 @@
         [self addEntity:en];
         
         en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(0.0, 0.0);
+        en.node.position = CGPointMake(100, 213);
         [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30]];
         
         [self addEntity:en];

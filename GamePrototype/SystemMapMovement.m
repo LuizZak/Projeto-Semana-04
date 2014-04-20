@@ -80,7 +80,8 @@
                 // Adiciona um block para executar o delegate após o movimento do nó
                 if(self.delegate != nil && [self.delegate respondsToSelector:@selector(systemMapMovement:entity:didWalkTo:tileID:)])
                 {
-                    moveAction = [SKAction sequence:@[moveAction, [SKAction runBlock:^(void) { [self.delegate systemMapMovement:self entity:entity didWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:[mapGrid.mapGrid[gridCellNX][gridCellNY] intValue]]; } queue:dispatch_get_main_queue()]]];
+                    int tileID = [mapGrid.mapGrid[gridCellNY][gridCellNX] intValue];
+                    moveAction = [SKAction sequence:@[moveAction, [SKAction runBlock:^(void) { [self.delegate systemMapMovement:self entity:entity didWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:tileID]; } queue:dispatch_get_main_queue()]]];
                 }
                 
                 // Atualiza a posição no grid da entidade

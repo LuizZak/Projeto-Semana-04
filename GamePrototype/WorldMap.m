@@ -13,7 +13,6 @@
 #import "ComponentDialog.h"
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
-#import "SystemMapMovement.h"
 #import "SystemCamera.h"
 #import "SystemDialog.h"
 
@@ -33,6 +32,9 @@
         [self addSystem:[[SystemMapMovement alloc] initWithGameScene:self]];
         // Adiciona o sistema de câmera
         [self addSystem:[[SystemCamera alloc] initWithGameScene:self]];
+        
+        // Arruma o delegate do sistema de movimento de mapa
+        ((SystemMapMovement*)[self getSystem:[SystemMapMovement class]]).delegate = self;
         
         [self createMap];
         
@@ -223,22 +225,18 @@
     [self addEntity:mapEntity];
 }
 
-- (BOOL)randomBattle
+- (void)systemMapMovement:(SystemMapMovement *)system entity:(GPEntity *)entity didWalkTo:(CGPoint)point tileID:(int)tileID
 {
-    int random = arc4random() % 50;
+    // Gera uma batalha caso o jogador esteja andando em cima de terra
+    if(entity.ID != PLAYER_ID)
+        return;
     
-    ComponentMapaGrid *mapGrid = (ComponentMapaGrid*)[[self getEntityByID:MAP_ID] getComponent:[ComponentMapaGrid class]];
+    int random = arc4random() % 6;
     
-    // Mecher com o grid aqui dentro
-    
-    
-    if (random == 6)
+    if(tileID == TILE_EARTH && random == 0)
     {
         [self goToBattle];
-        return YES;
     }
-    
-    return NO;
 }
 
 - (void)goToBattle

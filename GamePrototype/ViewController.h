@@ -12,4 +12,16 @@
 
 @interface ViewController : UIViewController
 
+// Imagem background
+@property UIImageView* imgBackground;
+
+// Imagem do Logo
+@property UIImageView* imgLogo;
+
+// Botão de Jogar
+@property UIButton* btnJogar;
+
+// Botão de star
+@property UIButton* btnTocar;
+
 @end

@@ -15,12 +15,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.btnTocar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    self.btnJogar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
+    [self criarBotao:self.btnTocar titulo:@"Touch Anywhere..." seletor:@selector(start) bordas:NO];
+}
+
+- (void)criarBotao:(UIButton*)button titulo:(NSString*)titulo seletor:(SEL)selector bordas:(BOOL)bordas
+{
+    [button addTarget:self
+                      action:selector
+            forControlEvents:UIControlEventTouchUpInside];
+    [button setTitle:titulo forState:UIControlStateNormal];
+    button.frame = CGRectMake(430, 350.0, 160.0, 40.0);
+    if (bordas)
+    {
+        button.layer.borderWidth = 2.0;
+        button.layer.borderColor = [UIColor redColor].CGColor;
+        button.layer.cornerRadius = 10;
+        button.clipsToBounds = YES;
+    }
+    [self.view addSubview:button];
+}
+
+- (void)start
+{
+    [self.btnTocar setHidden:YES];
+    
+    self.imgBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    [self.view addSubview:self.imgBackground];
+    
+    [self criarBotao:self.btnJogar titulo:@"JOGAR" seletor:@selector(comecarAJogar) bordas:YES];
+}
+
+- (void)comecarAJogar
+{
     // Configure the view.
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
@@ -33,7 +67,11 @@
     [[GameData gameData] saveWorld:scene];
     
     // Present the scene.
-    [skView presentScene:[[SceneBattle alloc] initWithSize:skView.bounds.size]];
+    [skView presentScene:[[WorldMap alloc] initWithSize:skView.bounds.size]];
+    
+    [self.imgBackground setHidden:YES];
+    [self.btnJogar removeFromSuperview];
+    [self.btnTocar removeFromSuperview];
 }
 
 - (BOOL)shouldAutorotate

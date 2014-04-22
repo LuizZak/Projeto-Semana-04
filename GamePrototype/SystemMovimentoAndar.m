@@ -134,13 +134,14 @@
     if (noClicado == self.recognizer)
     {
         NSLog(@"hey");
+        
+        self.currentPoint = self.selectedPlace;
+        
+        self.dPad.hidden = NO;
+        self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
+        
+        self.holdingTouch = YES;
     }
-    self.currentPoint = self.selectedPlace;
-    
-    self.dPad.hidden = NO;
-    self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
-    
-    self.holdingTouch = YES;
     
 }
 

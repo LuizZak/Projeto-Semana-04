@@ -22,7 +22,7 @@
 - (id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
-    {
+    {        
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         // Adiciona o sistema de mover o personagem com o dedo
@@ -235,9 +235,9 @@
     if(entity.ID != PLAYER_ID)
         return;
     
-    int random = arc4random() % 6;
+    int random = arc4random() % 50;
     
-    if(tileID == TILE_EARTH && random == 0)
+    if(tileID == TILE_EARTH && random == 7)
     {
         [self goToBattle];
     }

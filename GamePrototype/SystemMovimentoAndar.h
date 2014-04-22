@@ -13,6 +13,7 @@
 
 // The place touched
 @property CGPoint selectedPlace;
+
 // O ponto em que o usuário está com o dedo agora
 @property CGPoint currentPoint;
 

@@ -58,4 +58,7 @@
 //  Sprite node pra vver onde ele clicou
 @property SKSpriteNode* recognizer;
 
+// The place touched
+@property CGPoint selectedPlace;
+
 @end

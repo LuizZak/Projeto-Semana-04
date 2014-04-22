@@ -15,8 +15,14 @@
 @property GPEntitySelector *enemySelector;
 @property NSMutableArray *enemiesArray;
 
+// Player selector
+@property GPEntitySelector *playerSelector;
+@property GPEntity *playerEntity;
+
 // Current skill being dragged
 @property CGPoint dragOffset;
 @property GPEntity *currentDrag;
+
+@property BOOL inBattle;
 
 @end

@@ -54,6 +54,7 @@
 		B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA018F5D11A0079F74D /* ComponentHealth.m */; };
 		B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */; };
 		B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */; };
+		B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C01906F0D0006A2294 /* ComponentAIBattle.m */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -64,6 +65,13 @@
 		FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */; };
 		FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDD1900712C00D24C87 /* tile-mountain.png */; };
 		FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDE1900712C00D24C87 /* tile-cave.png */; };
+		FCCD02781906EFD500FFE9DB /* Knight.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02761906EFD500FFE9DB /* Knight.png */; };
+		FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02771906EFD500FFE9DB /* dragon-perfil.png */; };
+		FCCD027C1906F15A00FFE9DB /* Knight-portrate.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */; };
+		FCCD027D1906F15A00FFE9DB /* dragon-portrate.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD027B1906F15A00FFE9DB /* dragon-portrate.png */; };
+		FCCD02821906F55600FFE9DB /* ataqueFogo.fla in Resources */ = {isa = PBXBuildFile; fileRef = FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */; };
+		FCCD02831906F55600FFE9DB /* explosao.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02801906F55600FFE9DB /* explosao.png */; };
+		FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02811906F55600FFE9DB /* bola-de-fogo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +165,8 @@
 		B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemHealthIndicator.m; sourceTree = "<group>"; };
 		B35DDFA618F5E4FF0079F74D /* ComponentHealthIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentHealthIndicator.h; sourceTree = "<group>"; };
 		B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHealthIndicator.m; sourceTree = "<group>"; };
+		B38069BF1906F0D0006A2294 /* ComponentAIBattle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentAIBattle.h; sourceTree = "<group>"; };
+		B38069C01906F0D0006A2294 /* ComponentAIBattle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentAIBattle.m; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -169,6 +179,14 @@
 		FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-castle-earth.png"; sourceTree = "<group>"; };
 		FC8E1CDD1900712C00D24C87 /* tile-mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-mountain.png"; sourceTree = "<group>"; };
 		FC8E1CDE1900712C00D24C87 /* tile-cave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-cave.png"; sourceTree = "<group>"; };
+		FCCD02761906EFD500FFE9DB /* Knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knight.png; sourceTree = "<group>"; };
+		FCCD02771906EFD500FFE9DB /* dragon-perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon-perfil.png"; sourceTree = "<group>"; };
+		FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knight-portrate.png"; sourceTree = "<group>"; };
+		FCCD027B1906F15A00FFE9DB /* dragon-portrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon-portrate.png"; sourceTree = "<group>"; };
+		FCCD027E1906F17300FFE9DB /* Knight.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Knight.fla; sourceTree = "<group>"; };
+		FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = ataqueFogo.fla; sourceTree = "<group>"; };
+		FCCD02801906F55600FFE9DB /* explosao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosao.png; sourceTree = "<group>"; };
+		FCCD02811906F55600FFE9DB /* bola-de-fogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bola-de-fogo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +222,14 @@
 				FC3F73C818FF264D00949342 /* dragon.fla */,
 				A0005D691904405A003A60F1 /* dragonAvatar.fla */,
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
+				FCCD027E1906F17300FFE9DB /* Knight.fla */,
+				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
+				FCCD02801906F55600FFE9DB /* explosao.png */,
+				FCCD02811906F55600FFE9DB /* bola-de-fogo.png */,
+				FCCD02761906EFD500FFE9DB /* Knight.png */,
+				FCCD02771906EFD500FFE9DB /* dragon-perfil.png */,
+				FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */,
+				FCCD027B1906F15A00FFE9DB /* dragon-portrate.png */,
 				A0005D6A19044064003A60F1 /* dragonAvatar.png */,
 				FC8E1CD61900711800D24C87 /* tile-grass.png */,
 				FC8E1CD51900711800D24C87 /* tile-earth.png */,
@@ -354,6 +380,8 @@
 				B32E644518FF099F00040D47 /* ComponentCamera.m */,
 				B33EBCC319004F6B0027882B /* ComponentDialog.h */,
 				B33EBCC419004F6B0027882B /* ComponentDialog.m */,
+				B38069BF1906F0D0006A2294 /* ComponentAIBattle.h */,
+				B38069C01906F0D0006A2294 /* ComponentAIBattle.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -486,14 +514,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */,
+				FCCD027C1906F15A00FFE9DB /* Knight-portrate.png in Resources */,
 				FC3F739018FF03AF00949342 /* player.png in Resources */,
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
+				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
+				FCCD027D1906F15A00FFE9DB /* dragon-portrate.png in Resources */,
+				FCCD02831906F55600FFE9DB /* explosao.png in Resources */,
+				FCCD02821906F55600FFE9DB /* ataqueFogo.fla in Resources */,
 				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
+				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
+				FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */,
 				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				5EBB788D1906F4F1001D961C /* background.png in Resources */,
@@ -547,6 +582,7 @@
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
 				5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */,
 				B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */,
+				B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */,
 				B32B9BC118FDB68A00BF4B2C /* SystemMap.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,

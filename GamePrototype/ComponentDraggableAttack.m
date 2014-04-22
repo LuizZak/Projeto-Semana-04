@@ -10,13 +10,19 @@
 
 @implementation ComponentDraggableAttack
 
-- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage
+- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage skillType:(SkillType)skillType startEnabled:(BOOL)startEnabled
 {
     self = [super init];
     if (self)
     {
         self.skillCooldown = skillCooldown;
         self.damage = damage;
+        self.skillType = skillType;
+        
+        if(!startEnabled)
+        {
+            self.currentCooldown = skillCooldown;
+        }
     }
     return self;
 }

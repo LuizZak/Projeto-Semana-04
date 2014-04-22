@@ -19,9 +19,18 @@
 @property GPEntitySelector *playerSelector;
 @property GPEntity *playerEntity;
 
+// AI Selector
+@property GPEntitySelector *AISelector;
+
+// Attacks selector
+@property GPEntitySelector *attacksSelector;
+
 // Current skill being dragged
 @property CGPoint dragOffset;
 @property GPEntity *currentDrag;
+
+// Nó sendo utilizado para demarcar a skill selecionada atualmente
+@property SKSpriteNode *selectionNode;
 
 @property BOOL inBattle;
 

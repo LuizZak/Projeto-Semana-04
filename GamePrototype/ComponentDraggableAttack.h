@@ -8,6 +8,11 @@
 
 #import "GPComponent.h"
 
+typedef enum {
+    SkillMelee,
+    SkillFireball
+} SkillType;
+
 @interface ComponentDraggableAttack : GPComponent
 
 @property CGPoint startPoint;
@@ -15,6 +20,8 @@
 @property float skillCooldown;
 @property float damage;
 
-- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage;
+@property SkillType skillType;
+
+- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage skillType:(SkillType)skillType startEnabled:(BOOL)startEnabled;
 
 @end

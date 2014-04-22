@@ -63,14 +63,17 @@
     float barWidth = healthComp.barWidth;
     float barHeight = healthComp.barHeight;
     
-    SKSpriteNode *barNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(barWidth, barHeight)];
+    SKSpriteNode *backNode = [SKSpriteNode spriteNodeWithColor:healthComp.barBackColor size:CGSizeMake(barWidth, barHeight)];
+    SKSpriteNode *barNode = [SKSpriteNode spriteNodeWithColor:healthComp.barFrontColor size:CGSizeMake(barWidth - 10, barHeight - 10)];
     
     bar.healthBar = [[GPEntity alloc] initWithNode:barNode];
     
     [self.gameScene addEntity:bar.healthBar];
     
-    barNode.position = CGPointMake(0, entity.node.frame.size.height + barHeight / 1.5f);
+    backNode.position = CGPointMake(0, entity.node.frame.size.height + barHeight / 1.5f);
+    barNode.position = backNode.position;
     [barNode removeFromParent];
+    [entity.node addChild:backNode];
     [entity.node addChild:barNode];
     
     bar.entity = entity;

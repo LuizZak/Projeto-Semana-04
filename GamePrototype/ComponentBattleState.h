@@ -1,5 +1,5 @@
 //
-//  ComponentAIBattle.h
+//  ComponentBattleState.h
 //  GamePrototype
 //
 //  Created by LUIZ FERNANDO SILVA on 22/04/14.
@@ -8,8 +8,9 @@
 
 #import "GPComponent.h"
 
-@interface ComponentAIBattle : GPComponent
+@interface ComponentBattleState : GPComponent
 
+// Diz se a entidade pode atacar ou não
 @property BOOL canAttack;
 
 @end

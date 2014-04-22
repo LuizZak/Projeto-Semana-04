@@ -13,6 +13,8 @@
 
 // A representação da barra de vida na tela
 @property GPEntity *healthBar;
+// A representação do fundo da barra de vida na tela
+@property GPEntity *backBar;
 // A entidade que a barra de vida está representando
 @property GPEntity *entity;
 

@@ -10,6 +10,7 @@
 #import "SystemAttackDrag.h"
 #import "SystemHealthIndicator.h"
 #import "ComponentAIBattle.h"
+#import "ComponentBattleState.h"
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
@@ -31,9 +32,9 @@
         [self createEnemy:260 y:290 health:75];
         [self createEnemy:260 y:330 health:100];
         
-        [self createAttack:40 y:213 cooldown:1 damage:3];
-        [self createAttack:120 y:213 cooldown:5 damage:10];
-        [self createAttack:200 y:213 cooldown:10 damage:30];
+        [self createAttack:40 y:213 cooldown:1 damage:3 skillType:SkillFireball];
+        [self createAttack:120 y:213 cooldown:5 damage:10 skillType:SkillFireball];
+        [self createAttack:200 y:213 cooldown:10 damage:30 skillType:SkillFireball];
         
         [self createPlayer];
         
@@ -49,8 +50,9 @@
     SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
-    [player addComponent:[[ComponentHealth alloc] initWithHealth:35 maxhealth:35]];
+    [player addComponent:[[ComponentHealth alloc] initWithHealth:500 maxhealth:500]];
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [player addComponent:[[ComponentBattleState alloc] init]];
     player.ID = PLAYER_ID;
     
     [playerNode setScale:0.5f];
@@ -74,9 +76,11 @@
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:health maxhealth:health]];
     [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:200 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [enemy addComponent:[[ComponentAIBattle alloc] init]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:20]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:100]];
+    [enemy addComponent:[[ComponentBattleState alloc] init]];
+    
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:10 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:20 skillType:SkillMelee startEnabled:NO]];
     
     enemy.type = ENEMY_TYPE;
     
@@ -85,11 +89,11 @@
     [self addEntity:enemy];
 }
 
-- (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage
+- (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage skillType:(SkillType)skillType
 {
     GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)]];
     en.node.position = CGPointMake(x, y);
-    [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage]];
+    [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage skillType:skillType startEnabled:YES]];
     
     en.type = PLAYER_TYPE;
     

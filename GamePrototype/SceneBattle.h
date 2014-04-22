@@ -10,6 +10,6 @@
 #import "WorldMap.h"
 #import "GameData.h"
 
-@interface MyScene : GPGameScene
+@interface SceneBattle : GPGameScene
 
 @end

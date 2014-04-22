@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 LUIZ FERNANDO SILVA. All rights reserved.
 //
 
-#import "MyScene.h"
+#import "SceneBattle.h"
 #import "SystemAttackDrag.h"
 #import "SystemHealthIndicator.h"
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
 
-@implementation MyScene
+@implementation SceneBattle
 
 - (id)initWithSize:(CGSize)size
 {

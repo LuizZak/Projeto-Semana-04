@@ -25,7 +25,7 @@
 		B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32AE33D18F465CC006F8635 /* Main_iPhone.storyboard */; };
 		B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B32AE34018F465CC006F8635 /* Main_iPad.storyboard */; };
 		B32AE34518F465CC006F8635 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE34418F465CC006F8635 /* ViewController.m */; };
-		B32AE34818F465CC006F8635 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE34718F465CC006F8635 /* MyScene.m */; };
+		B32AE34818F465CC006F8635 /* SceneBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE34718F465CC006F8635 /* SceneBattle.m */; };
 		B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B32AE34B18F465CC006F8635 /* Images.xcassets */; };
 		B32AE35318F465CC006F8635 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE35218F465CC006F8635 /* XCTest.framework */; };
 		B32AE35418F465CC006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
@@ -104,8 +104,8 @@
 		B32AE34118F465CC006F8635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		B32AE34318F465CC006F8635 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B32AE34418F465CC006F8635 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B32AE34618F465CC006F8635 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		B32AE34718F465CC006F8635 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		B32AE34618F465CC006F8635 /* SceneBattle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneBattle.h; sourceTree = "<group>"; };
+		B32AE34718F465CC006F8635 /* SceneBattle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneBattle.m; sourceTree = "<group>"; };
 		B32AE34B18F465CC006F8635 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B32AE35118F465CC006F8635 /* GamePrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePrototypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE35218F465CC006F8635 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -225,8 +225,8 @@
 		5ECF637F18FF24F900029917 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				B32AE34618F465CC006F8635 /* MyScene.h */,
-				B32AE34718F465CC006F8635 /* MyScene.m */,
+				B32AE34618F465CC006F8635 /* SceneBattle.h */,
+				B32AE34718F465CC006F8635 /* SceneBattle.m */,
 				5E4A15C418FC66B80000BC5A /* WorldMap.h */,
 				5E4A15C518FC66B80000BC5A /* WorldMap.m */,
 				5ECF638018FF252900029917 /* Menu.h */,
@@ -516,7 +516,7 @@
 				B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */,
 				B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */,
 				B32E644618FF099F00040D47 /* ComponentCamera.m in Sources */,
-				B32AE34818F465CC006F8635 /* MyScene.m in Sources */,
+				B32AE34818F465CC006F8635 /* SceneBattle.m in Sources */,
 				5ECF638218FF252900029917 /* Menu.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,

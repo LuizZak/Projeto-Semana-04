@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
 #import "GPGameScene.h"
-#import "MyScene.h"
+#import "SceneBattle.h"
 #import "CommonImports.h"
 #import "SystemMapMovement.h"
 #import "GameData.h"

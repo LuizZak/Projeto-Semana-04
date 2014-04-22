@@ -246,7 +246,7 @@
 - (void)goToBattle
 {
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
-    MyScene *battleScene = [[MyScene alloc] initWithSize:self.size];
+    SceneBattle *battleScene = [[SceneBattle alloc] initWithSize:self.size];
     [self.scene.view presentScene: battleScene transition: reveal];
 }
 

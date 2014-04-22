@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MyScene.h"
+#import "SceneBattle.h"
 #import "WorldMap.h"
 
 @implementation ViewController
@@ -33,7 +33,7 @@
     [[GameData gameData] saveWorld:scene];
     
     // Present the scene.
-    [skView presentScene:[[MyScene alloc] initWithSize:skView.bounds.size]];
+    [skView presentScene:[[SceneBattle alloc] initWithSize:skView.bounds.size]];
 }
 
 - (BOOL)shouldAutorotate

@@ -46,14 +46,33 @@
     return nil;
 }
 
+- (NSArray*)getComponents:(Class)componentClass
+{
+    NSMutableArray *array = [NSMutableArray array];
+    
+    for(GPComponent *component in components)
+    {
+        if([component isKindOfClass:componentClass])
+            [array addObject:component];
+    }
+    
+    return array;
+}
+
 - (BOOL)hasComponent:(Class)componentClass
 {
     return [self getComponent:componentClass] != nil;
 }
 
-- (void)removeComponentWithClass:(Class)componentClass
+- (void)removeComponentsWithClass:(Class)componentClass
 {
-    [self removeComponent:[self getComponent:componentClass]];
+    GPComponent *comp = [self getComponent:componentClass];
+    
+    while (comp != nil)
+    {
+        [self removeComponent:comp];
+        comp = [self getComponent:componentClass];
+    }
 }
 
 @end

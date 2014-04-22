@@ -48,10 +48,14 @@ typedef unsigned long long entitytype_t;
 // Se nenhum componente do tipo fornecido for encontrado, nil é retornado
 - (GPComponent*)getComponent:(Class)componentClass;
 
+// Retorna uma array de componentes presentes nesta entidade que correspondem ao tipo de classe passada.
+// Se nenum componente do tipo fornecido for encontrado, uma array vazia é retornada
+- (NSArray*)getComponents:(Class)componentClass;
+
 // Retorna se esta entidade contém o componente referido pela classe passada
 - (BOOL)hasComponent:(Class)componentClass;
 
-// Remove o componente nesta entidade que tem a classe especificada
-- (void)removeComponentWithClass:(Class)componentClass;
+// Remove todos os componentes nesta entidade que tem a classe especificada
+- (void)removeComponentsWithClass:(Class)componentClass;
 
 @end

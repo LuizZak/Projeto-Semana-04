@@ -72,6 +72,7 @@
 		FCCD02821906F55600FFE9DB /* ataqueFogo.fla in Resources */ = {isa = PBXBuildFile; fileRef = FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */; };
 		FCCD02831906F55600FFE9DB /* explosao.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02801906F55600FFE9DB /* explosao.png */; };
 		FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02811906F55600FFE9DB /* bola-de-fogo.png */; };
+		FCCD028619070F7A00FFE9DB /* gramaScene.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD028519070F7A00FFE9DB /* gramaScene.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = ataqueFogo.fla; sourceTree = "<group>"; };
 		FCCD02801906F55600FFE9DB /* explosao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = explosao.png; sourceTree = "<group>"; };
 		FCCD02811906F55600FFE9DB /* bola-de-fogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bola-de-fogo.png"; sourceTree = "<group>"; };
+		FCCD028519070F7A00FFE9DB /* gramaScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gramaScene.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +226,7 @@
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
+				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
 				FCCD02801906F55600FFE9DB /* explosao.png */,
 				FCCD02811906F55600FFE9DB /* bola-de-fogo.png */,
 				FCCD02761906EFD500FFE9DB /* Knight.png */,
@@ -528,6 +531,7 @@
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
+				FCCD028619070F7A00FFE9DB /* gramaScene.png in Resources */,
 				FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */,
 				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,

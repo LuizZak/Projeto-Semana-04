@@ -17,11 +17,9 @@
     
     if(self)
     {
-        
         self.recognizer = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:gameScene.size];
         self.recognizer.anchorPoint = CGPointZero;
         self.recognizer.zPosition = 10000;
-        [gameScene addChild:self.recognizer];
         
         selector = GPEntitySelectorCreate(GPRuleComponent([ComponentDialog class]));
         
@@ -54,6 +52,13 @@
 
 - (void)gameSceneDidReceiveTouchesBegan:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    UITouch *tch = [touches anyObject];
+    self.selectedPlace = [tch locationInNode:gameScene];
+    SKNode *noClicado = [gameScene nodeAtPoint:self.selectedPlace];
+    if (noClicado == self.recognizer)
+    {
+        NSLog(@"hey2");
+    }
     if(self.showingDialog)
     {
         if(!self.isTextFullyShown)
@@ -236,6 +241,11 @@
 
 - (void)showDialogForComponent:(ComponentDialog*)compDialog
 {
+    if (self.recognizer.parent == nil)
+    {
+        [self.gameScene addChild:self.recognizer];
+    }
+    
     if(self.currentComponent.beforeDialogBlock != nil)
     {
         self.currentComponent.beforeDialogBlock();
@@ -308,6 +318,8 @@
     
     self.dialogNode.hidden = YES;
     self.showingDialog = NO;
+    
+    [self.recognizer removeFromParent];
 }
 
 @end

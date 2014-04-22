@@ -11,7 +11,10 @@
 		5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */; };
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
-		5ECF638218FF252900029917 /* Menu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF638118FF252900029917 /* Menu.m */; };
+		5EBB788A1906F4CE001D961C /* background.psd in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB78881906F4CE001D961C /* background.psd */; };
+		5EBB788B1906F4CE001D961C /* Titulo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB78891906F4CE001D961C /* Titulo.png */; };
+		5EBB788D1906F4F1001D961C /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB788C1906F4F1001D961C /* background.png */; };
+		5EBB788F19070716001D961C /* pleaseTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB788E19070716001D961C /* pleaseTouch.png */; };
 		A0005D68190433CE003A60F1 /* DSMultilineLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */; };
 		A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A0005D6A19044064003A60F1 /* dragonAvatar.png */; };
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
@@ -90,8 +93,10 @@
 		5E8A846918FDABFA0081583D /* dpad.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad.fla; sourceTree = "<group>"; };
 		5E8A846E18FDC6110081583D /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		5E8A846F18FDC6110081583D /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
-		5ECF638018FF252900029917 /* Menu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Menu.h; sourceTree = "<group>"; };
-		5ECF638118FF252900029917 /* Menu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Menu.m; sourceTree = "<group>"; };
+		5EBB78881906F4CE001D961C /* background.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = background.psd; sourceTree = "<group>"; };
+		5EBB78891906F4CE001D961C /* Titulo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Titulo.png; sourceTree = "<group>"; };
+		5EBB788C1906F4F1001D961C /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		5EBB788E19070716001D961C /* pleaseTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pleaseTouch.png; sourceTree = "<group>"; };
 		A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSMultilineLabelNode.m; sourceTree = "<group>"; };
 		A0005D67190433CE003A60F1 /* DSMultilineLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMultilineLabelNode.h; sourceTree = "<group>"; };
 		A0005D691904405A003A60F1 /* dragonAvatar.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonAvatar.fla; sourceTree = "<group>"; };
@@ -251,6 +256,17 @@
 			name = Singletons;
 			sourceTree = "<group>";
 		};
+		5EBB78871906F4C2001D961C /* Imagens */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB788E19070716001D961C /* pleaseTouch.png */,
+				5EBB788C1906F4F1001D961C /* background.png */,
+				5EBB78881906F4CE001D961C /* background.psd */,
+				5EBB78891906F4CE001D961C /* Titulo.png */,
+			);
+			name = Imagens;
+			sourceTree = "<group>";
+		};
 		5ECF637F18FF24F900029917 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,8 +274,6 @@
 				B32AE34718F465CC006F8635 /* SceneBattle.m */,
 				5E4A15C418FC66B80000BC5A /* WorldMap.h */,
 				5E4A15C518FC66B80000BC5A /* WorldMap.m */,
-				5ECF638018FF252900029917 /* Menu.h */,
-				5ECF638118FF252900029917 /* Menu.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -298,6 +312,7 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				5EBB78871906F4C2001D961C /* Imagens */,
 				5ECF637F18FF24F900029917 /* Scenes */,
 				5E8A846D18FDC5960081583D /* Singletons */,
 				5E8A846818FDABA90081583D /* Images */,
@@ -521,11 +536,15 @@
 				FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */,
 				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
+				5EBB788D1906F4F1001D961C /* background.png in Resources */,
 				FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */,
+				5EBB788B1906F4CE001D961C /* Titulo.png in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
+				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
+				5EBB788F19070716001D961C /* pleaseTouch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +576,6 @@
 				B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */,
 				B32E644618FF099F00040D47 /* ComponentCamera.m in Sources */,
 				B32AE34818F465CC006F8635 /* SceneBattle.m in Sources */,
-				5ECF638218FF252900029917 /* Menu.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,

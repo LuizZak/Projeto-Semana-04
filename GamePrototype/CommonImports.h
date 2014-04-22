@@ -13,7 +13,8 @@
 #define MAP_ID 2
 #define CAMERA_ID 3
 
-#define ENEMY_TYPE 0x1 << 0
+#define PLAYER_TYPE 0x1 << 0
+#define ENEMY_TYPE 0x1 << 1
 
 #define DIR_TOP 1
 #define DIR_RIGHT 0

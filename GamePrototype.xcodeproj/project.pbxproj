@@ -51,6 +51,7 @@
 		B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA018F5D11A0079F74D /* ComponentHealth.m */; };
 		B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */; };
 		B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */; };
+		B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C01906F0D0006A2294 /* ComponentAIBattle.m */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -159,6 +160,8 @@
 		B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemHealthIndicator.m; sourceTree = "<group>"; };
 		B35DDFA618F5E4FF0079F74D /* ComponentHealthIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentHealthIndicator.h; sourceTree = "<group>"; };
 		B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentHealthIndicator.m; sourceTree = "<group>"; };
+		B38069BF1906F0D0006A2294 /* ComponentAIBattle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentAIBattle.h; sourceTree = "<group>"; };
+		B38069C01906F0D0006A2294 /* ComponentAIBattle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentAIBattle.m; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				B32E644518FF099F00040D47 /* ComponentCamera.m */,
 				B33EBCC319004F6B0027882B /* ComponentDialog.h */,
 				B33EBCC419004F6B0027882B /* ComponentDialog.m */,
+				B38069BF1906F0D0006A2294 /* ComponentAIBattle.h */,
+				B38069C01906F0D0006A2294 /* ComponentAIBattle.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -559,6 +564,7 @@
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
 				5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */,
 				B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */,
+				B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */,
 				B32B9BC118FDB68A00BF4B2C /* SystemMap.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,

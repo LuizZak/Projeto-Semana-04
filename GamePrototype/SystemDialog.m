@@ -17,6 +17,12 @@
     
     if(self)
     {
+        
+        self.recognizer = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:gameScene.size];
+        self.recognizer.anchorPoint = CGPointZero;
+        self.recognizer.zPosition = 10000;
+        [gameScene addChild:self.recognizer];
+        
         selector = GPEntitySelectorCreate(GPRuleComponent([ComponentDialog class]));
         
         [self initDialog];

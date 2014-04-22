@@ -21,6 +21,11 @@
     
     if(self)
     {
+        self.recognizer = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:gameScene.size];
+        self.recognizer.anchorPoint = CGPointZero;
+        self.recognizer.zPosition = 1000;
+        [gameScene addChild:self.recognizer];
+        
         selector = GPEntitySelectorCreate(GPRuleAnd(GPRuleComponent([ComponentMovement class]), GPRuleID(PLAYER_ID)));
         
         self.deadZone = 30;
@@ -125,12 +130,18 @@
 {
     UITouch *tch = [touches anyObject];
     self.selectedPlace = [tch locationInNode:gameScene];
+    SKNode *noClicado = [gameScene nodeAtPoint:self.selectedPlace];
+    if (noClicado == self.recognizer)
+    {
+        NSLog(@"hey");
+    }
     self.currentPoint = self.selectedPlace;
     
     self.dPad.hidden = NO;
     self.dPad.position = CGPointMake(self.selectedPlace.x, self.selectedPlace.y);
     
     self.holdingTouch = YES;
+    
 }
 
 - (void)gameSceneDidReceiveTouchesMoved:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event

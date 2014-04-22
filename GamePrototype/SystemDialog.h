@@ -55,4 +55,7 @@
 // Pega o label node sendo usado para exibir o diálogo
 @property (readonly) DSMultilineLabelNode *labelNode;
 
+//  Sprite node pra vver onde ele clicou
+@property SKSpriteNode* recognizer;
+
 @end

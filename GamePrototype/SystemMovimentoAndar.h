@@ -31,4 +31,7 @@
 // Textura do DPad pressionado
 @property SKTexture *textureDPadPressed;
 
+//  Sprite node pra vver onde ele clicou
+@property SKSpriteNode* recognizer;
+
 @end

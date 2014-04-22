@@ -74,6 +74,9 @@
     {
         entity.node.position = CGPointMake(x, y);
         
+        ComponentDraggableAttack *attack = GET_COMPONENT(entity, ComponentDraggableAttack);
+        attack.startPoint = entity.node.position;
+        
         x += 130;
     }
 }

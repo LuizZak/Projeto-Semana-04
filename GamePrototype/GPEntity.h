@@ -10,6 +10,8 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GPComponent.h"
 
+#define GET_COMPONENT(entity, type) (type*)[entity getComponent:[type class]];
+
 typedef unsigned long long entityid_t;
 typedef unsigned long long entitytype_t;
 

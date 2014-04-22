@@ -291,7 +291,7 @@
     // Anima o ataque
     if(attack.skillType == SkillFireball)
     {
-        [self createFireBall:source target:target radius:10 + damage / 2];
+        [self createFireBall:source target:target radius:damage / 100];
     }
     else if(attack.skillType == SkillMelee)
     {
@@ -357,11 +357,20 @@
 
 - (void)createFireBall:(GPEntity*)source target:(GPEntity*)target radius:(float)radius
 {
-    SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f], [SKAction removeFromParent]]];
+    SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f],
+    [SKAction runBlock:^{
+        SKSpriteNode *explosionNode = [SKSpriteNode spriteNodeWithImageNamed:@"explosao"];
+        
+        explosionNode.position = source.node.position;
+        
+        [self.gameScene addChild:explosionNode];
+    }], [SKAction removeFromParent]]];
     
-    SKSpriteNode *fireballNode = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];//[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(radius, radius)];
+    SKSpriteNode *fireballNode = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
     
-    [fireballNode setScale:0.3f];
+    fireballNode.zPosition = 5;
+    
+    [fireballNode setScale:0.3f + radius];
     
     fireballNode.position = source.node.position;
     

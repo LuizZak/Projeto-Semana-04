@@ -69,7 +69,7 @@
     
     [self.gameScene addEntity:bar.healthBar];
     
-    barNode.position = CGPointMake(0, [entity.node calculateAccumulatedFrame].size.height / 2 + barHeight / 1.5f);
+    barNode.position = CGPointMake(0, entity.node.frame.size.height + barHeight / 1.5f);
     [barNode removeFromParent];
     [entity.node addChild:barNode];
     

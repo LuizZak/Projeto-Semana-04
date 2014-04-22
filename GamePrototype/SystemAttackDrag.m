@@ -152,7 +152,7 @@
                 {
                     comp.currentCooldown = comp.skillCooldown;
                     
-                    [self attackEntity:entity damage:comp.damage];
+                    [self attackEntity:comp source:self.playerEntity target:entity damage:comp.damage];
                     
                     break;
                 }
@@ -194,6 +194,8 @@
         [self.gameScene removeEntity:entity];
     }]]];
     
+    dieAnimation = [SKAction group:@[[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0], dieAnimation]];
+                    
     [entity.node runAction:dieAnimation];
     
     if(entity == self.playerEntity)
@@ -202,18 +204,18 @@
     }
 }
 
-- (void)attackEntity:(GPEntity*)entity damage:(float)damage
+- (void)attackEntity:(ComponentDraggableAttack*)attack source:(GPEntity*)source target:(GPEntity*)target damage:(float)damage
 {
     // Anima o ataque do jogador
-    [self createFireBall:self.playerEntity target:entity radius:10 + damage / 2];
+    [self createFireBall:self.playerEntity target:target radius:10 + damage / 2];
     
-    ComponentHealth *hc = (ComponentHealth*)[entity getComponent:[ComponentHealth class]];
+    ComponentHealth *hc = (ComponentHealth*)[target getComponent:[ComponentHealth class]];
     
     hc.health -= damage;
     
     if(hc.health <= 0)
     {
-        [self killEntity:entity];
+        [self killEntity:target];
         
         hc.health = 0;
     }
@@ -222,14 +224,14 @@
         // Cria uma animação de dano
         UIColor *originalColor = [UIColor whiteColor];
         
-        if([entity.node isKindOfClass:[SKSpriteNode class]])
+        if([target.node isKindOfClass:[SKSpriteNode class]])
         {
-            originalColor = ((SKSpriteNode*)entity.node).color;
+            originalColor = ((SKSpriteNode*)target.node).color;
         }
         
-        SKAction *damageAction = [SKAction sequence:@[[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0], [SKAction colorizeWithColor:originalColor colorBlendFactor:1 duration:0.25f]]];
+        SKAction *damageAction = [SKAction sequence:@[[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0], [SKAction colorizeWithColor:originalColor colorBlendFactor:0 duration:0.25f]]];
         
-        [entity.node runAction:damageAction];
+        [target.node runAction:damageAction];
     }
 }
 

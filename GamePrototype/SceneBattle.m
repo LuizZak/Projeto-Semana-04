@@ -46,23 +46,30 @@
 // Cria o jogador na cena de batalha
 - (void)createPlayer
 {
-    SKNode *playerNode = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(150, 150)];
+    SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
     [player addComponent:[[ComponentHealth alloc] initWithHealth:35 maxhealth:35]];
-    [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:150 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:300 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     player.ID = PLAYER_ID;
     
-    playerNode.position = CGPointMake(200, self.frame.size.height / 2 + 50
-                                      );
+    [playerNode setScale:0.5f];
+    
+    playerNode.xScale = -playerNode.xScale;
+    
+    playerNode.position = CGPointMake(200, self.frame.size.height / 2 + 50);
     
     [self addEntity:player];
 }
 
 - (void)createEnemy:(float)x y:(float)y health:(float)health;
 {
-    SKNode *enemyNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(150, 150)];
+    SKSpriteNode *enemyNode = [SKSpriteNode spriteNodeWithImageNamed:@"Knight"];
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
+    
+    [enemyNode setScale:0.4f];
+    
+    enemyNode.xScale = -enemyNode.xScale;
     
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:health maxhealth:health]];
     [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:150 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];

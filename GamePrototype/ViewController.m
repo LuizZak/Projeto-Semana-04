@@ -33,7 +33,7 @@
     [[GameData gameData] saveWorld:scene];
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:[[MyScene alloc] initWithSize:skView.bounds.size]];
 }
 
 - (BOOL)shouldAutorotate

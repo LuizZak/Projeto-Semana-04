@@ -30,34 +30,61 @@
         [self createEnemy:260 y:290];
         [self createEnemy:260 y:330];
         
-        GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(20, 213);
-        [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:1 damage:3]];
+        [self createAttack:40 y:213 cooldown:1 damage:3];
+        [self createAttack:120 y:213 cooldown:5 damage:10];
+        [self createAttack:200 y:213 cooldown:10 damage:30];
         
-        [self addEntity:en];
-        
-        en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(60, 213);
-        [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10]];
-        
-        [self addEntity:en];
-        
-        en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(30, 30)]];
-        en.node.position = CGPointMake(100, 213);
-        [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30]];
-        
-        [self addEntity:en];
+        [self sortEnemies];
+        [self sortAttacks];
     }
     return self;
 }
 
+- (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage
+{
+    GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)]];
+    en.node.position = CGPointMake(x, y);
+    [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage]];
+    
+    [self addEntity:en];
+}
+
+- (void)sortEnemies
+{
+    NSArray *attacks = [self getEntitiesWithSelectorRule:GPRuleAnd(GPRuleType(ENEMY_TYPE), GPRuleComponent([ComponentHealth class]))];
+    
+    int x = self.frame.size.width - 100;
+    int y = 250;
+    
+    for(GPEntity *entity in attacks)
+    {
+        entity.node.position = CGPointMake(x, y);
+        
+        y += 200;
+    }
+}
+
+- (void)sortAttacks
+{
+    NSArray *attacks = [self getEntitiesWithSelectorRule:GPRuleComponent([ComponentDraggableAttack class])];
+    
+    int x = 80;
+    int y = 80;
+    for(GPEntity *entity in attacks)
+    {
+        entity.node.position = CGPointMake(x, y);
+        
+        x += 130;
+    }
+}
+
 - (void)createEnemy:(float)x y:(float)y
 {
-    SKNode *enemyNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(30, 30)];
+    SKNode *enemyNode = [SKSpriteNode spriteNodeWithColor:[UIColor purpleColor] size:CGSizeMake(150, 150)];
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
     
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:100 maxhealth:100]];
-    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:150 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     enemy.type = ENEMY_TYPE;
     
     enemyNode.position = CGPointMake(x, y);

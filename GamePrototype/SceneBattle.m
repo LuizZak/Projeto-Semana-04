@@ -50,7 +50,7 @@
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
     [player addComponent:[[ComponentHealth alloc] initWithHealth:35 maxhealth:35]];
-    [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:300 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     player.ID = PLAYER_ID;
     
     [playerNode setScale:0.5f];
@@ -72,8 +72,12 @@
     enemyNode.xScale = -enemyNode.xScale;
     
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:health maxhealth:health]];
-    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:150 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:200 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [enemy addComponent:[[ComponentAIBattle alloc] init]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:20]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:100]];
+    
     enemy.type = ENEMY_TYPE;
     
     enemyNode.position = CGPointMake(x, y);
@@ -109,7 +113,7 @@
 
 - (void)sortAttacks
 {
-    NSArray *attacks = [self getEntitiesWithSelectorRule:GPRuleComponent([ComponentDraggableAttack class])];
+    NSArray *attacks = [self getEntitiesWithSelectorRule:GPRuleAnd(GPRuleType(PLAYER_TYPE), GPRuleComponent([ComponentDraggableAttack class]))];
     
     int x = 80;
     int y = 80;

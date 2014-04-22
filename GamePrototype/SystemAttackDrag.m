@@ -361,6 +361,8 @@
     
     SKSpriteNode *fireballNode = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];//[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(radius, radius)];
     
+    [fireballNode setScale:0.3f];
+    
     fireballNode.position = source.node.position;
     
     [fireballNode runAction:attack];

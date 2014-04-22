@@ -27,6 +27,13 @@
         
         // Adicionando fundo
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"gramaScene"];
+        background.anchorPoint = CGPointZero;
+        
+        background.zPosition = -50;
+        
+        [background setScale:0.5f];
+        
+        [self addChild:background];
         
         [self addSystem:[[SystemAttackDrag alloc] initWithGameScene:self]];
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
@@ -72,7 +79,7 @@
     SKSpriteNode *enemyNode = [SKSpriteNode spriteNodeWithImageNamed:@"Knight"];
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
     
-    [enemyNode setScale:0.4f];
+    [enemyNode setScale:0.8f - (y / 768)];
     
     enemyNode.xScale = -enemyNode.xScale;
     

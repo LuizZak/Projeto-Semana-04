@@ -87,7 +87,7 @@
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
     
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:100 maxhealth:100]];
-    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:150 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:150 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     enemy.type = ENEMY_TYPE;
     
     enemyNode.position = CGPointMake(x, y);

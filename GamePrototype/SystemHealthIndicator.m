@@ -58,15 +58,18 @@
 {
     LifeBar *bar = [[LifeBar alloc] init];
     
-    float barWidth = ((ComponentHealthIndicator*)[entity getComponent:[ComponentHealthIndicator class]]).barWidth;
+    ComponentHealthIndicator *healthComp = GET_COMPONENT(entity, ComponentHealthIndicator);
     
-    SKSpriteNode *barNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(barWidth, 5)];
+    float barWidth = healthComp.barWidth;
+    float barHeight = healthComp.barHeight;
+    
+    SKSpriteNode *barNode = [SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(barWidth, barHeight)];
     
     bar.healthBar = [[GPEntity alloc] initWithNode:barNode];
     
     [self.gameScene addEntity:bar.healthBar];
     
-    barNode.position = CGPointMake(0, [entity.node calculateAccumulatedFrame].size.height / 2 + 5);
+    barNode.position = CGPointMake(0, [entity.node calculateAccumulatedFrame].size.height / 2 + barHeight / 1.5f);
     [barNode removeFromParent];
     [entity.node addChild:barNode];
     

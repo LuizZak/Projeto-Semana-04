@@ -10,13 +10,14 @@
 
 @implementation ComponentHealthIndicator
 
-- (id)initWithBarWidth:(float)barWidth barBackColor:(UIColor*)barBackColor barFrontColor:(UIColor*)barFrontColor
+- (id)initWithBarWidth:(float)barWidth barHeight:(float)barHeight barBackColor:(UIColor*)barBackColor barFrontColor:(UIColor*)barFrontColor
 {
     self = [super init];
     
     if(self)
     {
         self.barWidth = barWidth;
+        self.barHeight = barHeight;
         self.barBackColor = barBackColor;
         self.barFrontColor = barFrontColor;
     }

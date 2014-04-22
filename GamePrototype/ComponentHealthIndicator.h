@@ -11,9 +11,10 @@
 @interface ComponentHealthIndicator : GPComponent
 
 @property float barWidth;
+@property float barHeight;
 @property UIColor *barBackColor;
 @property UIColor *barFrontColor;
 
-- (id)initWithBarWidth:(float)barWidth barBackColor:(UIColor*)barBackColor barFrontColor:(UIColor*)barFrontColor;
+- (id)initWithBarWidth:(float)barWidth barHeight:(float)barHeight barBackColor:(UIColor*)barBackColor barFrontColor:(UIColor*)barFrontColor;
 
 @end

@@ -62,6 +62,7 @@
     
     float barWidth = healthComp.barWidth;
     float barHeight = healthComp.barHeight;
+    int barY = entity.node.frame.size.height / 2 / entity.node.yScale;
     
     SKSpriteNode *backNode = [SKSpriteNode spriteNodeWithColor:healthComp.barBackColor size:CGSizeMake(barWidth, barHeight)];
     SKSpriteNode *barNode = [SKSpriteNode spriteNodeWithColor:healthComp.barFrontColor size:CGSizeMake(barWidth - 10, barHeight - 10)];
@@ -71,9 +72,9 @@
     [self.gameScene addEntity:bar.healthBar];
     
     barNode.anchorPoint = CGPointMake(1, 0.5f);
-    barNode.position = CGPointMake(barWidth / 2 - 5, entity.node.frame.size.height + barHeight / 1.5f);
+    barNode.position = CGPointMake(barWidth / 2 - 5, barY + barHeight / 1.5f);
     
-    backNode.position = CGPointMake(0, entity.node.frame.size.height + barHeight / 1.5f);
+    backNode.position = CGPointMake(0, barY + barHeight / 1.5f);
     
     [barNode removeFromParent];
     [entity.node addChild:backNode];

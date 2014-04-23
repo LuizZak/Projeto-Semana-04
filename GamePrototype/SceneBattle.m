@@ -28,7 +28,6 @@
         // Adicionando fundo
         SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"gramaScene"];
         background.anchorPoint = CGPointZero;
-        
         background.zPosition = -50;
         
         [background setScale:0.5f];
@@ -58,7 +57,6 @@
     SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width, 150)];
     
     sprite.anchorPoint = CGPointZero;
-    
     sprite.zPosition = -7;
     
     [self addChild:sprite];
@@ -74,7 +72,7 @@
     SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
-    [player addComponent:[[ComponentHealth alloc] initWithHealth:250 maxhealth:250]];
+    [player addComponent:[[ComponentHealth alloc] initWithHealth:200 maxhealth:200]];
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [player addComponent:[[ComponentBattleState alloc] init]];
     player.ID = PLAYER_ID;

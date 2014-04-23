@@ -245,11 +245,11 @@
     // Anima o ataque
     if(attack.skillType == SkillFireball)
     {
-        [self createFireBall:source target:target radius:damage / 100];
+        [self createFireBall:source target:target radius:damage / 100 forDamage:damage];
     }
     else if(attack.skillType == SkillMelee)
     {
-        [self meleeAttack:source target:target];
+        [self meleeAttack:source target:target forDamage:damage];
     }
     
     ComponentHealth *hc = (ComponentHealth*)[target getComponent:[ComponentHealth class]];
@@ -295,13 +295,26 @@
     }
 }
 
-- (void)meleeAttack:(GPEntity*)source target:(GPEntity*)target
+- (void)meleeAttack:(GPEntity*)source target:(GPEntity*)target forDamage:(float)damage
 {
     ComponentBattleState *bs = GET_COMPONENT(source, ComponentBattleState);
     
     bs.canAttack = NO;
     
-    SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f], [SKAction moveTo:source.node.position duration:0.2f],
+    SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f],
+    [SKAction runBlock:^{
+        CGPoint point = target.node.position;
+        
+        // Randomiza um pouco o ponto através da área do personagem
+        point.x -= target.node.frame.size.width / 4;
+        point.y -= target.node.frame.size.height / 4;
+        
+        point.x += arc4random() % (int)(target.node.frame.size.width / 2);
+        point.y += arc4random() % (int)(target.node.frame.size.height / 2);
+        
+        [self createDamagePopup:damage point:point];
+    }],
+    [SKAction moveTo:source.node.position duration:0.2f],
     [SKAction runBlock:^{
         bs.canAttack = YES;
     }]]];
@@ -309,7 +322,7 @@
     [source.node runAction:attack];
 }
 
-- (void)createFireBall:(GPEntity*)source target:(GPEntity*)target radius:(float)radius
+- (void)createFireBall:(GPEntity*)source target:(GPEntity*)target radius:(float)radius forDamage:(float)damage
 {
     SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f],
     [SKAction runBlock:^{
@@ -326,6 +339,10 @@
         [explosionNode runAction:anim];
         
         [self.gameScene addChild:explosionNode];
+        
+        // Create a damage popup
+        [self createDamagePopup:damage point:target.node.position];
+        
     }], [SKAction removeFromParent]]];
     
     SKSpriteNode *fireballNode = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
@@ -339,6 +356,20 @@
     [fireballNode runAction:attack];
     
     [self.gameScene addChild:fireballNode];
+}
+
+- (void)createDamagePopup:(float)damage point:(CGPoint)point
+{
+    SKAction *animAction = [SKAction group:@[[SKAction fadeAlphaTo:0 duration:1], [SKAction moveTo:CGPointMake(point.x, point.y + 100) duration:1]]];
+    animAction = [SKAction sequence:@[animAction, [SKAction removeFromParent]]];
+    SKLabelNode *textNode = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
+    
+    textNode.zPosition = 3;
+    textNode.text = [NSString stringWithFormat:@"%.0lf", damage];
+    textNode.position = point;
+    [textNode runAction:animAction];
+    
+    [self.gameScene addChild:textNode];
 }
 
 @end

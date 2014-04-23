@@ -41,7 +41,7 @@
 		B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B32AE37318F46BB2006F8635 /* GPGameScene.m */; };
 		B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = B32B9BBD18FDA34800BF4B2C /* ComponentMapaGrid.m */; };
 		B32B9BC118FDB68A00BF4B2C /* SystemMap.m in Sources */ = {isa = PBXBuildFile; fileRef = B32B9BC018FDB68A00BF4B2C /* SystemMap.m */; };
-		B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */; };
+		B32DB95F18F49557001ECCD2 /* SystemBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB95E18F49557001ECCD2 /* SystemBattle.m */; };
 		B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */ = {isa = PBXBuildFile; fileRef = B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */; };
 		B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E643A18FEF58400040D47 /* ComponentMovement.m */; };
 		B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = B32E643D18FEF66700040D47 /* SystemMapMovement.m */; };
@@ -140,8 +140,8 @@
 		B32B9BBF18FDB68A00BF4B2C /* SystemMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMap.h; sourceTree = "<group>"; };
 		B32B9BC018FDB68A00BF4B2C /* SystemMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemMap.m; sourceTree = "<group>"; };
 		B32DB95C18F48DA4001ECCD2 /* GamePrototype.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GamePrototype.h; sourceTree = "<group>"; };
-		B32DB95D18F49557001ECCD2 /* SystemAttackDrag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemAttackDrag.h; sourceTree = "<group>"; };
-		B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemAttackDrag.m; sourceTree = "<group>"; };
+		B32DB95D18F49557001ECCD2 /* SystemBattle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemBattle.h; sourceTree = "<group>"; };
+		B32DB95E18F49557001ECCD2 /* SystemBattle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemBattle.m; sourceTree = "<group>"; };
 		B32DB96018F4959E001ECCD2 /* ComponentDraggableAttack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentDraggableAttack.h; sourceTree = "<group>"; };
 		B32DB96118F4959E001ECCD2 /* ComponentDraggableAttack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentDraggableAttack.m; sourceTree = "<group>"; };
 		B32E643918FEF58400040D47 /* ComponentMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMovement.h; sourceTree = "<group>"; };
@@ -397,8 +397,8 @@
 		B32AE37618F4702C006F8635 /* Systems */ = {
 			isa = PBXGroup;
 			children = (
-				B32DB95D18F49557001ECCD2 /* SystemAttackDrag.h */,
-				B32DB95E18F49557001ECCD2 /* SystemAttackDrag.m */,
+				B32DB95D18F49557001ECCD2 /* SystemBattle.h */,
+				B32DB95E18F49557001ECCD2 /* SystemBattle.m */,
 				B35DDFA318F5DE580079F74D /* SystemHealthIndicator.h */,
 				B35DDFA418F5DE580079F74D /* SystemHealthIndicator.m */,
 				5E4A15CB18FC7A0C0000BC5A /* SystemMovimentoAndar.h */,
@@ -576,7 +576,7 @@
 				A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */,
 				B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */,
 				B32AE36B18F46736006F8635 /* GPEntity.m in Sources */,
-				B32DB95F18F49557001ECCD2 /* SystemAttackDrag.m in Sources */,
+				B32DB95F18F49557001ECCD2 /* SystemBattle.m in Sources */,
 				B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */,
 				B32E644618FF099F00040D47 /* ComponentCamera.m in Sources */,
 				B32AE34818F465CC006F8635 /* SceneBattle.m in Sources */,

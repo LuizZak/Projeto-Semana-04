@@ -7,7 +7,7 @@
 //
 
 #import "SceneBattle.h"
-#import "SystemAttackDrag.h"
+#import "SystemBattle.h"
 #import "SystemHealthIndicator.h"
 #import "ComponentAIBattle.h"
 #import "ComponentBattleState.h"
@@ -35,10 +35,10 @@
         
         [self addChild:background];
         
-        [self addSystem:[[SystemAttackDrag alloc] initWithGameScene:self]];
+        [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
         
-        [self createEnemy:260 y:250 health:30];
+        [self createEnemy:260 y:250 health:60];
         [self createEnemy:260 y:290 health:75];
         [self createEnemy:260 y:330 health:100];
         
@@ -60,7 +60,7 @@
     SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
-    [player addComponent:[[ComponentHealth alloc] initWithHealth:500 maxhealth:500]];
+    [player addComponent:[[ComponentHealth alloc] initWithHealth:250 maxhealth:250]];
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [player addComponent:[[ComponentBattleState alloc] init]];
     player.ID = PLAYER_ID;

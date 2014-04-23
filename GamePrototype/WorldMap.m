@@ -68,7 +68,9 @@
         ComponentDialog *cmp3 = [[ComponentDialog alloc] init];
         cmp3.textColor = [UIColor whiteColor];
         cmp3.charDelay = 0.05f;
-        cmp3.textDialog = @"Viva Final Fantasy (que eu nunca joguei)! ~~ testando textos grandes para exibição e tals...";
+        cmp3.avatarTexture = [SKTexture textureWithImageNamed:@"dragon-portrate"];
+        cmp3.characterName = @"Dragon";
+        cmp3.textDialog = @"Eita porra!";
         
         cmp.nextDialog = cmp2;
         cmp2.nextDialog = cmp3;
@@ -236,9 +238,11 @@
     
     int random = arc4random() % 50;
     
+    NSLog(@"asd");
+    
     if(tileID == TILE_EARTH && random == 7)
     {
-        [self goToBattle];
+        //[self goToBattle];
     }
 }
 

@@ -24,6 +24,9 @@
 // A posição Y no grid do mapa
 @property int currentGridY;
 
+// Se a entidade está se movendo atualmente
+@property BOOL moving;
+
 // Se a entidade deve bloquear outras entidades que se movimentam via mapa
 @property BOOL blocksOtherEntities;
 

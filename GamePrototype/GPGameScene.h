@@ -32,6 +32,8 @@
 - (void)gameSceneDidReceiveTouchesMoved:(GPGameScene*)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event;
 // Notifica quando a cena recebeu um evento de cancelamento de toque
 - (void)gameSceneDidReceiveTouchesCanceled:(GPGameScene*)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event;
+// Notifica quando a cena vai ser removida da view
+- (void)gameSceneWillBeMovedFromView:(GPGameScene*)gameScene;
 
 @end
 

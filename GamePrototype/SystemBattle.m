@@ -134,10 +134,7 @@
         self.playerEntity = nil;
         
         // Faz o jogador perder a batalha
-        if(self.inBattle)
-        {
-            [self loseBattle];
-        }
+        [self loseBattle];
     }
     
     [self.enemiesArray removeObject:entity];

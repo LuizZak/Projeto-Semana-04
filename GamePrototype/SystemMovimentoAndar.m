@@ -140,7 +140,6 @@
         
         self.holdingTouch = YES;
     }
-    
 }
 
 - (void)gameSceneDidReceiveTouchesMoved:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
@@ -152,6 +151,12 @@
 }
 
 - (void)gameSceneDidReceiveTouchesEnd:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    self.dPad.hidden = YES;
+    self.holdingTouch = NO;
+}
+
+- (void)gameSceneWillBeMovedFromView:(GPGameScene *)gameScene
 {
     self.dPad.hidden = YES;
     self.holdingTouch = NO;

@@ -51,7 +51,7 @@
         point.y -= mov.offsetY;
         
         // Checa se a entidade está parada em cima de um grid cell
-        if((mov.forceX != 0 || mov.forceY != 0) && fmodf(point.x, 64) == 0 && fmodf(point.y, 64) == 0)
+        if(!mov.moving && (mov.forceX != 0 || mov.forceY != 0) && fmodf(point.x, 64) == 0 && fmodf(point.y, 64) == 0)
         {
             //NSLog(@"%lf %lf", point.x, point.y);
             
@@ -81,7 +81,11 @@
                 if(self.delegate != nil && [self.delegate respondsToSelector:@selector(systemMapMovement:entity:didWalkTo:tileID:)])
                 {
                     int tileID = [mapGrid.mapGrid[gridCellNY][gridCellNX] intValue];
-                    moveAction = [SKAction sequence:@[moveAction, [SKAction runBlock:^(void) { [self.delegate systemMapMovement:self entity:entity didWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:tileID]; } queue:dispatch_get_main_queue()]]];
+                    moveAction = [SKAction sequence:@[moveAction, [SKAction runBlock:^(void) {
+                        [self.delegate systemMapMovement:self entity:entity didWalkTo:CGPointMake(gridCellNX, gridCellNY) tileID:tileID];
+                        
+                        mov.moving = NO;
+                    }]]];
                 }
                 
                 // Atualiza a posição no grid da entidade
@@ -89,6 +93,8 @@
                 mov.currentGridY = gridCellNY;
                 
                 [entity.node runAction:moveAction];
+                
+                mov.moving = YES;
             }
         }
         

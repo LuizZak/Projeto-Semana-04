@@ -240,5 +240,16 @@
         }
     }
 }
+- (void)willMoveFromView:(SKView *)view
+{
+    // Notifica os notifiers
+    for(id<GPGameSceneNotifier> notifier in notifiers)
+    {
+        if([notifier respondsToSelector:@selector(gameSceneWillBeMovedFromView:)])
+        {
+            [notifier gameSceneWillBeMovedFromView:self];
+        }
+    }
+}
 
 @end

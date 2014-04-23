@@ -26,7 +26,7 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         // Adicionando fundo
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"gramaScene"];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"earthScene"];
         background.anchorPoint = CGPointZero;
         background.zPosition = -50;
         
@@ -38,8 +38,8 @@
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
         
         [self createEnemy:260 y:250 health:50];
-        //[self createEnemy:260 y:290 health:75];
-        //[self createEnemy:260 y:330 health:100];
+        [self createEnemy:260 y:290 health:75];
+        [self createEnemy:260 y:330 health:100];
         
         [self createPlayer];
         

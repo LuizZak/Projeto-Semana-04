@@ -55,10 +55,7 @@
     UITouch *tch = [touches anyObject];
     self.selectedPlace = [tch locationInNode:gameScene];
     SKNode *noClicado = [gameScene nodeAtPoint:self.selectedPlace];
-    if (noClicado == self.recognizer)
-    {
-        NSLog(@"hey2");
-    }
+    
     if(self.showingDialog)
     {
         if(!self.isTextFullyShown)

@@ -72,9 +72,11 @@
     SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
-    [player addComponent:[[ComponentHealth alloc] initWithHealth:200 maxhealth:200]];
+    float playerHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] floatValue];
+    
+    [player addComponent:[[ComponentHealth alloc] initWithHealth:playerHealth maxhealth:playerHealth]];
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
-    [player addComponent:[[ComponentBattleState alloc] init]];
+    [player addComponent:[[ComponentBattleState alloc] initWithProjectilePoint:CGPointMake(190, 0)]];
     player.ID = PLAYER_ID;
     
     [playerNode setScale:0.5f];
@@ -100,7 +102,7 @@
     [enemy addComponent:[[ComponentAIBattle alloc] init]];
     [enemy addComponent:[[ComponentBattleState alloc] init]];
     
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillFireball startEnabled:NO]];
     [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:10 skillType:SkillMelee startEnabled:NO]];
     [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:20 skillType:SkillMelee startEnabled:NO]];
     

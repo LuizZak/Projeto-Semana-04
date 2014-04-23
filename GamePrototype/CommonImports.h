@@ -25,5 +25,8 @@
 #define TILE_MONTAIN 1
 #define TILE_EARTH 2
 #define TILE_CAVE 3
+#define TILE_CASTLE_EARTH 4
+#define TILE_CASTLE_GRASS 5
+#define TILE_WATER 6
 
 #endif

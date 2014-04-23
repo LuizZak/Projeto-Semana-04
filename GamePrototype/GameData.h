@@ -9,14 +9,24 @@
 #import <Foundation/Foundation.h>
 @class WorldMap;
 
+#define KEY_PLAYER_HEALTH @"playerHealth"
+#define KEY_PLAYER_SPAWN_X @"playerSpawnX"
+#define KEY_PLAYER_SPAWN_Y @"playerSpawnY"
+
 @interface GameData : NSObject
 
 + (GameData *) gameData;
 
-// Salvar a fase
-- (void)saveWorld:(WorldMap *)map; // WorldMap
-
 // Atributos da fases
 @property WorldMap* world; // WorldMap
+
+// Os dados do jogo
+@property NSMutableDictionary *data;
+
+// Reinicia os dados do jogo para os iniciais
+- (void)resetGameData;
+
+// Salvar a fase
+- (void)saveWorld:(WorldMap *)map; // WorldMap
 
 @end

@@ -85,6 +85,18 @@
             {
                 tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-cave"];
             }
+            else if(tileID == TILE_CASTLE_EARTH)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-castle-earth"];
+            }
+            else if(tileID == TILE_CASTLE_GRASS)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-castle-grass"];
+            }
+            else if(tileID == TILE_WATER)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-water0001"];
+            }
             
             tileNode.anchorPoint = CGPointZero;
             

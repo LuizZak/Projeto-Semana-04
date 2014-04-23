@@ -14,7 +14,9 @@
 {
     // Override point for customization after application launch.
     
+    // Reseta os dados do jogo
     [GameData gameData];
+    
     return YES;
 }
 							

@@ -74,6 +74,8 @@
 		FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */; };
 		FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDD1900712C00D24C87 /* tile-mountain.png */; };
 		FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDE1900712C00D24C87 /* tile-cave.png */; };
+		FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8FD6E8190838BE00E3DC97 /* earthScene.png */; };
+		FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC8FD6EA19083F8500E3DC97 /* water.atlas */; };
 		FCCD02781906EFD500FFE9DB /* Knight.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02761906EFD500FFE9DB /* Knight.png */; };
 		FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02771906EFD500FFE9DB /* dragon-perfil.png */; };
 		FCCD027C1906F15A00FFE9DB /* Knight-portrate.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */; };
@@ -200,6 +202,8 @@
 		FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-castle-earth.png"; sourceTree = "<group>"; };
 		FC8E1CDD1900712C00D24C87 /* tile-mountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-mountain.png"; sourceTree = "<group>"; };
 		FC8E1CDE1900712C00D24C87 /* tile-cave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-cave.png"; sourceTree = "<group>"; };
+		FC8FD6E8190838BE00E3DC97 /* earthScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earthScene.png; sourceTree = "<group>"; };
+		FC8FD6EA19083F8500E3DC97 /* water.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = water.atlas; sourceTree = "<group>"; };
 		FCCD02761906EFD500FFE9DB /* Knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knight.png; sourceTree = "<group>"; };
 		FCCD02771906EFD500FFE9DB /* dragon-perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon-perfil.png"; sourceTree = "<group>"; };
 		FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knight-portrate.png"; sourceTree = "<group>"; };
@@ -253,6 +257,7 @@
 		5E8A846818FDABA90081583D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FC8FD6EA19083F8500E3DC97 /* water.atlas */,
 				FC3F73C618FF24E900949342 /* dragon.atlas */,
 				5E8A846918FDABFA0081583D /* dpad.fla */,
 				FC3F73C818FF264D00949342 /* dragon.fla */,
@@ -261,6 +266,7 @@
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
 				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
+				FC8FD6E8190838BE00E3DC97 /* earthScene.png */,
 				FCCD02801906F55600FFE9DB /* explosao.png */,
 				FCCD02811906F55600FFE9DB /* bola-de-fogo.png */,
 				FCCD02761906EFD500FFE9DB /* Knight.png */,
@@ -560,6 +566,7 @@
 				5E44346519083F1800EBA273 /* DragaoMorrendo.wav in Resources */,
 				FC3F739018FF03AF00949342 /* player.png in Resources */,
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
+				FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */,
 				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
@@ -570,6 +577,7 @@
 				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
 				5E4434691908435300EBA273 /* Explosao.wav in Resources */,
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
+				FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,

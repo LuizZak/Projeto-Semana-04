@@ -10,6 +10,7 @@
 #import "ComponentAIBattle.h"
 #import "ComponentBattleState.h"
 #import "ComponentHealth.h"
+#import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
 
 @implementation SystemBattle
@@ -287,6 +288,10 @@
     
     dieAnimation = [SKAction group:@[[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0], dieAnimation]];
     
+    // Remove o componente de HealthBar
+    [entity removeComponentsWithClass:[ComponentHealthIndicator class]];
+    [self.gameScene entityModified:entity];
+    
     [entity.node runAction:dieAnimation];
     
     if(entity == self.playerEntity)
@@ -345,15 +350,21 @@
         
     }], [SKAction removeFromParent]]];
     
+    ComponentBattleState *battleState = GET_COMPONENT(source, ComponentBattleState);
+    
     SKSpriteNode *fireballNode = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
     
     fireballNode.zPosition = 5;
+    fireballNode.position = CGPointMake(source.node.position.x + battleState.projectilePoint.x, source.node.position.y + battleState.projectilePoint.y);
     
     [fireballNode setScale:0.3f + radius];
-    
-    fireballNode.position = source.node.position;
-    
     [fireballNode runAction:attack];
+    
+    // Calcula a rotação do fireball
+    float dx = target.node.position.x - source.node.position.x;
+    float dy = (target.node.position.y - source.node.position.y);
+    
+    fireballNode.zRotation = atan2f(dy, dx);
     
     [self.gameScene addChild:fireballNode];
 }
@@ -364,7 +375,7 @@
     animAction = [SKAction sequence:@[animAction, [SKAction removeFromParent]]];
     SKLabelNode *textNode = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
     
-    textNode.zPosition = 3;
+    textNode.zPosition = 10;
     textNode.text = [NSString stringWithFormat:@"%.0lf", damage];
     textNode.position = point;
     [textNode runAction:animAction];

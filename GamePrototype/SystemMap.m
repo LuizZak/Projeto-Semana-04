@@ -93,6 +93,10 @@
             {
                 tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-castle-grass"];
             }
+            else if(tileID == TILE_WATER)
+            {
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-water0001"];
+            }
             
             tileNode.anchorPoint = CGPointZero;
             

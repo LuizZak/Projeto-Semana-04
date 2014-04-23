@@ -133,7 +133,7 @@
     
     // Checagem de terreno
     if(mapGrid != nil)
-        return tileID == TILE_GRASS || tileID == TILE_EARTH;
+        return tileID == TILE_GRASS || tileID == TILE_EARTH || tileID == TILE_WATER;
     else
         return NO;
 }

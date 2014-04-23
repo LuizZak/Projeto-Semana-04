@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 @class WorldMap;
 
-@interface GameData : NSObject
+@interface GameData : NSMutableDictionary
 
 + (GameData *) gameData;
 

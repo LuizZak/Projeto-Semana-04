@@ -16,6 +16,7 @@
 #import "SystemCamera.h"
 #import "SystemDialog.h"
 #import "DSMultilineLabelNode.h"
+#import "Som.h"
 
 @implementation WorldMap
 

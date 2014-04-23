@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E44345E19083C3600EBA273 /* HomemMorrendo3.wav */; };
+		5E44346219083C3600EBA273 /* HomemMorrendo2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E44345F19083C3600EBA273 /* HomemMorrendo2.wav */; };
+		5E44346319083C3600EBA273 /* HomemMorrendo1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E44346019083C3600EBA273 /* HomemMorrendo1.wav */; };
+		5E44346519083F1800EBA273 /* DragaoMorrendo.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E44346419083F1800EBA273 /* DragaoMorrendo.wav */; };
+		5E443467190841A900EBA273 /* fireBall.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E443466190841A900EBA273 /* fireBall.wav */; };
+		5E4434691908435300EBA273 /* Explosao.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E4434681908435300EBA273 /* Explosao.wav */; };
+		5E44346B19084EA600EBA273 /* Espada.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E44346A19084EA600EBA273 /* Espada.wav */; };
+		5E44346F190853EA00EBA273 /* Som.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E44346E190853EA00EBA273 /* Som.m */; };
 		5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15C518FC66B80000BC5A /* WorldMap.m */; };
 		5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4A15CC18FC7A0C0000BC5A /* SystemMovimentoAndar.m */; };
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
@@ -87,6 +95,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E44345E19083C3600EBA273 /* HomemMorrendo3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HomemMorrendo3.wav; sourceTree = "<group>"; };
+		5E44345F19083C3600EBA273 /* HomemMorrendo2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HomemMorrendo2.wav; sourceTree = "<group>"; };
+		5E44346019083C3600EBA273 /* HomemMorrendo1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HomemMorrendo1.wav; sourceTree = "<group>"; };
+		5E44346419083F1800EBA273 /* DragaoMorrendo.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = DragaoMorrendo.wav; sourceTree = "<group>"; };
+		5E443466190841A900EBA273 /* fireBall.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fireBall.wav; sourceTree = "<group>"; };
+		5E4434681908435300EBA273 /* Explosao.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosao.wav; sourceTree = "<group>"; };
+		5E44346A19084EA600EBA273 /* Espada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Espada.wav; sourceTree = "<group>"; };
+		5E44346D190853EA00EBA273 /* Som.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Som.h; sourceTree = "<group>"; };
+		5E44346E190853EA00EBA273 /* Som.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Som.m; sourceTree = "<group>"; };
 		5E4A15C418FC66B80000BC5A /* WorldMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorldMap.h; sourceTree = "<group>"; };
 		5E4A15C518FC66B80000BC5A /* WorldMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorldMap.m; sourceTree = "<group>"; };
 		5E4A15CB18FC7A0C0000BC5A /* SystemMovimentoAndar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemMovimentoAndar.h; sourceTree = "<group>"; };
@@ -219,6 +236,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E44345D1908393700EBA273 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				5E44346A19084EA600EBA273 /* Espada.wav */,
+				5E4434681908435300EBA273 /* Explosao.wav */,
+				5E443466190841A900EBA273 /* fireBall.wav */,
+				5E44346419083F1800EBA273 /* DragaoMorrendo.wav */,
+				5E44345E19083C3600EBA273 /* HomemMorrendo3.wav */,
+				5E44345F19083C3600EBA273 /* HomemMorrendo2.wav */,
+				5E44346019083C3600EBA273 /* HomemMorrendo1.wav */,
+			);
+			name = Songs;
+			sourceTree = "<group>";
+		};
 		5E8A846818FDABA90081583D /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +286,8 @@
 			children = (
 				5E8A846E18FDC6110081583D /* GameData.h */,
 				5E8A846F18FDC6110081583D /* GameData.m */,
+				5E44346D190853EA00EBA273 /* Som.h */,
+				5E44346E190853EA00EBA273 /* Som.m */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -315,6 +348,7 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				5E44345D1908393700EBA273 /* Songs */,
 				5EBB78871906F4C2001D961C /* Imagens */,
 				5ECF637F18FF24F900029917 /* Scenes */,
 				5E8A846D18FDC5960081583D /* Singletons */,
@@ -523,6 +557,7 @@
 			files = (
 				FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */,
 				FCCD027C1906F15A00FFE9DB /* Knight-portrate.png in Resources */,
+				5E44346519083F1800EBA273 /* DragaoMorrendo.wav in Resources */,
 				FC3F739018FF03AF00949342 /* player.png in Resources */,
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
 				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
@@ -531,7 +566,9 @@
 				FCCD027D1906F15A00FFE9DB /* dragon-portrate.png in Resources */,
 				FCCD02831906F55600FFE9DB /* explosao.png in Resources */,
 				FCCD02821906F55600FFE9DB /* ataqueFogo.fla in Resources */,
+				5E44346219083C3600EBA273 /* HomemMorrendo2.wav in Resources */,
 				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
+				5E4434691908435300EBA273 /* Explosao.wav in Resources */,
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
@@ -540,8 +577,12 @@
 				FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */,
 				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
+				5E44346B19084EA600EBA273 /* Espada.wav in Resources */,
+				5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */,
 				5EBB788D1906F4F1001D961C /* background.png in Resources */,
+				5E44346319083C3600EBA273 /* HomemMorrendo1.wav in Resources */,
 				FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */,
+				5E443467190841A900EBA273 /* fireBall.wav in Resources */,
 				5EBB788B1906F4CE001D961C /* Titulo.png in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
@@ -582,6 +623,7 @@
 				B32AE34818F465CC006F8635 /* SceneBattle.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
+				5E44346F190853EA00EBA273 /* Som.m in Sources */,
 				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,
 				B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,

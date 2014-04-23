@@ -12,6 +12,10 @@
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
+#import "WorldMap.h"
+
+#define PLAYER_WON 0
+#define ENEMY_WON 1
 
 @implementation SystemBattle
 
@@ -32,6 +36,7 @@
         self.attacksSelector = GPEntitySelectorCreate(GPRuleComponent([ComponentDraggableAttack class]));
         
         self.inBattle = YES;
+        self.tapToExit = NO;
         
         self.selectionNode = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(64, 64)];
         self.selectionNode.zPosition = -5;
@@ -102,12 +107,11 @@
     return ret;
 }
 
+/*
 - (BOOL)gameSceneDidRemoveEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
 {
-    [self.enemiesArray removeObject:entity];
-    
     return [super gameSceneDidRemoveEntity:gameScene entity:entity];
-}
+}*/
 
 - (BOOL)testEntityToAdd:(GPEntity *)entity
 {
@@ -128,6 +132,20 @@
     if(self.playerEntity == entity)
     {
         self.playerEntity = nil;
+        
+        // Faz o jogador perder a batalha
+        if(self.inBattle)
+        {
+            [self loseBattle];
+        }
+    }
+    
+    [self.enemiesArray removeObject:entity];
+    
+    // Faz o jogador ganhar a batalha
+    if(self.enemiesArray.count == 0 && self.inBattle)
+    {
+        [self winBattle];
     }
     
     return ret;
@@ -137,6 +155,14 @@
 {
     UITouch *tch = [touches anyObject];
     CGPoint pt = [tch locationInNode:gameScene];
+    
+    if(self.tapToExit)
+    {
+        SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
+        WorldMap *worldMap = [GameData gameData].world;
+        [self.gameScene.view presentScene:worldMap transition:reveal];
+        return;
+    }
     
     if(!self.inBattle)
     {
@@ -192,6 +218,59 @@
             }
         }
     }
+}
+
+// Faz o jogador perder a batalha
+- (void)loseBattle
+{
+    self.inBattle = NO;
+    
+    self.tapToExit = YES;
+    self.didWonBattle = NO;
+    
+    [self createBattleMessage:@"You lost!" won:YES];
+}
+
+// Faz o jogador ganhar a batalha
+- (void)winBattle
+{
+    self.inBattle = NO;
+    
+    self.tapToExit = YES;
+    self.didWonBattle = YES;
+    
+    [self createBattleMessage:@"You win!" won:YES];
+}
+
+// Cria uma mensagem de fim de batalha
+- (void)createBattleMessage:(NSString*)labelText won:(BOOL)won
+{
+    // Cria o texto de vitória e o apresenta na tela
+    SKNode *holderNode = [SKNode node];
+    SKLabelNode *textNode = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
+    
+    textNode.text = labelText;
+    textNode.fontSize = 100;
+    
+    textNode.fontColor = won ? [UIColor colorWithRed:0.8f green:1 blue:0.8f alpha:1] : [UIColor colorWithRed:1 green:0.8f blue:0.8f alpha:1];
+    
+    [holderNode addChild:textNode];
+    
+    holderNode.alpha = 0;
+    holderNode.position = CGPointMake(self.gameScene.frame.size.width / 2, self.gameScene.frame.size.height / 2);
+    
+    SKAction *animAction = [SKAction group:@[[SKAction fadeAlphaTo:1 duration:2], [SKAction scaleTo:1.2f duration:2]]];
+    
+    animAction = [SKAction sequence:@[animAction,
+    [SKAction runBlock:^{
+        self.tapToExit = YES;
+    }]]];
+    
+    [holderNode runAction:animAction];
+    
+    holderNode.zPosition = 100;
+    
+    [self.gameScene addChild:holderNode];
 }
 
 // Roda a AI de ataque dos inimigos

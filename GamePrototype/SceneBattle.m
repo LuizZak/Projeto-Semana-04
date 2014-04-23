@@ -37,9 +37,9 @@
         [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
         
-        [self createEnemy:260 y:250 health:60];
-        [self createEnemy:260 y:290 health:75];
-        [self createEnemy:260 y:330 health:100];
+        [self createEnemy:260 y:250 health:50];
+        //[self createEnemy:260 y:290 health:75];
+        //[self createEnemy:260 y:330 health:100];
         
         [self createPlayer];
         
@@ -133,7 +133,9 @@
     
     for(GPEntity *entity in attacks)
     {
-        entity.node.position = CGPointMake(x, y);
+        int randX = -50 + (arc4random() % 100);
+        int randY = -50 + (arc4random() % 100);
+        entity.node.position = CGPointMake(x + randX, y + randY);
         
         y += 200;
     }

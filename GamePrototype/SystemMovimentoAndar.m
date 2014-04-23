@@ -133,8 +133,6 @@
     SKNode *noClicado = [gameScene nodeAtPoint:self.selectedPlace];
     if (noClicado == self.recognizer)
     {
-        NSLog(@"hey");
-        
         self.currentPoint = self.selectedPlace;
         
         self.dPad.hidden = NO;

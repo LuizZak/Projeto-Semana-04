@@ -54,7 +54,7 @@
         ComponentDialog *cmp = [[ComponentDialog alloc] init];
         cmp.textColor = [UIColor whiteColor];
         cmp.charDelay = 0.05f;
-        cmp.avatarTexture = [SKTexture textureWithImageNamed:@"dragonAvatar"];
+        cmp.avatarTexture = [SKTexture textureWithImageNamed:@"dragon-portrate"];
         cmp.characterName = @"Dragon";
         cmp.textDialog = @"Rawr! Que bom dia para passear, mano!";
         

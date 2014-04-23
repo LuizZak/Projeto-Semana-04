@@ -32,6 +32,13 @@
 // Nó sendo utilizado para demarcar a skill selecionada atualmente
 @property SKSpriteNode *selectionNode;
 
+// Se a batalha está acontecendo
 @property BOOL inBattle;
+
+// Se o jogador pode apertar a tela para voltar ao mapa
+@property BOOL tapToExit;
+
+// Se o jogador ganhou a batalha
+@property BOOL didWonBattle;
 
 @end

@@ -20,4 +20,15 @@
     return self;
 }
 
+- (id)initWithProjectilePoint:(CGPoint)point
+{
+    self = [super init];
+    if (self)
+    {
+        self.canAttack = YES;
+        self.projectilePoint = point;
+    }
+    return self;
+}
+
 @end

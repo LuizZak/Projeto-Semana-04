@@ -11,10 +11,12 @@
 // Encapsula uma barra de life e sua entidade correspondente
 @interface LifeBar : NSObject
 
+// A representação do fundo da barra de vida na tela
+@property SKSpriteNode *backBar;
 // A representação da barra de vida na tela
 @property GPEntity *healthBar;
-// A representação do fundo da barra de vida na tela
-@property GPEntity *backBar;
+// O label de vida total
+@property SKLabelNode *healthLabelNode;
 // A entidade que a barra de vida está representando
 @property GPEntity *entity;
 

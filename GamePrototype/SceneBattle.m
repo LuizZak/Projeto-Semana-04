@@ -14,6 +14,7 @@
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
+#import "Som.h"
 
 @implementation SceneBattle
 

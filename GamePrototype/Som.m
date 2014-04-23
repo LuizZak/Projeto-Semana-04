@@ -36,26 +36,31 @@
     return self;
 }
 
+// Som do ataque inimigo de corpo a corpo
 - (void)tocarSomEspada
 {
     [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Espada" withExtension:@"wav"]:NO];
 }
 
+// Som da explosão da bola de fogo
 - (void)tocarSomExplosao
 {
     [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Explosao" withExtension:@"wav"]:NO];
 }
 
+// Som da bola de fogo
 - (void)tocarSomFireBall
 {
     [self tocarSom:[[NSBundle mainBundle] URLForResource:@"fireBall" withExtension:@"wav"]:NO];
 }
 
+// Som de quando o Dragão morre
 - (void)tocarSomMorteDragao
 {
     [self tocarSom:[[NSBundle mainBundle] URLForResource:@"DragaoMorrendo" withExtension:@"wav"]:NO];
 }
 
+// Sons de quando os inimigos morrem
 - (void)tocarSomMorteHomem
 {
     int random = arc4random() % 3;
@@ -72,6 +77,19 @@
     }
 }
 
+// Som de fundo so mundo
+- (void)tocarSomMundo
+{
+    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"MundoMusica" withExtension:@"wav"]:YES];
+}
+
+// Som de fundo so mundo
+- (void)tocarSomBatalha
+{
+    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"BatalhaMusica" withExtension:@"wav"]:YES];
+}
+
+// Metodo que toca os sons
 - (void)tocarSom:(NSURL*)URL :(BOOL)loop
 {
     NSError *error;

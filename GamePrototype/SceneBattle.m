@@ -42,16 +42,30 @@
         [self createEnemy:260 y:290 health:75];
         [self createEnemy:260 y:330 health:100];
         
-        [self createAttack:40 y:213 cooldown:1 damage:3 skillType:SkillFireball];
-        [self createAttack:120 y:213 cooldown:5 damage:10 skillType:SkillFireball];
-        [self createAttack:200 y:213 cooldown:10 damage:30 skillType:SkillFireball];
-        
         [self createPlayer];
+        
+        [self createSkillsBar];
         
         [self sortEnemies];
         [self sortAttacks];
     }
     return self;
+}
+
+// Cria a barra de skills e suas skills respectivas
+- (void)createSkillsBar
+{
+    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width, 150)];
+    
+    sprite.anchorPoint = CGPointZero;
+    
+    sprite.zPosition = -7;
+    
+    [self addChild:sprite];
+    
+    [self createAttack:40 y:213 cooldown:1 damage:3 skillType:SkillFireball];
+    [self createAttack:120 y:213 cooldown:5 damage:10 skillType:SkillFireball];
+    [self createAttack:200 y:213 cooldown:10 damage:30 skillType:SkillFireball];
 }
 
 // Cria o jogador na cena de batalha

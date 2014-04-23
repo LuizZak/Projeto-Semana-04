@@ -35,8 +35,8 @@
     [[GameData gameData] saveWorld:scene];
     
     // Present the scene.
-    [skView presentScene:[[SceneBattle alloc] initWithSize:skView.bounds.size]];
-    //[skView presentScene:scene];
+    //[skView presentScene:[[SceneBattle alloc] initWithSize:skView.bounds.size]];
+    [skView presentScene:scene];
     //[skView presentScene:[[WorldMap alloc] initWithSize:skView.bounds.size]];
     
     //[self.imgBackground setHidden:YES];

@@ -72,7 +72,9 @@
     SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
-    [player addComponent:[[ComponentHealth alloc] initWithHealth:200 maxhealth:200]];
+    float playerHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] floatValue];
+    
+    [player addComponent:[[ComponentHealth alloc] initWithHealth:playerHealth maxhealth:playerHealth]];
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [player addComponent:[[ComponentBattleState alloc] initWithProjectilePoint:CGPointMake(190, 0)]];
     player.ID = PLAYER_ID;

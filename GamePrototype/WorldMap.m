@@ -39,19 +39,12 @@
         
         [self createMap];
         
-        int playerSpawnX = 15;
-        int playerSpawnY = 15;
+        int playerSpawnX = [[[GameData gameData].data objectForKey:KEY_PLAYER_SPAWN_X] intValue];
+        int playerSpawnY = [[[GameData gameData].data objectForKey:KEY_PLAYER_SPAWN_Y] intValue];
         
         GPEntity *playerEntity = [self createPlayer:playerSpawnX * 64 y:playerSpawnY * 64];
         
         [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
-        
-        
-        // ! TESTE !
-        playerEntity = [self createPlayer:(playerSpawnX + 4) * 64 y:playerSpawnY * 64];
-        playerEntity.ID = 0;
-        
-        [self entityModified:playerEntity];
         
         
         // TESTE DE CAIXA DE DIÁLOGO
@@ -62,12 +55,14 @@
         cmp.charDelay = 0.05f;
         cmp.avatarTexture = [SKTexture textureWithImageNamed:@"dragonAvatar"];
         cmp.characterName = @"Dragon";
-        cmp.textDialog = @"Rawr! Eu sou um dragão!";
+        cmp.textDialog = @"Rawr! Que bom dia para passear, mano!";
         
         ComponentDialog *cmp2 = [[ComponentDialog alloc] init];
         cmp2.textColor = [UIColor whiteColor];
         cmp2.charDelay = 0.05f;
-        cmp2.textDialog = @"Mexa o personagem com o toque!";
+        cmp2.avatarTexture = [SKTexture textureWithImageNamed:@"Knight-portrate"];
+        cmp2.characterName = @"Knight";
+        cmp2.textDialog = @"Parô aê tiozão! Perdeu mermão!";
         
         ComponentDialog *cmp3 = [[ComponentDialog alloc] init];
         cmp3.textColor = [UIColor whiteColor];

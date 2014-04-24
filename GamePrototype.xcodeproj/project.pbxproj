@@ -82,6 +82,9 @@
 		FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CDE1900712C00D24C87 /* tile-cave.png */; };
 		FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8FD6E8190838BE00E3DC97 /* earthScene.png */; };
 		FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC8FD6EA19083F8500E3DC97 /* water.atlas */; };
+		FCA3E0921909966D003505C7 /* tile-earthTransitionBot.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA3E08F1909966D003505C7 /* tile-earthTransitionBot.png */; };
+		FCA3E0931909966D003505C7 /* tile-earthTransitionCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA3E0901909966D003505C7 /* tile-earthTransitionCorner.png */; };
+		FCA3E0941909966D003505C7 /* tile-earthTransitionL.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA3E0911909966D003505C7 /* tile-earthTransitionL.png */; };
 		FCCD02781906EFD500FFE9DB /* Knight.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02761906EFD500FFE9DB /* Knight.png */; };
 		FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD02771906EFD500FFE9DB /* dragon-perfil.png */; };
 		FCCD027C1906F15A00FFE9DB /* Knight-portrate.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */; };
@@ -218,6 +221,10 @@
 		FC8E1CDE1900712C00D24C87 /* tile-cave.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-cave.png"; sourceTree = "<group>"; };
 		FC8FD6E8190838BE00E3DC97 /* earthScene.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earthScene.png; sourceTree = "<group>"; };
 		FC8FD6EA19083F8500E3DC97 /* water.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = water.atlas; sourceTree = "<group>"; };
+		FCA3E08F1909966D003505C7 /* tile-earthTransitionBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionBot.png"; sourceTree = "<group>"; };
+		FCA3E0901909966D003505C7 /* tile-earthTransitionCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionCorner.png"; sourceTree = "<group>"; };
+		FCA3E0911909966D003505C7 /* tile-earthTransitionL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionL.png"; sourceTree = "<group>"; };
+		FCA3E0951909A4BD003505C7 /* dragon-perfil.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dragon-perfil.fla"; sourceTree = "<group>"; };
 		FCCD02761906EFD500FFE9DB /* Knight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Knight.png; sourceTree = "<group>"; };
 		FCCD02771906EFD500FFE9DB /* dragon-perfil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dragon-perfil.png"; sourceTree = "<group>"; };
 		FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Knight-portrate.png"; sourceTree = "<group>"; };
@@ -283,6 +290,7 @@
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
+				FCA3E0951909A4BD003505C7 /* dragon-perfil.fla */,
 				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
 				FC8FD6E8190838BE00E3DC97 /* earthScene.png */,
 				FCCD02801906F55600FFE9DB /* explosao.png */,
@@ -294,6 +302,9 @@
 				A0005D6A19044064003A60F1 /* dragonAvatar.png */,
 				FC8E1CD61900711800D24C87 /* tile-grass.png */,
 				FC8E1CD51900711800D24C87 /* tile-earth.png */,
+				FCA3E08F1909966D003505C7 /* tile-earthTransitionBot.png */,
+				FCA3E0901909966D003505C7 /* tile-earthTransitionCorner.png */,
+				FCA3E0911909966D003505C7 /* tile-earthTransitionL.png */,
 				FC8E1CD91900712200D24C87 /* tile-castle-grass.png */,
 				FC8E1CDA1900712200D24C87 /* tile-castle-earth.png */,
 				FC8E1CDD1900712C00D24C87 /* tile-mountain.png */,
@@ -588,6 +599,7 @@
 				5E6CB578190985AD00C05DED /* BatalhaMusica.wav in Resources */,
 				5E44346519083F1800EBA273 /* DragaoMorrendo.wav in Resources */,
 				FC3F739018FF03AF00949342 /* player.png in Resources */,
+				FCA3E0921909966D003505C7 /* tile-earthTransitionBot.png in Resources */,
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
 				FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */,
 				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
@@ -617,11 +629,13 @@
 				5E443467190841A900EBA273 /* fireBall.wav in Resources */,
 				5E6CB57C1909879200C05DED /* MundoMusica.wav in Resources */,
 				5EBB788B1906F4CE001D961C /* Titulo.png in Resources */,
+				FCA3E0941909966D003505C7 /* tile-earthTransitionL.png in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
+				FCA3E0931909966D003505C7 /* tile-earthTransitionCorner.png in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
 				5EBB788F19070716001D961C /* pleaseTouch.png in Resources */,
 			);

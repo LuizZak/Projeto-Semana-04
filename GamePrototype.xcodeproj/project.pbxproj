@@ -21,6 +21,9 @@
 		5E6CB57A1909862800C05DED /* gameOver.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CB5791909862800C05DED /* gameOver.wav */; };
 		5E6CB57C1909879200C05DED /* MundoMusica.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CB57B1909879200C05DED /* MundoMusica.wav */; };
 		5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CB57D190987CC00C05DED /* Vitoria.wav */; };
+		5E6CB65C1909908C00C05DED /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB65B1909908C00C05DED /* Score.m */; };
+		5E6CB65F190990F400C05DED /* Ranking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB65E190990F400C05DED /* Ranking.m */; };
+		5E6CB6631909968900C05DED /* RankingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB6621909968900C05DED /* RankingTableViewController.m */; };
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
 		5EBB788A1906F4CE001D961C /* background.psd in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB78881906F4CE001D961C /* background.psd */; };
@@ -118,6 +121,12 @@
 		5E6CB5791909862800C05DED /* gameOver.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = gameOver.wav; sourceTree = "<group>"; };
 		5E6CB57B1909879200C05DED /* MundoMusica.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MundoMusica.wav; sourceTree = "<group>"; };
 		5E6CB57D190987CC00C05DED /* Vitoria.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Vitoria.wav; sourceTree = "<group>"; };
+		5E6CB65A1909908C00C05DED /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
+		5E6CB65B1909908C00C05DED /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		5E6CB65D190990F400C05DED /* Ranking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranking.h; sourceTree = "<group>"; };
+		5E6CB65E190990F400C05DED /* Ranking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranking.m; sourceTree = "<group>"; };
+		5E6CB6611909968900C05DED /* RankingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingTableViewController.h; sourceTree = "<group>"; };
+		5E6CB6621909968900C05DED /* RankingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingTableViewController.m; sourceTree = "<group>"; };
 		5E8A846918FDABFA0081583D /* dpad.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad.fla; sourceTree = "<group>"; };
 		5E8A846E18FDC6110081583D /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		5E8A846F18FDC6110081583D /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
@@ -266,6 +275,26 @@
 			name = Songs;
 			sourceTree = "<group>";
 		};
+		5E6CB6591909904500C05DED /* Objetos */ = {
+			isa = PBXGroup;
+			children = (
+				5E6CB65A1909908C00C05DED /* Score.h */,
+				5E6CB65B1909908C00C05DED /* Score.m */,
+			);
+			name = Objetos;
+			sourceTree = "<group>";
+		};
+		5E6CB6601909963400C05DED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B32AE34318F465CC006F8635 /* ViewController.h */,
+				B32AE34418F465CC006F8635 /* ViewController.m */,
+				5E6CB6611909968900C05DED /* RankingTableViewController.h */,
+				5E6CB6621909968900C05DED /* RankingTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		5E8A846818FDABA90081583D /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +335,8 @@
 				5E8A846F18FDC6110081583D /* GameData.m */,
 				5E44346D190853EA00EBA273 /* Som.h */,
 				5E44346E190853EA00EBA273 /* Som.m */,
+				5E6CB65D190990F400C05DED /* Ranking.h */,
+				5E6CB65E190990F400C05DED /* Ranking.m */,
 			);
 			name = Singletons;
 			sourceTree = "<group>";
@@ -366,6 +397,8 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				5E6CB6601909963400C05DED /* Controllers */,
+				5E6CB6591909904500C05DED /* Objetos */,
 				5E44345D1908393700EBA273 /* Songs */,
 				5EBB78871906F4C2001D961C /* Imagens */,
 				5ECF637F18FF24F900029917 /* Scenes */,
@@ -382,8 +415,6 @@
 				B32AE34018F465CC006F8635 /* Main_iPad.storyboard */,
 				A0005D67190433CE003A60F1 /* DSMultilineLabelNode.h */,
 				A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */,
-				B32AE34318F465CC006F8635 /* ViewController.h */,
-				B32AE34418F465CC006F8635 /* ViewController.m */,
 				B32AE34B18F465CC006F8635 /* Images.xcassets */,
 				B32AE33218F465CC006F8635 /* Supporting Files */,
 			);
@@ -649,10 +680,12 @@
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				5E44346F190853EA00EBA273 /* Som.m in Sources */,
 				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,
+				5E6CB65F190990F400C05DED /* Ranking.m in Sources */,
 				B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B32E644318FF098900040D47 /* SystemCamera.m in Sources */,
+				5E6CB6631909968900C05DED /* RankingTableViewController.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
 				5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */,
@@ -662,6 +695,7 @@
 				B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,
+				5E6CB65C1909908C00C05DED /* Score.m in Sources */,
 				B32AE33818F465CC006F8635 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

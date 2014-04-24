@@ -12,10 +12,4 @@
 
 @interface ViewController : UIViewController
 
-// Imagem do Logo
-@property UIImageView* imgLogo;
-
-// Botão de Jogar
-@property UIButton* btnJogar;
-
 @end

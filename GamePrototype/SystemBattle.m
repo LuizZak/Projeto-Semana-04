@@ -13,6 +13,7 @@
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
 #import "WorldMap.h"
+#import "Ranking.h"
 
 #define PLAYER_WON 0
 #define ENEMY_WON 1
@@ -373,7 +374,10 @@
     if(entity == self.playerEntity)
     {
         self.inBattle = NO;
-    }
+        
+        [[Ranking lista] criarPontuacao:[[Ranking lista] currentPLayerName] :[[Ranking lista] currentPlayerScore]];
+    }else
+        [[Ranking lista] setCurrentPlayerScore:[[Ranking lista] currentPlayerScore] + 10];
 }
 
 - (void)meleeAttack:(GPEntity*)source target:(GPEntity*)target forDamage:(float)damage

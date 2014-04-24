@@ -242,7 +242,7 @@
     {
         random = arc4random() % 50;
         
-        if(random == 7)
+        if(random == 0)
         {
             [self goToBattle:tileID];
         }
@@ -251,7 +251,7 @@
     {
         random = arc4random() % 100;
         
-        if(random == 7)
+        if(random == 0)
         {
             [self goToBattle:tileID];
         }

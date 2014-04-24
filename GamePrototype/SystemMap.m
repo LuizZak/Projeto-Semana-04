@@ -39,6 +39,8 @@
     return ret;
 }
 
+#define GET_CELL(x, y) ([comp.mapGrid[y][x] intValue])
+
 - (void)loadMap
 {
     if(self.mapEntity == nil)
@@ -54,6 +56,9 @@
     
     // Limpa o node do mapa
     [mapContainer removeAllChildren];
+    
+    int mapWidth = [comp.mapGrid[0] count];
+    int mapHeight = comp.mapGrid.count;
     
     // Cria os nós de tiles e atribui a eles os gráficos respectivos
     // 0 - Grama
@@ -79,7 +84,41 @@
             }
             else if(tileID == TILE_EARTH)
             {
-                tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-earth"];
+                NSString *tileName = @"tile-earth";
+                
+                // Testa tiles adjacentes
+                int adjency = 0;
+                
+                // Em cima
+                if(y < mapHeight - 1 && GET_CELL(x, y + 1) == TILE_GRASS)
+                {
+                    adjency = adjency | DIR_TOP;
+                }
+                // Em baixo
+                if(y > 0 && GET_CELL(x, y - 1) == TILE_GRASS)
+                {
+                    adjency = adjency | DIR_BOTTOM;
+                }
+                // Na direita
+                if(x < mapWidth - 1 && GET_CELL(x + 1, y) == TILE_GRASS)
+                {
+                    adjency = adjency | DIR_RIGHT;
+                }
+                // Na esquerda
+                if(x > 0 && GET_CELL(x - 1, y) == TILE_GRASS)
+                {
+                    adjency = adjency | DIR_LEFT;
+                }
+                
+                // Testa adjacências
+                // _|
+                /*if(adjency == (DIR_BOTTOM & DIR_RIGHT))
+                {
+                    tileName =
+                }*/
+                
+                
+                tileNode = [SKSpriteNode spriteNodeWithImageNamed:tileName];
             }
             else if(tileID == TILE_CAVE)
             {
@@ -98,10 +137,10 @@
                 tileNode = [SKSpriteNode spriteNodeWithImageNamed:@"tile-water0001"];
             }
             
-            tileNode.anchorPoint = CGPointZero;
+            //tileNode.anchorPoint = CGPointZero;
             
             tileNode.size = CGSizeMake(64, 64);
-            tileNode.position = CGPointMake(x * 64, y * 64);
+            tileNode.position = CGPointMake(x * 64 + 32, y * 64 + 32);
             
             [mapContainer addChild:tileNode];
         }

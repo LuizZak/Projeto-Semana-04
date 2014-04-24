@@ -12,6 +12,9 @@
 #define KEY_PLAYER_HEALTH @"playerHealth"
 #define KEY_PLAYER_SPAWN_X @"playerSpawnX"
 #define KEY_PLAYER_SPAWN_Y @"playerSpawnY"
+#define KEY_PLAYER_LEVEL @"playerLevel"
+#define KEY_PLAYER_EXP @"playerExperience"
+#define KEY_PLAYER_SKILLS @"playerSkills"
 
 @interface GameData : NSObject
 

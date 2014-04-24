@@ -17,9 +17,9 @@
 #define ENEMY_TYPE 0x1 << 1
 
 #define DIR_TOP 1
-#define DIR_RIGHT 0
-#define DIR_LEFT 2
-#define DIR_BOTTOM 3
+#define DIR_RIGHT 2
+#define DIR_LEFT 4
+#define DIR_BOTTOM 8
 
 #define TILE_GRASS 0
 #define TILE_MONTAIN 1

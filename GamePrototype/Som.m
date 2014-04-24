@@ -77,6 +77,18 @@
     }
 }
 
+// Som de derrota
+- (void)tocarSomGameOver
+{
+    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"gameOver" withExtension:@"wav"]:NO];
+}
+
+// Som de vitoria
+- (void)tocarSomVitoria
+{
+    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Vitoria" withExtension:@"wav"]:NO];
+}
+
 // Som de fundo so mundo
 - (void)tocarSomMundo
 {

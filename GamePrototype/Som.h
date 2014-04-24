@@ -9,7 +9,7 @@
 #import "GPSystem.h"
 @import AVFoundation;
 
-@interface Som : GPSystem
+@interface Som : NSObject
 
 + (Som *) som;
 
@@ -30,6 +30,12 @@
 
 // Sons de quando os inimigos morrem
 - (void)tocarSomMorteHomem;
+
+// Som de derrota
+- (void)tocarSomGameOver;
+
+// Som de vitoria
+- (void)tocarSomVitoria;
 
 // Som de fundo so mundo
 - (void)tocarSomMundo;

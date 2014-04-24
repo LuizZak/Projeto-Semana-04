@@ -17,30 +17,30 @@
 @property (nonatomic) AVAudioPlayer * som;
 
 // Som do ataque inimigo de corpo a corpo
-- (void)tocarSomEspada;
+- (AVAudioPlayer *)tocarSomEspada;
 
 // Som da explosão da bola de fogo
-- (void)tocarSomExplosao;
+- (AVAudioPlayer *)tocarSomExplosao;
 
 // Som da bola de fogo
-- (void)tocarSomFireBall;
+- (AVAudioPlayer *)tocarSomFireBall;
 
 // Som de quando o Dragão morre
-- (void)tocarSomMorteDragao;
+- (AVAudioPlayer *)tocarSomMorteDragao;
 
 // Sons de quando os inimigos morrem
-- (void)tocarSomMorteHomem;
+- (AVAudioPlayer *)tocarSomMorteHomem;
 
 // Som de derrota
-- (void)tocarSomGameOver;
+- (AVAudioPlayer *)tocarSomGameOver;
 
 // Som de vitoria
-- (void)tocarSomVitoria;
+- (AVAudioPlayer *)tocarSomVitoria;
 
 // Som de fundo so mundo
-- (void)tocarSomMundo;
+- (AVAudioPlayer *)tocarSomMundo;
 
 // Som de fundo so mundo
-- (void)tocarSomBatalha;
+- (AVAudioPlayer *)tocarSomBatalha;
 
 @end

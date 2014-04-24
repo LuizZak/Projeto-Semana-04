@@ -16,11 +16,18 @@
 {
     [super viewDidLoad];
     self.btnJogar = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    self.imgLogo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Titulo.png"]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    self.view.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+    
+    self.imgLogo.frame = CGRectMake(260, 40, 500, 200);
+    [self.view addSubview:self.imgLogo];
     
     // Configure the view.
     SKView * skView = (SKView *)self.view;

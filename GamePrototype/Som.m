@@ -37,72 +37,74 @@
 }
 
 // Som do ataque inimigo de corpo a corpo
-- (void)tocarSomEspada
+- (AVAudioPlayer *)tocarSomEspada
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Espada" withExtension:@"wav"]:NO];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Espada" withExtension:@"wav"]:NO];
 }
 
 // Som da explosão da bola de fogo
-- (void)tocarSomExplosao
+- (AVAudioPlayer *)tocarSomExplosao
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Explosao" withExtension:@"wav"]:NO];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Explosao" withExtension:@"wav"]:NO];
 }
 
 // Som da bola de fogo
-- (void)tocarSomFireBall
+- (AVAudioPlayer *)tocarSomFireBall
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"fireBall" withExtension:@"wav"]:NO];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"fireBall" withExtension:@"wav"]:NO];
 }
 
 // Som de quando o Dragão morre
-- (void)tocarSomMorteDragao
+- (AVAudioPlayer *)tocarSomMorteDragao
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"DragaoMorrendo" withExtension:@"wav"]:NO];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"DragaoMorrendo" withExtension:@"wav"]:NO];
 }
 
 // Sons de quando os inimigos morrem
-- (void)tocarSomMorteHomem
+- (AVAudioPlayer *)tocarSomMorteHomem
 {
     int random = arc4random() % 3;
     
     if(random == 0)
     {
-        [self tocarSom:[[NSBundle mainBundle] URLForResource:@"HomemMorrendo1" withExtension:@"wav"]:NO];
+        return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"HomemMorrendo1" withExtension:@"wav"]:NO];
     }else if(random == 1)
     {
-        [self tocarSom:[[NSBundle mainBundle] URLForResource:@"HomemMorrendo2" withExtension:@"wav"]:NO];
+        return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"HomemMorrendo2" withExtension:@"wav"]:NO];
     }else if(random == 2)
     {
-        [self tocarSom:[[NSBundle mainBundle] URLForResource:@"HomemMorrendo3" withExtension:@"wav"]:NO];
+        return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"HomemMorrendo3" withExtension:@"wav"]:NO];
     }
+    
+    return 0;
 }
 
 // Som de derrota
-- (void)tocarSomGameOver
+- (AVAudioPlayer *)tocarSomGameOver
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"gameOver" withExtension:@"wav"]:NO];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"gameOver" withExtension:@"wav"]:NO];
 }
 
 // Som de vitoria
-- (void)tocarSomVitoria
+- (AVAudioPlayer *)tocarSomVitoria
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Vitoria" withExtension:@"wav"]:NO];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Vitoria" withExtension:@"wav"]:NO];
 }
 
 // Som de fundo so mundo
-- (void)tocarSomMundo
+- (AVAudioPlayer *)tocarSomMundo
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"MundoMusica" withExtension:@"wav"]:YES];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"MundoMusica" withExtension:@"wav"]:YES];
 }
 
 // Som de fundo so mundo
-- (void)tocarSomBatalha
+- (AVAudioPlayer *)tocarSomBatalha
 {
-    [self tocarSom:[[NSBundle mainBundle] URLForResource:@"BatalhaMusica" withExtension:@"wav"]:YES];
+    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"BatalhaMusica" withExtension:@"wav"]:YES];
 }
 
 // Metodo que toca os sons
-- (void)tocarSom:(NSURL*)URL :(BOOL)loop
+- (AVAudioPlayer *)tocarSom:(NSURL*)URL :(BOOL)loop
 {
     NSError *error;
     self.som = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:&error];
@@ -112,6 +114,8 @@
         self.som.numberOfLoops = 1;
     [self.som prepareToPlay];
     [self.som play];
+    
+    return self.som;
 }
 
 @end

@@ -46,7 +46,7 @@
     [observers removeObject:observer];
 }
 
-// Dá uma qunatidade de XP para o player
+// Dá uma quantidade de XP para o player
 - (void)givePlayerXP:(int)xp
 {
     // Soma o XP do player

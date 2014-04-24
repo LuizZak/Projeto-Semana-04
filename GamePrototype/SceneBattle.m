@@ -14,6 +14,7 @@
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
+#import "ComponentBounty.h"
 #import "Som.h"
 
 @implementation SceneBattle
@@ -38,9 +39,9 @@
         [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
         
-        [self createEnemy:260 y:250 health:50];
-        [self createEnemy:260 y:290 health:75];
-        [self createEnemy:260 y:330 health:100];
+        [self createEnemy:260 y:250 health:50 exp:100];
+        [self createEnemy:260 y:290 health:75 exp:100];
+        [self createEnemy:260 y:330 health:100 exp:100];
         
         [self createPlayer];
         
@@ -89,7 +90,7 @@
     [self addEntity:player];
 }
 
-- (void)createEnemy:(float)x y:(float)y health:(float)health;
+- (void)createEnemy:(float)x y:(float)y health:(float)health exp:(int)exp
 {
     SKSpriteNode *enemyNode = [SKSpriteNode spriteNodeWithImageNamed:@"Knight"];
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
@@ -106,6 +107,9 @@
     [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillFireball startEnabled:NO]];
     [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:10 skillType:SkillMelee startEnabled:NO]];
     [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:20 skillType:SkillMelee startEnabled:NO]];
+    
+    // Adiciona um bounty para este inimigo
+    [enemy addComponent:[[ComponentBounty alloc] initWithExp:exp gold:10]];
     
     enemy.type = ENEMY_TYPE;
     

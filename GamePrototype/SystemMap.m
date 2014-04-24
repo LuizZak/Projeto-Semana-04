@@ -84,10 +84,14 @@
             }
             else if(tileID == TILE_EARTH)
             {
+                float tileRotation = 0;
                 NSString *tileName = @"tile-earth";
                 
-                // Testa tiles adjacentes
+                //
+                // TESTA TILES ADJACENTES
+                //
                 int adjency = 0;
+                int cornerAdj = 0;
                 
                 // Em cima
                 if(y < mapHeight - 1 && GET_CELL(x, y + 1) == TILE_GRASS)
@@ -110,15 +114,125 @@
                     adjency = adjency | DIR_LEFT;
                 }
                 
-                // Testa adjacências
-                // _|
-                /*if(adjency == (DIR_BOTTOM & DIR_RIGHT))
+                // Testa ajacência por cima dos cantos
+                // Esquerdo
+                if(x > 0)
                 {
-                    tileName =
-                }*/
+                    // Inferior
+                    if(y > 0 && GET_CELL(x - 1, y - 1) == TILE_GRASS)
+                    {
+                        cornerAdj = cornerAdj | DIR_LEFT | DIR_BOTTOM;
+                    }
+                    // Superior
+                    if(y < mapHeight - 1 && GET_CELL(x - 1, y + 1) == TILE_GRASS)
+                    {
+                        cornerAdj = cornerAdj | DIR_LEFT | DIR_TOP;
+                    }
+                }
+                // Direito
+                if(x < mapWidth - 1)
+                {
+                    // Inferior
+                    if(y > 0 && GET_CELL(x + 1, y - 1) == TILE_GRASS)
+                    {
+                        cornerAdj = cornerAdj | DIR_RIGHT | DIR_BOTTOM;
+                    }
+                    // Superior
+                    if(y < mapHeight - 1 && GET_CELL(x + 1, y + 1) == TILE_GRASS)
+                    {
+                        cornerAdj = cornerAdj | DIR_RIGHT | DIR_TOP;
+                    }
+                }
+                
+                //
+                // ATUALIZA OS GRÁFICOS
+                //
+                
+                // Testa adjacências
+                // [_|]
+                if(adjency == (DIR_BOTTOM | DIR_RIGHT))
+                {
+                    tileName = @"tile-earthTransitionL";
+                    tileRotation = 0;
+                }
+                // [|_]
+                else if(adjency == (DIR_BOTTOM | DIR_LEFT))
+                {
+                    tileName = @"tile-earthTransitionL";
+                    tileRotation = -M_PI / 2;
+                }
+                // [|``]
+                else if(adjency == (DIR_TOP | DIR_LEFT))
+                {
+                    tileName = @"tile-earthTransitionL";
+                    tileRotation = M_PI;
+                }
+                // [``|]
+                else if(adjency == (DIR_TOP | DIR_RIGHT))
+                {
+                    tileName = @"tile-earthTransitionL";
+                    tileRotation = M_PI / 2;
+                }
+                // [__]
+                else if(adjency == DIR_BOTTOM)
+                {
+                    tileName = @"tile-earthTransitionBot";
+                }
+                // [``]
+                else if(adjency == DIR_TOP)
+                {
+                    tileName = @"tile-earthTransitionBot";
+                    tileRotation = -M_PI;
+                }
+                // [ |]
+                else if(adjency == DIR_RIGHT)
+                {
+                    tileName = @"tile-earthTransitionBot";
+                    tileRotation = M_PI / 2;
+                }
+                // [| ]
+                else if(adjency == DIR_LEFT)
+                {
+                    tileName = @"tile-earthTransitionBot";
+                    tileRotation = -M_PI / 2;
+                }
+                // Adjacências
+                // Esquerdo
+                else if((cornerAdj & DIR_LEFT) != 0)
+                {
+                    // Superior
+                    if((cornerAdj & DIR_TOP) != 0)
+                    {
+                        tileName = @"tile-earthTransitionCorner";
+                        tileRotation = -M_PI;
+                    }
+                    // Inferior
+                    else if((cornerAdj & DIR_BOTTOM) != 0)
+                    {
+                        tileName = @"tile-earthTransitionCorner";
+                        tileRotation = -M_PI / 2;
+                    }
+                }
+                // Direito
+                else if((cornerAdj & DIR_RIGHT) != 0)
+                {
+                    // Superior
+                    if((cornerAdj & DIR_TOP) != 0)
+                    {
+                        tileName = @"tile-earthTransitionCorner";
+                        tileRotation = M_PI / 2;
+                    }
+                    // Inferior
+                    else if((cornerAdj & DIR_BOTTOM) != 0)
+                    {
+                        tileName = @"tile-earthTransitionCorner";
+                        tileRotation = 0;
+                    }
+                }
                 
                 
                 tileNode = [SKSpriteNode spriteNodeWithImageNamed:tileName];
+                tileNode.zRotation = tileRotation;
             }
             else if(tileID == TILE_CAVE)
             {

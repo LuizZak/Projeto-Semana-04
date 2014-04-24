@@ -236,20 +236,35 @@
     if(entity.ID != PLAYER_ID)
         return;
     
-    int random = arc4random() % 50;
+    int random;
     
-    NSLog(@"asd");
-    
-    if(tileID == TILE_EARTH && random == 7)
+    if(tileID == TILE_EARTH)
     {
-        //[self goToBattle];
+        random = arc4random() % 50;
+        
+        if(random == 7)
+        {
+            [self goToBattle:tileID];
+        }
+    }
+    else if(tileID == TILE_GRASS)
+    {
+        random = arc4random() % 100;
+        
+        if(random == 7)
+        {
+            [self goToBattle:tileID];
+        }
     }
 }
 
-- (void)goToBattle
+- (void)goToBattle:(int)sceneType
 {
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
     SceneBattle *battleScene = [[SceneBattle alloc] initWithSize:self.size];
+    
+    [battleScene setSceneType:sceneType];
+    
     [self.scene.view presentScene: battleScene transition: reveal];
 }
 

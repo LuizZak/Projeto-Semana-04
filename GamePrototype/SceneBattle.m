@@ -27,13 +27,13 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         
         // Adicionando fundo
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"earthScene"];
-        background.anchorPoint = CGPointZero;
-        background.zPosition = -50;
+        self.background = [SKSpriteNode spriteNodeWithImageNamed:@"earthScene"];
+        self.background.anchorPoint = CGPointZero;
+        self.background.zPosition = -50;
         
-        [background setScale:0.5f];
+        [self.background setScale:0.5f];
         
-        [self addChild:background];
+        [self addChild:self.background];
         
         [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
@@ -156,6 +156,18 @@
         attack.startPoint = entity.node.position;
         
         x += 130;
+    }
+}
+
+- (void)setSceneType:(int)sceneType
+{
+    if(sceneType == TILE_GRASS)
+    {
+        [self.background setTexture:[SKTexture textureWithImageNamed:@"gramaScene"]];
+    }
+    else if(sceneType == TILE_EARTH)
+    {
+        [self.background setTexture:[SKTexture textureWithImageNamed:@"earthScene"]];
     }
 }
 

@@ -12,4 +12,9 @@
 
 @interface SceneBattle : GPGameScene
 
+@property SKSpriteNode *background;
+
+// Troca o tipo de cena da batalha
+- (void)setSceneType:(int)sceneType;
+
 @end

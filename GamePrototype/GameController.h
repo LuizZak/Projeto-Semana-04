@@ -7,12 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ComponentDraggableAttack.h"
 
 // Protocolo para recebimento de notificações de eventos do jogo (subir de nível, ganhar skills novas, etc.)
 @protocol GameControllerObserver <NSObject>
 
 // Notifica que o jogador ganhou uma quantidade de XP
 - (void)gameControllerDidWinXP:(int)xp;
+
+// Notifica que o jogador subiu de nível
+- (void)gameControllerDidWinLevel:(int)oldLevel newLevel:(int)newLevel;
+
+// Notifica que o jogador recebeu as skills especificadas na array
+- (void)gameControllerDidUnlockSkills:(NSMutableArray*)skills;
 
 @end
 

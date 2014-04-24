@@ -7,6 +7,7 @@
 //
 
 #import "GameController.h"
+#import "GameData.h"
 
 @implementation GameController
 
@@ -48,9 +49,61 @@
 // Dá uma qunatidade de XP para o player
 - (void)givePlayerXP:(int)xp
 {
-    int[] xpLevels = { 100, 200, 400, 800, 1200 };
+    // Soma o XP do player
+    int currentXP = [[[GameData gameData].data objectForKey:KEY_PLAYER_EXP] intValue];
     
+    currentXP += xp;
     
+    // Seta o XP
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:currentXP] forKey:KEY_PLAYER_EXP];
+    
+    // Notifica os observers
+    for (id<GameControllerObserver> observer in observers)
+    {
+        if([observer respondsToSelector:@selector(gameControllerDidWinXP:)])
+        {
+            [observer gameControllerDidWinXP:currentXP];
+        }
+    }
+    
+    [self checkForLevelUp];
+}
+
+// Checa se o jogador upou de nível
+- (void)checkForLevelUp
+{
+    int currentXP = [[[GameData gameData].data objectForKey:KEY_PLAYER_EXP] intValue];
+    int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
+    
+    int levelCount = 5;
+    int xpLevels[] = { 0, 100, 200, 400, 800, 1200 };
+    int nextLevel;
+    
+    // Checa se o nível mudou de índice
+    for(nextLevel = 0; nextLevel < levelCount; nextLevel++)
+    {
+        if(xpLevels[nextLevel] > currentXP)
+        {
+            // Subtrai 1, pois o nível atual indicado pelo índice é o próximo inalcancável
+            nextLevel--;
+            break;
+        }
+    }
+    
+    if(currentLevel < nextLevel)
+    {
+        // Atualiza o nível
+        [[GameData gameData].data setObject:[NSNumber numberWithInt:nextLevel] forKey:KEY_PLAYER_LEVEL];
+        
+        // Notifica os observers
+        for (id<GameControllerObserver> observer in observers)
+        {
+            if([observer respondsToSelector:@selector(gameControllerDidWinLevel:newLevel:)])
+            {
+                [observer gameControllerDidWinLevel:currentLevel newLevel:nextLevel];
+            }
+        }
+    }
 }
 
 @end

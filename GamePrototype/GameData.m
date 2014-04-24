@@ -8,6 +8,13 @@
 
 #import "GameData.h"
 
+#define KEY_PLAYER_HEALTH @"playerHealth"
+#define KEY_PLAYER_SPAWN_X @"playerSpawnX"
+#define KEY_PLAYER_SPAWN_Y @"playerSpawnY"
+#define KEY_PLAYER_LEVEL @"playerLevel"
+#define KEY_PLAYER_EXP @"playerExperience"
+#define KEY_PLAYER_SKILLS @"playerSkills"
+
 @implementation GameData
 
 // Cria o singleton
@@ -44,6 +51,8 @@
     [self.data setObject:[NSNumber numberWithFloat:200] forKey:KEY_PLAYER_HEALTH];
     [self.data setObject:[NSNumber numberWithInt:3] forKey:KEY_PLAYER_SPAWN_X];
     [self.data setObject:[NSNumber numberWithInt:25] forKey:KEY_PLAYER_SPAWN_Y];
+    [self.data setObject:[NSNumber numberWithInt:1] forKey:KEY_PLAYER_LEVEL];
+    [self.data setObject:[NSNumber numberWithInt:0] forKey:KEY_PLAYER_EXP];
     
     // Player spawn point
 }

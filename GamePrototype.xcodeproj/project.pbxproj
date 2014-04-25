@@ -77,6 +77,8 @@
 		B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C01906F0D0006A2294 /* ComponentAIBattle.m */; };
 		B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C3190703AE006A2294 /* ComponentBattleState.m */; };
 		B3B15DAB190ADD5800E98B92 /* AnimMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B15DAA190ADD5800E98B92 /* AnimMaker.m */; };
+		FC141491190AE94F00B398CE /* MenuBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC14148F190AE94F00B398CE /* MenuBG.png */; };
+		FC141492190AE94F00B398CE /* Menu.fla in Resources */ = {isa = PBXBuildFile; fileRef = FC141490190AE94F00B398CE /* Menu.fla */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -223,6 +225,8 @@
 		B38069C3190703AE006A2294 /* ComponentBattleState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentBattleState.m; sourceTree = "<group>"; };
 		B3B15DA9190ADD5800E98B92 /* AnimMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimMaker.h; sourceTree = "<group>"; };
 		B3B15DAA190ADD5800E98B92 /* AnimMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimMaker.m; sourceTree = "<group>"; };
+		FC14148F190AE94F00B398CE /* MenuBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBG.png; sourceTree = "<group>"; };
+		FC141490190AE94F00B398CE /* Menu.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menu.fla; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -323,6 +327,8 @@
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
+				FC141490190AE94F00B398CE /* Menu.fla */,
+				FC14148F190AE94F00B398CE /* MenuBG.png */,
 				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
 				FC8FD6E8190838BE00E3DC97 /* earthScene.png */,
 				FCCD02801906F55600FFE9DB /* explosao.png */,
@@ -667,6 +673,7 @@
 				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
 				A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
+				FC141491190AE94F00B398CE /* MenuBG.png in Resources */,
 				5E44346B19084EA600EBA273 /* Espada.wav in Resources */,
 				5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */,
 				5EBB788D1906F4F1001D961C /* background.png in Resources */,
@@ -675,6 +682,7 @@
 				5E443467190841A900EBA273 /* fireBall.wav in Resources */,
 				5E6CB57C1909879200C05DED /* MundoMusica.wav in Resources */,
 				5EBB788B1906F4CE001D961C /* Titulo.png in Resources */,
+				FC141492190AE94F00B398CE /* Menu.fla in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,

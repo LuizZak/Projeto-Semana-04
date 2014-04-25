@@ -10,6 +10,7 @@
 #import "SceneBattle.h"
 #import "WorldMap.h"
 #import "Ranking.h"
+#import "SceneMenu.h"
 
 @implementation ViewController
 
@@ -28,33 +29,11 @@
     skView.showsNodeCount = YES;
     skView.ignoresSiblingOrder = YES;
     
-    UIAlertView *pegarONome = [[UIAlertView alloc] initWithTitle:@"Novo Jogo"
-                                                         message:@"Digite Seu Nome"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Submit"
-                                               otherButtonTitles:nil];
-    
-    [pegarONome setAlertViewStyle:UIAlertViewStylePlainTextInput];
-    
-    [pegarONome show];
-    
     // Create and configure the scene.
-    WorldMap * scene = [WorldMap sceneWithSize:skView.bounds.size];
+    SceneMenu * scene = [SceneMenu sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
-    [[GameData gameData] saveWorld:scene];
     
     [skView presentScene:scene];
-}
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 0) {
-        [[self navigationController] popToRootViewControllerAnimated:true];
-        UITextField *username = [alertView textFieldAtIndex:0];
-        
-        [[Ranking lista] setCurrentPlayerName:username.text];
-        [[Ranking lista] setCurrentPlayerScore:0];
-    }
 }
 
 - (BOOL)shouldAutorotate

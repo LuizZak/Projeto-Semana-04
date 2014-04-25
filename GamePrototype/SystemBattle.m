@@ -16,6 +16,7 @@
 #import "ComponentDraggableAttack.h"
 #import "WorldMap.h"
 #import "Ranking.h"
+#import "SceneMenu.h"
 
 #define PLAYER_WON 0
 #define ENEMY_WON 1
@@ -162,10 +163,19 @@
     
     if(self.tapToExit)
     {
-        SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
-        WorldMap *worldMap = [GameData gameData].world;
-        [self.gameScene.view presentScene:worldMap transition:reveal];
-        return;
+        if (self.didWonBattle)
+        {
+            SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
+            WorldMap *worldMap = [GameData gameData].world;
+            [self.gameScene.view presentScene:worldMap transition:reveal];
+            return;
+        }else
+        {
+            SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
+            SceneMenu* menu = [[SceneMenu alloc] initWithSize:self.gameScene.size];
+            [self.gameScene.view presentScene:menu transition:reveal];
+            return;
+        }
     }
     
     if(!self.inBattle)

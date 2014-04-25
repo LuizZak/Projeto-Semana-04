@@ -23,8 +23,9 @@
 		5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CB57D190987CC00C05DED /* Vitoria.wav */; };
 		5E6CB65C1909908C00C05DED /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB65B1909908C00C05DED /* Score.m */; };
 		5E6CB65F190990F400C05DED /* Ranking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB65E190990F400C05DED /* Ranking.m */; };
-		5E6CB6631909968900C05DED /* RankingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB6621909968900C05DED /* RankingTableViewController.m */; };
 		5E6CB6691909B2AA00C05DED /* ComponentBounty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CB6681909B2AA00C05DED /* ComponentBounty.m */; };
+		5E7214B0190AD07700678908 /* SceneMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7214AF190AD07700678908 /* SceneMenu.m */; };
+		5E7214B3190AE24800678908 /* SceneRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7214B2190AE24800678908 /* SceneRanking.m */; };
 		5E8A846B18FDABFA0081583D /* dpad.fla in Resources */ = {isa = PBXBuildFile; fileRef = 5E8A846918FDABFA0081583D /* dpad.fla */; };
 		5E8A847018FDC6110081583D /* GameData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A846F18FDC6110081583D /* GameData.m */; };
 		5EBB788A1906F4CE001D961C /* background.psd in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB78881906F4CE001D961C /* background.psd */; };
@@ -78,7 +79,10 @@
 		B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C3190703AE006A2294 /* ComponentBattleState.m */; };
 		B3B15DAB190ADD5800E98B92 /* AnimMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B15DAA190ADD5800E98B92 /* AnimMaker.m */; };
 		FC141491190AE94F00B398CE /* MenuBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC14148F190AE94F00B398CE /* MenuBG.png */; };
-		FC141492190AE94F00B398CE /* Menu.fla in Resources */ = {isa = PBXBuildFile; fileRef = FC141490190AE94F00B398CE /* Menu.fla */; };
+		FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141493190AF44A00B398CE /* MenuBtnRank.png */; };
+		FC141496190AF44A00B398CE /* MenuBtnJogar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141494190AF44A00B398CE /* MenuBtnJogar.png */; };
+		FC141499190AF76E00B398CE /* RankCellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141498190AF76E00B398CE /* RankCellBG.png */; };
+		FC14149B190AF90700B398CE /* RankBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC14149A190AF90700B398CE /* RankBG.png */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -133,10 +137,12 @@
 		5E6CB65B1909908C00C05DED /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
 		5E6CB65D190990F400C05DED /* Ranking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ranking.h; sourceTree = "<group>"; };
 		5E6CB65E190990F400C05DED /* Ranking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ranking.m; sourceTree = "<group>"; };
-		5E6CB6611909968900C05DED /* RankingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RankingTableViewController.h; sourceTree = "<group>"; };
-		5E6CB6621909968900C05DED /* RankingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RankingTableViewController.m; sourceTree = "<group>"; };
 		5E6CB6671909B2A400C05DED /* ComponentBounty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComponentBounty.h; sourceTree = "<group>"; };
 		5E6CB6681909B2AA00C05DED /* ComponentBounty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentBounty.m; sourceTree = "<group>"; };
+		5E7214AE190AD07700678908 /* SceneMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneMenu.h; sourceTree = "<group>"; };
+		5E7214AF190AD07700678908 /* SceneMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneMenu.m; sourceTree = "<group>"; };
+		5E7214B1190AE24800678908 /* SceneRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SceneRanking.h; sourceTree = "<group>"; };
+		5E7214B2190AE24800678908 /* SceneRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SceneRanking.m; sourceTree = "<group>"; };
 		5E8A846918FDABFA0081583D /* dpad.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dpad.fla; sourceTree = "<group>"; };
 		5E8A846E18FDC6110081583D /* GameData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameData.h; sourceTree = "<group>"; };
 		5E8A846F18FDC6110081583D /* GameData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameData.m; sourceTree = "<group>"; };
@@ -226,7 +232,11 @@
 		B3B15DA9190ADD5800E98B92 /* AnimMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimMaker.h; sourceTree = "<group>"; };
 		B3B15DAA190ADD5800E98B92 /* AnimMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimMaker.m; sourceTree = "<group>"; };
 		FC14148F190AE94F00B398CE /* MenuBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBG.png; sourceTree = "<group>"; };
-		FC141490190AE94F00B398CE /* Menu.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menu.fla; sourceTree = "<group>"; };
+		FC141493190AF44A00B398CE /* MenuBtnRank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBtnRank.png; sourceTree = "<group>"; };
+		FC141494190AF44A00B398CE /* MenuBtnJogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBtnJogar.png; sourceTree = "<group>"; };
+		FC141497190AF49F00B398CE /* Menu.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menu.fla; sourceTree = "<group>"; };
+		FC141498190AF76E00B398CE /* RankCellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RankCellBG.png; sourceTree = "<group>"; };
+		FC14149A190AF90700B398CE /* RankBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RankBG.png; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -309,8 +319,6 @@
 			children = (
 				B32AE34318F465CC006F8635 /* ViewController.h */,
 				B32AE34418F465CC006F8635 /* ViewController.m */,
-				5E6CB6611909968900C05DED /* RankingTableViewController.h */,
-				5E6CB6621909968900C05DED /* RankingTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -327,7 +335,11 @@
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
-				FC141490190AE94F00B398CE /* Menu.fla */,
+				FC141497190AF49F00B398CE /* Menu.fla */,
+				FC14149A190AF90700B398CE /* RankBG.png */,
+				FC141498190AF76E00B398CE /* RankCellBG.png */,
+				FC141493190AF44A00B398CE /* MenuBtnRank.png */,
+				FC141494190AF44A00B398CE /* MenuBtnJogar.png */,
 				FC14148F190AE94F00B398CE /* MenuBG.png */,
 				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
 				FC8FD6E8190838BE00E3DC97 /* earthScene.png */,
@@ -387,6 +399,10 @@
 				B32AE34718F465CC006F8635 /* SceneBattle.m */,
 				5E4A15C418FC66B80000BC5A /* WorldMap.h */,
 				5E4A15C518FC66B80000BC5A /* WorldMap.m */,
+				5E7214AE190AD07700678908 /* SceneMenu.h */,
+				5E7214AF190AD07700678908 /* SceneMenu.m */,
+				5E7214B1190AE24800678908 /* SceneRanking.h */,
+				5E7214B2190AE24800678908 /* SceneRanking.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -664,7 +680,9 @@
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
 				A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */,
 				FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */,
+				FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */,
 				A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */,
+				FC141499190AF76E00B398CE /* RankCellBG.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
@@ -674,6 +692,7 @@
 				A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				FC141491190AE94F00B398CE /* MenuBG.png in Resources */,
+				FC141496190AF44A00B398CE /* MenuBtnJogar.png in Resources */,
 				5E44346B19084EA600EBA273 /* Espada.wav in Resources */,
 				5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */,
 				5EBB788D1906F4F1001D961C /* background.png in Resources */,
@@ -682,12 +701,12 @@
 				5E443467190841A900EBA273 /* fireBall.wav in Resources */,
 				5E6CB57C1909879200C05DED /* MundoMusica.wav in Resources */,
 				5EBB788B1906F4CE001D961C /* Titulo.png in Resources */,
-				FC141492190AE94F00B398CE /* Menu.fla in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
+				FC14149B190AF90700B398CE /* RankBG.png in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
 				5EBB788F19070716001D961C /* pleaseTouch.png in Resources */,
 			);
@@ -725,13 +744,13 @@
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				5E44346F190853EA00EBA273 /* Som.m in Sources */,
 				B32B9BBE18FDA34800BF4B2C /* ComponentMapaGrid.m in Sources */,
+				5E7214B3190AE24800678908 /* SceneRanking.m in Sources */,
 				5E6CB65F190990F400C05DED /* Ranking.m in Sources */,
 				B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B3B15DAB190ADD5800E98B92 /* AnimMaker.m in Sources */,
 				B32E644318FF098900040D47 /* SystemCamera.m in Sources */,
-				5E6CB6631909968900C05DED /* RankingTableViewController.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
 				5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */,
@@ -740,6 +759,7 @@
 				B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */,
 				B32B9BC118FDB68A00BF4B2C /* SystemMap.m in Sources */,
 				B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */,
+				5E7214B0190AD07700678908 /* SceneMenu.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,
 				A02127E11909F40200D67A8B /* GameController.m in Sources */,

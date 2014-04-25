@@ -33,6 +33,10 @@
 		5EBB788F19070716001D961C /* pleaseTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB788E19070716001D961C /* pleaseTouch.png */; };
 		A0005D68190433CE003A60F1 /* DSMultilineLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */; };
 		A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A0005D6A19044064003A60F1 /* dragonAvatar.png */; };
+		A02127E11909F40200D67A8B /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02127E01909F40200D67A8B /* GameController.m */; };
+		A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E21909F41B00D67A8B /* tile-earthTransitionBot.png */; };
+		A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E31909F41B00D67A8B /* tile-earthTransitionCorner.png */; };
+		A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E41909F41B00D67A8B /* tile-earthTransitionL.png */; };
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
@@ -141,6 +145,12 @@
 		A0005D67190433CE003A60F1 /* DSMultilineLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMultilineLabelNode.h; sourceTree = "<group>"; };
 		A0005D691904405A003A60F1 /* dragonAvatar.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonAvatar.fla; sourceTree = "<group>"; };
 		A0005D6A19044064003A60F1 /* dragonAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragonAvatar.png; sourceTree = "<group>"; };
+		A02127DF1909F40200D67A8B /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		A02127E01909F40200D67A8B /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		A02127E21909F41B00D67A8B /* tile-earthTransitionBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionBot.png"; sourceTree = "<group>"; };
+		A02127E31909F41B00D67A8B /* tile-earthTransitionCorner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionCorner.png"; sourceTree = "<group>"; };
+		A02127E41909F41B00D67A8B /* tile-earthTransitionL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionL.png"; sourceTree = "<group>"; };
+		A02127E81909F43400D67A8B /* dragon-perfil.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dragon-perfil.fla"; sourceTree = "<group>"; };
 		A02B81C01902201900D5A417 /* ComponentMapMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMapMovement.h; sourceTree = "<group>"; };
 		A02B81C11902201900D5A417 /* ComponentMapMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapMovement.m; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +316,7 @@
 				5E8A846918FDABFA0081583D /* dpad.fla */,
 				FC3F73C818FF264D00949342 /* dragon.fla */,
 				A0005D691904405A003A60F1 /* dragonAvatar.fla */,
+				A02127E81909F43400D67A8B /* dragon-perfil.fla */,
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
@@ -318,6 +329,9 @@
 				FCCD027A1906F15A00FFE9DB /* Knight-portrate.png */,
 				FCCD027B1906F15A00FFE9DB /* dragon-portrate.png */,
 				A0005D6A19044064003A60F1 /* dragonAvatar.png */,
+				A02127E21909F41B00D67A8B /* tile-earthTransitionBot.png */,
+				A02127E31909F41B00D67A8B /* tile-earthTransitionCorner.png */,
+				A02127E41909F41B00D67A8B /* tile-earthTransitionL.png */,
 				FC8E1CD61900711800D24C87 /* tile-grass.png */,
 				FC8E1CD51900711800D24C87 /* tile-earth.png */,
 				FC8E1CD91900712200D24C87 /* tile-castle-grass.png */,
@@ -336,6 +350,8 @@
 			children = (
 				5E8A846E18FDC6110081583D /* GameData.h */,
 				5E8A846F18FDC6110081583D /* GameData.m */,
+				A02127DF1909F40200D67A8B /* GameController.h */,
+				A02127E01909F40200D67A8B /* GameController.m */,
 				5E44346D190853EA00EBA273 /* Som.h */,
 				5E44346E190853EA00EBA273 /* Som.m */,
 				5E6CB65D190990F400C05DED /* Ranking.h */,
@@ -627,13 +643,16 @@
 				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
 				5E4434691908435300EBA273 /* Explosao.wav in Resources */,
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
+				A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */,
 				FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */,
+				A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
 				FCCD028619070F7A00FFE9DB /* gramaScene.png in Resources */,
 				FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */,
 				FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */,
+				A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				5E44346B19084EA600EBA273 /* Espada.wav in Resources */,
 				5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */,
@@ -701,6 +720,7 @@
 				B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,
+				A02127E11909F40200D67A8B /* GameController.m in Sources */,
 				5E6CB65C1909908C00C05DED /* Score.m in Sources */,
 				B32AE33818F465CC006F8635 /* main.m in Sources */,
 			);

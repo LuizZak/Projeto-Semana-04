@@ -42,6 +42,8 @@
         self.selectionNode = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(64, 64)];
         self.selectionNode.zPosition = -5;
         [self.gameScene addChild:self.selectionNode];
+        
+        [Som som].nodeForSound = gameScene;
     }
     
     return self;
@@ -369,11 +371,8 @@
     SKAction *dieAnimation = [SKAction sequence:@[[SKAction group:@[[SKAction fadeAlphaTo:0 duration:1], [SKAction moveTo:CGPointMake(entity.node.position.x, entity.node.position.y - 30) duration:1]]],
                                                   [SKAction runBlock:^(void) {
         [self.gameScene removeEntity:entity];
-        [[Som som] tocarSomExplosao];
+        
     }]]];
-    
-    // Toca o som de ataque
-    [[Som som] tocarSomFireBall];
     
     dieAnimation = [SKAction group:@[[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0], dieAnimation]];
     
@@ -385,12 +384,16 @@
     
     if(entity == self.playerEntity)
     {
+        [[Som som] tocarSomMorteHomem];
+        
         self.inBattle = NO;
         
         [[Ranking lista] criarPontuacao:[[Ranking lista] currentPlayerName] :[[Ranking lista] currentPlayerScore]];
     }
     else
     {
+        [[Som som] tocarSomMorteDragao];
+        
         [[Ranking lista] setCurrentPlayerScore:[[Ranking lista] currentPlayerScore] + 10];
     }
 }
@@ -445,7 +448,12 @@
         // Create a damage popup
         [self createDamagePopup:damage point:target.node.position];
         
+        [[Som som] tocarSomExplosao];
+        
     }], [SKAction removeFromParent]]];
+    
+    // Toca o som de ataque
+    [[Som som] tocarSomFireBall];
     
     ComponentBattleState *battleState = GET_COMPONENT(source, ComponentBattleState);
     

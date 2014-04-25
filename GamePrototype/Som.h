@@ -16,6 +16,9 @@
 // AudioPlayer
 @property (nonatomic) AVAudioPlayer * som;
 
+// Node usado para tocar os SKActions dos ataques e etc.
+@property SKNode *nodeForSound;
+
 // Som do ataque inimigo de corpo a corpo
 - (AVAudioPlayer *)tocarSomEspada;
 

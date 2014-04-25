@@ -225,14 +225,14 @@
 {
     self.inBattle = NO;
     
-    self.tapToExit = YES;
     self.didWonBattle = NO;
     
     // Toca música de lose
     [self.bgMusicPlayer stop];
     self.bgMusicPlayer = [[Som som] tocarSomGameOver];
     
-    [self createBattleMessage:@"You lost!" won:YES];
+    [self finishBattle];
+    
 }
 
 // Faz o jogador ganhar a batalha
@@ -240,18 +240,34 @@
 {
     self.inBattle = NO;
     
-    self.tapToExit = YES;
     self.didWonBattle = YES;
     
     // Toca música de lose
     [self.bgMusicPlayer stop];
     self.bgMusicPlayer = [[Som som] tocarSomVitoria];
     
-    [self createBattleMessage:@"You win!" won:YES];
+    [self finishBattle];
+}
+
+- (void)finishBattle
+{
+    // Acumuda a mensagem de win
+    if(!self.didWonBattle)
+    {
+        [self createBattleMessage:@"You lost!" won:YES animKeyName:nil];
+    }
+    else
+    {
+        
+        
+        [self createBattleMessage:@"You win!" won:YES animKeyName:nil];
+    }
+    
+    self.tapToExit = YES;
 }
 
 // Cria uma mensagem de fim de batalha
-- (void)createBattleMessage:(NSString*)labelText won:(BOOL)won
+- (SKNode*)createBattleMessage:(NSString*)labelText won:(BOOL)won animKeyName:(NSString*)key
 {
     // Cria o texto de vitória e o apresenta na tela
     SKNode *holderNode = [SKNode node];
@@ -274,11 +290,20 @@
         self.tapToExit = YES;
     }]]];
     
-    [holderNode runAction:animAction];
+    if(key == nil)
+    {
+        [holderNode runAction:animAction];
+    }
+    else
+    {
+        [holderNode runAction:animAction withKey:key];
+    }
     
     holderNode.zPosition = 100;
     
     [self.gameScene addChild:holderNode];
+    
+    return holderNode;
 }
 
 // Roda a AI de ataque dos inimigos

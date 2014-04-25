@@ -10,6 +10,8 @@
 #import "CommonImports.h"
 #import "ComponentMapaGrid.h"
 
+#define GET_CELL(x, y) ([comp.mapGrid[y][x] intValue])
+
 @implementation SystemMap
 
 - (id)initWithGameScene:(GPGameScene *)gameScene
@@ -39,8 +41,6 @@
     return ret;
 }
 
-#define GET_CELL(x, y) ([comp.mapGrid[y][x] intValue])
-
 - (void)loadMap
 {
     if(self.mapEntity == nil)
@@ -57,8 +57,8 @@
     // Limpa o node do mapa
     [mapContainer removeAllChildren];
     
-    int mapWidth = [comp.mapGrid[0] count];
-    int mapHeight = comp.mapGrid.count;
+    int mapWidth = (int)[comp.mapGrid[0] count];
+    int mapHeight = (int)comp.mapGrid.count;
     
     // Cria os nós de tiles e atribui a eles os gráficos respectivos
     // 0 - Grama

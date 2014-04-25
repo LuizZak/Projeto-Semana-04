@@ -76,6 +76,7 @@
 		B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = B35DDFA718F5E4FF0079F74D /* ComponentHealthIndicator.m */; };
 		B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C01906F0D0006A2294 /* ComponentAIBattle.m */; };
 		B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */ = {isa = PBXBuildFile; fileRef = B38069C3190703AE006A2294 /* ComponentBattleState.m */; };
+		B3B15DAB190ADD5800E98B92 /* AnimMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = B3B15DAA190ADD5800E98B92 /* AnimMaker.m */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -220,6 +221,8 @@
 		B38069C01906F0D0006A2294 /* ComponentAIBattle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentAIBattle.m; sourceTree = "<group>"; };
 		B38069C2190703AE006A2294 /* ComponentBattleState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentBattleState.h; sourceTree = "<group>"; };
 		B38069C3190703AE006A2294 /* ComponentBattleState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentBattleState.m; sourceTree = "<group>"; };
+		B3B15DA9190ADD5800E98B92 /* AnimMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimMaker.h; sourceTree = "<group>"; };
+		B3B15DAA190ADD5800E98B92 /* AnimMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimMaker.m; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -416,6 +419,7 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				B3B15DA8190ADC6200E98B92 /* Misc */,
 				5E6CB6601909963400C05DED /* Controllers */,
 				5E6CB6591909904500C05DED /* Objetos */,
 				5E44345D1908393700EBA273 /* Songs */,
@@ -544,6 +548,15 @@
 				B32DB95C18F48DA4001ECCD2 /* GamePrototype.h */,
 			);
 			name = Engine;
+			sourceTree = "<group>";
+		};
+		B3B15DA8190ADC6200E98B92 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				B3B15DA9190ADD5800E98B92 /* AnimMaker.h */,
+				B3B15DAA190ADD5800E98B92 /* AnimMaker.m */,
+			);
+			name = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -708,6 +721,7 @@
 				B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
+				B3B15DAB190ADD5800E98B92 /* AnimMaker.m in Sources */,
 				B32E644318FF098900040D47 /* SystemCamera.m in Sources */,
 				5E6CB6631909968900C05DED /* RankingTableViewController.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,

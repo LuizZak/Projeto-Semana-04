@@ -20,6 +20,8 @@ typedef enum {
 @property float skillCooldown;
 @property float damage;
 
+@property NSString *skillName;
+
 @property SkillType skillType;
 
 - (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage skillType:(SkillType)skillType startEnabled:(BOOL)startEnabled;

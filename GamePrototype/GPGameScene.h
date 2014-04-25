@@ -34,6 +34,9 @@
 - (void)gameSceneDidReceiveTouchesCanceled:(GPGameScene*)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event;
 // Notifica quando a cena vai ser removida da view
 - (void)gameSceneWillBeMovedFromView:(GPGameScene*)gameScene;
+// Notifica quando a cena foi adicionada a uma view
+- (void)gameSceneDidAddToView:(GPGameScene*)gameScene;
+
 
 @end
 

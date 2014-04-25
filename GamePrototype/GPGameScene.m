@@ -240,6 +240,17 @@
         }
     }
 }
+- (void)didMoveToView:(SKView *)view
+{
+    // Notifica os notifiers
+    for(id<GPGameSceneNotifier> notifier in notifiers)
+    {
+        if([notifier respondsToSelector:@selector(gameSceneDidAddToView:)])
+        {
+            [notifier gameSceneDidAddToView:self];
+        }
+    }
+}
 - (void)willMoveFromView:(SKView *)view
 {
     // Notifica os notifiers

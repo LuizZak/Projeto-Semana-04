@@ -8,6 +8,8 @@
 
 #import "GPSystem.h"
 #import "CommonImports.h"
+#import "Som.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface SystemBattle : GPSystem
 
@@ -31,6 +33,9 @@
 
 // Nó sendo utilizado para demarcar a skill selecionada atualmente
 @property SKSpriteNode *selectionNode;
+
+// Music player da música de fundo atual
+@property AVAudioPlayer *bgMusicPlayer;
 
 // Se a batalha está acontecendo
 @property BOOL inBattle;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <UIKit/UIGestureRecognizerSubclass.h>
+#import <AVFoundation/AVFoundation.h>
 #import "GPGameScene.h"
 #import "SceneBattle.h"
 #import "CommonImports.h"
@@ -16,7 +17,10 @@
 
 @interface WorldMap : GPGameScene <SystemMapMovementDelegate>
 
+// Audio player da música de fundo
+@property AVAudioPlayer *bgMusicPlayer;
+
 // Metodo que chama a cena de batalha
-- (void)goToBattle;
+- (void)goToBattle:(int)sceneType;
 
 @end

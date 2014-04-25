@@ -14,6 +14,9 @@
 
 @property SKSpriteNode *background;
 
+// Audio player da música de fundo
+@property AVAudioPlayer *bgMusicPlayer;
+
 // Troca o tipo de cena da batalha
 - (void)setSceneType:(int)sceneType;
 

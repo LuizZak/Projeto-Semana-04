@@ -226,6 +226,10 @@
     self.tapToExit = YES;
     self.didWonBattle = NO;
     
+    // Toca música de lose
+    [self.bgMusicPlayer stop];
+    self.bgMusicPlayer = [[Som som] tocarSomGameOver];
+    
     [self createBattleMessage:@"You lost!" won:YES];
 }
 
@@ -236,6 +240,10 @@
     
     self.tapToExit = YES;
     self.didWonBattle = YES;
+    
+    // Toca música de lose
+    [self.bgMusicPlayer stop];
+    self.bgMusicPlayer = [[Som som] tocarSomVitoria];
     
     [self createBattleMessage:@"You win!" won:YES];
 }
@@ -361,7 +369,11 @@
     SKAction *dieAnimation = [SKAction sequence:@[[SKAction group:@[[SKAction fadeAlphaTo:0 duration:1], [SKAction moveTo:CGPointMake(entity.node.position.x, entity.node.position.y - 30) duration:1]]],
                                                   [SKAction runBlock:^(void) {
         [self.gameScene removeEntity:entity];
+        [[Som som] tocarSomExplosao];
     }]]];
+    
+    // Toca o som de ataque
+    [[Som som] tocarSomFireBall];
     
     dieAnimation = [SKAction group:@[[SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0], dieAnimation]];
     
@@ -376,8 +388,11 @@
         self.inBattle = NO;
         
         [[Ranking lista] criarPontuacao:[[Ranking lista] currentPLayerName] :[[Ranking lista] currentPlayerScore]];
-    }else
+    }
+    else
+    {
         [[Ranking lista] setCurrentPlayerScore:[[Ranking lista] currentPlayerScore] + 10];
+    }
 }
 
 - (void)meleeAttack:(GPEntity*)source target:(GPEntity*)target forDamage:(float)damage
@@ -398,6 +413,8 @@
         point.y += arc4random() % (int)(target.node.frame.size.height / 2);
         
         [self createDamagePopup:damage point:point];
+        
+        [[Som som] tocarSomEspada];
     }],
     [SKAction moveTo:source.node.position duration:0.2f],
     [SKAction runBlock:^{
@@ -461,6 +478,15 @@
     [textNode runAction:animAction];
     
     [self.gameScene addChild:textNode];
+}
+
+- (void)gameSceneDidAddToView:(GPGameScene *)gameScene
+{
+    self.bgMusicPlayer = [[Som som] tocarSomBatalha];
+}
+- (void)gameSceneWillBeMovedFromView:(GPGameScene *)gameScene
+{
+    [self.bgMusicPlayer stop];
 }
 
 @end

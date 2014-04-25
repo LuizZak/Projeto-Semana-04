@@ -240,7 +240,7 @@
     
     if(tileID == TILE_EARTH)
     {
-        random = arc4random() % 50;
+        random = arc4random() % 30;
         
         if(random == 0)
         {
@@ -283,6 +283,15 @@
     }
     
     return animationFrames;
+}
+
+- (void)didMoveToView:(SKView *)view
+{
+    self.bgMusicPlayer = [[Som som] tocarSomMundo];
+}
+- (void)willMoveFromView:(SKView *)view
+{
+    [self.bgMusicPlayer stop];
 }
 
 @end

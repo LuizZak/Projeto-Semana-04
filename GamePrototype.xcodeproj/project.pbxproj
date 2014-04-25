@@ -80,6 +80,7 @@
 		FC141491190AE94F00B398CE /* MenuBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC14148F190AE94F00B398CE /* MenuBG.png */; };
 		FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141493190AF44A00B398CE /* MenuBtnRank.png */; };
 		FC141496190AF44A00B398CE /* MenuBtnJogar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141494190AF44A00B398CE /* MenuBtnJogar.png */; };
+		FC141499190AF76E00B398CE /* RankCellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141498190AF76E00B398CE /* RankCellBG.png */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -230,6 +231,7 @@
 		FC141493190AF44A00B398CE /* MenuBtnRank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBtnRank.png; sourceTree = "<group>"; };
 		FC141494190AF44A00B398CE /* MenuBtnJogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBtnJogar.png; sourceTree = "<group>"; };
 		FC141497190AF49F00B398CE /* Menu.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menu.fla; sourceTree = "<group>"; };
+		FC141498190AF76E00B398CE /* RankCellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RankCellBG.png; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
 				FC141497190AF49F00B398CE /* Menu.fla */,
+				FC141498190AF76E00B398CE /* RankCellBG.png */,
 				FC141493190AF44A00B398CE /* MenuBtnRank.png */,
 				FC141494190AF44A00B398CE /* MenuBtnJogar.png */,
 				FC14148F190AE94F00B398CE /* MenuBG.png */,
@@ -663,6 +666,7 @@
 				FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */,
 				FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */,
 				A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */,
+				FC141499190AF76E00B398CE /* RankCellBG.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,

@@ -81,6 +81,7 @@
 		FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141493190AF44A00B398CE /* MenuBtnRank.png */; };
 		FC141496190AF44A00B398CE /* MenuBtnJogar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141494190AF44A00B398CE /* MenuBtnJogar.png */; };
 		FC141499190AF76E00B398CE /* RankCellBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC141498190AF76E00B398CE /* RankCellBG.png */; };
+		FC14149B190AF90700B398CE /* RankBG.png in Resources */ = {isa = PBXBuildFile; fileRef = FC14149A190AF90700B398CE /* RankBG.png */; };
 		FC3F739018FF03AF00949342 /* player.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F738E18FF03AF00949342 /* player.png */; };
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
@@ -232,6 +233,7 @@
 		FC141494190AF44A00B398CE /* MenuBtnJogar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBtnJogar.png; sourceTree = "<group>"; };
 		FC141497190AF49F00B398CE /* Menu.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = Menu.fla; sourceTree = "<group>"; };
 		FC141498190AF76E00B398CE /* RankCellBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RankCellBG.png; sourceTree = "<group>"; };
+		FC14149A190AF90700B398CE /* RankBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RankBG.png; sourceTree = "<group>"; };
 		FC3F738E18FF03AF00949342 /* player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player.png; sourceTree = "<group>"; };
 		FC3F73C618FF24E900949342 /* dragon.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = dragon.atlas; sourceTree = "<group>"; };
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
 				FC141497190AF49F00B398CE /* Menu.fla */,
+				FC14149A190AF90700B398CE /* RankBG.png */,
 				FC141498190AF76E00B398CE /* RankCellBG.png */,
 				FC141493190AF44A00B398CE /* MenuBtnRank.png */,
 				FC141494190AF44A00B398CE /* MenuBtnJogar.png */,
@@ -690,6 +693,7 @@
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
+				FC14149B190AF90700B398CE /* RankBG.png in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
 				5EBB788F19070716001D961C /* pleaseTouch.png in Resources */,
 			);

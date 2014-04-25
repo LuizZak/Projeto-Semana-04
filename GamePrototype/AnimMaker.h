@@ -13,9 +13,9 @@
 @interface AnimMaker : NSObject
 
 // Cria um nó de animação de level up
-- (SKNode*)createLevelUpAnim:(int)newLevel;
++ (SKNode*)createLevelUpAnim:(int)newLevel;
 
 // Cria um nó de animação de ganho de skill
-- (SKNode*)createSkillAnim:(ComponentDraggableAttack*)newAttack;
++ (SKNode*)createSkillAnim:(ComponentDraggableAttack*)newAttack;
 
 @end

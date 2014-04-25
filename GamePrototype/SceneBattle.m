@@ -39,8 +39,8 @@
         [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
         [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
         
-        [self createEnemy:260 y:250 health:50 exp:100];
-        [self createEnemy:260 y:290 health:75 exp:100];
+        [self createEnemy:260 y:250 health:50 exp:50];
+        [self createEnemy:260 y:290 health:75 exp:75];
         [self createEnemy:260 y:330 health:100 exp:100];
         
         [self createPlayer];

@@ -76,7 +76,7 @@
     int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
     
     int levelCount = 5;
-    int xpLevels[] = { 0, 5, 10, 15, 20 };//{ 0, 100, 200, 400, 800, 1200 };
+    int xpLevels[] = { 0, 100, 200, 400, 800, 1200 };
     int nextLevel;
     
     // Checa se o nível mudou de índice
@@ -97,6 +97,9 @@
         
         // Atualiza o sangue do jogador
         [self updatePlayerHealth];
+        
+        // Destrava skills
+        
         
         // Notifica os observers
         for (id<GameControllerObserver> observer in observers)

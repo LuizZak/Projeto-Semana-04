@@ -7,6 +7,8 @@
 //
 
 #import "SystemBattle.h"
+#import "AnimMaker.h"
+#import "ComponentBounty.h"
 #import "ComponentAIBattle.h"
 #import "ComponentBattleState.h"
 #import "ComponentHealth.h"
@@ -44,6 +46,8 @@
         [self.gameScene addChild:self.selectionNode];
         
         [Som som].nodeForSound = gameScene;
+        
+        [[GameController gameController] addObserver:self];
     }
     
     return self;
@@ -258,7 +262,8 @@
     }
     else
     {
-        
+        // Soma o XP da batalha
+        [[GameController gameController] givePlayerXP:self.battleXP];
         
         [self createBattleMessage:@"You win!" won:YES animKeyName:nil];
     }
@@ -281,7 +286,7 @@
     [holderNode addChild:textNode];
     
     holderNode.alpha = 0;
-    holderNode.position = CGPointMake(self.gameScene.frame.size.width / 2, self.gameScene.frame.size.height / 2);
+    holderNode.position = CGPointMake(self.gameScene.frame.size.width / 2, self.gameScene.frame.size.height / 1.5f);
     
     SKAction *animAction = [SKAction group:@[[SKAction fadeAlphaTo:1 duration:2], [SKAction scaleTo:1.2f duration:2]]];
     
@@ -409,7 +414,7 @@
     
     if(entity == self.playerEntity)
     {
-        [[Som som] tocarSomMorteHomem];
+        [[Som som] tocarSomMorteDragao];
         
         self.inBattle = NO;
         
@@ -417,9 +422,12 @@
     }
     else
     {
-        [[Som som] tocarSomMorteDragao];
+        [[Som som] tocarSomMorteHomem];
         
         [[Ranking lista] setCurrentPlayerScore:[[Ranking lista] currentPlayerScore] + 10];
+        
+        ComponentBounty *bounty = GET_COMPONENT(entity, ComponentBounty);
+        self.battleXP += bounty.bountyXP;
     }
 }
 
@@ -513,6 +521,31 @@
     [self.gameScene addChild:textNode];
 }
 
+- (void)gameControllerDidWinLevel:(int)oldLevel newLevel:(int)newLevel
+{
+    SKNode *node = [AnimMaker createLevelUpAnim:newLevel];
+    
+    node.position = CGPointMake(self.gameScene.frame.size.width / 2, self.gameScene.frame.size.height / 2);
+    
+    [self.gameScene addChild:node];
+}
+
+- (void)gameControllerDidUnlockSkills:(NSMutableArray *)skills
+{
+    int y = self.gameScene.frame.size.height / 2.25f;
+    
+    for(int i = 0; i < skills.count; i++)
+    {
+        SKNode *node = [AnimMaker createSkillAnim:skills[0]];
+        
+        node.position = CGPointMake(self.gameScene.frame.size.width / 2, y);
+        
+        [self.gameScene addChild:node];
+        
+        y -= 30;
+    }
+}
+
 - (void)gameSceneDidAddToView:(GPGameScene *)gameScene
 {
     self.bgMusicPlayer = [[Som som] tocarSomBatalha];
@@ -520,6 +553,8 @@
 - (void)gameSceneWillBeMovedFromView:(GPGameScene *)gameScene
 {
     [self.bgMusicPlayer stop];
+    
+    [[GameController gameController] removeObserver:self];
 }
 
 @end

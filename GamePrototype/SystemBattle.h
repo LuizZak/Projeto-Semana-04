@@ -9,9 +9,10 @@
 #import "GPSystem.h"
 #import "CommonImports.h"
 #import "Som.h"
+#import "GameController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface SystemBattle : GPSystem
+@interface SystemBattle : GPSystem <GameControllerObserver>
 
 // List of enemies
 @property GPEntitySelector *enemySelector;
@@ -36,6 +37,9 @@
 
 // Music player da música de fundo atual
 @property AVAudioPlayer *bgMusicPlayer;
+
+// Acumulador do XP de batalha
+@property int battleXP;
 
 // Se a batalha está acontecendo
 @property BOOL inBattle;

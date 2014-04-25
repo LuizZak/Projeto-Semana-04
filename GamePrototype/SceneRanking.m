@@ -25,7 +25,7 @@
 {
     for (int i = 0; i < 10; i ++)
     {
-        self.cell = [[SKSpriteNode alloc] initWithColor:[UIColor whiteColor] size:CGSizeMake(700, 50)];
+        self.cell = [[SKSpriteNode alloc] initWithColor:[UIColor whiteColor] size:CGSizeMake(600, 50)];
         self.cell.position = CGPointMake(500, 600 - (i*55));
         
         [self.scene addChild:self.cell];

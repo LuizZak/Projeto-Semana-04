@@ -22,12 +22,16 @@
         self.background.anchorPoint = CGPointMake(0, 0);
         self.background.size = size;
         
-        self.btnJogar = [[SKSpriteNode alloc] initWithColor:[UIColor brownColor] size:CGSizeMake(100, 100)];
-        self.btnJogar.position = CGPointMake(510, 400);
+        UIImage* imgBtnJogar = [UIImage imageNamed:@"MenuBtnJogar.png"];
+        self.btnJogar = [[SKSpriteNode alloc] initWithColor:[UIColor brownColor] size:CGSizeMake(imgBtnJogar.size.width/2, imgBtnJogar.size.height/2)];
+        [self.btnJogar setTexture:[SKTexture textureWithImage:imgBtnJogar]];
+        self.btnJogar.position = CGPointMake(510, 320);
         self.btnJogar.zPosition = 10;
         
-        self.btnRanking = [[SKSpriteNode alloc] initWithColor:[UIColor brownColor] size:CGSizeMake(100, 100)];
-        self.btnRanking.position = CGPointMake(510, 290);
+        UIImage* imgBtnRanking = [UIImage imageNamed:@"MenuBtnRank.png"];
+        self.btnRanking = [[SKSpriteNode alloc] initWithColor:[UIColor brownColor] size:CGSizeMake(imgBtnRanking.size.width/2, imgBtnRanking.size.height/2)];
+        [self.btnRanking setTexture:[SKTexture textureWithImage:imgBtnRanking]];
+        self.btnRanking.position = CGPointMake(510, 200);
         self.btnRanking.zPosition = 10;
         
         [self addChild:self.background];

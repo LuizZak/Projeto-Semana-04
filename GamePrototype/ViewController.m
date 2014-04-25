@@ -52,7 +52,7 @@
         [[self navigationController] popToRootViewControllerAnimated:true];
         UITextField *username = [alertView textFieldAtIndex:0];
         
-        [[Ranking lista] setCurrentPLayerName:username.text];
+        [[Ranking lista] setCurrentPlayerName:username.text];
         [[Ranking lista] setCurrentPlayerScore:0];
     }
 }

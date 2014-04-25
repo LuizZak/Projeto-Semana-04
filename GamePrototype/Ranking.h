@@ -14,7 +14,7 @@
     NSMutableArray *tudo;
 }
 
-@property NSString* currentPLayerName;
+@property NSString* currentPlayerName;
 @property int currentPlayerScore;
 
 +(Ranking *) lista;

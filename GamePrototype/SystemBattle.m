@@ -387,7 +387,7 @@
     {
         self.inBattle = NO;
         
-        [[Ranking lista] criarPontuacao:[[Ranking lista] currentPLayerName] :[[Ranking lista] currentPlayerScore]];
+        [[Ranking lista] criarPontuacao:[[Ranking lista] currentPlayerName] :[[Ranking lista] currentPlayerScore]];
     }
     else
     {

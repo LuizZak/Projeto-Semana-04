@@ -16,6 +16,12 @@
 {
     if (self = [super initWithSize:size])
     {
+        self.background = [[SKSpriteNode alloc] initWithImageNamed:@"RankBG.png"];
+        self.background.anchorPoint = CGPointMake(0, 0);
+        self.background.size = size;
+        
+        [self addChild:self.background];
+        
         [self criarORanking];
     }
     return self;
@@ -29,6 +35,7 @@
         self.cell = [[SKSpriteNode alloc] initWithColor:[UIColor whiteColor] size:CGSizeMake(600, 50)];
         self.cell.texture = [SKTexture textureWithImage:imgCell];
         self.cell.position = CGPointMake(500, 600 - (i*55));
+        self.cell.alpha = 0.5;
         
         [self.scene addChild:self.cell];
         

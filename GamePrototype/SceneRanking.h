@@ -16,4 +16,7 @@
 // Score do jogador
 @property SKLabelNode* pontuacao;
 
+// Imagem de fundo
+@property SKSpriteNode* background;
+
 @end

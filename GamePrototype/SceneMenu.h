@@ -16,4 +16,7 @@
 // Botão Ranking
 @property SKSpriteNode* btnRanking;
 
+// Imagem de fundo
+@property SKSpriteNode* background;
+
 @end

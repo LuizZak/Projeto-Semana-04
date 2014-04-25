@@ -18,14 +18,19 @@
 {
     if (self = [super initWithSize:size])
     {
-        self.backgroundColor = [UIColor greenColor];
+        self.background = [[SKSpriteNode alloc] initWithImageNamed:@"MenuBG.png"];
+        self.background.anchorPoint = CGPointMake(0, 0);
+        self.background.size = size;
         
         self.btnJogar = [[SKSpriteNode alloc] initWithColor:[UIColor brownColor] size:CGSizeMake(100, 100)];
-        self.btnJogar.position = CGPointMake(510, 500);
+        self.btnJogar.position = CGPointMake(510, 400);
+        self.btnJogar.zPosition = 10;
         
         self.btnRanking = [[SKSpriteNode alloc] initWithColor:[UIColor brownColor] size:CGSizeMake(100, 100)];
-        self.btnRanking.position = CGPointMake(510, 390);
+        self.btnRanking.position = CGPointMake(510, 290);
+        self.btnRanking.zPosition = 10;
         
+        [self addChild:self.background];
         [self addChild:self.btnJogar];
         [self addChild:self.btnRanking];
     }

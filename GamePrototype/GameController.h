@@ -12,6 +12,8 @@
 // Protocolo para recebimento de notificações de eventos do jogo (subir de nível, ganhar skills novas, etc.)
 @protocol GameControllerObserver <NSObject>
 
+@optional
+
 // Notifica que o jogador ganhou uma quantidade de XP
 - (void)gameControllerDidWinXP:(int)xp;
 
@@ -20,6 +22,9 @@
 
 // Notifica que o jogador recebeu as skills especificadas na array
 - (void)gameControllerDidUnlockSkills:(NSMutableArray*)skills;
+
+// Notifica que o sangue total do jogador foi modificado
+- (void)gameControllerDidChangeMaxPlayerHP:(int)maxXP;
 
 @end
 

@@ -76,7 +76,7 @@
     int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
     
     int levelCount = 5;
-    int xpLevels[] = { 0, 100, 200, 400, 800, 1200 };
+    int xpLevels[] = { 0, 5, 10, 15, 20 };//{ 0, 100, 200, 400, 800, 1200 };
     int nextLevel;
     
     // Checa se o nível mudou de índice
@@ -95,12 +95,40 @@
         // Atualiza o nível
         [[GameData gameData].data setObject:[NSNumber numberWithInt:nextLevel] forKey:KEY_PLAYER_LEVEL];
         
+        // Atualiza o sangue do jogador
+        [self updatePlayerHealth];
+        
         // Notifica os observers
         for (id<GameControllerObserver> observer in observers)
         {
             if([observer respondsToSelector:@selector(gameControllerDidWinLevel:newLevel:)])
             {
                 [observer gameControllerDidWinLevel:currentLevel newLevel:nextLevel];
+            }
+        }
+    }
+}
+
+// Atualiza o sangue do jogador baseado no seu nível atual
+- (void)updatePlayerHealth
+{
+    int currentHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] intValue];
+    int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
+    
+    int newHP = 200;
+    
+    newHP = 200 + 25 * currentLevel;
+    
+    if(currentHealth != newHP)
+    {
+        [[GameData gameData].data setObject:[NSNumber numberWithInt:newHP] forKey:KEY_PLAYER_HEALTH];
+        
+        // Notifica os observers
+        for (id<GameControllerObserver> observer in observers)
+        {
+            if([observer respondsToSelector:@selector(gameControllerDidChangeMaxPlayerHP:)])
+            {
+                [observer gameControllerDidChangeMaxPlayerHP:newHP];
             }
         }
     }

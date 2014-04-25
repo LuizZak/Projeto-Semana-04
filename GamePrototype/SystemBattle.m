@@ -428,7 +428,10 @@
         
         self.inBattle = NO;
         
-        [[Ranking lista] criarPontuacao:[[Ranking lista] currentPlayerName] :[[Ranking lista] currentPlayerScore]];
+        if ([[Ranking lista] currentPlayerScore] > 0)
+        {
+            [[Ranking lista] criarPontuacao:[[Ranking lista] currentPlayerName] :[[Ranking lista] currentPlayerScore]];
+        }
     }
     else
     {

@@ -16,6 +16,9 @@
 // Score do jogador
 @property SKLabelNode* pontuacao;
 
+// Botão de voltar
+@property SKSpriteNode* btnVoltar;
+
 // Imagem de fundo
 @property SKSpriteNode* background;
 

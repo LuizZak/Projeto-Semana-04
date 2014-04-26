@@ -21,6 +21,6 @@
 @property AVAudioPlayer *bgMusicPlayer;
 
 // Metodo que chama a cena de batalha
-- (void)goToBattle:(int)sceneType;
+- (void)goToBattle:(int)sceneType battleConfig:(BattleConfig*)config;
 
 @end

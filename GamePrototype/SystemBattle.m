@@ -43,7 +43,7 @@
         self.tapToExit = NO;
         
         self.selectionNode = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(64, 64)];
-        self.selectionNode.zPosition = -5;
+        self.selectionNode.zPosition = 11;
         [self.gameScene addChild:self.selectionNode];
         
         [Som som].nodeForSound = gameScene;

@@ -7,10 +7,17 @@
 //
 
 #import "WorldMap.h"
+#import "BattleConfig.h"
 #import "ComponentMapaGrid.h"
 #import "ComponentMapMovement.h"
 #import "ComponentCamera.h"
 #import "ComponentDialog.h"
+#import "ComponentAIBattle.h"
+#import "ComponentBattleState.h"
+#import "ComponentHealth.h"
+#import "ComponentHealthIndicator.h"
+#import "ComponentDraggableAttack.h"
+#import "ComponentBounty.h"
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
 #import "SystemCamera.h"
@@ -237,14 +244,15 @@
         return;
     
     int random;
+    BOOL battle = NO;
     
     if(tileID == TILE_EARTH)
     {
-        random = arc4random() % 30;
+        random = arc4random() % 1;
         
         if(random == 0)
         {
-            [self goToBattle:tileID];
+            battle = YES;
         }
     }
     else if(tileID == TILE_GRASS)
@@ -253,22 +261,36 @@
         
         if(random == 0)
         {
-            [self goToBattle:tileID];
+            battle = YES;
         }
+    }
+    
+    if(battle)
+    {
+        BattleConfig *config = [[BattleConfig alloc] init];
+        
+        // Adiciona alguns inimigos
+        [config.enemiesArray addObject:[self createEnemyWithHealth:50 exp:50]];
+        [config.enemiesArray addObject:[self createEnemyWithHealth:75 exp:75]];
+        [config.enemiesArray addObject:[self createEnemyWithHealth:100 exp:100]];
+        
+        [self goToBattle:tileID battleConfig:config];
     }
 }
 
-- (void)goToBattle:(int)sceneType
+- (void)goToBattle:(int)sceneType battleConfig:(BattleConfig*)config
 {
-    SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
     SceneBattle *battleScene = [[SceneBattle alloc] initWithSize:self.size];
+    
+    battleScene.battleConfig = config;
     
     [battleScene setSceneType:sceneType];
     
+    SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
     [self.scene.view presentScene: battleScene transition: reveal];
 }
 
--(NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
+- (NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
 {
     NSMutableArray *animationFrames = [NSMutableArray array];
     SKTextureAtlas *animationAtlas = [SKTextureAtlas atlasNamed:name];
@@ -283,6 +305,30 @@
     }
     
     return animationFrames;
+}
+
+// Cria um novo inimigo para uma batalha
+- (GPEntity*)createEnemyWithHealth:(float)health exp:(int)exp
+{
+    SKSpriteNode *enemyNode = [SKSpriteNode spriteNodeWithImageNamed:@"Knight"];
+    GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
+    
+    [enemy addComponent:[[ComponentHealth alloc] initWithHealth:health maxhealth:health]];
+    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:200 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [enemy addComponent:[[ComponentAIBattle alloc] init]];
+    [enemy addComponent:[[ComponentBattleState alloc] init]];
+    
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillFireball startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:10 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:20 skillType:SkillMelee startEnabled:NO]];
+    
+    // Adiciona um bounty para este inimigo
+    [enemy addComponent:[[ComponentBounty alloc] initWithExp:exp gold:10]];
+    
+    enemyNode.zPosition = -5;
+    enemy.type = ENEMY_TYPE;
+    
+    return enemy;
 }
 
 - (void)didMoveToView:(SKView *)view

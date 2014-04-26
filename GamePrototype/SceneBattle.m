@@ -75,7 +75,7 @@
     SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width, 150)];
     
     sprite.anchorPoint = CGPointZero;
-    sprite.zPosition = -7;
+    sprite.zPosition = 10;
     
     [self addChild:sprite];
     
@@ -110,6 +110,7 @@
 {
     GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)]];
     en.node.position = CGPointMake(x, y);
+    en.node.zPosition = 12;
     [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage skillType:skillType startEnabled:YES]];
     
     en.type = PLAYER_TYPE;
@@ -121,19 +122,18 @@
 {
     NSArray *attacks = [self getEntitiesWithSelectorRule:GPRuleAnd(GPRuleType(ENEMY_TYPE), GPRuleComponent([ComponentHealth class]))];
     
-    int x = self.frame.size.width - 100;
-    int y = 250;
+    float x = self.frame.size.width - 100;
+    float y = 250;
     
     for(GPEntity *entity in attacks)
     {
-        int randX = -50 + (arc4random() % 100);
-        int randY = -50 + (arc4random() % 100);
-        
-        
+        int randX = -25 + (arc4random() % 50);
+        int randY = -25 + (arc4random() % 50);
         
         entity.node.position = CGPointMake(x + randX, y + randY);
         
-        [entity.node setScale:0.8f - (y / 768)];
+        [entity.node setScale:0.7f - ((y + randY) / 2000)];
+        
         // Gira o inimigo para a esquerda
         entity.node.xScale = -entity.node.xScale;
         

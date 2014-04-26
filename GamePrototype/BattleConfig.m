@@ -10,4 +10,14 @@
 
 @implementation BattleConfig
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.enemiesArray = [NSMutableArray array];
+    }
+    return self;
+}
+
 @end

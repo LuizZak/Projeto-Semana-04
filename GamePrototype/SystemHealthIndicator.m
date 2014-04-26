@@ -124,9 +124,9 @@
     [entity.node addChild:barNode];
     [backNode addChild:lblNode];
     
-    bar.backBar.zPosition = 10;
-    bar.healthBar.node.zPosition = 10;
-    lblNode.zPosition = 11;
+    bar.backBar.zPosition = 15;
+    bar.healthBar.node.zPosition = 15;
+    lblNode.zPosition = 17;
     bar.backBar = backNode;
     bar.healthLabelNode = lblNode;
     bar.entity = entity;

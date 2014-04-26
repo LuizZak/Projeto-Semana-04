@@ -9,7 +9,6 @@
 #import "SceneBattle.h"
 #import "SystemBattle.h"
 #import "SystemHealthIndicator.h"
-#import "ComponentAIBattle.h"
 #import "ComponentBattleState.h"
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
@@ -35,22 +34,39 @@
         [self.background setScale:0.5f];
         
         [self addChild:self.background];
-        
-        [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
-        [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
-        
-        [self createEnemy:260 y:250 health:50 exp:50];
-        [self createEnemy:260 y:290 health:75 exp:75];
-        [self createEnemy:260 y:330 health:100 exp:100];
-        
-        [self createPlayer];
-        
-        [self createSkillsBar];
-        
-        [self sortEnemies];
-        [self sortAttacks];
     }
     return self;
+}
+
+// Carrega a batalha agora
+- (void)didMoveToView:(SKView *)view
+{
+    [self loadBattle];
+}
+
+// Carrega a batalha
+- (void)loadBattle
+{
+    // Limpa a cena
+    [self clearScene];
+    
+    // Reinicia a batalha
+    [self addSystem:[[SystemBattle alloc] initWithGameScene:self]];
+    [self addSystem:[[SystemHealthIndicator alloc] initWithGameScene:self]];
+    
+    // Cria os inimigos, usando a array de inimigos passada
+    for (GPEntity *enemy in self.battleConfig.enemiesArray)
+    {
+        [self addEntity:enemy];
+    }
+    
+    // Cria o jogador
+    [self createPlayer];
+    
+    [self createSkillsBar];
+    
+    [self sortEnemies];
+    [self sortAttacks];
 }
 
 // Cria a barra de skills e suas skills respectivas
@@ -90,34 +106,6 @@
     [self addEntity:player];
 }
 
-- (void)createEnemy:(float)x y:(float)y health:(float)health exp:(int)exp
-{
-    SKSpriteNode *enemyNode = [SKSpriteNode spriteNodeWithImageNamed:@"Knight"];
-    GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
-    
-    [enemyNode setScale:0.8f - (y / 768)];
-    
-    enemyNode.xScale = -enemyNode.xScale;
-    
-    [enemy addComponent:[[ComponentHealth alloc] initWithHealth:health maxhealth:health]];
-    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:200 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
-    [enemy addComponent:[[ComponentAIBattle alloc] init]];
-    [enemy addComponent:[[ComponentBattleState alloc] init]];
-    
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillFireball startEnabled:NO]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:10 skillType:SkillMelee startEnabled:NO]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:20 skillType:SkillMelee startEnabled:NO]];
-    
-    // Adiciona um bounty para este inimigo
-    [enemy addComponent:[[ComponentBounty alloc] initWithExp:exp gold:10]];
-    
-    enemy.type = ENEMY_TYPE;
-    
-    enemyNode.position = CGPointMake(x, y);
-    
-    [self addEntity:enemy];
-}
-
 - (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage skillType:(SkillType)skillType
 {
     GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)]];
@@ -140,7 +128,14 @@
     {
         int randX = -50 + (arc4random() % 100);
         int randY = -50 + (arc4random() % 100);
+        
+        
+        
         entity.node.position = CGPointMake(x + randX, y + randY);
+        
+        [entity.node setScale:0.8f - (y / 768)];
+        // Gira o inimigo para a esquerda
+        entity.node.xScale = -entity.node.xScale;
         
         y += 200;
     }

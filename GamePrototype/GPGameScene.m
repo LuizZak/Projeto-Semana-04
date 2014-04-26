@@ -73,6 +73,22 @@
     }
 }
 
+// Limpa a cena, removendo todas as entidades e sistemas
+- (void)clearScene
+{
+    // Remove todos os sistemas
+    while(systems.count > 0)
+    {
+        [self removeSystem:systems[0]];
+    }
+    
+    // Remove todas as entides
+    while(entities.count > 0)
+    {
+        [self removeEntity:entities[0]];
+    }
+}
+
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity
 {

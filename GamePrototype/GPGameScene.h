@@ -57,6 +57,9 @@
 
 @property (readonly) SKNode *worldNode;
 
+// Limpa a cena, removendo todas as entidades e sistemas
+- (void)clearScene;
+
 // Adiciona uma entidade à cena
 - (void)addEntity:(GPEntity*)entity;
 // Adiciona uma entidade à cena, como filha do nó passado

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GameData.h"
 #import "Ranking.h"
 
 @implementation AppDelegate

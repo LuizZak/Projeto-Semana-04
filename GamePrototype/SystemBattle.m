@@ -432,6 +432,11 @@
         if ([[Ranking lista] currentPlayerScore] > 0)
         {
             [[Ranking lista] criarPontuacao:[[Ranking lista] currentPlayerName] :[[Ranking lista] currentPlayerScore]];
+            
+            NSMutableArray* array = [[NSMutableArray alloc] init];
+            array = [[Ranking lista] todosItens];
+            
+            [[Ranking lista] salvarPontuacao];
         }
     }
     else

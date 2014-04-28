@@ -14,15 +14,20 @@
     NSMutableArray *tudo;
 }
 
+@property NSMutableDictionary *dict;
+
 @property NSString* currentPlayerName;
 @property int currentPlayerScore;
 
-+(Ranking *) lista;
++ (Ranking *) lista;
 
--(NSMutableArray *) todosItens;
--(Score *) criarPontuacao :(NSString *)nome :(int)ponto;
+- (NSMutableArray *) todosItens;
+- (Score *) criarPontuacao :(NSString *)nome :(int)ponto;
 
--(void)removePontuacao: (Score *)s;
--(void) moveItemAtIndex: (int)from toIndex:(int)to;
+- (void)removePontuacao: (Score *)s;
+- (void) moveItemAtIndex: (int)from toIndex:(int)to;
+
+- (void)salvarPontuacao;
+- (void)pegarPontuacao;
 
 @end

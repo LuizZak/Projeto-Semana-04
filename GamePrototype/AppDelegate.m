@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "GameData.h"
-#import "GameController.h"
+#import "Ranking.h"
 
 @implementation AppDelegate
 
@@ -16,8 +16,12 @@
 {
     // Override point for customization after application launch.
     
+    
+    
     // Reseta os dados do jogo
-    [GameController gameController];
+    [GameData gameData];
+    [[Ranking lista] pegarPontuacao];
+    
     
     return YES;
 }

@@ -84,4 +84,37 @@
     [tudo insertObject: s atIndex: to];
 }
 
+- (void)salvarPontuacao
+{
+    for (int i = 0; i <[[[Ranking lista] todosItens] count]; i++)
+    {
+        [self.dict setObject:@([[[[Ranking lista] todosItens] objectAtIndex:i] pontos]) forKey:[[[[Ranking lista] todosItens] objectAtIndex:i] nome]];
+    }
+    
+    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.dict] forKey:@"dict"];
+    //[prefs setObject:self.dict forKey:@"dict"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    //[prefs synchronize];
+}
+
+- (void)pegarPontuacao
+{
+    NSData *data = [[NSUserDefaults standardUserDefaults]objectForKey:@"dict"];
+    self.dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    
+    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    
+    //self.dict = [prefs stringForKey:@"dict"];
+    
+    NSArray *keys = [self.dict allKeys];
+    
+    for (NSString *key in keys)
+    {
+        NSLog(@"%@ is %@",key, [self.dict objectForKey:key]);
+        [[Ranking lista] criarPontuacao:key :[self.dict objectForKey:key]];
+    }
+    
+}
+
 @end

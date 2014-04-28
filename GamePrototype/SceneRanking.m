@@ -21,8 +21,10 @@
         self.background.anchorPoint = CGPointMake(0, 0);
         self.background.size = size;
         
-        self.btnVoltar = [[SKSpriteNode alloc] initWithColor:[UIColor blackColor] size:CGSizeMake(100, 100)];
-        self.btnVoltar.position = CGPointMake(1000, 50);
+        UIImage* imgCell = [UIImage imageNamed:@"BtnVoltar.png"];
+        self.btnVoltar = [[SKSpriteNode alloc] initWithColor:[UIColor blackColor] size:CGSizeMake(imgCell.size.width/2.5, imgCell.size.height/2.5)];
+        self.btnVoltar.texture = [SKTexture textureWithImage:imgCell];
+        self.btnVoltar.position = CGPointMake(900, 50);
         self.btnVoltar.zPosition = 10;
         
         [self addChild:self.background];
@@ -44,8 +46,6 @@
         self.cell.zPosition = 10;
         
         [self.scene addChild:self.cell];
-        
-        NSLog(@"%d", [[Ranking lista] todosItens].count);
         
         if ([[Ranking lista] todosItens].count > i)
         {

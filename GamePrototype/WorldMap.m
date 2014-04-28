@@ -325,6 +325,19 @@
     // Adiciona um bounty para este inimigo
     [enemy addComponent:[[ComponentBounty alloc] initWithExp:exp gold:10]];
     
+    // Cria o corpo de física
+    SKNode *physicsNode = [SKNode node];
+    
+    physicsNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0, 0, enemyNode.frame.size.width, enemyNode.frame.size.height)];
+    physicsNode.physicsBody.collisionBitMask   = FIREBALL_BITMASK;
+    physicsNode.physicsBody.contactTestBitMask = FIREBALL_BITMASK;
+    physicsNode.physicsBody.categoryBitMask    = ENEMY_BITMASK;
+    physicsNode.physicsBody.dynamic = NO;
+    
+    physicsNode.position = CGPointMake(-enemyNode.frame.size.width / 2, -enemyNode.frame.size.height / 2);
+    
+    [enemyNode addChild:physicsNode];
+    
     enemyNode.zPosition = -5;
     enemy.type = ENEMY_TYPE;
     

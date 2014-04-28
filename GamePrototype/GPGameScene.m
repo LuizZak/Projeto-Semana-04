@@ -20,6 +20,8 @@
         notifiers = [NSMutableArray array];
         worldNode = [SKNode node];
         
+        self.physicsWorld.contactDelegate = self;
+        
         [self addChild:worldNode];
     }
     return self;

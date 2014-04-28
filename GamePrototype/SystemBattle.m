@@ -45,6 +45,7 @@
         self.selectionNode = [SKSpriteNode spriteNodeWithColor:[UIColor yellowColor] size:CGSizeMake(64, 64)];
         self.selectionNode.zPosition = 11;
         [self.gameScene addChild:self.selectionNode];
+        self.gameScene.physicsWorld.gravity = CGVectorMake(0, 0);
         
         [Som som].nodeForSound = gameScene;
         
@@ -268,7 +269,7 @@
     // Acumuda a mensagem de win
     if(!self.didWonBattle)
     {
-        [self createBattleMessage:@"You lost!" won:YES animKeyName:nil];
+        [self createBattleMessage:@"You lose!" won:YES animKeyName:nil];
     }
     else
     {
@@ -475,6 +476,7 @@
 
 - (void)createFireBall:(GPEntity*)source target:(GPEntity*)target radius:(float)radius forDamage:(float)damage
 {
+    /*
     SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f],
     [SKAction runBlock:^{
         SKSpriteNode *explosionNode = [SKSpriteNode spriteNodeWithImageNamed:@"explosao"];
@@ -518,6 +520,46 @@
     fireballNode.zRotation = atan2f(dy, dx);
     
     [self.gameScene addChild:fireballNode];
+    */
+    
+    // Create a damage popup
+    [self createDamagePopup:damage point:target.node.position];
+    
+    // Toca o som de ataque
+    [[Som som] tocarSomFireBall];
+    
+    // Pega as definições de batalha do personagem que está atirando
+    ComponentBattleState *battleState = GET_COMPONENT(source, ComponentBattleState);
+    
+    // Cria o node da bola de fogo
+    SKSpriteNode *fireball = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
+    fireball.zPosition = 5;
+    fireball.position = CGPointMake(source.node.position.x + battleState.projectilePoint.x, source.node.position.y + battleState.projectilePoint.y);
+    [fireball setScale:0.3f + radius];
+    
+    // Cria o corpo de física da bola de fogo e ajusta os colliders
+    fireball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+    fireball.physicsBody.collisionBitMask   = (source.ID == PLAYER_ID ? ENEMY_BITMASK : PLAYER_BITMASK);
+    fireball.physicsBody.contactTestBitMask = (source.ID == PLAYER_ID ? ENEMY_BITMASK : PLAYER_BITMASK);
+    fireball.physicsBody.categoryBitMask    = FIREBALL_BITMASK;
+    fireball.physicsBody.usesPreciseCollisionDetection = YES;
+    
+    // Acelera o node até o target
+    CGVector accelVector = CGVectorMake(target.node.position.x - source.node.position.x, target.node.position.y - source.node.position.y);
+    
+    // Transforma a velocidade numa normal
+    float mag = sqrtf(accelVector.dx * accelVector.dx + accelVector.dy * accelVector.dy);
+    accelVector.dx /= mag;
+    accelVector.dy /= mag;
+    
+    // Acelera ela
+    accelVector.dx *= 2000;
+    accelVector.dy *= 2000;
+    
+    fireball.physicsBody.velocity = accelVector;
+    fireball.zRotation = atan2f(accelVector.dy, accelVector.dx);
+    
+    [self.gameScene addChild:fireball];
 }
 
 - (void)createDamagePopup:(float)damage point:(CGPoint)point
@@ -541,6 +583,48 @@
     node.position = CGPointMake(self.gameScene.frame.size.width / 2, self.gameScene.frame.size.height / 2);
     
     [self.gameScene addChild:node];
+}
+
+- (void)gameSceneDidBeginContact:(SKPhysicsContact *)contact
+{
+    SKPhysicsBody *bodyA;
+    SKPhysicsBody *bodyB;
+    
+    if(contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask)
+    {
+        bodyA = contact.bodyA;
+        bodyB = contact.bodyB;
+    }
+    else
+    {
+        bodyB = contact.bodyA;
+        bodyA = contact.bodyB;
+    }
+    
+    if((bodyA.categoryBitMask & bodyB.contactTestBitMask) == 0 || (bodyA.contactTestBitMask & bodyB.categoryBitMask) == 0)
+        return;
+    
+    // Bola de fogo atingiu o jogador ou o inimigo
+    if((bodyA.categoryBitMask & FIREBALL_BITMASK) != 0)
+    {
+        [bodyA.node removeFromParent];
+        
+        SKSpriteNode *explosionNode = [SKSpriteNode spriteNodeWithImageNamed:@"explosao"];
+        
+        explosionNode.position = bodyB.node.position;
+        
+        float scaleMod = (0.75f + 0.2f) * bodyB.node.yScale;
+        
+        [explosionNode setScale:scaleMod];
+        
+        SKAction *anim = [SKAction group:@[[SKAction fadeAlphaTo:0 duration:0.15f], [SKAction scaleTo:2 * scaleMod duration:0.15f]]];
+        
+        [explosionNode runAction:anim];
+        
+        [self.gameScene addChild:explosionNode];
+        
+        [[Som som] tocarSomExplosao];
+    }
 }
 
 - (void)gameControllerDidUnlockSkills:(NSMutableArray *)skills

@@ -98,10 +98,22 @@
     player.ID = PLAYER_ID;
     
     [playerNode setScale:0.5f];
-    
     playerNode.xScale = -playerNode.xScale;
-    
     playerNode.position = CGPointMake(200, self.frame.size.height / 2 + 50);
+    
+    SKNode *physicsNode = [SKNode node];
+    
+    // Cria o corpo de física
+    physicsNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0, 0, playerNode.frame.size.width, playerNode.frame.size.height)];
+    //physicsNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(500, 500) center:CGPointZero];
+    physicsNode.physicsBody.collisionBitMask   = FIREBALL_BITMASK;
+    physicsNode.physicsBody.contactTestBitMask = FIREBALL_BITMASK;
+    physicsNode.physicsBody.categoryBitMask    = PLAYER_BITMASK;
+    //physicsNode.physicsBody.dynamic = NO;
+    
+    physicsNode.position = CGPointMake(-playerNode.frame.size.width, 0);
+    
+    [playerNode addChild:physicsNode];
     
     [self addEntity:player];
 }

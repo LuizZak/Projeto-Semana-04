@@ -747,11 +747,8 @@
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
-<<<<<<< HEAD
 				B313318A190EF345009C29BA /* TimeBall.atlas in Resources */,
-=======
 				FC77330A190EDD7C008A7E39 /* tile-earthU.png in Resources */,
->>>>>>> FETCH_HEAD
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
 				FC14149B190AF90700B398CE /* RankBG.png in Resources */,

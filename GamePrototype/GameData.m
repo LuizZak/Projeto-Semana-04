@@ -33,21 +33,8 @@
     if (self)
     {
         self.data = [NSMutableDictionary dictionary];
-        
-        [self resetGameData];
     }
     return self;
-}
-
-- (void)resetGameData
-{
-    [self.data setObject:[NSNumber numberWithFloat:200] forKey:KEY_PLAYER_HEALTH];
-    [self.data setObject:[NSNumber numberWithInt:3] forKey:KEY_PLAYER_SPAWN_X];
-    [self.data setObject:[NSNumber numberWithInt:25] forKey:KEY_PLAYER_SPAWN_Y];
-    [self.data setObject:[NSNumber numberWithInt:1] forKey:KEY_PLAYER_LEVEL];
-    [self.data setObject:[NSNumber numberWithInt:0] forKey:KEY_PLAYER_EXP];
-    
-    // Player spawn point
 }
 
 // Salvar a fase WorldMap

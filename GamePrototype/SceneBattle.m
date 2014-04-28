@@ -79,9 +79,14 @@
     
     [self addChild:sprite];
     
-    [self createAttack:40 y:213 cooldown:1 damage:3 skillType:SkillFireball];
-    [self createAttack:120 y:213 cooldown:5 damage:10 skillType:SkillFireball];
-    [self createAttack:200 y:213 cooldown:10 damage:30 skillType:SkillFireball];
+    NSMutableArray *array = [[GameController gameController] getPlayerSkills];
+    
+    for(int i = 0; i < array.count; i++)
+    {
+        ComponentDraggableAttack *attack = array[i];
+        
+        [self createAttack:40 + 80 * i y:213 cooldown:attack.skillCooldown damage:attack.damage skillType:attack.skillType];
+    }
 }
 
 // Cria o jogador na cena de batalha

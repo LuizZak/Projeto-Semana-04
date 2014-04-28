@@ -32,6 +32,10 @@
     if (self)
     {
         observers = [NSMutableArray array];
+        
+        [GameData gameData];
+        
+        [self resetGameData];
     }
     return self;
 }
@@ -44,6 +48,15 @@
 - (void)removeObserver:(id<GameControllerObserver>)observer
 {
     [observers removeObject:observer];
+}
+
+- (void)resetGameData
+{
+    [[GameData gameData].data setObject:[NSNumber numberWithFloat:200] forKey:KEY_PLAYER_HEALTH];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:3] forKey:KEY_PLAYER_SPAWN_X];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:25] forKey:KEY_PLAYER_SPAWN_Y];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:1] forKey:KEY_PLAYER_LEVEL];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:0] forKey:KEY_PLAYER_EXP];
 }
 
 // Dá uma quantidade de XP para o player
@@ -84,14 +97,15 @@
     {
         if(xpLevels[nextLevel] > currentXP)
         {
-            // Subtrai 1, pois o nível atual indicado pelo índice é o próximo inalcancável
-            nextLevel--;
             break;
         }
     }
     
     if(currentLevel < nextLevel)
     {
+        // Para checagem de skills novas
+        NSArray *curSkills = [self getPlayerSkills];
+        
         // Atualiza o nível
         [[GameData gameData].data setObject:[NSNumber numberWithInt:nextLevel] forKey:KEY_PLAYER_LEVEL];
         
@@ -99,9 +113,25 @@
         [self updatePlayerHealth];
         
         // Destrava skills
+        NSArray *newSkills = [self getPlayerSkills];
         
+        // Itera as skills
+        NSMutableArray *unlockedSkills = [NSMutableArray array];
+        for(int i = curSkills.count; i < newSkills.count; i++)
+        {
+            [unlockedSkills addObject:newSkills[i]];
+        }
         
-        // Notifica os observers
+        // Notifica os observers das skills destravadas
+        for (id<GameControllerObserver> observer in observers)
+        {
+            if([observer respondsToSelector:@selector(gameControllerDidUnlockSkills:)])
+            {
+                [observer gameControllerDidUnlockSkills:unlockedSkills];
+            }
+        }
+        
+        // Notifica os observers do nível novo
         for (id<GameControllerObserver> observer in observers)
         {
             if([observer respondsToSelector:@selector(gameControllerDidWinLevel:newLevel:)])
@@ -135,6 +165,31 @@
             }
         }
     }
+}
+
+- (NSMutableArray*)getPlayerSkills
+{
+    int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
+    
+    NSMutableArray *skillsArray = [NSMutableArray array];
+    
+    // Skill padrão
+    [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:1 damage:3 skillType:SkillFireball startEnabled:YES]];
+    
+    if(currentLevel > 1)
+    {
+        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10 skillType:SkillFireball startEnabled:YES]];
+    }
+    if(currentLevel > 3)
+    {
+        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30 skillType:SkillFireball startEnabled:YES]];
+    }
+    if(currentLevel > 5)
+    {
+        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:13 damage:40 skillType:SkillFireball startEnabled:YES]];
+    }
+    
+    return skillsArray;
 }
 
 @end

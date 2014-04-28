@@ -248,7 +248,7 @@
     
     if(tileID == TILE_EARTH)
     {
-        random = arc4random() % 1;
+        random = arc4random() % 10;
         
         if(random == 0)
         {
@@ -269,10 +269,27 @@
     {
         BattleConfig *config = [[BattleConfig alloc] init];
         
+        // Pega o nível do player
+        int playerLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
+        
         // Adiciona alguns inimigos
-        [config.enemiesArray addObject:[self createEnemyWithHealth:50 exp:50]];
-        [config.enemiesArray addObject:[self createEnemyWithHealth:75 exp:75]];
-        [config.enemiesArray addObject:[self createEnemyWithHealth:100 exp:100]];
+        if(playerLevel == 1)
+        {
+            [config.enemiesArray addObject:[self createEnemyWithHealth:30 exp:70]];
+        }
+        else
+        {
+            [config.enemiesArray addObject:[self createEnemyWithHealth:50 exp:50]];
+        }
+        
+        if(playerLevel > 1)
+        {
+            [config.enemiesArray addObject:[self createEnemyWithHealth:75 exp:75]];
+        }
+        if(playerLevel > 3)
+        {
+            [config.enemiesArray addObject:[self createEnemyWithHealth:100 exp:100]];
+        }
         
         [self goToBattle:tileID battleConfig:config];
     }

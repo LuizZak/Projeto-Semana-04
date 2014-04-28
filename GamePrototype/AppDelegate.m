@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "GameData.h"
+#import "GameController.h"
 
 @implementation AppDelegate
 
@@ -14,10 +16,8 @@
 {
     // Override point for customization after application launch.
     
-    
-    
     // Reseta os dados do jogo
-    [GameData gameData];
+    [GameController gameController];
     
     return YES;
 }

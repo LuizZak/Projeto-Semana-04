@@ -278,5 +278,27 @@
         }
     }
 }
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    // Notifica os notifiers
+    for(id<GPGameSceneNotifier> notifier in notifiers)
+    {
+        if([notifier respondsToSelector:@selector(gameSceneDidBeginContact:)])
+        {
+            [notifier gameSceneDidBeginContact:contact];
+        }
+    }
+}
+- (void)didEndContact:(SKPhysicsContact *)contact
+{
+    // Notifica os notifiers
+    for(id<GPGameSceneNotifier> notifier in notifiers)
+    {
+        if([notifier respondsToSelector:@selector(gameSceneDidEndContact:)])
+        {
+            [notifier gameSceneDidEndContact:contact];
+        }
+    }
+}
 
 @end

@@ -202,9 +202,6 @@
                 {
                     [self attackEntity:comp source:self.playerEntity target:entity];
                     
-                    // Seta a skill em cooldown
-                    comp.currentCooldown = comp.skillCooldown;
-                    
                     SKNode *node = [self.currentDrag.node childNodeWithName:@"COOLDOWN"];
                     
                     if(node != nil)
@@ -377,6 +374,8 @@
 
 - (void)attackEntity:(ComponentDraggableAttack*)attack source:(GPEntity*)source target:(GPEntity*)target
 {
+    attack.currentCooldown = attack.skillCooldown;
+    
     float damage = attack.damage;
     
     // Anima o ataque

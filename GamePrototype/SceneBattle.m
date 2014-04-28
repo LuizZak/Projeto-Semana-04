@@ -34,6 +34,8 @@
         [self.background setScale:0.5f];
         
         [self addChild:self.background];
+        
+        self.cooldownFrames = [self loadSpriteSheetFromImageWithName:@"TimeBall" startingAt:1];
     }
     return self;
 }
@@ -110,11 +112,9 @@
     
     // Cria o corpo de física
     physicsNode.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(0, 0, playerNode.frame.size.width, playerNode.frame.size.height)];
-    //physicsNode.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(500, 500) center:CGPointZero];
     physicsNode.physicsBody.collisionBitMask   = FIREBALL_BITMASK;
     physicsNode.physicsBody.contactTestBitMask = FIREBALL_BITMASK;
     physicsNode.physicsBody.categoryBitMask    = PLAYER_BITMASK;
-    //physicsNode.physicsBody.dynamic = NO;
     
     physicsNode.position = CGPointMake(-playerNode.frame.size.width, 0);
     
@@ -125,10 +125,38 @@
 
 - (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage skillType:(SkillType)skillType
 {
+    SKSpriteNode *attachGraph;
+    SKLabelNode *damageLbl = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
+    SKSpriteNode *cooldownAnim = [SKSpriteNode spriteNodeWithTexture:self.cooldownFrames[0]];
+    cooldownAnim.alpha = 0;
+    cooldownAnim.name = @"COOLDOWN";
+    
+    damageLbl.text = [NSString stringWithFormat:@"%.0lf", damage];
+    damageLbl.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
+    damageLbl.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
+    damageLbl.position = CGPointMake(45, -45);
+    
+    if(skillType == SkillFireball)
+    {
+        attachGraph = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
+        attachGraph.zRotation = M_PI / 4;
+        [attachGraph setScale:MIN(0.35f, 0.1f + damage / 150)];
+    }
+    else if(skillType == SkillMelee)
+    {
+        attachGraph = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
+    }
+    
     GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)]];
     en.node.position = CGPointMake(x, y);
     en.node.zPosition = 12;
     [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage skillType:skillType startEnabled:YES]];
+    
+    [en.node addChild:attachGraph];
+    [en.node addChild:damageLbl];
+    [en.node addChild:cooldownAnim];
+    
+    //[cooldownAnim runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:self.cooldownFrames timePerFrame:0.05 resize:NO restore:NO]]];
     
     en.type = PLAYER_TYPE;
     
@@ -192,6 +220,23 @@
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
     //WorldMap *battleScene = [[WorldMap alloc] initWithSize:self.size];
     [self.scene.view presentScene:[[GameData gameData] world] transition: reveal];
+}
+
+- (NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
+{
+    NSMutableArray *animationFrames = [NSMutableArray array];
+    SKTextureAtlas *animationAtlas = [SKTextureAtlas atlasNamed:name];
+    
+    for(int i = firstNum; i <= animationAtlas.textureNames.count; i++)
+    {
+        // Nomes das imagens com números de 4 dígitos, por exemplo "0001"
+        NSString *partName = [NSString stringWithFormat:@"%@%04i", name, i];
+        SKTexture *part = [animationAtlas textureNamed:partName];
+        
+        [animationFrames addObject:part];
+    }
+    
+    return animationFrames;
 }
 
 @end

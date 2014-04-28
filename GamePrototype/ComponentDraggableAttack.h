@@ -25,5 +25,6 @@ typedef enum {
 @property SkillType skillType;
 
 - (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage skillType:(SkillType)skillType startEnabled:(BOOL)startEnabled;
+- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage skillType:(SkillType)skillType skillName:(NSString*)skillName startEnabled:(BOOL)startEnabled;
 
 @end

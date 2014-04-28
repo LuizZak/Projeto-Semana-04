@@ -476,52 +476,6 @@
 
 - (void)createFireBall:(GPEntity*)source target:(GPEntity*)target radius:(float)radius forDamage:(float)damage
 {
-    /*
-    SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f],
-    [SKAction runBlock:^{
-        SKSpriteNode *explosionNode = [SKSpriteNode spriteNodeWithImageNamed:@"explosao"];
-        
-        explosionNode.position = target.node.position;
-        
-        float scaleMod = (0.75f + radius) * target.node.yScale;
-        
-        [explosionNode setScale:scaleMod];
-        
-        SKAction *anim = [SKAction group:@[[SKAction fadeAlphaTo:0 duration:0.15f], [SKAction scaleTo:2 * scaleMod duration:0.15f]]];
-        
-        [explosionNode runAction:anim];
-        
-        [self.gameScene addChild:explosionNode];
-        
-        // Create a damage popup
-        [self createDamagePopup:damage point:target.node.position];
-        
-        [[Som som] tocarSomExplosao];
-        
-    }], [SKAction removeFromParent]]];
-    
-    // Toca o som de ataque
-    [[Som som] tocarSomFireBall];
-    
-    ComponentBattleState *battleState = GET_COMPONENT(source, ComponentBattleState);
-    
-    SKSpriteNode *fireballNode = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
-    
-    fireballNode.zPosition = 5;
-    fireballNode.position = CGPointMake(source.node.position.x + battleState.projectilePoint.x, source.node.position.y + battleState.projectilePoint.y);
-    
-    [fireballNode setScale:0.3f + radius];
-    [fireballNode runAction:attack];
-    
-    // Calcula a rotação do fireball
-    float dx = target.node.position.x - source.node.position.x;
-    float dy = (target.node.position.y - source.node.position.y);
-    
-    fireballNode.zRotation = atan2f(dy, dx);
-    
-    [self.gameScene addChild:fireballNode];
-    */
-    
     // Create a damage popup
     [self createDamagePopup:damage point:target.node.position];
     

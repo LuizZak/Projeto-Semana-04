@@ -304,7 +304,8 @@
     [battleScene setSceneType:sceneType];
     
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
-    [self.scene.view presentScene: battleScene transition: reveal];
+    
+    [self.view presentScene:battleScene transition:reveal];
 }
 
 - (NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
@@ -363,10 +364,14 @@
 
 - (void)didMoveToView:(SKView *)view
 {
+    [super didMoveToView:view];
+    
     self.bgMusicPlayer = [[Som som] tocarSomMundo];
 }
 - (void)willMoveFromView:(SKView *)view
 {
+    [super willMoveFromView:view];
+    
     [self.bgMusicPlayer stop];
 }
 

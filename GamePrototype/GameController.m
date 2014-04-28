@@ -57,6 +57,8 @@
     [[GameData gameData].data setObject:[NSNumber numberWithInt:25] forKey:KEY_PLAYER_SPAWN_Y];
     [[GameData gameData].data setObject:[NSNumber numberWithInt:1] forKey:KEY_PLAYER_LEVEL];
     [[GameData gameData].data setObject:[NSNumber numberWithInt:0] forKey:KEY_PLAYER_EXP];
+    
+    [self updatePlayerHealth];
 }
 
 // Dá uma quantidade de XP para o player
@@ -148,9 +150,7 @@
     int currentHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] intValue];
     int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
     
-    int newHP = 200;
-    
-    newHP = 200 + 25 * currentLevel;
+    int newHP = 25 + 50 * currentLevel;
     
     if(currentHealth != newHP)
     {
@@ -174,19 +174,19 @@
     NSMutableArray *skillsArray = [NSMutableArray array];
     
     // Skill padrão
-    [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:1 damage:3 skillType:SkillFireball startEnabled:YES]];
+    [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:1 damage:3 skillType:SkillFireball skillName:@"Fireball 1" startEnabled:YES]];
     
     if(currentLevel > 1)
     {
-        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10 skillType:SkillFireball startEnabled:YES]];
+        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:10 skillType:SkillFireball skillName:@"Fireball 2" startEnabled:YES]];
     }
     if(currentLevel > 3)
     {
-        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30 skillType:SkillFireball startEnabled:YES]];
+        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:30 skillType:SkillFireball skillName:@"Fireball 3" startEnabled:YES]];
     }
     if(currentLevel > 5)
     {
-        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:13 damage:40 skillType:SkillFireball startEnabled:YES]];
+        [skillsArray addObject:[[ComponentDraggableAttack alloc] initWithSkillCooldown:13 damage:40 skillType:SkillFireball skillName:@"Fireball 4" startEnabled:YES]];
     }
     
     return skillsArray;

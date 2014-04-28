@@ -22,6 +22,9 @@
 // Audio player da música de fundo
 @property AVAudioPlayer *bgMusicPlayer;
 
+// Arrsy de frames do cooldown das skills
+@property NSArray *cooldownFrames;
+
 // Troca o tipo de cena da batalha
 - (void)setSceneType:(int)sceneType;
 

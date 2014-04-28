@@ -88,7 +88,8 @@
         WorldMap* newScene = [[WorldMap alloc] initWithSize:self.size];
         [self.view presentScene:newScene];
         [[GameData gameData] saveWorld:newScene];
-    }else if (scene == 1)
+    }
+    else if (scene == 1)
     {
         SceneRanking* newScene = [[SceneRanking alloc] initWithSize:self.size];
         [self.view presentScene:newScene];

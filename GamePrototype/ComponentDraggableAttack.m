@@ -27,4 +27,14 @@
     return self;
 }
 
+- (id)initWithSkillCooldown:(float)skillCooldown damage:(float)damage skillType:(SkillType)skillType skillName:(NSString *)skillName startEnabled:(BOOL)startEnabled
+{
+    self = [self initWithSkillCooldown:skillCooldown damage:damage skillType:skillType startEnabled:startEnabled];
+    if (self)
+    {
+        self.skillName = skillName;
+    }
+    return self;
+}
+
 @end

@@ -40,6 +40,7 @@
 		A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E41909F41B00D67A8B /* tile-earthTransitionL.png */; };
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
 		A09A05EF190C471200ACEAB8 /* BattleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A09A05EE190C471200ACEAB8 /* BattleConfig.m */; };
+		B313318A190EF345009C29BA /* TimeBall.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B3133189190EF345009C29BA /* TimeBall.atlas */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
 		B32AE32E18F465CB006F8635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32D18F465CB006F8635 /* UIKit.framework */; };
@@ -166,6 +167,7 @@
 		A02B81C11902201900D5A417 /* ComponentMapMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapMovement.m; sourceTree = "<group>"; };
 		A09A05ED190C471200ACEAB8 /* BattleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleConfig.h; sourceTree = "<group>"; };
 		A09A05EE190C471200ACEAB8 /* BattleConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleConfig.m; sourceTree = "<group>"; };
+		B3133189190EF345009C29BA /* TimeBall.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TimeBall.atlas; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32AE32B18F465CB006F8635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -331,6 +333,7 @@
 		5E8A846818FDABA90081583D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B3133189190EF345009C29BA /* TimeBall.atlas */,
 				FC8FD6EA19083F8500E3DC97 /* water.atlas */,
 				FC3F73C618FF24E900949342 /* dragon.atlas */,
 				5E8A846918FDABFA0081583D /* dpad.fla */,
@@ -713,6 +716,7 @@
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
+				B313318A190EF345009C29BA /* TimeBall.atlas in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
 				FC14149B190AF90700B398CE /* RankBG.png in Resources */,

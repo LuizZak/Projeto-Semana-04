@@ -86,6 +86,8 @@
 
 - (void)salvarPontuacao
 {
+    self.dict = [[NSMutableDictionary alloc] init];
+    
     int maxRank = [[[Ranking lista] todosItens] count] < 10 ? [[[Ranking lista] todosItens] count] : 9;
     for (int i = 0; i < maxRank; i++)
     {
@@ -104,6 +106,11 @@
     NSDictionary *temp = [defaults dictionaryForKey:@"rank"];
     
     self.dict = [temp mutableCopy];
+    
+    NSArray *keys = [self.dict allKeys];
+    
+    for(NSString *key in keys)
+        [[Ranking lista] criarPontuacao:key :[[self.dict objectForKey:key] integerValue]];
 }
 
 @end

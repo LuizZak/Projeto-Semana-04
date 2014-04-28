@@ -88,6 +88,7 @@
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
 		FC66C37718FDB7C00015062B /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC66C37618FDB7C00015062B /* dpad.png */; };
+		FC7732FD190ECD44008A7E39 /* BtnVoltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7732FC190ECD44008A7E39 /* BtnVoltar.png */; };
 		FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD51900711800D24C87 /* tile-earth.png */; };
 		FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD61900711800D24C87 /* tile-grass.png */; };
 		FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD91900712200D24C87 /* tile-castle-grass.png */; };
@@ -245,6 +246,7 @@
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
 		FC3F73C918FF280E00949342 /* dpadClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpadClicked.png; sourceTree = "<group>"; };
 		FC66C37618FDB7C00015062B /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		FC7732FC190ECD44008A7E39 /* BtnVoltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnVoltar.png; sourceTree = "<group>"; };
 		FC8E1CD4190070FE00D24C87 /* tiles.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiles.fla; sourceTree = "<group>"; };
 		FC8E1CD51900711800D24C87 /* tile-earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earth.png"; sourceTree = "<group>"; };
 		FC8E1CD61900711800D24C87 /* tile-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grass.png"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 				FC141493190AF44A00B398CE /* MenuBtnRank.png */,
 				FC141494190AF44A00B398CE /* MenuBtnJogar.png */,
 				FC14148F190AE94F00B398CE /* MenuBG.png */,
+				FC7732FC190ECD44008A7E39 /* BtnVoltar.png */,
 				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
 				FC8FD6E8190838BE00E3DC97 /* earthScene.png */,
 				FCCD02801906F55600FFE9DB /* explosao.png */,
@@ -673,6 +676,7 @@
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
 				FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */,
 				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
+				FC7732FD190ECD44008A7E39 /* BtnVoltar.png in Resources */,
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
 				FCCD027D1906F15A00FFE9DB /* dragon-portrate.png in Resources */,

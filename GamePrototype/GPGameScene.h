@@ -36,12 +36,16 @@
 - (void)gameSceneWillBeMovedFromView:(GPGameScene*)gameScene;
 // Notifica quando a cena foi adicionada a uma view
 - (void)gameSceneDidAddToView:(GPGameScene*)gameScene;
+// Notifica quando a cena teve um contato de colisão adicionado
+- (void)gameSceneDidBeginContact:(SKPhysicsContact*)contact;
+// Notifica quando a cena teve um contato de colisão removido
+- (void)gameSceneDidEndContact:(SKPhysicsContact*)contact;
 
 
 @end
 
 // Representa uma cena do jogo que contém entidades e sistemas
-@interface GPGameScene : SKScene
+@interface GPGameScene : SKScene <SKPhysicsContactDelegate>
 {
     // Lista de entidades da cena
     NSMutableArray *entities;

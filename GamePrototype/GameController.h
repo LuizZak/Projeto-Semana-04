@@ -47,4 +47,10 @@
 // Dá uma qunatidade de XP para o player
 - (void)givePlayerXP:(int)xp;
 
+// Reinicia os dados do jogo para os iniciais
+- (void)resetGameData;
+
+// Pega os skills do jogador
+- (NSMutableArray*)getPlayerSkills;
+
 @end

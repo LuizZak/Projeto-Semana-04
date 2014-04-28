@@ -88,6 +88,15 @@
 		FC3F73C718FF24E900949342 /* dragon.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C618FF24E900949342 /* dragon.atlas */; };
 		FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */ = {isa = PBXBuildFile; fileRef = FC3F73C918FF280E00949342 /* dpadClicked.png */; };
 		FC66C37718FDB7C00015062B /* dpad.png in Resources */ = {isa = PBXBuildFile; fileRef = FC66C37618FDB7C00015062B /* dpad.png */; };
+		FC7732FD190ECD44008A7E39 /* BtnVoltar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7732FC190ECD44008A7E39 /* BtnVoltar.png */; };
+		FC773306190EDD7C008A7E39 /* tile-grassCanto.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7732FE190EDD7C008A7E39 /* tile-grassCanto.png */; };
+		FC773307190EDD7C008A7E39 /* tile-earthBaixo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7732FF190EDD7C008A7E39 /* tile-earthBaixo.png */; };
+		FC773308190EDD7C008A7E39 /* tile-grassL.png in Resources */ = {isa = PBXBuildFile; fileRef = FC773300190EDD7C008A7E39 /* tile-grassL.png */; };
+		FC773309190EDD7C008A7E39 /* tile-grassU.png in Resources */ = {isa = PBXBuildFile; fileRef = FC773301190EDD7C008A7E39 /* tile-grassU.png */; };
+		FC77330A190EDD7C008A7E39 /* tile-earthU.png in Resources */ = {isa = PBXBuildFile; fileRef = FC773302190EDD7C008A7E39 /* tile-earthU.png */; };
+		FC77330B190EDD7C008A7E39 /* tile-earthL.png in Resources */ = {isa = PBXBuildFile; fileRef = FC773303190EDD7C008A7E39 /* tile-earthL.png */; };
+		FC77330C190EDD7C008A7E39 /* tile-grassBaixo.png in Resources */ = {isa = PBXBuildFile; fileRef = FC773304190EDD7C008A7E39 /* tile-grassBaixo.png */; };
+		FC77330D190EDD7C008A7E39 /* tile-earthCanto.png in Resources */ = {isa = PBXBuildFile; fileRef = FC773305190EDD7C008A7E39 /* tile-earthCanto.png */; };
 		FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD51900711800D24C87 /* tile-earth.png */; };
 		FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD61900711800D24C87 /* tile-grass.png */; };
 		FC8E1CDB1900712200D24C87 /* tile-castle-grass.png in Resources */ = {isa = PBXBuildFile; fileRef = FC8E1CD91900712200D24C87 /* tile-castle-grass.png */; };
@@ -245,6 +254,15 @@
 		FC3F73C818FF264D00949342 /* dragon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragon.fla; sourceTree = "<group>"; };
 		FC3F73C918FF280E00949342 /* dpadClicked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpadClicked.png; sourceTree = "<group>"; };
 		FC66C37618FDB7C00015062B /* dpad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dpad.png; sourceTree = "<group>"; };
+		FC7732FC190ECD44008A7E39 /* BtnVoltar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BtnVoltar.png; sourceTree = "<group>"; };
+		FC7732FE190EDD7C008A7E39 /* tile-grassCanto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grassCanto.png"; sourceTree = "<group>"; };
+		FC7732FF190EDD7C008A7E39 /* tile-earthBaixo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthBaixo.png"; sourceTree = "<group>"; };
+		FC773300190EDD7C008A7E39 /* tile-grassL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grassL.png"; sourceTree = "<group>"; };
+		FC773301190EDD7C008A7E39 /* tile-grassU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grassU.png"; sourceTree = "<group>"; };
+		FC773302190EDD7C008A7E39 /* tile-earthU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthU.png"; sourceTree = "<group>"; };
+		FC773303190EDD7C008A7E39 /* tile-earthL.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthL.png"; sourceTree = "<group>"; };
+		FC773304190EDD7C008A7E39 /* tile-grassBaixo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grassBaixo.png"; sourceTree = "<group>"; };
+		FC773305190EDD7C008A7E39 /* tile-earthCanto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthCanto.png"; sourceTree = "<group>"; };
 		FC8E1CD4190070FE00D24C87 /* tiles.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = tiles.fla; sourceTree = "<group>"; };
 		FC8E1CD51900711800D24C87 /* tile-earth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earth.png"; sourceTree = "<group>"; };
 		FC8E1CD61900711800D24C87 /* tile-grass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-grass.png"; sourceTree = "<group>"; };
@@ -339,11 +357,20 @@
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
 				FC141497190AF49F00B398CE /* Menu.fla */,
+				FC7732FE190EDD7C008A7E39 /* tile-grassCanto.png */,
+				FC7732FF190EDD7C008A7E39 /* tile-earthBaixo.png */,
+				FC773300190EDD7C008A7E39 /* tile-grassL.png */,
+				FC773301190EDD7C008A7E39 /* tile-grassU.png */,
+				FC773302190EDD7C008A7E39 /* tile-earthU.png */,
+				FC773303190EDD7C008A7E39 /* tile-earthL.png */,
+				FC773304190EDD7C008A7E39 /* tile-grassBaixo.png */,
+				FC773305190EDD7C008A7E39 /* tile-earthCanto.png */,
 				FC14149A190AF90700B398CE /* RankBG.png */,
 				FC141498190AF76E00B398CE /* RankCellBG.png */,
 				FC141493190AF44A00B398CE /* MenuBtnRank.png */,
 				FC141494190AF44A00B398CE /* MenuBtnJogar.png */,
 				FC14148F190AE94F00B398CE /* MenuBG.png */,
+				FC7732FC190ECD44008A7E39 /* BtnVoltar.png */,
 				FCCD028519070F7A00FFE9DB /* gramaScene.png */,
 				FC8FD6E8190838BE00E3DC97 /* earthScene.png */,
 				FCCD02801906F55600FFE9DB /* explosao.png */,
@@ -666,6 +693,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC8E1CD71900711800D24C87 /* tile-earth.png in Resources */,
+				FC773306190EDD7C008A7E39 /* tile-grassCanto.png in Resources */,
 				FCCD027C1906F15A00FFE9DB /* Knight-portrate.png in Resources */,
 				5E6CB578190985AD00C05DED /* BatalhaMusica.wav in Resources */,
 				5E44346519083F1800EBA273 /* DragaoMorrendo.wav in Resources */,
@@ -673,6 +701,8 @@
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
 				FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */,
 				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
+				FC7732FD190ECD44008A7E39 /* BtnVoltar.png in Resources */,
+				FC773308190EDD7C008A7E39 /* tile-grassL.png in Resources */,
 				5E8A846B18FDABFA0081583D /* dpad.fla in Resources */,
 				FC66C37718FDB7C00015062B /* dpad.png in Resources */,
 				FCCD027D1906F15A00FFE9DB /* dragon-portrate.png in Resources */,
@@ -683,13 +713,16 @@
 				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
 				5E4434691908435300EBA273 /* Explosao.wav in Resources */,
 				FC3F73CA18FF280E00949342 /* dpadClicked.png in Resources */,
+				FC773307190EDD7C008A7E39 /* tile-earthBaixo.png in Resources */,
 				A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */,
 				FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */,
+				FC77330D190EDD7C008A7E39 /* tile-earthCanto.png in Resources */,
 				FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */,
 				A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */,
 				FC141499190AF76E00B398CE /* RankCellBG.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
 				FCCD02841906F55600FFE9DB /* bola-de-fogo.png in Resources */,
+				FC77330B190EDD7C008A7E39 /* tile-earthL.png in Resources */,
 				B32AE34218F465CC006F8635 /* Main_iPad.storyboard in Resources */,
 				FCCD028619070F7A00FFE9DB /* gramaScene.png in Resources */,
 				FCCD02791906EFD500FFE9DB /* dragon-perfil.png in Resources */,
@@ -697,6 +730,7 @@
 				A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */,
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				FC141491190AE94F00B398CE /* MenuBG.png in Resources */,
+				FC773309190EDD7C008A7E39 /* tile-grassU.png in Resources */,
 				FC141496190AF44A00B398CE /* MenuBtnJogar.png in Resources */,
 				5E44346B19084EA600EBA273 /* Espada.wav in Resources */,
 				5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */,
@@ -704,11 +738,13 @@
 				5E44346319083C3600EBA273 /* HomemMorrendo1.wav in Resources */,
 				FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */,
 				5E443467190841A900EBA273 /* fireBall.wav in Resources */,
+				FC77330C190EDD7C008A7E39 /* tile-grassBaixo.png in Resources */,
 				5E6CB57C1909879200C05DED /* MundoMusica.wav in Resources */,
 				5EBB788B1906F4CE001D961C /* Titulo.png in Resources */,
 				FC8E1CDC1900712200D24C87 /* tile-castle-earth.png in Resources */,
 				5E6CB57E190987CC00C05DED /* Vitoria.wav in Resources */,
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
+				FC77330A190EDD7C008A7E39 /* tile-earthU.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
 				FC14149B190AF90700B398CE /* RankBG.png in Resources */,

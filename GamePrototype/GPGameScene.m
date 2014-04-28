@@ -20,6 +20,8 @@
         notifiers = [NSMutableArray array];
         worldNode = [SKNode node];
         
+        self.physicsWorld.contactDelegate = self;
+        
         [self addChild:worldNode];
     }
     return self;
@@ -275,6 +277,28 @@
         if([notifier respondsToSelector:@selector(gameSceneWillBeMovedFromView:)])
         {
             [notifier gameSceneWillBeMovedFromView:self];
+        }
+    }
+}
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    // Notifica os notifiers
+    for(id<GPGameSceneNotifier> notifier in notifiers)
+    {
+        if([notifier respondsToSelector:@selector(gameSceneDidBeginContact:)])
+        {
+            [notifier gameSceneDidBeginContact:contact];
+        }
+    }
+}
+- (void)didEndContact:(SKPhysicsContact *)contact
+{
+    // Notifica os notifiers
+    for(id<GPGameSceneNotifier> notifier in notifiers)
+    {
+        if([notifier respondsToSelector:@selector(gameSceneDidEndContact:)])
+        {
+            [notifier gameSceneDidEndContact:contact];
         }
     }
 }

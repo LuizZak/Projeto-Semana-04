@@ -45,8 +45,6 @@
         
         [self.scene addChild:self.cell];
         
-        NSLog(@"%d", [[Ranking lista] todosItens].count);
-        
         if ([[Ranking lista] todosItens].count > i)
         {
             Score *score = [[[Ranking lista] todosItens] objectAtIndex:i];

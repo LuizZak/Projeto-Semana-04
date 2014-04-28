@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Ranking.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,8 @@
     
     // Reseta os dados do jogo
     [GameData gameData];
+    [[Ranking lista] pegarPontuacao];
+    
     
     return YES;
 }

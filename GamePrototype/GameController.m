@@ -53,10 +53,10 @@
 - (void)resetGameData
 {
     [[GameData gameData].data setObject:[NSNumber numberWithFloat:200] forKey:KEY_PLAYER_HEALTH];
-    [[GameData gameData].data setObject:[NSNumber numberWithInt:3] forKey:KEY_PLAYER_SPAWN_X];
-    [[GameData gameData].data setObject:[NSNumber numberWithInt:25] forKey:KEY_PLAYER_SPAWN_Y];
-    [[GameData gameData].data setObject:[NSNumber numberWithInt:1] forKey:KEY_PLAYER_LEVEL];
-    [[GameData gameData].data setObject:[NSNumber numberWithInt:0] forKey:KEY_PLAYER_EXP];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:3]     forKey:KEY_PLAYER_SPAWN_X];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:25]    forKey:KEY_PLAYER_SPAWN_Y];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:1]     forKey:KEY_PLAYER_LEVEL];
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:0]     forKey:KEY_PLAYER_EXP];
     
     [self updatePlayerHealth];
 }

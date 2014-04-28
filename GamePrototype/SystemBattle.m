@@ -50,6 +50,8 @@
         [Som som].nodeForSound = gameScene;
         
         [[GameController gameController] addObserver:self];
+        
+        self.cooldownFrames = [self loadSpriteSheetFromImageWithName:@"TimeBall" startingAt:1];
     }
     
     return self;
@@ -115,12 +117,6 @@
     
     return ret;
 }
-
-/*
-- (BOOL)gameSceneDidRemoveEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
-{
-    return [super gameSceneDidRemoveEntity:gameScene entity:entity];
-}*/
 
 - (BOOL)testEntityToAdd:(GPEntity *)entity
 {
@@ -193,7 +189,7 @@
     
     if(self.currentDrag != nil)
     {
-        ComponentDraggableAttack *comp = (ComponentDraggableAttack*)[self.currentDrag getComponent:[ComponentDraggableAttack class]];
+        ComponentDraggableAttack *comp = GET_COMPONENT(self.currentDrag, ComponentDraggableAttack);//(ComponentDraggableAttack*)[self.currentDrag getComponent:[ComponentDraggableAttack class]];
         
         // Checa se o jogador largou a skill em cima de um inimigo
         for(GPEntity *entity in self.enemiesArray)
@@ -206,6 +202,21 @@
                 {
                     [self attackEntity:comp source:self.playerEntity target:entity];
                     
+                    // Seta a skill em cooldown
+                    comp.currentCooldown = comp.skillCooldown;
+                    
+                    SKNode *node = [self.currentDrag.node childNodeWithName:@"COOLDOWN"];
+                    
+                    if(node != nil)
+                    {
+                        float interval = comp.skillCooldown / self.cooldownFrames.count;
+                        
+                        SKAction *animAction = [SKAction sequence:@[[SKAction animateWithTextures:self.cooldownFrames timePerFrame:interval resize:YES restore:YES], [SKAction fadeAlphaTo:0 duration:0]]];
+                        
+                        node.alpha = 1;
+                        [node runAction:animAction];
+                    }
+                    
                     break;
                 }
             }
@@ -213,7 +224,6 @@
         
         SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
         
-        [(SKSpriteNode*)self.currentDrag.node setColor:[UIColor yellowColor]];
         [self.currentDrag.node runAction:act];
     }
     
@@ -367,8 +377,6 @@
 
 - (void)attackEntity:(ComponentDraggableAttack*)attack source:(GPEntity*)source target:(GPEntity*)target
 {
-    attack.currentCooldown = attack.skillCooldown;
-    
     float damage = attack.damage;
     
     // Anima o ataque
@@ -611,6 +619,22 @@
     [self.bgMusicPlayer stop];
     
     [[GameController gameController] removeObserver:self];
+}
+- (NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
+{
+    NSMutableArray *animationFrames = [NSMutableArray array];
+    SKTextureAtlas *animationAtlas = [SKTextureAtlas atlasNamed:name];
+    
+    for(int i = firstNum; i <= animationAtlas.textureNames.count; i++)
+    {
+        // Nomes das imagens com números de 4 dígitos, por exemplo "0001"
+        NSString *partName = [NSString stringWithFormat:@"%@%04i", name, i];
+        SKTexture *part = [animationAtlas textureNamed:partName];
+        
+        [animationFrames addObject:part];
+    }
+    
+    return animationFrames;
 }
 
 @end

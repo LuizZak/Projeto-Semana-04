@@ -38,6 +38,9 @@
 // Music player da música de fundo atual
 @property AVAudioPlayer *bgMusicPlayer;
 
+// Arrsy de frames do cooldown das skills
+@property NSArray *cooldownFrames;
+
 // Acumulador do XP de batalha
 @property int battleXP;
 

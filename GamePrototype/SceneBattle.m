@@ -34,8 +34,6 @@
         [self.background setScale:0.5f];
         
         [self addChild:self.background];
-        
-        self.cooldownFrames = [self loadSpriteSheetFromImageWithName:@"TimeBall" startingAt:1];
     }
     return self;
 }
@@ -127,7 +125,7 @@
 {
     SKSpriteNode *attachGraph;
     SKLabelNode *damageLbl = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
-    SKSpriteNode *cooldownAnim = [SKSpriteNode spriteNodeWithTexture:self.cooldownFrames[0]];
+    SKSpriteNode *cooldownAnim = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(100, 100)];
     cooldownAnim.alpha = 0;
     cooldownAnim.name = @"COOLDOWN";
     
@@ -220,23 +218,6 @@
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
     //WorldMap *battleScene = [[WorldMap alloc] initWithSize:self.size];
     [self.scene.view presentScene:[[GameData gameData] world] transition: reveal];
-}
-
-- (NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
-{
-    NSMutableArray *animationFrames = [NSMutableArray array];
-    SKTextureAtlas *animationAtlas = [SKTextureAtlas atlasNamed:name];
-    
-    for(int i = firstNum; i <= animationAtlas.textureNames.count; i++)
-    {
-        // Nomes das imagens com números de 4 dígitos, por exemplo "0001"
-        NSString *partName = [NSString stringWithFormat:@"%@%04i", name, i];
-        SKTexture *part = [animationAtlas textureNamed:partName];
-        
-        [animationFrames addObject:part];
-    }
-    
-    return animationFrames;
 }
 
 @end

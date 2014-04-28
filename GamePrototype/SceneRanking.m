@@ -42,7 +42,6 @@
         self.cell.texture = [SKTexture textureWithImage:imgCell];
         self.cell.position = CGPointMake(500, 600 - (i*55));
         self.cell.zPosition = 10;
-        self.cell.alpha = 0.5;
         
         [self.scene addChild:self.cell];
         

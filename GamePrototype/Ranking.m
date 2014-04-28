@@ -86,35 +86,24 @@
 
 - (void)salvarPontuacao
 {
-    for (int i = 0; i <[[[Ranking lista] todosItens] count]; i++)
+    int maxRank = [[[Ranking lista] todosItens] count] < 10 ? [[[Ranking lista] todosItens] count] : 9;
+    for (int i = 0; i < maxRank; i++)
     {
         [self.dict setObject:@([[[[Ranking lista] todosItens] objectAtIndex:i] pontos]) forKey:[[[[Ranking lista] todosItens] objectAtIndex:i] nome]];
     }
     
-    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    [[NSUserDefaults standardUserDefaults] setObject:[NSKeyedArchiver archivedDataWithRootObject:self.dict] forKey:@"dict"];
-    //[prefs setObject:self.dict forKey:@"dict"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    //[prefs synchronize];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.dict forKey:@"rank"];
+    [defaults synchronize];
 }
 
 - (void)pegarPontuacao
 {
-    NSData *data = [[NSUserDefaults standardUserDefaults]objectForKey:@"dict"];
-    self.dict = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    //NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSDictionary *temp = [defaults dictionaryForKey:@"rank"];
     
-    //self.dict = [prefs stringForKey:@"dict"];
-    
-    NSArray *keys = [self.dict allKeys];
-    
-    for (NSString *key in keys)
-    {
-        NSLog(@"%@ is %@",key, [self.dict objectForKey:key]);
-        [[Ranking lista] criarPontuacao:key :[self.dict objectForKey:key]];
-    }
-    
+    self.dict = [temp mutableCopy];
 }
 
 @end

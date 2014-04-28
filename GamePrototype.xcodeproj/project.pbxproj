@@ -34,6 +34,7 @@
 		5EBB788F19070716001D961C /* pleaseTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EBB788E19070716001D961C /* pleaseTouch.png */; };
 		A0005D68190433CE003A60F1 /* DSMultilineLabelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = A0005D66190433CE003A60F1 /* DSMultilineLabelNode.m */; };
 		A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */ = {isa = PBXBuildFile; fileRef = A0005D6A19044064003A60F1 /* dragonAvatar.png */; };
+		A0105942190F122600B07EBE /* BattleResult.m in Sources */ = {isa = PBXBuildFile; fileRef = A0105941190F122600B07EBE /* BattleResult.m */; };
 		A02127E11909F40200D67A8B /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = A02127E01909F40200D67A8B /* GameController.m */; };
 		A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E21909F41B00D67A8B /* tile-earthTransitionBot.png */; };
 		A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E31909F41B00D67A8B /* tile-earthTransitionCorner.png */; };
@@ -165,6 +166,8 @@
 		A0005D67190433CE003A60F1 /* DSMultilineLabelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSMultilineLabelNode.h; sourceTree = "<group>"; };
 		A0005D691904405A003A60F1 /* dragonAvatar.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = dragonAvatar.fla; sourceTree = "<group>"; };
 		A0005D6A19044064003A60F1 /* dragonAvatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragonAvatar.png; sourceTree = "<group>"; };
+		A0105940190F122600B07EBE /* BattleResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleResult.h; sourceTree = "<group>"; };
+		A0105941190F122600B07EBE /* BattleResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleResult.m; sourceTree = "<group>"; };
 		A02127DF1909F40200D67A8B /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		A02127E01909F40200D67A8B /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		A02127E21909F41B00D67A8B /* tile-earthTransitionBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tile-earthTransitionBot.png"; sourceTree = "<group>"; };
@@ -612,6 +615,8 @@
 				B3B15DAA190ADD5800E98B92 /* AnimMaker.m */,
 				A09A05ED190C471200ACEAB8 /* BattleConfig.h */,
 				A09A05EE190C471200ACEAB8 /* BattleConfig.m */,
+				A0105940190F122600B07EBE /* BattleResult.h */,
+				A0105941190F122600B07EBE /* BattleResult.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -800,6 +805,7 @@
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
 				5E4A15C618FC66B80000BC5A /* WorldMap.m in Sources */,
+				A0105942190F122600B07EBE /* BattleResult.m in Sources */,
 				5E6CB6691909B2AA00C05DED /* ComponentBounty.m in Sources */,
 				B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */,
 				B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */,

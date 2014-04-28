@@ -14,6 +14,7 @@
 #import "ComponentHealth.h"
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
+#import "BattleResult.h"
 #import "WorldMap.h"
 #import "Ranking.h"
 #import "SceneMenu.h"
@@ -285,6 +286,14 @@
         
         [self createBattleMessage:@"You win!" won:YES animKeyName:nil];
     }
+    
+    // Atualiza o componente de resultado de batalha
+    BattleResult *result = [[BattleResult alloc] init];
+    
+    result.bountyXP = self.battleXP;
+    result.didWon = self.didWonBattle;
+    
+    [[GameData gameData].data setObject:result forKey:KEY_BATTLE_RESULT];
     
     self.tapToExit = YES;
 }

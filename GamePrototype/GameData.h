@@ -15,6 +15,7 @@
 #define KEY_PLAYER_LEVEL @"playerLevel"
 #define KEY_PLAYER_EXP @"playerExperience"
 #define KEY_PLAYER_SKILLS @"playerSkills"
+#define KEY_BATTLE_RESULT @"battleResult"
 
 @interface GameData : NSObject
 
@@ -25,9 +26,6 @@
 
 // Os dados do jogo
 @property NSMutableDictionary *data;
-
-// Reinicia os dados do jogo para os iniciais
-- (void)resetGameData;
 
 // Salvar a fase
 - (void)saveWorld:(WorldMap *)map; // WorldMap

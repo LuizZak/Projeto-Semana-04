@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 LUIZ FERNANDO SILVA. All rights reserved.
 //
 
-#import "GPGameScene.h"
+#import "GamePrototype.h"
 
 @interface SceneRanking : GPGameScene
 

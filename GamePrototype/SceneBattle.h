@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 LUIZ FERNANDO SILVA. All rights reserved.
 //
 
-#import "BattleConfig.h"
 #import "GameData.h"
 #import "GamePrototype.h"
-#import "WorldMap.h"
+#import <AVFoundation/AVFoundation.h>
+#import "BattleConfig.h"
 
 @interface SceneBattle : GPGameScene
 

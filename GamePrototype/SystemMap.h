@@ -14,4 +14,7 @@
 // Entidade que guarda o mapa
 @property GPEntity *mapEntity;
 
+// Atualiza o grid
+- (void)updateGrid;
+
 @end

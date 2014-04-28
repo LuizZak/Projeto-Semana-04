@@ -308,6 +308,12 @@
     [self.view presentScene:battleScene transition:reveal];
 }
 
+// Método chamado quando o mapa veio de um final de batalha
+- (void)comeFromBattle
+{
+    
+}
+
 - (NSMutableArray*)loadSpriteSheetFromImageWithName:(NSString*)name startingAt:(int)firstNum
 {
     NSMutableArray *animationFrames = [NSMutableArray array];
@@ -367,6 +373,11 @@
     [super didMoveToView:view];
     
     self.bgMusicPlayer = [[Som som] tocarSomMundo];
+    
+    if(self.battleResult != nil)
+    {
+        self.battleResult = nil;
+    }
 }
 - (void)willMoveFromView:(SKView *)view
 {

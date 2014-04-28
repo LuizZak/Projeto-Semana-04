@@ -41,13 +41,18 @@
     return ret;
 }
 
+- (void)updateGrid
+{
+    [self loadMap];
+}
+
 - (void)loadMap
 {
     if(self.mapEntity == nil)
         return;
     
-    // Pega o c
-    ComponentMapaGrid *comp = (ComponentMapaGrid*)[self.mapEntity getComponent:[ComponentMapaGrid class]];
+    // Pega o componente de mapa
+    ComponentMapaGrid *comp = GET_COMPONENT(self.mapEntity, ComponentMapaGrid);
     
     // Pega o node da entidade
     SKNode *mapContainer = [self.mapEntity node];

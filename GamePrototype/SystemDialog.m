@@ -9,6 +9,8 @@
 #import "SystemDialog.h"
 #import "ComponentDialog.h"
 
+const int depthDialog = 2000;
+
 @implementation SystemDialog
 
 - (id)initWithGameScene:(GPGameScene *)gameScene
@@ -192,6 +194,11 @@
     self.tapToContinueNode.hidden = YES;
     
     self.continueLabelAction = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction waitForDuration:0.5f], [SKAction fadeAlphaTo:0 duration:0], [SKAction waitForDuration:0.5f], [SKAction fadeAlphaTo:1 duration:0]]]];
+    
+    self.dialogNode.zPosition = depthDialog;
+    self.avatarNode.zPosition = depthDialog + 1;
+    textNode.zPosition = depthDialog + 2;
+    self.tapToContinueNode.zPosition = depthDialog + 3;
     
     [self.gameScene addChild:self.dialogNode];
 }

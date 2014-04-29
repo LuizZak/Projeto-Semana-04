@@ -28,6 +28,9 @@
 #define TILE_CASTLE_EARTH 4
 #define TILE_CASTLE_GRASS 5
 #define TILE_WATER        6
+#define TILE_CASTLE_EARTH_DOWN 7
+#define TILE_CASTLE_GRASS_DOWN 8
+#define TILE_CAVE_USEDC   9
 
 // Defines de Batalha
 #define FIREBALL_BITMASK 0x1 << 0

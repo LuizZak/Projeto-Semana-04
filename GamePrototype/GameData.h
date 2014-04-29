@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 @class WorldMap;
 
+#define KEY_PLAYER_MAX_HEALTH @"playerMaxHealth"
 #define KEY_PLAYER_HEALTH @"playerHealth"
 #define KEY_PLAYER_SPAWN_X @"playerSpawnX"
 #define KEY_PLAYER_SPAWN_Y @"playerSpawnY"

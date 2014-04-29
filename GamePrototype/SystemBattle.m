@@ -167,8 +167,12 @@
             WorldMap *worldMap = [GameData gameData].world;
             [self.gameScene.view presentScene:worldMap transition:reveal];
             return;
-        }else
+        }
+        else
         {
+            // Reseta o jogo
+            [[GameController gameController] resetGameData];
+            
             SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
             SceneMenu* menu = [[SceneMenu alloc] initWithSize:self.gameScene.size];
             [self.gameScene.view presentScene:menu transition:reveal];
@@ -294,6 +298,11 @@
     result.didWon = self.didWonBattle;
     
     [[GameData gameData].data setObject:result forKey:KEY_BATTLE_RESULT];
+    
+    // Salva o life atual do jogador
+    ComponentHealth *health = GET_COMPONENT(self.playerEntity, ComponentHealth);
+    
+    [[GameController gameController] setPlayerHealth:health.health];
     
     self.tapToExit = YES;
 }

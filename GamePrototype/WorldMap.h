@@ -13,7 +13,6 @@
 #import "SceneBattle.h"
 #import "CommonImports.h"
 #import "SystemMapMovement.h"
-#import "GameData.h"
 #import "BattleResult.h"
 
 @interface WorldMap : GPGameScene <SystemMapMovementDelegate>

@@ -20,9 +20,12 @@
 #import "ComponentBounty.h"
 #import "SystemMap.h"
 #import "SystemMovimentoAndar.h"
+#import "SystemMapHud.h"
 #import "SystemCamera.h"
 #import "SystemDialog.h"
 #import "DSMultilineLabelNode.h"
+#import "GameData.h"
+#import "GameController.h"
 #import "Som.h"
 
 @implementation WorldMap
@@ -41,6 +44,8 @@
         [self addSystem:[[SystemMapMovement alloc] initWithGameScene:self]];
         // Adiciona o sistema de câmera
         [self addSystem:[[SystemCamera alloc] initWithGameScene:self]];
+        // Adiciona o sistema de HUD
+        [self addSystem:[[SystemMapHud alloc] initWithGameScene:self]];
         
         // Arruma o delegate do sistema de movimento de mapa
         ((SystemMapMovement*)[self getSystem:[SystemMapMovement class]]).delegate = self;
@@ -248,7 +253,7 @@
     
     if(tileID == TILE_EARTH)
     {
-        random = arc4random() % 10;
+        random = arc4random() % 30;
         
         if(random == 0)
         {
@@ -257,11 +262,35 @@
     }
     else if(tileID == TILE_GRASS)
     {
-        random = arc4random() % 100;
+        random = arc4random() % 150;
         
         if(random == 0)
         {
             battle = YES;
+        }
+    }
+    else if(tileID == TILE_CASTLE_EARTH || tileID == TILE_CASTLE_GRASS)
+    {
+        battle = YES;
+    }
+    // Checkpoint. Revitaliza o life do jogador
+    else if(tileID == TILE_CAVE)
+    {
+        int curHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] intValue];
+        int maxHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_MAX_HEALTH] intValue];
+        
+        if(curHealth != maxHealth)
+        {
+            [[GameController gameController] setPlayerHealth:maxHealth];
+            
+            ComponentDialog *dialog = [[ComponentDialog alloc] init];
+            
+            dialog.textDialog = @"Vida revitalizada!";
+            
+            GPEntity *entity = [[GPEntity alloc] initWithNode:[SKNode node]];
+            [entity addComponent:dialog];
+            
+            [self addEntity:entity];
         }
     }
     
@@ -271,24 +300,35 @@
         
         // Pega o nível do player
         int playerLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
+        float healthMult = 1;
+        int expMult = 1;
+        
+        // Torna a batalha mais dificil caso o jogador esteja em cima de um castelo
+        if(tileID == TILE_CASTLE_EARTH || tileID == TILE_CASTLE_GRASS)
+        {
+            playerLevel += 5;
+            
+            healthMult *= 2;
+            expMult *= 3;
+        }
         
         // Adiciona alguns inimigos
         if(playerLevel == 1)
         {
-            [config.enemiesArray addObject:[self createEnemyWithHealth:30 exp:70]];
+            [config.enemiesArray addObject:[self createEnemyWithHealth:30 * healthMult exp:70 * expMult level:1]];
         }
         else
         {
-            [config.enemiesArray addObject:[self createEnemyWithHealth:50 exp:50]];
+            [config.enemiesArray addObject:[self createEnemyWithHealth:50 * healthMult exp:50 * expMult level:1]];
         }
         
         if(playerLevel > 1)
         {
-            [config.enemiesArray addObject:[self createEnemyWithHealth:75 exp:75]];
+            [config.enemiesArray addObject:[self createEnemyWithHealth:75 * healthMult exp:75 * expMult level:1]];
         }
         if(playerLevel > 3)
         {
-            [config.enemiesArray addObject:[self createEnemyWithHealth:100 exp:100]];
+            [config.enemiesArray addObject:[self createEnemyWithHealth:100 * healthMult exp:100 * expMult level:1]];
         }
         
         [self goToBattle:tileID battleConfig:config];
@@ -332,7 +372,7 @@
 }
 
 // Cria um novo inimigo para uma batalha
-- (GPEntity*)createEnemyWithHealth:(float)health exp:(int)exp
+- (GPEntity*)createEnemyWithHealth:(float)health exp:(int)exp level:(int)level
 {
     SKSpriteNode *enemyNode = [SKSpriteNode spriteNodeWithImageNamed:@"Knight"];
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
@@ -342,9 +382,18 @@
     [enemy addComponent:[[ComponentAIBattle alloc] init]];
     [enemy addComponent:[[ComponentBattleState alloc] init]];
     
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:5 damage:5 skillType:SkillFireball startEnabled:NO]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:10 damage:10 skillType:SkillMelee startEnabled:NO]];
-    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:25 damage:20 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:MAX(0, 5 - level) damage:5 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:MAX(0, 10 - level) damage:10 skillType:SkillMelee startEnabled:NO]];
+    [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:MAX(0, 20 - level) damage:20 skillType:SkillMelee startEnabled:NO]];
+    
+    if(level > 5)
+    {
+        [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:MAX(0, 40 - level) damage:40 skillType:SkillMelee startEnabled:NO]];
+    }
+    if(level > 15)
+    {
+        [enemy addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:MAX(0, 80 - level) damage:80 skillType:SkillMelee startEnabled:NO]];
+    }
     
     // Adiciona um bounty para este inimigo
     [enemy addComponent:[[ComponentBounty alloc] initWithExp:exp gold:10]];

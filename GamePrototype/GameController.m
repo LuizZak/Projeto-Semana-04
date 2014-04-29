@@ -53,12 +53,38 @@
 - (void)resetGameData
 {
     [[GameData gameData].data setObject:[NSNumber numberWithFloat:200] forKey:KEY_PLAYER_HEALTH];
+    [[GameData gameData].data setObject:[NSNumber numberWithFloat:200] forKey:KEY_PLAYER_MAX_HEALTH];
     [[GameData gameData].data setObject:[NSNumber numberWithInt:3]     forKey:KEY_PLAYER_SPAWN_X];
     [[GameData gameData].data setObject:[NSNumber numberWithInt:25]    forKey:KEY_PLAYER_SPAWN_Y];
     [[GameData gameData].data setObject:[NSNumber numberWithInt:1]     forKey:KEY_PLAYER_LEVEL];
     [[GameData gameData].data setObject:[NSNumber numberWithInt:0]     forKey:KEY_PLAYER_EXP];
     
     [self updatePlayerHealth];
+    
+    // Notifica os observers
+    for (id<GameControllerObserver> observer in observers)
+    {
+        if([observer respondsToSelector:@selector(gameControllerDidReset)])
+        {
+            [observer gameControllerDidReset];
+        }
+    }
+}
+
+- (void)setPlayerHealth:(int)health
+{
+    int currentMaxHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_MAX_HEALTH] intValue];
+    
+    [[GameData gameData].data setObject:[NSNumber numberWithInt:MIN(health, currentMaxHealth)] forKey:KEY_PLAYER_HEALTH];
+    
+    // Notifica os observers
+    for (id<GameControllerObserver> observer in observers)
+    {
+        if([observer respondsToSelector:@selector(gameControllerDidUpdatePlayerHP:)])
+        {
+            [observer gameControllerDidUpdatePlayerHP:MIN(health, currentMaxHealth)];
+        }
+    }
 }
 
 // Dá uma quantidade de XP para o player
@@ -147,14 +173,16 @@
 // Atualiza o sangue do jogador baseado no seu nível atual
 - (void)updatePlayerHealth
 {
+    int currentMaxHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_MAX_HEALTH] intValue];
     int currentHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] intValue];
     int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
     
-    int newHP = 25 + 50 * currentLevel;
+    int newHP = 100 + 50 * currentLevel;
     
-    if(currentHealth != newHP)
+    if(currentMaxHealth != newHP)
     {
-        [[GameData gameData].data setObject:[NSNumber numberWithInt:newHP] forKey:KEY_PLAYER_HEALTH];
+        [[GameData gameData].data setObject:[NSNumber numberWithInt:MIN(currentHealth, newHP)] forKey:KEY_PLAYER_HEALTH];
+        [[GameData gameData].data setObject:[NSNumber numberWithInt:newHP] forKey:KEY_PLAYER_MAX_HEALTH];
         
         // Notifica os observers
         for (id<GameControllerObserver> observer in observers)

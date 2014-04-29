@@ -14,6 +14,7 @@
 #import "ComponentHealthIndicator.h"
 #import "ComponentDraggableAttack.h"
 #import "ComponentBounty.h"
+#import "GFXBuilder.h"
 #import "Som.h"
 
 @implementation SceneBattle
@@ -85,7 +86,9 @@
     {
         ComponentDraggableAttack *attack = array[i];
         
-        [self createAttack:40 + 80 * i y:213 cooldown:attack.skillCooldown damage:attack.damage skillType:attack.skillType];
+        GPEntity *entity = [GFXBuilder createAttack:40 + 80 * i y:213 cooldown:attack.skillCooldown damage:attack.damage skillType:attack.skillType];
+        
+        [self addEntity:entity];
     }
 }
 
@@ -95,9 +98,10 @@
     SKNode *playerNode = [SKSpriteNode spriteNodeWithImageNamed:@"dragon-perfil"];
     GPEntity *player = [[GPEntity alloc] initWithNode:playerNode];
     
+    float maxPlayerHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_MAX_HEALTH] floatValue];
     float playerHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] floatValue];
     
-    [player addComponent:[[ComponentHealth alloc] initWithHealth:playerHealth maxhealth:playerHealth]];
+    [player addComponent:[[ComponentHealth alloc] initWithHealth:playerHealth maxhealth:maxPlayerHealth]];
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [player addComponent:[[ComponentBattleState alloc] initWithProjectilePoint:CGPointMake(190, 0)]];
     player.ID = PLAYER_ID;
@@ -120,7 +124,7 @@
     
     [self addEntity:player];
 }
-
+/*
 - (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage skillType:(SkillType)skillType
 {
     SKSpriteNode *attachGraph;
@@ -154,12 +158,10 @@
     [en.node addChild:damageLbl];
     [en.node addChild:cooldownAnim];
     
-    //[cooldownAnim runAction:[SKAction repeatActionForever:[SKAction animateWithTextures:self.cooldownFrames timePerFrame:0.05 resize:NO restore:NO]]];
-    
     en.type = PLAYER_TYPE;
     
     [self addEntity:en];
-}
+}*/
 
 - (void)sortEnemies
 {
@@ -203,11 +205,11 @@
 
 - (void)setSceneType:(int)sceneType
 {
-    if(sceneType == TILE_GRASS)
+    if(sceneType == TILE_GRASS || sceneType == TILE_CASTLE_GRASS)
     {
         [self.background setTexture:[SKTexture textureWithImageNamed:@"gramaScene"]];
     }
-    else if(sceneType == TILE_EARTH)
+    else if(sceneType == TILE_EARTH || sceneType == TILE_CASTLE_EARTH)
     {
         [self.background setTexture:[SKTexture textureWithImageNamed:@"earthScene"]];
     }

@@ -46,6 +46,8 @@
         [self addSystem:[[SystemCamera alloc] initWithGameScene:self]];
         // Adiciona o sistema de HUD
         [self addSystem:[[SystemMapHud alloc] initWithGameScene:self]];
+        // Adiciona o sistema de diálogo
+        [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
         
         // Arruma o delegate do sistema de movimento de mapa
         ((SystemMapMovement*)[self getSystem:[SystemMapMovement class]]).delegate = self;
@@ -58,39 +60,6 @@
         GPEntity *playerEntity = [self createPlayer:playerSpawnX * 64 y:playerSpawnY * 64];
         
         [self createCamera:0 y:0 withBounds:CGRectMake(0, 0, 30 * 64, 30 * 64) following:playerEntity];
-        
-        
-        // TESTE DE CAIXA DE DIÁLOGO
-        [self addSystem:[[SystemDialog alloc] initWithGameScene:self]];
-        
-        ComponentDialog *cmp = [[ComponentDialog alloc] init];
-        cmp.textColor = [UIColor whiteColor];
-        cmp.charDelay = 0.05f;
-        cmp.avatarTexture = [SKTexture textureWithImageNamed:@"dragon-portrate"];
-        cmp.characterName = @"Dragon";
-        cmp.textDialog = @"Rawr! Que bom dia para passear, mano!";
-        
-        ComponentDialog *cmp2 = [[ComponentDialog alloc] init];
-        cmp2.textColor = [UIColor whiteColor];
-        cmp2.charDelay = 0.05f;
-        cmp2.avatarTexture = [SKTexture textureWithImageNamed:@"Knight-portrate"];
-        cmp2.characterName = @"Knight";
-        cmp2.textDialog = @"Parô aê tiozão! Perdeu mermão!";
-        
-        ComponentDialog *cmp3 = [[ComponentDialog alloc] init];
-        cmp3.textColor = [UIColor whiteColor];
-        cmp3.charDelay = 0.05f;
-        cmp3.avatarTexture = [SKTexture textureWithImageNamed:@"dragon-portrate"];
-        cmp3.characterName = @"Dragon";
-        cmp3.textDialog = @"Eita porra!";
-        
-        cmp.nextDialog = cmp2;
-        cmp2.nextDialog = cmp3;
-        
-        GPEntity *entity = [[GPEntity alloc] initWithNode:[SKNode node]];
-        [entity addComponent:cmp];
-        
-        [self addEntity:entity];
     }
     return self;
 }

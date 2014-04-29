@@ -262,7 +262,7 @@
     }
     else if(tileID == TILE_GRASS)
     {
-        random = arc4random() % 150;
+        random = arc4random() % 200;
         
         if(random == 0)
         {

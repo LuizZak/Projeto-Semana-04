@@ -42,6 +42,8 @@
 // Carrega a batalha agora
 - (void)didMoveToView:(SKView *)view
 {
+    [super didMoveToView:view];
+    
     [self loadBattle];
 }
 
@@ -124,44 +126,6 @@
     
     [self addEntity:player];
 }
-/*
-- (void)createAttack:(float)x y:(float)y cooldown:(float)cooldown damage:(float)damage skillType:(SkillType)skillType
-{
-    SKSpriteNode *attachGraph;
-    SKLabelNode *damageLbl = [SKLabelNode labelNodeWithFontNamed:@"GillSans"];
-    SKSpriteNode *cooldownAnim = [SKSpriteNode spriteNodeWithColor:[UIColor clearColor] size:CGSizeMake(100, 100)];
-    cooldownAnim.alpha = 0;
-    cooldownAnim.name = @"COOLDOWN";
-    
-    damageLbl.text = [NSString stringWithFormat:@"%.0lf", damage];
-    damageLbl.horizontalAlignmentMode = SKLabelHorizontalAlignmentModeRight;
-    damageLbl.verticalAlignmentMode = SKLabelVerticalAlignmentModeBottom;
-    damageLbl.position = CGPointMake(45, -45);
-    
-    if(skillType == SkillFireball)
-    {
-        attachGraph = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
-        attachGraph.zRotation = M_PI / 4;
-        [attachGraph setScale:MIN(0.35f, 0.1f + damage / 150)];
-    }
-    else if(skillType == SkillMelee)
-    {
-        attachGraph = [SKSpriteNode spriteNodeWithImageNamed:@"bola-de-fogo"];
-    }
-    
-    GPEntity *en = [[GPEntity alloc] initWithNode:[SKSpriteNode spriteNodeWithColor:[UIColor redColor] size:CGSizeMake(100, 100)]];
-    en.node.position = CGPointMake(x, y);
-    en.node.zPosition = 12;
-    [en addComponent:[[ComponentDraggableAttack alloc] initWithSkillCooldown:cooldown damage:damage skillType:skillType startEnabled:YES]];
-    
-    [en.node addChild:attachGraph];
-    [en.node addChild:damageLbl];
-    [en.node addChild:cooldownAnim];
-    
-    en.type = PLAYER_TYPE;
-    
-    [self addEntity:en];
-}*/
 
 - (void)sortEnemies
 {

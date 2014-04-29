@@ -627,7 +627,7 @@
     }
 }
 
-- (void)gameSceneDidAddToView:(GPGameScene *)gameScene
+- (void)didAddToScene
 {
     self.bgMusicPlayer = [[Som som] tocarSomBatalha];
 }

@@ -512,7 +512,6 @@
 				5ECF637F18FF24F900029917 /* Scenes */,
 				5E8A846D18FDC5960081583D /* Singletons */,
 				5E8A846818FDABA90081583D /* Images */,
-				B32B9BBB18FDA02300BF4B2C /* iPad */,
 				B34B2DDD18F470E7007B82C4 /* Engine */,
 				B32AE37618F4702C006F8635 /* Systems */,
 				B32AE37518F47027006F8635 /* Components */,
@@ -608,13 +607,6 @@
 				A0105944190F209800B07EBE /* SystemMapHud.m */,
 			);
 			name = Systems;
-			sourceTree = "<group>";
-		};
-		B32B9BBB18FDA02300BF4B2C /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		B34B2DDD18F470E7007B82C4 /* Engine */ = {

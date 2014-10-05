@@ -202,7 +202,7 @@
     [system didRemoveFromScene];
 }
 // Retorna um sistema específico adicionado à cena
-- (GPSystem*)getSystem:(Class)systemClass
+- (id)getSystem:(Class)systemClass
 {
     for (GPSystem *system in systems) {
         if([system isKindOfClass:systemClass])

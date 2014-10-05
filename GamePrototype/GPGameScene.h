@@ -86,6 +86,6 @@
 // Remove um sistema da cena
 - (void)removeSystem:(GPSystem*)system;
 // Retorna um sistema específico adicionado à cena
-- (GPSystem*)getSystem:(Class)systemClass;
+- (id)getSystem:(Class)systemClass;
 
 @end

@@ -10,4 +10,19 @@
 
 @implementation ActionQueueView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        
+    }
+    return self;
+}
+
+- (void)updateQueueView:(NSTimeInterval)timestep
+{
+    
+}
+
 @end

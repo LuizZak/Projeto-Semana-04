@@ -45,6 +45,13 @@
 		A09A05EF190C471200ACEAB8 /* BattleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A09A05EE190C471200ACEAB8 /* BattleConfig.m */; };
 		A0CF924319DF610800D1011B /* GPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924219DF610800D1011B /* GPEvent.m */; };
 		A0CF924619DF611800D1011B /* GPEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924519DF611800D1011B /* GPEventDispatcher.m */; };
+		A0D9F61319E1D00A0077CB4A /* BattleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61219E1D00A0077CB4A /* BattleAction.m */; };
+		A0D9F61919E1D1270077CB4A /* ActionCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61819E1D1270077CB4A /* ActionCollection.m */; };
+		A0D9F61C19E1D3160077CB4A /* ActionBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61B19E1D3160077CB4A /* ActionBarManager.m */; };
+		A0D9F61F19E1D4570077CB4A /* ActionQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61E19E1D4570077CB4A /* ActionQueueManager.m */; };
+		A0D9F62419E1E4E80077CB4A /* ActionBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62319E1E4E80077CB4A /* ActionBarView.m */; };
+		A0D9F62719E1E6570077CB4A /* ActionQueueView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62619E1E6570077CB4A /* ActionQueueView.m */; };
+		A0D9F62A19E1E8BD0077CB4A /* ActionRunTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */; };
 		B313318A190EF345009C29BA /* TimeBall.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B3133189190EF345009C29BA /* TimeBall.atlas */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
@@ -191,6 +198,21 @@
 		A0CF924419DF611800D1011B /* GPEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEventDispatcher.h; sourceTree = "<group>"; };
 		A0CF924519DF611800D1011B /* GPEventDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEventDispatcher.m; sourceTree = "<group>"; };
 		A0CF924719DF615F00D1011B /* GPEventListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEventListener.h; sourceTree = "<group>"; };
+		A0D9F61119E1D00A0077CB4A /* BattleAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleAction.h; sourceTree = "<group>"; };
+		A0D9F61219E1D00A0077CB4A /* BattleAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleAction.m; sourceTree = "<group>"; };
+		A0D9F61719E1D1270077CB4A /* ActionCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionCollection.h; sourceTree = "<group>"; };
+		A0D9F61819E1D1270077CB4A /* ActionCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionCollection.m; sourceTree = "<group>"; };
+		A0D9F61A19E1D3160077CB4A /* ActionBarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBarManager.h; sourceTree = "<group>"; };
+		A0D9F61B19E1D3160077CB4A /* ActionBarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBarManager.m; sourceTree = "<group>"; };
+		A0D9F61D19E1D4570077CB4A /* ActionQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionQueueManager.h; sourceTree = "<group>"; };
+		A0D9F61E19E1D4570077CB4A /* ActionQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionQueueManager.m; sourceTree = "<group>"; };
+		A0D9F62119E1D9F90077CB4A /* ActionRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionRunner.h; sourceTree = "<group>"; };
+		A0D9F62219E1E4E80077CB4A /* ActionBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionBarView.h; sourceTree = "<group>"; };
+		A0D9F62319E1E4E80077CB4A /* ActionBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionBarView.m; sourceTree = "<group>"; };
+		A0D9F62519E1E6570077CB4A /* ActionQueueView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionQueueView.h; sourceTree = "<group>"; };
+		A0D9F62619E1E6570077CB4A /* ActionQueueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionQueueView.m; sourceTree = "<group>"; };
+		A0D9F62819E1E8BD0077CB4A /* ActionRunTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionRunTimer.h; sourceTree = "<group>"; };
+		A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionRunTimer.m; sourceTree = "<group>"; };
 		B3133189190EF345009C29BA /* TimeBall.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TimeBall.atlas; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -470,6 +492,70 @@
 			name = Eventing;
 			sourceTree = "<group>";
 		};
+		A0D9F60F19DF779E0077CB4A /* ECS */ = {
+			isa = PBXGroup;
+			children = (
+				B34B2DDD18F470E7007B82C4 /* Engine */,
+				B32AE37618F4702C006F8635 /* Systems */,
+				B32AE37518F47027006F8635 /* Components */,
+			);
+			name = ECS;
+			sourceTree = "<group>";
+		};
+		A0D9F61019E1CFDE0077CB4A /* Battle System */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F62019E1D9C30077CB4A /* Protocols */,
+				A0D9F61619E1D0FC0077CB4A /* View */,
+				A0D9F61519E1D0F10077CB4A /* Control */,
+				A0D9F61419E1D0E80077CB4A /* Data */,
+			);
+			name = "Battle System";
+			sourceTree = "<group>";
+		};
+		A0D9F61419E1D0E80077CB4A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F61119E1D00A0077CB4A /* BattleAction.h */,
+				A0D9F61219E1D00A0077CB4A /* BattleAction.m */,
+				A0D9F61719E1D1270077CB4A /* ActionCollection.h */,
+				A0D9F61819E1D1270077CB4A /* ActionCollection.m */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		A0D9F61519E1D0F10077CB4A /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F61A19E1D3160077CB4A /* ActionBarManager.h */,
+				A0D9F61B19E1D3160077CB4A /* ActionBarManager.m */,
+				A0D9F61D19E1D4570077CB4A /* ActionQueueManager.h */,
+				A0D9F61E19E1D4570077CB4A /* ActionQueueManager.m */,
+				A0D9F62819E1E8BD0077CB4A /* ActionRunTimer.h */,
+				A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
+		A0D9F61619E1D0FC0077CB4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F62219E1E4E80077CB4A /* ActionBarView.h */,
+				A0D9F62319E1E4E80077CB4A /* ActionBarView.m */,
+				A0D9F62519E1E6570077CB4A /* ActionQueueView.h */,
+				A0D9F62619E1E6570077CB4A /* ActionQueueView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A0D9F62019E1D9C30077CB4A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F62119E1D9F90077CB4A /* ActionRunner.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		B32AE31D18F465CB006F8635 = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +590,8 @@
 		B32AE33118F465CC006F8635 /* GamePrototype */ = {
 			isa = PBXGroup;
 			children = (
+				A0D9F61019E1CFDE0077CB4A /* Battle System */,
+				A0D9F60F19DF779E0077CB4A /* ECS */,
 				B3B15DA8190ADC6200E98B92 /* Misc */,
 				5E6CB6601909963400C05DED /* Controllers */,
 				5E6CB6591909904500C05DED /* Objetos */,
@@ -512,9 +600,6 @@
 				5ECF637F18FF24F900029917 /* Scenes */,
 				5E8A846D18FDC5960081583D /* Singletons */,
 				5E8A846818FDABA90081583D /* Images */,
-				B34B2DDD18F470E7007B82C4 /* Engine */,
-				B32AE37618F4702C006F8635 /* Systems */,
-				B32AE37518F47027006F8635 /* Components */,
 				B35DDFA218F5D9970079F74D /* CommonImports.h */,
 				B32AE33A18F465CC006F8635 /* AppDelegate.h */,
 				B32AE33B18F465CC006F8635 /* AppDelegate.m */,
@@ -801,12 +886,15 @@
 			files = (
 				B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */,
 				5E8A847018FDC6110081583D /* GameData.m in Sources */,
+				A0D9F62419E1E4E80077CB4A /* ActionBarView.m in Sources */,
 				B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */,
+				A0D9F61C19E1D3160077CB4A /* ActionBarManager.m in Sources */,
 				B32AE37118F46B35006F8635 /* GPSystem.m in Sources */,
 				A0005D68190433CE003A60F1 /* DSMultilineLabelNode.m in Sources */,
 				B33EBCC219004F410027882B /* SystemDialog.m in Sources */,
 				A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */,
 				A0105948190F230400B07EBE /* GFXBuilder.m in Sources */,
+				A0D9F62719E1E6570077CB4A /* ActionQueueView.m in Sources */,
 				B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */,
 				B32AE36B18F46736006F8635 /* GPEntity.m in Sources */,
 				B32DB95F18F49557001ECCD2 /* SystemBattle.m in Sources */,
@@ -814,6 +902,7 @@
 				B32E644618FF099F00040D47 /* ComponentCamera.m in Sources */,
 				B32AE34818F465CC006F8635 /* SceneBattle.m in Sources */,
 				B32AE34518F465CC006F8635 /* ViewController.m in Sources */,
+				A0D9F61919E1D1270077CB4A /* ActionCollection.m in Sources */,
 				5E4A15CD18FC7A0C0000BC5A /* SystemMovimentoAndar.m in Sources */,
 				5E44346F190853EA00EBA273 /* Som.m in Sources */,
 				A09A05EF190C471200ACEAB8 /* BattleConfig.m in Sources */,
@@ -834,13 +923,16 @@
 				A0105942190F122600B07EBE /* BattleResult.m in Sources */,
 				5E6CB6691909B2AA00C05DED /* ComponentBounty.m in Sources */,
 				B35DDFA118F5D11A0079F74D /* ComponentHealth.m in Sources */,
+				A0D9F61319E1D00A0077CB4A /* BattleAction.m in Sources */,
 				B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */,
 				B32B9BC118FDB68A00BF4B2C /* SystemMap.m in Sources */,
 				B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */,
+				A0D9F62A19E1E8BD0077CB4A /* ActionRunTimer.m in Sources */,
 				5E7214B0190AD07700678908 /* SceneMenu.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,
 				B35DDFA818F5E4FF0079F74D /* ComponentHealthIndicator.m in Sources */,
 				A02127E11909F40200D67A8B /* GameController.m in Sources */,
+				A0D9F61F19E1D4570077CB4A /* ActionQueueManager.m in Sources */,
 				5E6CB65C1909908C00C05DED /* Score.m in Sources */,
 				B32AE33818F465CC006F8635 /* main.m in Sources */,
 			);

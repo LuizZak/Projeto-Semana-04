@@ -18,8 +18,8 @@
     {
         closing = NO;
         
-        self.arcRadius = 135;
-        self.pieRadius = 100;
+        self.arcRadius = 160;
+        self.pieRadius = 120;
         self.organizeCategories = YES;
         self.actionCollection = collection;
     }

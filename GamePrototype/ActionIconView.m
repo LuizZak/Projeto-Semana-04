@@ -16,17 +16,36 @@
     if (self)
     {
         self.action = action;
-        [self updateDisplay];
+        self.userInteractionEnabled = YES;
+        [self createIcon];
     }
     return self;
 }
 
-/// Updates the display of this ActionIconView
-- (void)updateDisplay
+- (void)update:(NSTimeInterval)timestep
 {
-    self.iconBackground = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(50, 50)];
+    
+}
+
+/// Updates the display of this ActionIconView
+- (void)createIcon
+{
+    self.iconBackground = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(60, 60)];
     
     [self addChild:self.iconBackground];
+}
+
+- (void)setOnTapped:(ActionIconViewTapped)onTappedBlock
+{
+    self->onTapped = onTappedBlock;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if(onTapped != nil)
+    {
+        self->onTapped();
+    }
 }
 
 @end

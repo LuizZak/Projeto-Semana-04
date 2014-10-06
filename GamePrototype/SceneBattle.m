@@ -122,7 +122,7 @@
     float playerHealth = [[[GameData gameData].data objectForKey:KEY_PLAYER_HEALTH] floatValue];
     
     [player addComponent:[[ComponentHealth alloc] initWithHealth:playerHealth maxhealth:maxPlayerHealth]];
-    [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:60 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [player addComponent:[[ComponentBattleState alloc] initWithProjectilePoint:CGPointMake(190, 0)]];
     player.ID = PLAYER_ID;
     

@@ -48,7 +48,7 @@
 /// Replenishes a portion of charge on this ActionBarManager
 - (CGFloat)replenishCharge:(CGFloat)charge
 {
-    if(charge < 0)
+    if(charge < 0 || self.actionRunTimer.isPerformingAction)
     {
         return 0;
     }
@@ -63,7 +63,7 @@
 /// Replenishes a portion of charge on this ActionBarManager
 - (CGFloat)drainCharge:(CGFloat)charge
 {
-    if(charge < 0)
+    if(charge < 0 || self.actionRunTimer.isPerformingAction)
     {
         return 0;
     }
@@ -77,7 +77,7 @@
 
 - (void)performAction:(BattleAction*)action
 {
-    if([self canPerformAction:action])
+    if(![self canPerformAction:action])
     {
         return;
     }
@@ -95,7 +95,14 @@
 
 - (BOOL)canPerformAction:(BattleAction*)action
 {
-    return !self.actionRunTimer.isPerformingAction && self.charge >= action.actionCharge;
+    // False case: Total queue charge + action charge is larger than the available charge
+    if(self.actionQueueManager.totalQueueCharge + action.actionCharge > self.charge)
+    {
+        return NO;
+    }
+    
+    // False case: There's an action currently being performed
+    return !self.actionRunTimer.isPerformingAction;
 }
 
 @end

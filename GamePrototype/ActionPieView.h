@@ -8,21 +8,10 @@
 
 #import <SpriteKit/SpriteKit.h>
 #import "ActionCollection.h"
+#import "ActionBarManager.h"
+#import "ActionIconView.h"
+#import "ActionPieContainerView.h"
 #import "GPGameScene.h"
-
-/// Describes the orientation of an ActionPieView
-typedef enum ActionPieViewMenuOrientationEnum {
-    /// Automatically chooses the orientation to display the ActionPieMenu
-    ActionPieViewMenuOrientationAuto,
-    /// Specifies that a menu is pointing up
-    ActionPieViewMenuOrientationTop,
-    /// Specifies that a menu is pointing left
-    ActionPieViewMenuOrientationLeft,
-    /// Specifies that a menu is pointing bottom
-    ActionPieViewMenuOrientationBottom,
-    /// Specifies that a menu is pointing right
-    ActionPieViewMenuOrientationRight
-} ActionPieViewMenuOrientation;
 
 /// Pie view used to display a collection of actions on top of a point
 @interface ActionPieView : SKNode <GPGameSceneNotifier>
@@ -34,26 +23,20 @@ typedef enum ActionPieViewMenuOrientationEnum {
 /// The target of this ActionPieView
 @property SKNode *target;
 
-/// The radius of the pie menu
-@property CGFloat pieRadius;
+/// The container for the items of this ActionPieView
+@property ActionPieContainerView *container;
 
-/// The radius to layout the items of the pie menu on, in degrees
-@property CGFloat arcRadius;
-
-/// Whether to allow this ActionPieView to organize the actions into categories that are displayed in sub-menus
-@property BOOL organizeCategories;
+/// The orientation to display this ActionPieMenu
+@property ActionPieViewMenuOrientation orientation;
 
 /// The action collection associated with this ActionPieView
 @property ActionCollection *actionCollection;
 
-/// A reference to the parent menu of this ActionPieMenu, when available
-@property (weak) ActionPieView *parentMenu;
+/// Whether to allow this ActionPieView to organize the actions into categories that are displayed in sub-menus
+@property BOOL displayCategoriesOnly;
 
-/// A reference to the child menu of this ActionPieMenu, when available
-@property ActionPieView *childMenu;
-
-/// The orientation to display this ActionPieMenu
-@property ActionPieViewMenuOrientation orientation;
+/// A reference to the action bar manager to perform actions
+@property ActionBarManager *actionBarManager;
 
 /// Initializes this ActionPieView with a given ActionCollection
 - (id)initWithActionCollection:(ActionCollection*)collection;
@@ -61,13 +44,16 @@ typedef enum ActionPieViewMenuOrientationEnum {
 /// Opens this menu with a given orientation at a given point
 - (void)open:(ActionPieViewMenuOrientation)orientation onNode:(SKNode*)node atPoint:(CGPoint)point;
 
+/// Called by the ActionPieContainerView to notify when the user has tapped an item
+- (void)actionTapped:(ActionIconView*)icon;
+
 /// Closes this menu and all children menus opened on this ActionPieView
 - (void)close;
 
 /// Called whenever the first immediate child of this ActionPieView has closed itself
 - (void)childClosed;
 
-/// Opens up a submenu on this ActionPieMenu on a given item index
-- (void)openSubMenu:(ActionCollection*)collection onIndex:(NSInteger)index;
+/// Opens up a submenu on this ActionPieMenu on a given container
+- (void)openSubMenu:(ActionCollection*)collection onActionContainer:(ActionPieContainerView*)container;
 
 @end

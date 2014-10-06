@@ -10,4 +10,15 @@
 
 @implementation BattleAction
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.actionCharge = 20;
+        self.actionDuration = 2;
+    }
+    return self;
+}
+
 @end

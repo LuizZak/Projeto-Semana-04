@@ -406,10 +406,9 @@
 {
     ActionCollection *collection = [self generateActionCollectionForEntity:target];
     ActionPieView *pieView = [[ActionPieView alloc] initWithActionCollection:collection];
-    
-    [pieView open:ActionPieViewMenuOrientationAuto onNode:target.node atPoint:CGPointZero];
-    
+    pieView.actionBarManager = self.playerActionBar;
     [self.gameScene addNotifier:pieView];
+    [pieView open:ActionPieViewMenuOrientationAuto onNode:target.node atPoint:CGPointZero];
 }
 
 /// Generates a collection of actions that can be performed on top of a given entity
@@ -420,10 +419,14 @@
     [collection addAction:[[BattleAction alloc] init]];
     [collection addAction:[[BattleAction alloc] init]];
     [collection addAction:[[BattleAction alloc] init]];
+    [collection addAction:[[BattleAction alloc] init]];
+    [collection addAction:[[BattleAction alloc] init]];
     
     [collection.actionList[0] setActionType:ActionTypeAttack];
     [collection.actionList[1] setActionType:ActionTypeItem];
     [collection.actionList[2] setActionType:ActionTypeSkill];
+    [collection.actionList[3] setActionType:ActionTypeSkill];
+    [collection.actionList[4] setActionType:ActionTypeSkill];
     
     return collection;
 }

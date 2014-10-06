@@ -56,7 +56,6 @@ const int depthDialog = 2000;
 {
     UITouch *tch = [touches anyObject];
     self.selectedPlace = [tch locationInNode:gameScene];
-    SKNode *noClicado = [gameScene nodeAtPoint:self.selectedPlace];
     
     if(self.showingDialog)
     {
@@ -200,7 +199,7 @@ const int depthDialog = 2000;
     textNode.zPosition = depthDialog + 2;
     self.tapToContinueNode.zPosition = depthDialog + 3;
     
-    [self.gameScene addChild:self.dialogNode];
+    //[self.gameScene addChild:self.dialogNode];
 }
 
 // Destroi a caixa de diálogo
@@ -308,7 +307,11 @@ const int depthDialog = 2000;
         }
     }
     else
+    {
         [self changeDialogTextSize:(int)self.currentText.length];
+    }
+    
+    [self.gameScene addChild:self.dialogNode];
 }
 
 - (void)hideDialog
@@ -316,6 +319,7 @@ const int depthDialog = 2000;
     // Se a entidade do diálogo atual não for nula, esconde o diálogo removendo ela
     if(self.currentDialogEntity != nil)
     {
+        [self.dialogNode removeFromParent];
         [self.gameScene removeEntity:self.currentDialogEntity];
         return;
     }

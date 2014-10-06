@@ -224,7 +224,7 @@
     {
         random = arc4random() % 30;
         
-        if(random == 0)
+        //if(random == 0)
         {
             battle = YES;
         }
@@ -233,7 +233,7 @@
     {
         random = arc4random() % 200;
         
-        if(random == 0)
+        //if(random == 0)
         {
             battle = YES;
         }
@@ -347,7 +347,7 @@
     GPEntity *enemy = [[GPEntity alloc] initWithNode:enemyNode];
     
     [enemy addComponent:[[ComponentHealth alloc] initWithHealth:health maxhealth:health]];
-    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:200 barHeight:30 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
+    [enemy addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:200 barHeight:60 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [enemy addComponent:[[ComponentAIBattle alloc] init]];
     [enemy addComponent:[[ComponentBattleState alloc] init]];
     

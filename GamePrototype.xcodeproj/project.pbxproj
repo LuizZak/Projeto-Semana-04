@@ -43,6 +43,7 @@
 		A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E41909F41B00D67A8B /* tile-earthTransitionL.png */; };
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
 		A09A05EF190C471200ACEAB8 /* BattleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A09A05EE190C471200ACEAB8 /* BattleConfig.m */; };
+		A0B0B53619E331D600D46A0E /* ActionPieContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B53519E331D600D46A0E /* ActionPieContainerView.m */; };
 		A0CF924319DF610800D1011B /* GPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924219DF610800D1011B /* GPEvent.m */; };
 		A0CF924619DF611800D1011B /* GPEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924519DF611800D1011B /* GPEventDispatcher.m */; };
 		A0D9F61319E1D00A0077CB4A /* BattleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61219E1D00A0077CB4A /* BattleAction.m */; };
@@ -195,6 +196,8 @@
 		A02B81C11902201900D5A417 /* ComponentMapMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapMovement.m; sourceTree = "<group>"; };
 		A09A05ED190C471200ACEAB8 /* BattleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleConfig.h; sourceTree = "<group>"; };
 		A09A05EE190C471200ACEAB8 /* BattleConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleConfig.m; sourceTree = "<group>"; };
+		A0B0B53419E331D600D46A0E /* ActionPieContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionPieContainerView.h; sourceTree = "<group>"; };
+		A0B0B53519E331D600D46A0E /* ActionPieContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionPieContainerView.m; sourceTree = "<group>"; };
 		A0CF924119DF610800D1011B /* GPEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEvent.h; sourceTree = "<group>"; };
 		A0CF924219DF610800D1011B /* GPEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEvent.m; sourceTree = "<group>"; };
 		A0CF924419DF611800D1011B /* GPEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEventDispatcher.h; sourceTree = "<group>"; };
@@ -486,6 +489,17 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
+		A0B0B53319E331BF00D46A0E /* Action Pie Menu */ = {
+			isa = PBXGroup;
+			children = (
+				A0D9F62E19E216C50077CB4A /* ActionPieView.h */,
+				A0D9F62F19E216C50077CB4A /* ActionPieView.m */,
+				A0B0B53419E331D600D46A0E /* ActionPieContainerView.h */,
+				A0B0B53519E331D600D46A0E /* ActionPieContainerView.m */,
+			);
+			name = "Action Pie Menu";
+			sourceTree = "<group>";
+		};
 		A0CF924019DF60FD00D1011B /* Eventing */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,14 +560,13 @@
 		A0D9F61619E1D0FC0077CB4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A0B0B53319E331BF00D46A0E /* Action Pie Menu */,
 				A0D9F62219E1E4E80077CB4A /* ActionBarView.h */,
 				A0D9F62319E1E4E80077CB4A /* ActionBarView.m */,
 				A0D9F62519E1E6570077CB4A /* ActionQueueView.h */,
 				A0D9F62619E1E6570077CB4A /* ActionQueueView.m */,
 				A0D9F62B19E1F9AC0077CB4A /* ActionIconView.h */,
 				A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */,
-				A0D9F62E19E216C50077CB4A /* ActionPieView.h */,
-				A0D9F62F19E216C50077CB4A /* ActionPieView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -907,6 +920,7 @@
 				A0105948190F230400B07EBE /* GFXBuilder.m in Sources */,
 				A0D9F62719E1E6570077CB4A /* ActionQueueView.m in Sources */,
 				B32E643E18FEF66700040D47 /* SystemMapMovement.m in Sources */,
+				A0B0B53619E331D600D46A0E /* ActionPieContainerView.m in Sources */,
 				B32AE36B18F46736006F8635 /* GPEntity.m in Sources */,
 				B32DB95F18F49557001ECCD2 /* SystemBattle.m in Sources */,
 				B32E643B18FEF58400040D47 /* ComponentMovement.m in Sources */,

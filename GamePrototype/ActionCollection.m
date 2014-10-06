@@ -39,8 +39,10 @@
 }
 
 /// Returns a list of actions that match the given battle action type
-- (NSMutableArray*)actionsForType:(BattleActionType)actionType
+- (ActionCollection*)actionsForType:(BattleActionType)actionType
 {
+    ActionCollection *col = [[ActionCollection alloc] init];
+    
     NSMutableArray *ret = [NSMutableArray array];
     
     for (BattleAction *action in self.actionList)
@@ -51,7 +53,9 @@
         }
     }
     
-    return ret;
+    col.actionList = ret;
+    
+    return col;
 }
 
 @end

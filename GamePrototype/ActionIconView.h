@@ -9,14 +9,20 @@
 #import <SpriteKit/SpriteKit.h>
 #import "BattleAction.h"
 
+typedef void(^ActionIconViewTapped)(void);
+
 /// Object utilized to display an action icon on the screen
 @interface ActionIconView : SKNode
+{
+    /// Block called whenever the action view has been tapped
+    ActionIconViewTapped onTapped;
+}
 
 /// The action to load on this icon
 @property BattleAction *action;
 
 /// Whethe this ActionIconView is used to display the category of the battle action only
-@property BOOL categoryDisplay;
+@property BOOL displayCategoryOnly;
 
 /// The backgound image of the icon to display
 @property SKSpriteNode *iconBackground;
@@ -26,5 +32,8 @@
 
 /// Initializes this ActionIconView with a given action
 - (id)initWithAction:(BattleAction*)action;
+
+/// Block called whenever the action view has been tapped
+- (void)setOnTapped:(ActionIconViewTapped)onTapped;
 
 @end

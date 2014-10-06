@@ -7,7 +7,6 @@
 //
 
 #import "ActionPieView.h"
-#import "ActionIconView.h"
 
 @implementation ActionPieView
 
@@ -18,10 +17,8 @@
     {
         closing = NO;
         
-        self.arcRadius = 160;
-        self.pieRadius = 120;
-        self.organizeCategories = YES;
         self.actionCollection = collection;
+        self.displayCategoriesOnly = YES;
     }
     return self;
 }
@@ -69,6 +66,11 @@
         }
     }
     
+    self.orientation = orientation;
+    self.container = [self createContainer:self.actionCollection];
+    [self addChild:self.container];
+    [self.container initialize];
+    
     self.target = node;
     self.orientation = orientation;
     self.zPosition = 1000;
@@ -76,166 +78,87 @@
     // Add pie menu to node
     self.position = realPoint;
     [scene addChild:self];
-    
-    [self createIcons];
 }
 
 - (void)close
 {
-    closing = YES;
+    [self.container close];
     
-    // Close children menu first
-    if(self.childMenu)
-    {
-        [self.childMenu close];
-    }
+    closing = YES;
     
     [(GPGameScene*)self.scene removeNotifier:self];
     [self removeFromParent];
-    
-    if(self.parentMenu)
-    {
-        [self.parentMenu childClosed];
-        self.parentMenu = nil;
-    }
 }
 
-- (void)childClosed
+- (ActionPieContainerView*)createContainer:(ActionCollection*)collection
 {
-    self.childMenu = nil;
+    ActionPieContainerView *container = [[ActionPieContainerView alloc] initWithActionCollection:collection];
+    container.actionPieOwner = self;
+    container.orientation = self.orientation;
+    container.displayCategoriesOnly = self.displayCategoriesOnly;
+    
+    return container;
 }
 
-- (void)openSubMenu:(ActionCollection *)collection onIndex:(NSInteger)index
+- (void)actionTapped:(ActionIconView *)action
 {
-    
-}
-
-// Private members
-- (void)createIcons
-{
-    // List of icons to display
-    NSMutableArray *iconsArray = [self getActionIconViewList];
-    
-    // Calculate the angles now
-    CGFloat startAngle = 0;
-    
-    switch (self.orientation) {
-        case ActionPieViewMenuOrientationBottom:
-            startAngle = -90;
-            break;
-        case ActionPieViewMenuOrientationLeft:
-            startAngle = 180;
-            break;
-        case ActionPieViewMenuOrientationRight:
-            startAngle = 0;
-            break;
-        case ActionPieViewMenuOrientationTop:
-            startAngle = 90;
-        default:
-            startAngle = 0;
-            break;
-    }
-    
-    startAngle -= self.arcRadius / 2;
-    CGFloat stepAngle = self.arcRadius / iconsArray.count;
-    
-    for (int i = 0; i < iconsArray.count; i++)
+    if(action.displayCategoryOnly)
     {
-        CGFloat iconAngle = startAngle + stepAngle * i + stepAngle / 2;
+        ActionPieContainerView *container = [self containerForActionIconView:action];
         
-        CGPoint point = CGPointMake(cos(iconAngle * (M_PI / 180)) * self.pieRadius, sin(iconAngle * (M_PI / 180)) * self.pieRadius);
+        [container.childMenu close];
         
-        SKNode *node = iconsArray[i];
-        node.position = point;
+        ActionPieContainerView *newContainer = [self createContainer:[container.actionCollection actionsForType:action.action.actionType]];
+        newContainer.displayCategoriesOnly = NO;
+        newContainer.orientation = ActionPieViewMenuOrientationRight;
+        newContainer.modAngle = [container angleForIcon:action];
+        container.childMenu = newContainer;
+        newContainer.parentMenu = container;
         
-        [self addChild:node];
-    }
-}
-
-/// Returns a list of ActionIconView items that represent the icons to display on this ActionPieView
-- (NSMutableArray*)getActionIconViewList
-{
-    NSMutableArray *iconsArray = [NSMutableArray array];
-    
-    if(self.actionCollection.actionList.count == 0)
-    {
-        return iconsArray;
-    }
-    
-    if(self.organizeCategories)
-    {
-        BOOL hasAttack = NO;
-        BOOL hasSkill = NO;
-        BOOL hasItems = NO;
+        CGPoint point = [action convertPoint:CGPointZero toNode:self];
         
-        for (BattleAction *action in self.actionCollection.actionList)
-        {
-            switch(action.actionType)
-            {
-                case ActionTypeAttack:
-                    hasAttack = YES;
-                    break;
-                case ActionTypeItem:
-                    hasItems = YES;
-                    break;
-                case ActionTypeSkill:
-                    hasSkill = YES;
-                    break;
-            }
-        }
+        newContainer.position = point;
+        [self addChild:newContainer];
+        [newContainer initialize];
         
-        // Now, create an icon view for each item
-        if(hasSkill)
-        {
-            BattleAction *dummy = [[BattleAction alloc] init]; dummy.actionType = ActionTypeSkill;
-            
-            ActionIconView *icon = [[ActionIconView alloc] initWithAction:dummy];
-            icon.categoryDisplay = YES;
-            
-            [iconsArray addObject:icon];
-        }
-        if(hasAttack)
-        {
-            BattleAction *dummy = [[BattleAction alloc] init]; dummy.actionType = ActionTypeAttack;
-            
-            ActionIconView *icon = [[ActionIconView alloc] initWithAction:dummy];
-            icon.categoryDisplay = YES;
-            
-            [iconsArray addObject:icon];
-        }
-        if(hasItems)
-        {
-            BattleAction *dummy = [[BattleAction alloc] init]; dummy.actionType = ActionTypeItem;
-            
-            ActionIconView *icon = [[ActionIconView alloc] initWithAction:dummy];
-            icon.categoryDisplay = YES;
-            
-            [iconsArray addObject:icon];
-        }
-    }
-    else
-    {
-        for (BattleAction *action in self.actionCollection.actionList)
-        {
-            ActionIconView *icon = [[ActionIconView alloc] initWithAction:action];
-            [iconsArray addObject:icon];
-        }
+        return;
     }
     
-    return iconsArray;
+    [self.actionBarManager performAction:action.action];
+    [self close];
 }
 
 - (void)gameSceneDidReceiveTouchesBegan:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInNode:gameScene];
+    CGPoint point = [touch locationInNode:self.scene];
     
-    SKNode *nodeOnPoint = [gameScene nodeAtPoint:point];
+    SKNode *nodeOnPoint = [self.scene nodeAtPoint:point];
     
     if(![nodeOnPoint inParentHierarchy:self] && ![nodeOnPoint inParentHierarchy:self.target])
     {
         [self close];
     }
+}
+
+- (ActionPieContainerView*)containerForActionIconView:(ActionIconView*)icon
+{
+    ActionPieContainerView *container = self.container;
+    
+    do
+    {
+        // Check tapped actions
+        for (ActionIconView *icon in container.children)
+        {
+            if([icon isEqual:icon])
+            {
+                return container;
+            }
+        }
+        container = container.childMenu;
+    } while (container != nil);
+    
+    return nil;
 }
 
 @end

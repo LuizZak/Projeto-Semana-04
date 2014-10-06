@@ -422,8 +422,8 @@
     [collection addAction:[[BattleAction alloc] init]];
     
     [collection.actionList[0] setActionType:ActionTypeAttack];
-    [collection.actionList[0] setActionType:ActionTypeItem];
-    [collection.actionList[0] setActionType:ActionTypeSkill];
+    [collection.actionList[1] setActionType:ActionTypeItem];
+    [collection.actionList[2] setActionType:ActionTypeSkill];
     
     return collection;
 }

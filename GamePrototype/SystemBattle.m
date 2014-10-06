@@ -18,6 +18,7 @@
 #import "WorldMap.h"
 #import "Ranking.h"
 #import "SceneMenu.h"
+#import "ActionPieView.h"
 
 #define PLAYER_WON 0
 #define ENEMY_WON 1
@@ -197,9 +198,13 @@
         return;
     }
     
-    if(self.currentDrag != nil)
+    if([self.playerEntity.node containsPoint:pt])
     {
-        ComponentDraggableAttack *comp = GET_COMPONENT(self.currentDrag, ComponentDraggableAttack);//(ComponentDraggableAttack*)[self.currentDrag getComponent:[ComponentDraggableAttack class]];
+        [self displayPieMenuOnEntity:self.playerEntity];
+    }
+    else
+    {
+        //ComponentDraggableAttack *comp = GET_COMPONENT(self.currentDrag, ComponentDraggableAttack);//(ComponentDraggableAttack*)[self.currentDrag getComponent:[ComponentDraggableAttack class]];
         
         // Checa se o jogador largou a skill em cima de um inimigo
         for(GPEntity *entity in self.enemiesArray)
@@ -210,7 +215,8 @@
                 
                 if(health.health > 0)
                 {
-                    [self attackEntity:comp source:self.playerEntity target:entity];
+                    [self displayPieMenuOnEntity:entity];
+                    /*[self attackEntity:comp source:self.playerEntity target:entity];
                     
                     SKNode *node = [self.currentDrag.node childNodeWithName:@"COOLDOWN"];
                     
@@ -222,16 +228,16 @@
                         
                         node.alpha = 1;
                         [node runAction:animAction];
-                    }
+                    }*/
                     
                     break;
                 }
             }
         }
         
-        SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
+        //SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
         
-        [self.currentDrag.node runAction:act];
+        //[self.currentDrag.node runAction:act];
     }
     
     self.currentDrag = nil;
@@ -393,6 +399,33 @@
             }
         }
     }
+}
+
+/// Displays the pie menu on top of a given entity
+- (void)displayPieMenuOnEntity:(GPEntity*)target
+{
+    ActionCollection *collection = [self generateActionCollectionForEntity:target];
+    ActionPieView *pieView = [[ActionPieView alloc] initWithActionCollection:collection];
+    
+    [pieView open:ActionPieViewMenuOrientationAuto onNode:self.gameScene atPoint:target.node.position];
+    
+    [self.gameScene addNotifier:pieView];
+}
+
+/// Generates a collection of actions that can be performed on top of a given entity
+- (ActionCollection*)generateActionCollectionForEntity:(GPEntity*)entity
+{
+    ActionCollection *collection = [[ActionCollection alloc] init];
+    
+    [collection addAction:[[BattleAction alloc] init]];
+    [collection addAction:[[BattleAction alloc] init]];
+    [collection addAction:[[BattleAction alloc] init]];
+    
+    [collection.actionList[0] setActionType:ActionTypeAttack];
+    [collection.actionList[0] setActionType:ActionTypeItem];
+    [collection.actionList[0] setActionType:ActionTypeSkill];
+    
+    return collection;
 }
 
 - (void)attackEntity:(ComponentDraggableAttack*)attack source:(GPEntity*)source target:(GPEntity*)target

@@ -52,6 +52,9 @@
         
         [[GameController gameController] addObserver:self];
         
+        // Load up the player action bar
+        self.playerActionBar = [[ActionBarManager alloc] init];
+        
         self.cooldownFrames = [self loadSpriteSheetFromImageWithName:@"TimeBall" startingAt:1];
     }
     
@@ -64,6 +67,8 @@
     {
         self.currentDrag = nil;
     }
+    
+    [self.playerActionBar update:interval];
     
     if(self.currentDrag != nil)
     {
@@ -481,7 +486,7 @@
     
     bs.canAttack = NO;
     
-    SKAction *attack = [SKAction sequence:@[[SKAction moveTo:target.node.position duration:0.2f],
+    SKAction *attack = [SKAction sequence:@[//[SKAction moveTo:target.node.position duration:0.2f],
     [SKAction runBlock:^{
         CGPoint point = target.node.position;
         
@@ -496,7 +501,7 @@
         
         [[Som som] tocarSomEspada];
     }],
-    [SKAction moveTo:source.node.position duration:0.2f],
+    //[SKAction moveTo:source.node.position duration:0.2f],
     [SKAction runBlock:^{
         bs.canAttack = YES;
     }]]];

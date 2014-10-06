@@ -52,6 +52,7 @@
 		A0D9F62419E1E4E80077CB4A /* ActionBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62319E1E4E80077CB4A /* ActionBarView.m */; };
 		A0D9F62719E1E6570077CB4A /* ActionQueueView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62619E1E6570077CB4A /* ActionQueueView.m */; };
 		A0D9F62A19E1E8BD0077CB4A /* ActionRunTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */; };
+		A0D9F62D19E1F9AC0077CB4A /* ActionIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */; };
 		B313318A190EF345009C29BA /* TimeBall.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B3133189190EF345009C29BA /* TimeBall.atlas */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
@@ -213,6 +214,8 @@
 		A0D9F62619E1E6570077CB4A /* ActionQueueView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionQueueView.m; sourceTree = "<group>"; };
 		A0D9F62819E1E8BD0077CB4A /* ActionRunTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionRunTimer.h; sourceTree = "<group>"; };
 		A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionRunTimer.m; sourceTree = "<group>"; };
+		A0D9F62B19E1F9AC0077CB4A /* ActionIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionIconView.h; sourceTree = "<group>"; };
+		A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionIconView.m; sourceTree = "<group>"; };
 		B3133189190EF345009C29BA /* TimeBall.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TimeBall.atlas; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -544,6 +547,8 @@
 				A0D9F62319E1E4E80077CB4A /* ActionBarView.m */,
 				A0D9F62519E1E6570077CB4A /* ActionQueueView.h */,
 				A0D9F62619E1E6570077CB4A /* ActionQueueView.m */,
+				A0D9F62B19E1F9AC0077CB4A /* ActionIconView.h */,
+				A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -885,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */,
+				A0D9F62D19E1F9AC0077CB4A /* ActionIconView.m in Sources */,
 				5E8A847018FDC6110081583D /* GameData.m in Sources */,
 				A0D9F62419E1E4E80077CB4A /* ActionBarView.m in Sources */,
 				B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */,

@@ -21,13 +21,28 @@
         
         self.actionBarView = [[ActionBarView alloc] init];
         self.actionBarView.actionBarManager = self;
+        
+        self.chargeRate = 10;
+        self.totalCharge = 100;
     }
     return self;
 }
 
+- (CGFloat)chargePercentage
+{
+    return self.charge / self.totalCharge;
+}
+
 - (void)update:(NSTimeInterval)timestep
 {
+    // Replenish charge
+    [self replenishCharge:self.chargeRate * timestep];
+    
     [self.actionRunTimer update:timestep];
+    
+    [self.actionQueueManager update:timestep];
+    
+    [self.actionBarView updateBarView:timestep];
 }
 
 /// Replenishes a portion of charge on this ActionBarManager

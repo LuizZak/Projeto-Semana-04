@@ -15,9 +15,14 @@
     self = [super init];
     if (self)
     {
-        
+        [self initializeView];
     }
     return self;
+}
+
+- (void)initializeView
+{
+    
 }
 
 - (void)updateQueueView:(NSTimeInterval)timestep

@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
-#import "ActionBarManager.h"
 
+@class ActionBarManager;
 /// Represents a node that displays the action bar
 @interface ActionBarView : SKNode
+{
+    /// The current size of this ActionBarView
+    CGSize currentSceneSize;
+}
 
 /// The action bar manager that owns this ActionBarView
 @property ActionBarManager *actionBarManager;
+
+/// Initializes this ActionBarView with a given ActionBarManagher
+- (id)initWithBarManager:(ActionBarManager*)barManager;
 
 /// Updates this ActionBarView
 - (void)updateBarView:(NSTimeInterval)timestep;

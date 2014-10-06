@@ -10,8 +10,8 @@
 #import "ActionRunner.h"
 #import "ActionQueueManager.h"
 #import "ActionRunTimer.h"
+#import "ActionBarView.h"
 
-@class ActionBarView;
 /// Manages an action bar, being able to queue actions and charge a bar to perform them
 @interface ActionBarManager : NSObject
 
@@ -20,6 +20,12 @@
 
 /// The bar's total charge
 @property CGFloat totalCharge;
+
+/// The rate at which this ActionBarManager should replenish the charge
+@property CGFloat chargeRate;
+
+/// Returns a value ranging from [0 - 1] that describes the percentage of the charge of this ActionBarManager
+@property (readonly) CGFloat chargePercentage;
 
 /// The action queue for this action bar manager
 @property ActionQueueManager *actionQueueManager;

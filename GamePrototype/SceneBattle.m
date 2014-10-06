@@ -16,6 +16,7 @@
 #import "ComponentBounty.h"
 #import "GFXBuilder.h"
 #import "Som.h"
+#import "WorldMap.h"
 
 @implementation SceneBattle
 
@@ -66,10 +67,27 @@
     // Cria o jogador
     [self createPlayer];
     
-    [self createSkillsBar];
+    //[self createSkillsBar];
+    [self setupActionBar];
     
     [self sortEnemies];
     [self sortAttacks];
+}
+
+/// Sets up the action bar
+- (void)setupActionBar
+{
+    SystemBattle *system = (SystemBattle*)[self getSystem:[SystemBattle class]];
+    
+    if(system == nil)
+        return;
+    
+    SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithColor:[UIColor blueColor] size:CGSizeMake(self.frame.size.width, 150)];
+    sprite.anchorPoint = CGPointZero;
+    sprite.zPosition = 10;
+    [self addChild:sprite];
+    
+    [sprite addChild:system.playerActionBar.actionBarView];
 }
 
 // Cria a barra de skills e suas skills respectivas
@@ -182,7 +200,6 @@
 - (void)fecharATela
 {
     SKTransition *reveal = [SKTransition fadeWithDuration:1.0];
-    //WorldMap *battleScene = [[WorldMap alloc] initWithSize:self.size];
     [self.scene.view presentScene:[[GameData gameData] world] transition: reveal];
 }
 

@@ -199,7 +199,16 @@
 
 - (void)removeNotifier:(id<GPGameSceneNotifier>)notifier
 {
-    [notifiers removeObject:notifier];
+    for (int i = 0; i < notifiers.count; i++)
+    {
+        id obj = notifiers[i];
+        
+        if([obj isKindOfClass:[notifier class]] && [obj isEqual:notifier])
+        {
+            [notifiers removeObjectAtIndex:i];
+            break;
+        }
+    }
 }
 
 // Adiciona um sistema à cena

@@ -81,6 +81,11 @@
 // Notifica que a entidade passada foi modificada (componentes, id ou tipo foram modificados)
 - (void)entityModified:(GPEntity*)entity;
 
+/// Adds a given object to the list of game scene notifiers for this game scene
+- (void)addNotifier:(id<GPGameSceneNotifier>)notifier;
+/// Removes a given object from the list of game scene notifiers for this game scene
+- (void)removeNotifier:(id<GPGameSceneNotifier>)notifier;
+
 // Adiciona um sistema à cena
 - (void)addSystem:(GPSystem*)system;
 // Remove um sistema da cena

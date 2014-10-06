@@ -9,6 +9,13 @@
 #import "GPGameScene.h"
 #import "GPSystem.h"
 
+@interface GPGameScene ()
+
+// Returns a copy of the notifiers array that is safe to modify
+@property (readonly) NSArray* notifiersCopy;
+
+@end
+
 @implementation GPGameScene
 
 - (id)initWithSize:(CGSize)size
@@ -25,6 +32,11 @@
         [self addChild:worldNode];
     }
     return self;
+}
+
+- (NSArray*)notifiersCopy
+{
+    return [NSArray arrayWithArray:notifiers];
 }
 
 - (SKNode*)worldNode
@@ -106,9 +118,12 @@
     entity.gameScene = self;
     
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
-        [notifier gameSceneDidAddEntity:self entity:entity];
+        if([notifier respondsToSelector:@selector(gameSceneDidAddEntity:entity:)])
+        {
+            [notifier gameSceneDidAddEntity:self entity:entity];
+        }
     }
 }
 // Remove uma entidade da cena
@@ -122,9 +137,12 @@
         entity.gameScene = nil;
     
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
-        [notifier gameSceneDidRemoveEntity:self entity:entity];
+        if([notifier respondsToSelector:@selector(gameSceneDidRemoveEntity:entity:)])
+        {
+            [notifier gameSceneDidRemoveEntity:self entity:entity];
+        }
     }
 }
 // Retorna uma entidade na cena que corresponde ao ID passado
@@ -174,6 +192,16 @@
     }
 }
 
+- (void)addNotifier:(id<GPGameSceneNotifier>)notifier
+{
+    [notifiers addObject:notifier];
+}
+
+- (void)removeNotifier:(id<GPGameSceneNotifier>)notifier
+{
+    [notifiers removeObject:notifier];
+}
+
 // Adiciona um sistema à cena
 - (void)addSystem:(GPSystem*)system
 {
@@ -185,7 +213,7 @@
     [system reloadEntities:entities];
     
     // Adiciona este sistema como notifier
-    [notifiers addObject:system];
+    [self addNotifier:system];
     
     [system didAddToScene];
 }
@@ -197,14 +225,15 @@
     [systems removeObject:system];
     
     // Remove este sistema como notifier
-    [notifiers removeObject:system];
+    [self removeNotifier:system];
     
     [system didRemoveFromScene];
 }
 // Retorna um sistema específico adicionado à cena
 - (id)getSystem:(Class)systemClass
 {
-    for (GPSystem *system in systems) {
+    for (GPSystem *system in systems)
+    {
         if([system isKindOfClass:systemClass])
             return system;
     }
@@ -217,7 +246,7 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidReceiveTouchesBegan:touches:withEvent:)])
         {
@@ -228,7 +257,7 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidReceiveTouchesEnd:touches:withEvent:)])
         {
@@ -239,7 +268,7 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidReceiveTouchesMoved:touches:withEvent:)])
         {
@@ -250,7 +279,7 @@
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidReceiveTouchesCanceled:touches:withEvent:)])
         {
@@ -261,7 +290,7 @@
 - (void)didMoveToView:(SKView *)view
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidAddToView:)])
         {
@@ -272,7 +301,7 @@
 - (void)willMoveFromView:(SKView *)view
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneWillBeMovedFromView:)])
         {
@@ -283,7 +312,7 @@
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidBeginContact:)])
         {
@@ -294,7 +323,7 @@
 - (void)didEndContact:(SKPhysicsContact *)contact
 {
     // Notifica os notifiers
-    for(id<GPGameSceneNotifier> notifier in notifiers)
+    for(id<GPGameSceneNotifier> notifier in self.notifiersCopy)
     {
         if([notifier respondsToSelector:@selector(gameSceneDidEndContact:)])
         {

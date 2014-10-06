@@ -25,7 +25,6 @@
 - (void)updateDisplay
 {
     self.iconBackground = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(50, 50)];
-    self.zPosition = 1000;
     
     [self addChild:self.iconBackground];
 }

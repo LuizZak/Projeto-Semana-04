@@ -66,6 +66,7 @@
     }
     
     self.orientation = orientation;
+    self.zPosition = 1000;
     
     // Add pie menu to node
     self.position = point;

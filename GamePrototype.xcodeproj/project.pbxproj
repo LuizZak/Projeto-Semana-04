@@ -53,6 +53,7 @@
 		A0D9F62719E1E6570077CB4A /* ActionQueueView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62619E1E6570077CB4A /* ActionQueueView.m */; };
 		A0D9F62A19E1E8BD0077CB4A /* ActionRunTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */; };
 		A0D9F62D19E1F9AC0077CB4A /* ActionIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */; };
+		A0D9F63019E216C50077CB4A /* ActionPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F62F19E216C50077CB4A /* ActionPieView.m */; };
 		B313318A190EF345009C29BA /* TimeBall.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B3133189190EF345009C29BA /* TimeBall.atlas */; };
 		B32AE32A18F465CB006F8635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32918F465CB006F8635 /* Foundation.framework */; };
 		B32AE32C18F465CB006F8635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32AE32B18F465CB006F8635 /* CoreGraphics.framework */; };
@@ -216,6 +217,8 @@
 		A0D9F62919E1E8BD0077CB4A /* ActionRunTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionRunTimer.m; sourceTree = "<group>"; };
 		A0D9F62B19E1F9AC0077CB4A /* ActionIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionIconView.h; sourceTree = "<group>"; };
 		A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionIconView.m; sourceTree = "<group>"; };
+		A0D9F62E19E216C50077CB4A /* ActionPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionPieView.h; sourceTree = "<group>"; };
+		A0D9F62F19E216C50077CB4A /* ActionPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionPieView.m; sourceTree = "<group>"; };
 		B3133189190EF345009C29BA /* TimeBall.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TimeBall.atlas; sourceTree = "<group>"; };
 		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -549,6 +552,8 @@
 				A0D9F62619E1E6570077CB4A /* ActionQueueView.m */,
 				A0D9F62B19E1F9AC0077CB4A /* ActionIconView.h */,
 				A0D9F62C19E1F9AC0077CB4A /* ActionIconView.m */,
+				A0D9F62E19E216C50077CB4A /* ActionPieView.h */,
+				A0D9F62F19E216C50077CB4A /* ActionPieView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -941,6 +946,7 @@
 				A0D9F61F19E1D4570077CB4A /* ActionQueueManager.m in Sources */,
 				5E6CB65C1909908C00C05DED /* Score.m in Sources */,
 				B32AE33818F465CC006F8635 /* main.m in Sources */,
+				A0D9F63019E216C50077CB4A /* ActionPieView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,12 +17,12 @@
 // entidades são adicionadas/removidas/modificadas em uma GameScene
 @protocol GPGameSceneNotifier <NSObject>
 
-// Notifica quando uma entidade for adicionada na cena. O valor de retorno depende to contexto da classe que o implementa.
+@optional
+
+// Notifica quando uma entidade for adicionada na cena. O valor de retorno dependeto contexto da classe que o implementa.
 - (BOOL)gameSceneDidAddEntity:(GPGameScene*)gameScene entity:(GPEntity*)entity;
 // Notifica quando uma entidade for removida da cena. O valor de retorno depende to contexto da classe que o implementa.
 - (BOOL)gameSceneDidRemoveEntity:(GPGameScene*)gameScene entity:(GPEntity*)entity;
-
-@optional
 
 // Notifica quando a cena recebeu um evento de início de toque
 - (void)gameSceneDidReceiveTouchesBegan:(GPGameScene*)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -32,10 +32,12 @@
 - (void)gameSceneDidReceiveTouchesMoved:(GPGameScene*)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event;
 // Notifica quando a cena recebeu um evento de cancelamento de toque
 - (void)gameSceneDidReceiveTouchesCanceled:(GPGameScene*)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event;
+
 // Notifica quando a cena vai ser removida da view
 - (void)gameSceneWillBeMovedFromView:(GPGameScene*)gameScene;
 // Notifica quando a cena foi adicionada a uma view
 - (void)gameSceneDidAddToView:(GPGameScene*)gameScene;
+
 // Notifica quando a cena teve um contato de colisão adicionado
 - (void)gameSceneDidBeginContact:(SKPhysicsContact*)contact;
 // Notifica quando a cena teve um contato de colisão removido

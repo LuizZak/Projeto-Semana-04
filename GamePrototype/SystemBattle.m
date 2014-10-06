@@ -407,7 +407,7 @@
     ActionCollection *collection = [self generateActionCollectionForEntity:target];
     ActionPieView *pieView = [[ActionPieView alloc] initWithActionCollection:collection];
     
-    [pieView open:ActionPieViewMenuOrientationAuto onNode:self.gameScene atPoint:target.node.position];
+    [pieView open:ActionPieViewMenuOrientationAuto onNode:target.node atPoint:CGPointZero];
     
     [self.gameScene addNotifier:pieView];
 }

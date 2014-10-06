@@ -26,19 +26,23 @@
     return self;
 }
 
-- (void)open:(ActionPieViewMenuOrientation)orientation onNode:(SKNode *)node atPoint:(CGPoint)point
+- (void)open:(ActionPieViewMenuOrientation)orientation onNode:(SKNode*)node atPoint:(CGPoint)point
 {
+    SKScene *scene = node.scene;
+    
+    CGPoint realPoint = [scene convertPoint:point fromNode:node];
+    
     // Auto orientation scheme
     if(orientation == ActionPieViewMenuOrientationAuto)
     {
-        CGSize screenSize = node.scene.size;
+        CGSize screenSize = scene.size;
         CGPoint screenCenter = CGPointMake(screenSize.width / 2, screenSize.height / 2);
         
-        CGFloat angle = atan2(point.y - screenCenter.y, -point.x - screenCenter.x) * -(180 / M_PI);
+        CGFloat angle = atan2(realPoint.y - screenCenter.y, -realPoint.x - screenCenter.x) * -(180 / M_PI);
         
         angle = floor(angle / 90) * 90;
         
-        if(point.x > screenSize.width / 2)
+        if(realPoint.x > screenSize.width / 2)
         {
             orientation = ActionPieViewMenuOrientationLeft;
         }
@@ -65,12 +69,13 @@
         }
     }
     
+    self.target = node;
     self.orientation = orientation;
     self.zPosition = 1000;
     
     // Add pie menu to node
-    self.position = point;
-    [node addChild:self];
+    self.position = realPoint;
+    [scene addChild:self];
     
     [self createIcons];
 }
@@ -85,6 +90,7 @@
         [self.childMenu close];
     }
     
+    [(GPGameScene*)self.scene removeNotifier:self];
     [self removeFromParent];
     
     if(self.parentMenu)
@@ -226,7 +232,7 @@
     
     SKNode *nodeOnPoint = [gameScene nodeAtPoint:point];
     
-    if(![nodeOnPoint inParentHierarchy:self])
+    if(![nodeOnPoint inParentHierarchy:self] && ![nodeOnPoint inParentHierarchy:self.target])
     {
         [self close];
     }

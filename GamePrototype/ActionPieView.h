@@ -31,6 +31,9 @@ typedef enum ActionPieViewMenuOrientationEnum {
     BOOL closing;
 }
 
+/// The target of this ActionPieView
+@property SKNode *target;
+
 /// The radius of the pie menu
 @property CGFloat pieRadius;
 

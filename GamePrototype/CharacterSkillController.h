@@ -21,4 +21,10 @@
 /// Returns the name of the animation for a given character skill
 + (NSString*)animationForSkill:(CharacterSkill*)skill;
 
+/// Returns the name of the resource image for a given character skill
++ (NSString*)imageForSkill:(CharacterSkill*)skill;
+
+/// Returns the name of the resource image for a given character skill type
++ (NSString*)imageForSkillType:(CharacterSkillType)skillType;
+
 @end

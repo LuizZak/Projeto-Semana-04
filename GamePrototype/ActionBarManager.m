@@ -20,11 +20,10 @@
         self.actionQueueManager.actionBarManager = self;
         self.actionRunTimer = [[ActionRunTimer alloc] init];
         
-        self.actionBarView = [[ActionBarView alloc] init];
-        self.actionBarView.actionBarManager = self;
-        
         self.chargeRate = 20;
         self.totalCharge = 100;
+        
+        self.actionBarView = [[ActionBarView alloc] initWithBarManager:self];
         
         self.paused = NO;
     }

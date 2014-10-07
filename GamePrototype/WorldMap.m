@@ -224,7 +224,7 @@
     {
         random = arc4random() % 30;
         
-        if(random == 0)
+        //if(random == 0)
         {
             battle = YES;
         }
@@ -233,7 +233,7 @@
     {
         random = arc4random() % 200;
         
-        if(random == 0)
+        //if(random == 0)
         {
             battle = YES;
         }

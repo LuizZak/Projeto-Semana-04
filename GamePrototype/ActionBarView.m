@@ -16,8 +16,14 @@
     SKSpriteNode *chargeBarBackgroundNode;
     /// The charge bar's fill node
     SKSpriteNode *chargeBarFillNode;
+    /// The charge bar's frame
+    SKSpriteNode *chargeBarFrame;
+    /// The mask of the charge bar
+    SKSpriteNode *chargeBarMask;
     /// The timer bar fill node
     SKSpriteNode *timeBarFillNode;
+    /// The crop node used to trim the charge bar around the bar frame
+    SKCropNode *chargeBarCropNode;
 }
 
 @end
@@ -31,7 +37,7 @@
     if (self)
     {
         currentSceneSize = CGSizeZero;
-        [self initializeView];
+        self.chargeBarSectionSize = 25;
     }
     return self;
 }
@@ -42,6 +48,7 @@
     if (self)
     {
         self.actionBarManager = barManager;
+        [self initializeView];
     }
     return self;
 }
@@ -53,15 +60,37 @@
 
 - (void)initializeView
 {
-    chargeBarBackgroundNode = [[SKSpriteNode alloc] initWithColor:[[UIColor orangeColor] colorWithAlphaComponent:0.3] size:currentSceneSize];
-    chargeBarFillNode = [[SKSpriteNode alloc] initWithColor:[UIColor orangeColor] size:currentSceneSize];
-    timeBarFillNode = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:currentSceneSize];
+    chargeBarFrame = [[SKSpriteNode alloc] initWithImageNamed:@"commandBarFrame"];
+    chargeBarFillNode = [[SKSpriteNode alloc] initWithColor:[UIColor colorWithRed:255 / 255.0 green:198 / 255.0 blue:26 / 255.0 alpha:1] size:chargeBarFrame.size];
+    chargeBarBackgroundNode = [[SKSpriteNode alloc] initWithColor:[UIColor colorWithRed:78 / 255.0 green:75 / 255.0 blue:82 / 255.0 alpha:1] size:chargeBarFrame.size];
+    chargeBarMask = [SKSpriteNode spriteNodeWithImageNamed:@"commandBarFillMask"];
     
-    [self addChild:chargeBarBackgroundNode];
-    [self addChild:chargeBarFillNode];
-    [self addChild:timeBarFillNode];
-    
+    timeBarFillNode = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:chargeBarFrame.size];
     timeBarFillNode.hidden = YES;
+    
+    chargeBarCropNode = [SKCropNode node];
+    chargeBarCropNode.maskNode = chargeBarMask;
+    
+    [self addChild:chargeBarCropNode];
+    [self addChild:chargeBarFrame];
+    [chargeBarCropNode addChild:chargeBarBackgroundNode];
+    [chargeBarCropNode addChild:chargeBarFillNode];
+    [chargeBarCropNode addChild:timeBarFillNode];
+    
+    [self createCharteBarSections];
+}
+
+/// Creates the charge bar sections
+- (void)createCharteBarSections
+{
+    for (CGFloat step = 0; step < self.actionBarManager.totalCharge; step += self.chargeBarSectionSize)
+    {
+        SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"commandBarSection"];
+        node.position = CGPointMake(chargeBarFrame.size.width * (step / self.actionBarManager.totalCharge), 4);
+        node.anchorPoint = CGPointMake(0.5, 0);
+        
+        [chargeBarCropNode addChild:node];
+    }
 }
 
 - (void)updateBarView:(NSTimeInterval)timestep
@@ -77,7 +106,7 @@
     timeBarFillNode.hidden = !self.actionBarManager.actionRunTimer.isPerformingAction;
     if(self.actionBarManager.actionRunTimer.isPerformingAction)
     {
-        timeBarFillNode.position = CGPointMake(chargeBarFillNode.position.y + (chargeBarFillNode.size.width / chargeBarFillNode.xScale) * chargeBarFillNode.xScale, timeBarFillNode.position.y);
+        timeBarFillNode.position = CGPointMake((chargeBarFillNode.size.width / chargeBarFillNode.xScale) * chargeBarFillNode.xScale, timeBarFillNode.position.y);
         timeBarFillNode.xScale = 1 - self.actionBarManager.actionRunTimer.percentageDone;
         timeBarFillNode.xScale *= (self.actionBarManager.lastAction.actionCharge / self.actionBarManager.totalCharge);
     }
@@ -87,16 +116,17 @@
 {
     currentSceneSize = self.scene.size;
     
-    chargeBarBackgroundNode.size = CGSizeMake(currentSceneSize.width - 60, 60);
-    chargeBarBackgroundNode.position = CGPointMake(30, 30);
+    chargeBarBackgroundNode.position = CGPointMake(0, 0);
     chargeBarBackgroundNode.anchorPoint = CGPointZero;
     
-    chargeBarFillNode.size = CGSizeMake(currentSceneSize.width - 60, 60);
-    chargeBarFillNode.position = CGPointMake(30, 30);
+    chargeBarFrame.position = CGPointMake(30, 30);
+    chargeBarFrame.anchorPoint = CGPointZero;
+    
+    chargeBarCropNode.position = CGPointMake(30, 30);
+    chargeBarMask.anchorPoint = CGPointZero;
+    
     chargeBarFillNode.anchorPoint = CGPointZero;
     
-    timeBarFillNode.size = CGSizeMake(currentSceneSize.width - 60, 60);
-    timeBarFillNode.position = CGPointMake(30, 30);
     timeBarFillNode.anchorPoint = CGPointZero;
 }
 

@@ -203,19 +203,19 @@
     NSMutableArray *skillsArray = [NSMutableArray array];
     
     // Default skill
-    [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_1_ID cooldown:1 damage:3 skillType:CharacterSkillTypeAttack skillName:@"Fireball 1"]];
+    [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_1_ID cooldown:1 damage:3 skillType:CharacterSkillTypeSpell skillName:@"Fireball 1"]];
     
     if(currentLevel > 1)
     {
-        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_2_ID cooldown:5 damage:10 skillType:CharacterSkillTypeAttack skillName:@"Fireball 2"]];
+        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_2_ID cooldown:5 damage:10 skillType:CharacterSkillTypeSpell skillName:@"Fireball 2"]];
     }
     if(currentLevel > 3)
     {
-        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_3_ID cooldown:10 damage:30 skillType:CharacterSkillTypeAttack skillName:@"Fireball 3"]];
+        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_3_ID cooldown:10 damage:30 skillType:CharacterSkillTypeSpell skillName:@"Fireball 3"]];
     }
     if(currentLevel > 5)
     {
-        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_4_ID cooldown:13 damage:40 skillType:CharacterSkillTypeAttack skillName:@"Fireball 3"]];
+        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_4_ID cooldown:13 damage:40 skillType:CharacterSkillTypeSpell skillName:@"Fireball 3"]];
     }
     
     return skillsArray;

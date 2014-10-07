@@ -47,6 +47,15 @@
 /// Updates the display of this ActionIconView
 - (void)updateDisplay
 {
+    if(self.displayCategoryOnly)
+    {
+        self.iconBackground.texture = self.action.actionCategoryIconTexture;
+    }
+    else
+    {
+        self.iconBackground.texture = self.action.actionIconTexture;
+    }
+    
     if(!self.enabled)
     {
         self.alpha = 0.5;

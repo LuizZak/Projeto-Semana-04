@@ -39,6 +39,12 @@ typedef NS_OPTIONS(NSUInteger, BattleActionTarget) {
 /// The type of this action
 @property BattleActionType actionType;
 
+/// The texture to use when visually representing this action
+@property SKTexture* actionIconTexture;
+
+/// The texture to use when visually representing this action's category
+@property SKTexture* actionCategoryIconTexture;
+
 /// The source of this action
 @property id actionSource;
 

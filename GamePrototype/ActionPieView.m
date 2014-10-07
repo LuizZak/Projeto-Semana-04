@@ -139,11 +139,14 @@
         return;
     }
     
-    action.action.actionSource = self.actionSource;
-    action.action.actionTarget = self.actionTarget;
-    
-    [self.actionBarManager.actionQueueManager queue:action.action];
-    [self close];
+    if([self.actionBarManager.actionQueueManager canQueue:action.action])
+    {
+        action.action.actionSource = self.actionSource;
+        action.action.actionTarget = self.actionTarget;
+        
+        [self.actionBarManager.actionQueueManager queue:action.action];
+        [self close];
+    }
 }
 
 - (void)gameSceneDidReceiveTouchesBegan:(GPGameScene *)gameScene touches:(NSSet *)touches withEvent:(UIEvent *)event

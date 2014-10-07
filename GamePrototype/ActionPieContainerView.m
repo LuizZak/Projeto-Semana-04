@@ -9,6 +9,7 @@
 #import "ActionPieContainerView.h"
 #import "ActionBarView.h"
 #import "ActionPieView.h"
+#import "CharacterSkillController.h"
 
 @implementation ActionPieContainerView
 
@@ -160,7 +161,9 @@
         // Now, create an icon view for each item
         if(hasSkill)
         {
-            BattleAction *dummy = [[BattleAction alloc] init]; dummy.actionType = ActionTypeSkill;
+            BattleAction *dummy = [[BattleAction alloc] init];
+            dummy.actionType = ActionTypeSkill;
+            dummy.actionCategoryIconTexture = [SKTexture textureWithImageNamed:[CharacterSkillController imageForSkillType:CharacterSkillTypeSpell]];
             
             ActionIconView *icon = [[ActionIconView alloc] initWithAction:dummy];
             icon.displayCategoryOnly = YES;
@@ -169,7 +172,9 @@
         }
         if(hasAttack)
         {
-            BattleAction *dummy = [[BattleAction alloc] init]; dummy.actionType = ActionTypeAttack;
+            BattleAction *dummy = [[BattleAction alloc] init];
+            dummy.actionType = ActionTypeAttack;
+            dummy.actionCategoryIconTexture = [SKTexture textureWithImageNamed:[CharacterSkillController imageForSkillType:CharacterSkillTypeAttack]];
             
             ActionIconView *icon = [[ActionIconView alloc] initWithAction:dummy];
             icon.displayCategoryOnly = YES;
@@ -178,7 +183,8 @@
         }
         if(hasItems)
         {
-            BattleAction *dummy = [[BattleAction alloc] init]; dummy.actionType = ActionTypeItem;
+            BattleAction *dummy = [[BattleAction alloc] init];
+            dummy.actionType = ActionTypeItem;
             
             ActionIconView *icon = [[ActionIconView alloc] initWithAction:dummy];
             icon.displayCategoryOnly = YES;

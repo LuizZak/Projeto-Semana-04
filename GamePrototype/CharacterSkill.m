@@ -33,10 +33,17 @@
     
     [action addComponent:[[BattleComponentDamage alloc] initWithDamage:self.damage]];
     [action addComponent:[[BattleComponentAnimation alloc] initWithAnimationName:[CharacterSkillController animationForSkill:self]]];
+    
     action.actionCharge = [CharacterSkillController actionChargeForSkill:self];
     action.actionDuration = [CharacterSkillController timeIntervalForSkill:self];
+    action.actionId = self.skillId;
     
-    if(self.skillType == CharacterSkillTypeAttack)
+    action.actionIconTexture = [SKTexture textureWithImageNamed:[CharacterSkillController imageForSkill:self]];
+    action.actionCategoryIconTexture = [SKTexture textureWithImageNamed:[CharacterSkillController imageForSkillType:self.skillType]];
+    
+    action.actionType = self.skillType == CharacterSkillTypeAttack ? ActionTypeAttack : ActionTypeSkill;
+    
+    if(self.skillType == CharacterSkillTypeAttack || self.skillType == CharacterSkillTypeSpell)
     {
         action.actionTargetType = BattleActionTarget_Enemy;
     }

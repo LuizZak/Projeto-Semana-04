@@ -27,7 +27,7 @@
 
 - (void)initializeView
 {
-    self.position = CGPointMake(30, 120);
+    self.position = CGPointMake(30, 130);
 }
 
 - (void)updateQueueView:(NSTimeInterval)timestep

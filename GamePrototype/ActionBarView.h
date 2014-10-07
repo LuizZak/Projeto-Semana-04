@@ -21,6 +21,9 @@
 /// The width of the bar to display on screen
 @property (readonly) CGFloat barWidth;
 
+/// Defines how big to display the sections of the charge bar
+@property CGFloat chargeBarSectionSize;
+
 /// The action bar manager that owns this ActionBarView
 @property ActionBarManager *actionBarManager;
 

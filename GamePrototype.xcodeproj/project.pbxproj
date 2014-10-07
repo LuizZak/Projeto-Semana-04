@@ -48,6 +48,15 @@
 		A0B0B54219E427C400D46A0E /* BattleComponentDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B54119E427C400D46A0E /* BattleComponentDamage.m */; };
 		A0B0B54519E42ADE00D46A0E /* BattleComponentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B54419E42ADE00D46A0E /* BattleComponentAnimation.m */; };
 		A0B0B54819E4310000D46A0E /* CharacterSkillController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B54719E4310000D46A0E /* CharacterSkillController.m */; };
+		A0B0B55119E4683200D46A0E /* actionIcon-Magic1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B54B19E4683200D46A0E /* actionIcon-Magic1@2x.png */; };
+		A0B0B55219E4683200D46A0E /* actionIcon-Magic2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B54C19E4683200D46A0E /* actionIcon-Magic2@2x.png */; };
+		A0B0B55319E4683200D46A0E /* actionIcon-Magic3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B54D19E4683200D46A0E /* actionIcon-Magic3@2x.png */; };
+		A0B0B55419E4683200D46A0E /* actionIconAttack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B54E19E4683200D46A0E /* actionIconAttack@2x.png */; };
+		A0B0B55519E4683200D46A0E /* actionIconMagic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B54F19E4683200D46A0E /* actionIconMagic@2x.png */; };
+		A0B0B55619E4683200D46A0E /* actionIconPotion@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B55019E4683200D46A0E /* actionIconPotion@2x.png */; };
+		A0B0B55A19E4683A00D46A0E /* commandBarFillMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B55719E4683A00D46A0E /* commandBarFillMask@2x.png */; };
+		A0B0B55B19E4683A00D46A0E /* commandBarFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B55819E4683A00D46A0E /* commandBarFrame@2x.png */; };
+		A0B0B55C19E4683A00D46A0E /* commandBarSection@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0B0B55919E4683A00D46A0E /* commandBarSection@2x.png */; };
 		A0CF924319DF610800D1011B /* GPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924219DF610800D1011B /* GPEvent.m */; };
 		A0CF924619DF611800D1011B /* GPEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924519DF611800D1011B /* GPEventDispatcher.m */; };
 		A0D9F61319E1D00A0077CB4A /* BattleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61219E1D00A0077CB4A /* BattleAction.m */; };
@@ -210,6 +219,15 @@
 		A0B0B54419E42ADE00D46A0E /* BattleComponentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleComponentAnimation.m; sourceTree = "<group>"; };
 		A0B0B54619E4310000D46A0E /* CharacterSkillController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSkillController.h; sourceTree = "<group>"; };
 		A0B0B54719E4310000D46A0E /* CharacterSkillController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSkillController.m; sourceTree = "<group>"; };
+		A0B0B54B19E4683200D46A0E /* actionIcon-Magic1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIcon-Magic1@2x.png"; sourceTree = "<group>"; };
+		A0B0B54C19E4683200D46A0E /* actionIcon-Magic2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIcon-Magic2@2x.png"; sourceTree = "<group>"; };
+		A0B0B54D19E4683200D46A0E /* actionIcon-Magic3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIcon-Magic3@2x.png"; sourceTree = "<group>"; };
+		A0B0B54E19E4683200D46A0E /* actionIconAttack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIconAttack@2x.png"; sourceTree = "<group>"; };
+		A0B0B54F19E4683200D46A0E /* actionIconMagic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIconMagic@2x.png"; sourceTree = "<group>"; };
+		A0B0B55019E4683200D46A0E /* actionIconPotion@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "actionIconPotion@2x.png"; sourceTree = "<group>"; };
+		A0B0B55719E4683A00D46A0E /* commandBarFillMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commandBarFillMask@2x.png"; sourceTree = "<group>"; };
+		A0B0B55819E4683A00D46A0E /* commandBarFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commandBarFrame@2x.png"; sourceTree = "<group>"; };
+		A0B0B55919E4683A00D46A0E /* commandBarSection@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "commandBarSection@2x.png"; sourceTree = "<group>"; };
 		A0CF924119DF610800D1011B /* GPEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEvent.h; sourceTree = "<group>"; };
 		A0CF924219DF610800D1011B /* GPEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEvent.m; sourceTree = "<group>"; };
 		A0CF924419DF611800D1011B /* GPEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEventDispatcher.h; sourceTree = "<group>"; };
@@ -402,6 +420,8 @@
 			children = (
 				B32AE34318F465CC006F8635 /* ViewController.h */,
 				B32AE34418F465CC006F8635 /* ViewController.m */,
+				A0B0B54619E4310000D46A0E /* CharacterSkillController.h */,
+				A0B0B54719E4310000D46A0E /* CharacterSkillController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -409,6 +429,7 @@
 		5E8A846818FDABA90081583D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A0B0B54919E4681C00D46A0E /* Battle */,
 				B3133189190EF345009C29BA /* TimeBall.atlas */,
 				FC8FD6EA19083F8500E3DC97 /* water.atlas */,
 				FC3F73C618FF24E900949342 /* dragon.atlas */,
@@ -518,8 +539,6 @@
 			children = (
 				A0B0B53719E3904700D46A0E /* CharacterSkill.h */,
 				A0B0B53819E3904700D46A0E /* CharacterSkill.m */,
-				A0B0B54619E4310000D46A0E /* CharacterSkillController.h */,
-				A0B0B54719E4310000D46A0E /* CharacterSkillController.m */,
 			);
 			name = Character;
 			sourceTree = "<group>";
@@ -549,6 +568,38 @@
 				A0B0B54419E42ADE00D46A0E /* BattleComponentAnimation.m */,
 			);
 			name = Animation;
+			sourceTree = "<group>";
+		};
+		A0B0B54919E4681C00D46A0E /* Battle */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B55D19E4683C00D46A0E /* Interface */,
+				A0B0B54A19E4682800D46A0E /* Actions */,
+			);
+			name = Battle;
+			sourceTree = "<group>";
+		};
+		A0B0B54A19E4682800D46A0E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B54B19E4683200D46A0E /* actionIcon-Magic1@2x.png */,
+				A0B0B54C19E4683200D46A0E /* actionIcon-Magic2@2x.png */,
+				A0B0B54D19E4683200D46A0E /* actionIcon-Magic3@2x.png */,
+				A0B0B54E19E4683200D46A0E /* actionIconAttack@2x.png */,
+				A0B0B54F19E4683200D46A0E /* actionIconMagic@2x.png */,
+				A0B0B55019E4683200D46A0E /* actionIconPotion@2x.png */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		A0B0B55D19E4683C00D46A0E /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B55719E4683A00D46A0E /* commandBarFillMask@2x.png */,
+				A0B0B55819E4683A00D46A0E /* commandBarFrame@2x.png */,
+				A0B0B55919E4683A00D46A0E /* commandBarSection@2x.png */,
+			);
+			name = Interface;
 			sourceTree = "<group>";
 		};
 		A0CF924019DF60FD00D1011B /* Eventing */ = {
@@ -889,6 +940,7 @@
 				5E44346519083F1800EBA273 /* DragaoMorrendo.wav in Resources */,
 				FC3F739018FF03AF00949342 /* player.png in Resources */,
 				B32AE34C18F465CC006F8635 /* Images.xcassets in Resources */,
+				A0B0B55119E4683200D46A0E /* actionIcon-Magic1@2x.png in Resources */,
 				FC8FD6E9190838BE00E3DC97 /* earthScene.png in Resources */,
 				FCCD02781906EFD500FFE9DB /* Knight.png in Resources */,
 				FC7732FD190ECD44008A7E39 /* BtnVoltar.png in Resources */,
@@ -899,6 +951,7 @@
 				FCCD02831906F55600FFE9DB /* explosao.png in Resources */,
 				FCCD02821906F55600FFE9DB /* ataqueFogo.fla in Resources */,
 				5E44346219083C3600EBA273 /* HomemMorrendo2.wav in Resources */,
+				A0B0B55C19E4683A00D46A0E /* commandBarSection@2x.png in Resources */,
 				5E6CB57A1909862800C05DED /* gameOver.wav in Resources */,
 				FC8E1CE01900712C00D24C87 /* tile-cave.png in Resources */,
 				5E4434691908435300EBA273 /* Explosao.wav in Resources */,
@@ -908,6 +961,7 @@
 				FC8FD6EB19083F8500E3DC97 /* water.atlas in Resources */,
 				FC77330D190EDD7C008A7E39 /* tile-earthCanto.png in Resources */,
 				FC141495190AF44A00B398CE /* MenuBtnRank.png in Resources */,
+				A0B0B55519E4683200D46A0E /* actionIconMagic@2x.png in Resources */,
 				A02127E51909F41B00D67A8B /* tile-earthTransitionBot.png in Resources */,
 				FC141499190AF76E00B398CE /* RankCellBG.png in Resources */,
 				FC3F73C718FF24E900949342 /* dragon.atlas in Resources */,
@@ -921,11 +975,13 @@
 				B32AE33F18F465CC006F8635 /* Main_iPhone.storyboard in Resources */,
 				FC141491190AE94F00B398CE /* MenuBG.png in Resources */,
 				FC773309190EDD7C008A7E39 /* tile-grassU.png in Resources */,
+				A0B0B55A19E4683A00D46A0E /* commandBarFillMask@2x.png in Resources */,
 				FC141496190AF44A00B398CE /* MenuBtnJogar.png in Resources */,
 				5E44346B19084EA600EBA273 /* Espada.wav in Resources */,
 				5E44346119083C3600EBA273 /* HomemMorrendo3.wav in Resources */,
 				5EBB788D1906F4F1001D961C /* background.png in Resources */,
 				5E44346319083C3600EBA273 /* HomemMorrendo1.wav in Resources */,
+				A0B0B55B19E4683A00D46A0E /* commandBarFrame@2x.png in Resources */,
 				FC8E1CD81900711800D24C87 /* tile-grass.png in Resources */,
 				5E443467190841A900EBA273 /* fireBall.wav in Resources */,
 				FC77330C190EDD7C008A7E39 /* tile-grassBaixo.png in Resources */,
@@ -938,7 +994,11 @@
 				FC77330A190EDD7C008A7E39 /* tile-earthU.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
+				A0B0B55319E4683200D46A0E /* actionIcon-Magic3@2x.png in Resources */,
+				A0B0B55419E4683200D46A0E /* actionIconAttack@2x.png in Resources */,
 				FC14149B190AF90700B398CE /* RankBG.png in Resources */,
+				A0B0B55619E4683200D46A0E /* actionIconPotion@2x.png in Resources */,
+				A0B0B55219E4683200D46A0E /* actionIcon-Magic2@2x.png in Resources */,
 				B32AE33618F465CC006F8635 /* InfoPlist.strings in Resources */,
 				5EBB788F19070716001D961C /* pleaseTouch.png in Resources */,
 			);

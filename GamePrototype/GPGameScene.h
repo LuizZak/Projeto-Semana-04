@@ -10,6 +10,7 @@
 #import "GPEntity.h"
 #import "GPEntitySelector.h"
 #import "GPSelectorRules.h"
+#import "GPEventDispatcher.h"
 
 @class GPGameScene;
 @class GPSystem;
@@ -62,6 +63,9 @@
 @property (nonatomic) NSTimeInterval lastUpdateTimeInterval;
 
 @property (readonly) SKNode *worldNode;
+
+/// The main event dispatcher for this scene
+@property GPEventDispatcher *eventDispatcher;
 
 // Limpa a cena, removendo todas as entidades e sistemas
 - (void)clearScene;

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "GPGameScene.h"
+#import "GPEventListener.h"
 
 @class GPGameScene;
 // Representa um sistema, que possui a lógica para aplicar os comportamentos a entidades no sistema
-@interface GPSystem : NSObject <GPGameSceneNotifier>
+@interface GPSystem : NSObject <GPGameSceneNotifier, GPEventListener>
 {
     // Seletor de entidade de conveniência usada para filtrar as entidades que este sistema possui
     GPEntitySelector *selector;

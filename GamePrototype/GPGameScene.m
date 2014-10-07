@@ -27,6 +27,7 @@
         notifiers = [NSMutableArray array];
         worldNode = [SKNode node];
         
+        self.eventDispatcher = [[GPEventDispatcher alloc] init];
         self.physicsWorld.contactDelegate = self;
         
         [self addChild:worldNode];
@@ -237,6 +238,8 @@
     [self removeNotifier:system];
     
     [system didRemoveFromScene];
+    
+    [self.eventDispatcher unregisterListenerFromAllEvents:system];
 }
 // Retorna um sistema específico adicionado à cena
 - (id)getSystem:(Class)systemClass

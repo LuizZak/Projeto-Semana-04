@@ -43,6 +43,9 @@
 /// Timer class used to count down on an action's runtime
 @property ActionRunTimer *actionRunTimer;
 
+/// Whether this action bar is paused and cannot recharge/disrcharge or perform actions
+@property BOOL paused;
+
 /// Updates this ActionBarManager
 - (void)update:(NSTimeInterval)timestep;
 

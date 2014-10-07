@@ -72,9 +72,14 @@
         self.currentDrag = nil;
     }
     
+    BOOL paused = self.actionPieView != nil && self.actionPieView.parent != nil;
+    
+    self.playerActionBar.paused = paused;
+    
     if(self.inBattle)
     {
         [self.playerActionBar update:interval];
+        
         [self.actionPieView update:interval];
     }
     
@@ -89,29 +94,32 @@
         self.selectionNode.hidden = YES;
     }
     
-    NSArray *attacks = [self.gameScene getEntitiesWithSelector:self.attacksSelector];
-    
-    for(GPEntity *attackEntity in attacks)
+    if(!paused)
     {
-        NSArray *attacksArray = GET_COMPONENTS(attackEntity, ComponentDraggableAttack);
+        NSArray *attacks = [self.gameScene getEntitiesWithSelector:self.attacksSelector];
         
-        for(ComponentDraggableAttack *attackEntity in attacksArray)
+        for(GPEntity *attackEntity in attacks)
         {
-            attackEntity.currentCooldown -= interval;
+            NSArray *attacksArray = GET_COMPONENTS(attackEntity, ComponentDraggableAttack);
+            
+            for(ComponentDraggableAttack *attackEntity in attacksArray)
+            {
+                attackEntity.currentCooldown -= interval;
+            }
         }
-    }
-    
-    for(GPEntity *entity in entitiesArray)
-    {
-        ComponentDraggableAttack *comp = GET_COMPONENT(entity, ComponentDraggableAttack);
         
-        if(comp.currentCooldown <= 0)
+        for(GPEntity *entity in entitiesArray)
         {
-            [(SKSpriteNode*)entity.node setColor:[UIColor redColor]];
+            ComponentDraggableAttack *comp = GET_COMPONENT(entity, ComponentDraggableAttack);
+            
+            if(comp.currentCooldown <= 0)
+            {
+                [(SKSpriteNode*)entity.node setColor:[UIColor redColor]];
+            }
         }
+        
+        [self runAI];
     }
-    
-    [self runAI];
 }
 
 - (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
@@ -211,8 +219,6 @@
     }
     else
     {
-        //ComponentDraggableAttack *comp = GET_COMPONENT(self.currentDrag, ComponentDraggableAttack);//(ComponentDraggableAttack*)[self.currentDrag getComponent:[ComponentDraggableAttack class]];
-        
         // Checa se o jogador largou a skill em cima de um inimigo
         for(GPEntity *entity in self.enemiesArray)
         {
@@ -223,28 +229,11 @@
                 if(health.health > 0)
                 {
                     [self displayPieMenuOnEntity:entity];
-                    /*[self attackEntity:comp source:self.playerEntity target:entity];
-                    
-                    SKNode *node = [self.currentDrag.node childNodeWithName:@"COOLDOWN"];
-                    
-                    if(node != nil)
-                    {
-                        float interval = comp.skillCooldown / self.cooldownFrames.count;
-                        
-                        SKAction *animAction = [SKAction sequence:@[[SKAction animateWithTextures:self.cooldownFrames timePerFrame:interval resize:YES restore:YES], [SKAction fadeAlphaTo:0 duration:0]]];
-                        
-                        node.alpha = 1;
-                        [node runAction:animAction];
-                    }*/
                     
                     break;
                 }
             }
         }
-        
-        //SKAction *act = [SKAction moveTo:comp.startPoint duration:0.1];
-        
-        //[self.currentDrag.node runAction:act];
     }
     
     self.currentDrag = nil;

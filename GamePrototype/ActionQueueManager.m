@@ -47,12 +47,15 @@
 /// Updates this ActionQueueManager
 - (void)update:(NSTimeInterval)timestep
 {
-    BattleAction *action = [self peek];
-    
-    if(action != nil && [self.actionBarManager canPerformAction:action])
+    if(!self.actionBarManager.paused)
     {
-        [self dequeue];
-        [self.actionBarManager performAction:action];
+        BattleAction *action = [self peek];
+        
+        if(action != nil && [self.actionBarManager canPerformAction:action])
+        {
+            [self dequeue];
+            [self.actionBarManager performAction:action];
+        }
     }
     
     [self.actionQueueView updateQueueView:timestep];

@@ -25,6 +25,8 @@
         
         self.chargeRate = 20;
         self.totalCharge = 100;
+        
+        self.paused = NO;
     }
     return self;
 }
@@ -36,13 +38,15 @@
 
 - (void)update:(NSTimeInterval)timestep
 {
-    // Replenish charge
-    [self replenishCharge:self.chargeRate * timestep];
-    
-    [self.actionRunTimer update:timestep];
+    if(!self.paused)
+    {
+        // Replenish charge
+        [self replenishCharge:self.chargeRate * timestep];
+        
+        [self.actionRunTimer update:timestep];
+    }
     
     [self.actionQueueManager update:timestep];
-    
     [self.actionBarView updateBarView:timestep];
 }
 

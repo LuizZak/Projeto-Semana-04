@@ -49,6 +49,9 @@ typedef enum ActionPieViewMenuOrientationEnum {
 /// The action collection associated with this ActionPieView
 @property ActionCollection *actionCollection;
 
+/// Gets an array of all the action icons that currently populate this ActionPieContainerView
+@property (readonly) NSArray *actionIcons;
+
 /// Whether to allow this ActionPieContainerView to organize the actions into categories that are displayed in sub-menus
 @property BOOL displayCategoriesOnly;
 
@@ -65,9 +68,6 @@ typedef enum ActionPieViewMenuOrientationEnum {
 /// Initializes this ActionPieContainerView
 - (void)initialize;
 
-/// Opens this menu with a given orientation at a given point
-- (void)open:(ActionPieViewMenuOrientation)orientation onNode:(SKNode*)node atPoint:(CGPoint)point;
-
 /// Called when an action has been tapped
 - (void)tappedAction:(ActionIconView*)action;
 
@@ -76,9 +76,6 @@ typedef enum ActionPieViewMenuOrientationEnum {
 
 /// Called whenever the first immediate child of this ActionPieView has closed itself
 - (void)childClosed;
-
-/// Opens up a submenu on this ActionPieMenu on a given item index
-- (void)openSubMenu:(ActionCollection*)collection onIndex:(NSInteger)index;
 
 /// Returns the angle for the given icon
 - (CGFloat)angleForIcon:(ActionIconView*)icon;

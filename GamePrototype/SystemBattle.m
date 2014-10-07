@@ -18,7 +18,7 @@
 #import "WorldMap.h"
 #import "Ranking.h"
 #import "SceneMenu.h"
-#import "ActionPieView.h"
+#import "CharacterSkill.h"
 
 #define PLAYER_WON 0
 #define ENEMY_WON 1
@@ -55,6 +55,9 @@
         
         // Load up the player action bar
         self.playerActionBar = [[ActionBarManager alloc] init];
+        self.playerActionBar.actionRunner = self;
+        
+        playerSkills = [[GameController gameController] getPlayerSkills];
         
         self.cooldownFrames = [self loadSpriteSheetFromImageWithName:@"TimeBall" startingAt:1];
     }
@@ -69,7 +72,11 @@
         self.currentDrag = nil;
     }
     
-    [self.playerActionBar update:interval];
+    if(self.inBattle)
+    {
+        [self.playerActionBar update:interval];
+        [self.actionPieView update:interval];
+    }
     
     if(self.currentDrag != nil)
     {
@@ -302,6 +309,9 @@
         [self createBattleMessage:@"You win!" won:YES animKeyName:nil];
     }
     
+    // Close the pie menu
+    [self.actionPieView close];
+    
     // Atualiza o componente de resultado de batalha
     BattleResult *result = [[BattleResult alloc] init];
     
@@ -404,11 +414,24 @@
 /// Displays the pie menu on top of a given entity
 - (void)displayPieMenuOnEntity:(GPEntity*)target
 {
+    [self.actionPieView close];
+    
     ActionCollection *collection = [self generateActionCollectionForEntity:target];
-    ActionPieView *pieView = [[ActionPieView alloc] initWithActionCollection:collection];
-    pieView.actionBarManager = self.playerActionBar;
-    [self.gameScene addNotifier:pieView];
-    [pieView open:ActionPieViewMenuOrientationAuto onNode:target.node atPoint:CGPointZero];
+    
+    if(collection.actionList.count == 0)
+    {
+        return;
+    }
+    
+    self.actionPieView = [[ActionPieView alloc] initWithActionCollection:collection];
+    self.actionPieView.actionBarManager = self.playerActionBar;
+    
+    // Setup the endpoints for the action
+    self.actionPieView.actionSource = self.playerEntity;
+    self.actionPieView.actionTarget = target;
+    
+    [self.gameScene addNotifier:self.actionPieView];
+    [self.actionPieView open:ActionPieViewMenuOrientationAuto onNode:target.node atPoint:CGPointZero];
 }
 
 /// Generates a collection of actions that can be performed on top of a given entity
@@ -416,19 +439,44 @@
 {
     ActionCollection *collection = [[ActionCollection alloc] init];
     
-    [collection addAction:[[BattleAction alloc] init]];
-    [collection addAction:[[BattleAction alloc] init]];
-    [collection addAction:[[BattleAction alloc] init]];
-    [collection addAction:[[BattleAction alloc] init]];
-    [collection addAction:[[BattleAction alloc] init]];
+    // Collect skills
+    for (CharacterSkill *skill in self->playerSkills)
+    {
+        [collection addAction:[skill generateBattleAction]];
+    }
     
-    [collection.actionList[0] setActionType:ActionTypeAttack];
-    [collection.actionList[1] setActionType:ActionTypeItem];
-    [collection.actionList[2] setActionType:ActionTypeSkill];
-    [collection.actionList[3] setActionType:ActionTypeSkill];
-    [collection.actionList[4] setActionType:ActionTypeSkill];
+    // Filter skills
+    if(entity.type & PLAYER_TYPE)
+    {
+        collection = [collection actionsForTargetType:BattleActionTarget_Friendly];
+    }
+    if(entity.type & ENEMY_TYPE)
+    {
+        collection = [collection actionsForTargetType:BattleActionTarget_Enemy];
+    }
     
     return collection;
+}
+
+- (void)performAction:(BattleAction *)action
+{
+    BattleComponentAnimation *anim = GET_COMPONENT(action, BattleComponentAnimation);
+    BattleComponentDamage *damage = GET_COMPONENT(action, BattleComponentDamage);
+    
+    if(anim == nil)
+        return;
+    
+    // Damage an entity
+    if(damage)
+    {
+        [self damageEntity:action.actionTarget damage:damage.damage];
+    }
+    
+    // Animate an action
+    if([anim.animationName isEqualToString:@"FIREBALL"])
+    {
+        [self createFireBall:action.actionSource target:action.actionTarget radius:damage.damage / 100 forDamage:damage.damage];
+    }
 }
 
 - (void)attackEntity:(ComponentDraggableAttack*)attack source:(GPEntity*)source target:(GPEntity*)target
@@ -447,6 +495,11 @@
         [self meleeAttack:source target:target forDamage:damage];
     }
     
+    [self damageEntity:target damage:attack.damage];
+}
+
+- (void)damageEntity:(GPEntity*)target damage:(CGFloat)damage
+{
     ComponentHealth *hc = (ComponentHealth*)[target getComponent:[ComponentHealth class]];
     
     hc.health -= damage;
@@ -499,8 +552,7 @@
         {
             [[Ranking lista] criarPontuacao:[[Ranking lista] currentPlayerName] :[[Ranking lista] currentPlayerScore]];
             
-            NSMutableArray* array = [[NSMutableArray alloc] init];
-            array = [[Ranking lista] todosItens];
+            [[Ranking lista] todosItens];
             
             [[Ranking lista] salvarPontuacao];
         }
@@ -563,7 +615,7 @@
     [fireball setScale:0.3f + radius];
     
     // Cria o corpo de física da bola de fogo e ajusta os colliders
-    fireball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+    fireball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:30];
     fireball.physicsBody.collisionBitMask   = (source.ID == PLAYER_ID ? ENEMY_BITMASK : PLAYER_BITMASK);
     fireball.physicsBody.contactTestBitMask = (source.ID == PLAYER_ID ? ENEMY_BITMASK : PLAYER_BITMASK);
     fireball.physicsBody.categoryBitMask    = FIREBALL_BITMASK;

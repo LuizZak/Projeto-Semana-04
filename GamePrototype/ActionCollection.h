@@ -27,4 +27,7 @@
 /// Returns a list of actions that match the given battle action type
 - (ActionCollection*)actionsForType:(BattleActionType)actionType;
 
+/// Returns a list of actions that can be targeted on a given target type
+- (ActionCollection*)actionsForTargetType:(BattleActionTarget)actionTarget;
+
 @end

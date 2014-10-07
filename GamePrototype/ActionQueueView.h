@@ -7,15 +7,25 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
-#import "ActionQueueManager.h"
+#import "BattleAction.h"
 
+@class ActionQueueManager;
 /// Represents a view that displays the contents of an ActionQueueManager
 @interface ActionQueueView : SKNode
 
 /// The action queue manager that owns this ActionQueueView
 @property ActionQueueManager* actionQueueManager;
 
+/// Action icons still pending on the queue
+@property NSMutableArray *actionIcons;
+
 /// Updates the contents of this ActionQueueView
 - (void)updateQueueView:(NSTimeInterval)timestep;
+
+/// Called to notify when a new battle action has been queued
+- (void)viewQueueAction:(BattleAction*)action;
+
+/// Called to notify when the the next available action on the queue has been dequeued
+- (void)viewDequeueAction:(BattleAction*)action;
 
 @end

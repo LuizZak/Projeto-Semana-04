@@ -17,12 +17,13 @@
     if (self)
     {
         self.actionQueueManager = [[ActionQueueManager alloc] init];
+        self.actionQueueManager.actionBarManager = self;
         self.actionRunTimer = [[ActionRunTimer alloc] init];
         
         self.actionBarView = [[ActionBarView alloc] init];
         self.actionBarView.actionBarManager = self;
         
-        self.chargeRate = 10;
+        self.chargeRate = 20;
         self.totalCharge = 100;
     }
     return self;
@@ -83,7 +84,9 @@
     }
     
     [self.actionRunTimer setTimer:action.actionDuration];
+    [self.actionRunner performAction:action];
     
+    self.lastAction = action;
     self.charge -= action.actionCharge;
 }
 
@@ -95,8 +98,8 @@
 
 - (BOOL)canPerformAction:(BattleAction*)action
 {
-    // False case: Total queue charge + action charge is larger than the available charge
-    if(self.actionQueueManager.totalQueueCharge + action.actionCharge > self.charge)
+    // False case: Action charge is higher than available charge
+    if(action.actionCharge > self.charge)
     {
         return NO;
     }

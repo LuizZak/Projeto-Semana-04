@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <SpriteKit/SpriteKit.h>
+#import "BattleAction.h"
 
 @class ActionBarManager;
 /// Represents a node that displays the action bar
@@ -16,6 +17,9 @@
     /// The current size of this ActionBarView
     CGSize currentSceneSize;
 }
+
+/// The width of the bar to display on screen
+@property (readonly) CGFloat barWidth;
 
 /// The action bar manager that owns this ActionBarView
 @property ActionBarManager *actionBarManager;

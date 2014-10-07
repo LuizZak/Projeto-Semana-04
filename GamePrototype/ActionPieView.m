@@ -23,6 +23,21 @@
     return self;
 }
 
+/// Updates this pie menu
+- (void)update:(NSTimeInterval)timestep
+{
+    // Fetches each icon from each opened menu and update it's display
+    ActionPieContainerView *container = self.container;
+    do {
+        for (ActionIconView *icon in container.actionIcons)
+        {
+            icon.enabled = [self.actionBarManager.actionQueueManager canQueue:icon.action];
+        }
+        
+        container = container.childMenu;
+    } while (container);
+}
+
 - (void)open:(ActionPieViewMenuOrientation)orientation onNode:(SKNode*)node atPoint:(CGPoint)point
 {
     SKScene *scene = node.scene;
@@ -124,7 +139,10 @@
         return;
     }
     
-    [self.actionBarManager performAction:action.action];
+    action.action.actionSource = self.actionSource;
+    action.action.actionTarget = self.actionTarget;
+    
+    [self.actionBarManager.actionQueueManager queue:action.action];
     [self close];
 }
 

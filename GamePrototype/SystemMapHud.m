@@ -131,7 +131,7 @@ const int depthHud = 1000;
     [self.skillsContainer removeAllChildren];
     
     // Cria as skills uma a uma
-    NSArray *skills = [[GameController gameController] getPlayerSkills];
+    NSArray *skills = [[GameController gameController] getPlayerSkillsAsComponents];
     
     int i = 0;
     for (ComponentDraggableAttack *attack in skills)

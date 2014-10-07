@@ -12,11 +12,12 @@
 
 - (instancetype)init
 {
-    self = [super init];
+    self = [super initWithNode:nil];
     if (self)
     {
         self.actionCharge = 20;
-        self.actionDuration = 2;
+        self.actionDuration = 4;
+        self.actionTargetType = BattleActionTarget_Friendly;
     }
     return self;
 }

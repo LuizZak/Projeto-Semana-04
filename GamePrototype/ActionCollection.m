@@ -42,7 +42,6 @@
 - (ActionCollection*)actionsForType:(BattleActionType)actionType
 {
     ActionCollection *col = [[ActionCollection alloc] init];
-    
     NSMutableArray *ret = [NSMutableArray array];
     
     for (BattleAction *action in self.actionList)
@@ -54,7 +53,24 @@
     }
     
     col.actionList = ret;
+    return col;
+}
+
+/// Returns a list of actions that can be targeted on a given target type
+- (ActionCollection*)actionsForTargetType:(BattleActionTarget)actionTarget;
+{
+    ActionCollection *col = [[ActionCollection alloc] init];
+    NSMutableArray *ret = [NSMutableArray array];
     
+    for (BattleAction *action in self.actionList)
+    {
+        if((action.actionTargetType & actionTarget) != 0)
+        {
+            [ret addObject:action];
+        }
+    }
+    
+    col.actionList = ret;
     return col;
 }
 

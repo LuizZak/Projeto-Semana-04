@@ -8,6 +8,7 @@
 
 #import "GameController.h"
 #import "GameData.h"
+#import "CharacterSkill.h"
 
 @implementation GameController
 
@@ -132,7 +133,7 @@
     if(currentLevel < nextLevel)
     {
         // Para checagem de skills novas
-        NSArray *curSkills = [self getPlayerSkills];
+        NSArray *curSkills = [self getPlayerSkillsAsComponents];
         
         // Atualiza o nível
         [[GameData gameData].data setObject:[NSNumber numberWithInt:nextLevel] forKey:KEY_PLAYER_LEVEL];
@@ -141,7 +142,7 @@
         [self updatePlayerHealth];
         
         // Destrava skills
-        NSArray *newSkills = [self getPlayerSkills];
+        NSArray *newSkills = [self getPlayerSkillsAsComponents];
         
         // Itera as skills
         NSMutableArray *unlockedSkills = [NSMutableArray array];
@@ -196,6 +197,31 @@
 }
 
 - (NSMutableArray*)getPlayerSkills
+{
+    int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
+    
+    NSMutableArray *skillsArray = [NSMutableArray array];
+    
+    // Default skill
+    [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_1_ID cooldown:1 damage:3 skillType:CharacterSkillTypeAttack skillName:@"Fireball 1"]];
+    
+    if(currentLevel > 1)
+    {
+        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_2_ID cooldown:5 damage:10 skillType:CharacterSkillTypeAttack skillName:@"Fireball 2"]];
+    }
+    if(currentLevel > 3)
+    {
+        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_3_ID cooldown:10 damage:30 skillType:CharacterSkillTypeAttack skillName:@"Fireball 3"]];
+    }
+    if(currentLevel > 5)
+    {
+        [skillsArray addObject:[[CharacterSkill alloc] initWithSkillId:CS_FIREBALL_4_ID cooldown:13 damage:40 skillType:CharacterSkillTypeAttack skillName:@"Fireball 3"]];
+    }
+    
+    return skillsArray;
+}
+
+- (NSMutableArray*)getPlayerSkillsAsComponents
 {
     int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
     

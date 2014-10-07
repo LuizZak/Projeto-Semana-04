@@ -21,6 +21,9 @@ typedef void(^ActionIconViewTapped)(void);
 /// The action to load on this icon
 @property BattleAction *action;
 
+/// Specifies whether this ActionIconView is currently enabled
+@property (nonatomic) BOOL enabled;
+
 /// Whethe this ActionIconView is used to display the category of the battle action only
 @property BOOL displayCategoryOnly;
 

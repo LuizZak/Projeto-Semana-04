@@ -20,7 +20,13 @@
     BOOL closing;
 }
 
+/// The source of this ActionPieView
+@property id actionSource;
+
 /// The target of this ActionPieView
+@property id actionTarget;
+
+/// The target node to point of this ActionPieView
 @property SKNode *target;
 
 /// The container for the items of this ActionPieView
@@ -41,6 +47,9 @@
 /// Initializes this ActionPieView with a given ActionCollection
 - (id)initWithActionCollection:(ActionCollection*)collection;
 
+/// Updates this pie menu
+- (void)update:(NSTimeInterval)timestep;
+
 /// Opens this menu with a given orientation at a given point
 - (void)open:(ActionPieViewMenuOrientation)orientation onNode:(SKNode*)node atPoint:(CGPoint)point;
 
@@ -49,11 +58,5 @@
 
 /// Closes this menu and all children menus opened on this ActionPieView
 - (void)close;
-
-/// Called whenever the first immediate child of this ActionPieView has closed itself
-- (void)childClosed;
-
-/// Opens up a submenu on this ActionPieMenu on a given container
-- (void)openSubMenu:(ActionCollection*)collection onActionContainer:(ActionPieContainerView*)container;
 
 @end

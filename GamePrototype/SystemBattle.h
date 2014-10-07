@@ -12,8 +12,13 @@
 #import "Som.h"
 #import "GameController.h"
 #import "ActionBarManager.h"
+#import "ActionPieView.h"
 
-@interface SystemBattle : GPSystem <GameControllerObserver>
+@interface SystemBattle : GPSystem <GameControllerObserver, ActionRunner>
+{
+    /// An array of skills available to the player at the start of the battle
+    NSMutableArray *playerSkills;
+}
 
 /// List of enemies
 @property GPEntitySelector *enemySelector;
@@ -31,6 +36,9 @@
 
 /// The action bar binded to the player actions
 @property ActionBarManager *playerActionBar;
+
+/// The action piew view used to choose actions
+@property ActionPieView *actionPieView;
 
 /// Current skill being dragged
 @property CGPoint dragOffset;

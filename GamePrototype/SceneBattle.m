@@ -88,6 +88,7 @@
     [self addChild:sprite];
     
     [sprite addChild:system.playerActionBar.actionBarView];
+    [sprite addChild:system.playerActionBar.actionQueueManager.actionQueueView];
 }
 
 // Cria a barra de skills e suas skills respectivas
@@ -100,7 +101,7 @@
     
     [self addChild:sprite];
     
-    NSMutableArray *array = [[GameController gameController] getPlayerSkills];
+    NSMutableArray *array = [[GameController gameController] getPlayerSkillsAsComponents];
     
     for(int i = 0; i < array.count; i++)
     {
@@ -125,6 +126,7 @@
     [player addComponent:[[ComponentHealthIndicator alloc] initWithBarWidth:500 barHeight:60 barBackColor:[UIColor blackColor] barFrontColor:[UIColor redColor]]];
     [player addComponent:[[ComponentBattleState alloc] initWithProjectilePoint:CGPointMake(190, 0)]];
     player.ID = PLAYER_ID;
+    player.type = PLAYER_TYPE;
     
     [playerNode setScale:0.5f];
     playerNode.xScale = -playerNode.xScale;

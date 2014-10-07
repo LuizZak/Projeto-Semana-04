@@ -24,6 +24,11 @@
     return self;
 }
 
+- (NSArray*)actionIcons
+{
+    return actionIcons;
+}
+
 - (void)close
 {
     [self removeFromParent];
@@ -47,9 +52,6 @@
     {
         // Close any child menus
         [self.childMenu close];
-        
-        [self.actionPieOwner openSubMenu:[self.actionCollection actionsForType:action.action.actionType] onActionContainer:self];
-        //[self openSubMenu:[self.actionCollection actionsForType:action.action.actionType] onIndex:[actionIcons indexOfObject:action]];
         
         return;
     }

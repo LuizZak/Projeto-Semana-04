@@ -44,6 +44,10 @@
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
 		A09A05EF190C471200ACEAB8 /* BattleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A09A05EE190C471200ACEAB8 /* BattleConfig.m */; };
 		A0B0B53619E331D600D46A0E /* ActionPieContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B53519E331D600D46A0E /* ActionPieContainerView.m */; };
+		A0B0B53919E3904700D46A0E /* CharacterSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B53819E3904700D46A0E /* CharacterSkill.m */; };
+		A0B0B54219E427C400D46A0E /* BattleComponentDamage.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B54119E427C400D46A0E /* BattleComponentDamage.m */; };
+		A0B0B54519E42ADE00D46A0E /* BattleComponentAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B54419E42ADE00D46A0E /* BattleComponentAnimation.m */; };
+		A0B0B54819E4310000D46A0E /* CharacterSkillController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B54719E4310000D46A0E /* CharacterSkillController.m */; };
 		A0CF924319DF610800D1011B /* GPEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924219DF610800D1011B /* GPEvent.m */; };
 		A0CF924619DF611800D1011B /* GPEventDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A0CF924519DF611800D1011B /* GPEventDispatcher.m */; };
 		A0D9F61319E1D00A0077CB4A /* BattleAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D9F61219E1D00A0077CB4A /* BattleAction.m */; };
@@ -198,6 +202,14 @@
 		A09A05EE190C471200ACEAB8 /* BattleConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleConfig.m; sourceTree = "<group>"; };
 		A0B0B53419E331D600D46A0E /* ActionPieContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionPieContainerView.h; sourceTree = "<group>"; };
 		A0B0B53519E331D600D46A0E /* ActionPieContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionPieContainerView.m; sourceTree = "<group>"; };
+		A0B0B53719E3904700D46A0E /* CharacterSkill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSkill.h; sourceTree = "<group>"; };
+		A0B0B53819E3904700D46A0E /* CharacterSkill.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSkill.m; sourceTree = "<group>"; };
+		A0B0B54019E427C400D46A0E /* BattleComponentDamage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleComponentDamage.h; sourceTree = "<group>"; };
+		A0B0B54119E427C400D46A0E /* BattleComponentDamage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleComponentDamage.m; sourceTree = "<group>"; };
+		A0B0B54319E42ADE00D46A0E /* BattleComponentAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleComponentAnimation.h; sourceTree = "<group>"; };
+		A0B0B54419E42ADE00D46A0E /* BattleComponentAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleComponentAnimation.m; sourceTree = "<group>"; };
+		A0B0B54619E4310000D46A0E /* CharacterSkillController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterSkillController.h; sourceTree = "<group>"; };
+		A0B0B54719E4310000D46A0E /* CharacterSkillController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterSkillController.m; sourceTree = "<group>"; };
 		A0CF924119DF610800D1011B /* GPEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEvent.h; sourceTree = "<group>"; };
 		A0CF924219DF610800D1011B /* GPEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEvent.m; sourceTree = "<group>"; };
 		A0CF924419DF611800D1011B /* GPEventDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEventDispatcher.h; sourceTree = "<group>"; };
@@ -378,6 +390,7 @@
 		5E6CB6591909904500C05DED /* Objetos */ = {
 			isa = PBXGroup;
 			children = (
+				A0B0B53A19E3904B00D46A0E /* Character */,
 				5E6CB65A1909908C00C05DED /* Score.h */,
 				5E6CB65B1909908C00C05DED /* Score.m */,
 			);
@@ -500,6 +513,44 @@
 			name = "Action Pie Menu";
 			sourceTree = "<group>";
 		};
+		A0B0B53A19E3904B00D46A0E /* Character */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B53719E3904700D46A0E /* CharacterSkill.h */,
+				A0B0B53819E3904700D46A0E /* CharacterSkill.m */,
+				A0B0B54619E4310000D46A0E /* CharacterSkillController.h */,
+				A0B0B54719E4310000D46A0E /* CharacterSkillController.m */,
+			);
+			name = Character;
+			sourceTree = "<group>";
+		};
+		A0B0B53B19E3918B00D46A0E /* Action Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B53C19E3919200D46A0E /* Action Stats */,
+				A0B0B53D19E391BC00D46A0E /* Animation */,
+			);
+			name = "Action Components";
+			sourceTree = "<group>";
+		};
+		A0B0B53C19E3919200D46A0E /* Action Stats */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B54019E427C400D46A0E /* BattleComponentDamage.h */,
+				A0B0B54119E427C400D46A0E /* BattleComponentDamage.m */,
+			);
+			name = "Action Stats";
+			sourceTree = "<group>";
+		};
+		A0B0B53D19E391BC00D46A0E /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				A0B0B54319E42ADE00D46A0E /* BattleComponentAnimation.h */,
+				A0B0B54419E42ADE00D46A0E /* BattleComponentAnimation.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
 		A0CF924019DF60FD00D1011B /* Eventing */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +587,7 @@
 		A0D9F61419E1D0E80077CB4A /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A0B0B53B19E3918B00D46A0E /* Action Components */,
 				A0D9F61119E1D00A0077CB4A /* BattleAction.h */,
 				A0D9F61219E1D00A0077CB4A /* BattleAction.m */,
 				A0D9F61719E1D1270077CB4A /* ActionCollection.h */,
@@ -909,6 +961,7 @@
 			files = (
 				B34B2DE018F475EE007B82C4 /* GPEntitySelector.m in Sources */,
 				A0D9F62D19E1F9AC0077CB4A /* ActionIconView.m in Sources */,
+				A0B0B54519E42ADE00D46A0E /* BattleComponentAnimation.m in Sources */,
 				5E8A847018FDC6110081583D /* GameData.m in Sources */,
 				A0D9F62419E1E4E80077CB4A /* ActionBarView.m in Sources */,
 				B32DB96218F4959E001ECCD2 /* ComponentDraggableAttack.m in Sources */,
@@ -937,9 +990,11 @@
 				B33EBCC519004F6B0027882B /* ComponentDialog.m in Sources */,
 				A0CF924319DF610800D1011B /* GPEvent.m in Sources */,
 				B34B2DE318F47E17007B82C4 /* GPSelectorRules.m in Sources */,
+				A0B0B54219E427C400D46A0E /* BattleComponentDamage.m in Sources */,
 				B32AE36E18F467E3006F8635 /* GPComponent.m in Sources */,
 				B3B15DAB190ADD5800E98B92 /* AnimMaker.m in Sources */,
 				A0CF924619DF611800D1011B /* GPEventDispatcher.m in Sources */,
+				A0B0B54819E4310000D46A0E /* CharacterSkillController.m in Sources */,
 				B32E644318FF098900040D47 /* SystemCamera.m in Sources */,
 				B32AE33C18F465CC006F8635 /* AppDelegate.m in Sources */,
 				B35DDFA518F5DE580079F74D /* SystemHealthIndicator.m in Sources */,
@@ -952,6 +1007,7 @@
 				B38069C11906F0D0006A2294 /* ComponentAIBattle.m in Sources */,
 				B32B9BC118FDB68A00BF4B2C /* SystemMap.m in Sources */,
 				B38069C4190703AE006A2294 /* ComponentBattleState.m in Sources */,
+				A0B0B53919E3904700D46A0E /* CharacterSkill.m in Sources */,
 				A0D9F62A19E1E8BD0077CB4A /* ActionRunTimer.m in Sources */,
 				5E7214B0190AD07700678908 /* SceneMenu.m in Sources */,
 				B32AE37418F46BB2006F8635 /* GPGameScene.m in Sources */,

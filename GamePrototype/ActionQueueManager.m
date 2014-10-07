@@ -17,6 +17,7 @@
     self = [super init];
     if (self)
     {
+        self.actionQueue = [NSMutableArray array];
         self.actionQueueView = [[ActionQueueView alloc] init];
         self.actionQueueView.actionQueueManager = self;
     }
@@ -48,16 +49,25 @@
 {
     BattleAction *action = [self peek];
     
-    if([self.actionBarManager canPerformAction:action])
+    if(action != nil && [self.actionBarManager canPerformAction:action])
     {
+        [self dequeue];
         [self.actionBarManager performAction:action];
     }
+    
+    [self.actionQueueView updateQueueView:timestep];
 }
 
 /// Queues an action on this ActionQueueManager
 - (void)queue:(BattleAction*)action
 {
+    if(![self canQueue:action])
+    {
+        return;
+    }
+    
     [self.actionQueue addObject:action];
+    [self.actionQueueView viewQueueAction:action];
 }
 
 /// Dequeues and returns an action from this ActionQueueManager
@@ -66,6 +76,7 @@
     BattleAction *action = self.actionQueue[0];
     
     [self.actionQueue removeObjectAtIndex:0];
+    [self.actionQueueView viewDequeueAction:action];
     
     return action;
 }
@@ -73,13 +84,19 @@
 /// Returns the next action on this ActionQueueManager without dequeing it
 - (BattleAction*)peek
 {
-    return self.actionQueue[0];
+    return self.actionQueue.count == 0 ? nil : self.actionQueue[0];
 }
 
 /// Returns whether the given battle can be queued
 - (BOOL)canQueue:(BattleAction*)action
 {
-    return 0;
+    // False case: Total queue charge + action charge is larger than the total charge
+    if(self.totalQueueCharge + action.actionCharge > self.actionBarManager.totalCharge)
+    {
+        return NO;
+    }
+    
+    return YES;
 }
 
 /// Returns

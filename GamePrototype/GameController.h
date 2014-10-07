@@ -59,7 +59,10 @@
 // Reinicia os dados do jogo para os iniciais
 - (void)resetGameData;
 
-// Pega os skills do jogador
+/// Gets the player skills as an array of CharacterSkills
 - (NSMutableArray*)getPlayerSkills;
+
+// Pega os skills do jogador
+- (NSMutableArray*)getPlayerSkillsAsComponents;
 
 @end

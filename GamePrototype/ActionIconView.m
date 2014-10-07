@@ -15,11 +15,20 @@
     self = [super init];
     if (self)
     {
+        self.enabled = YES;
         self.action = action;
         self.userInteractionEnabled = YES;
         [self createIcon];
+        [self updateDisplay];
     }
     return self;
+}
+
+- (void)setEnabled:(BOOL)enabled
+{
+    _enabled = enabled;
+    
+    [self updateDisplay];
 }
 
 - (void)update:(NSTimeInterval)timestep
@@ -27,12 +36,25 @@
     
 }
 
-/// Updates the display of this ActionIconView
+/// Creates the display of this ActionIconView
 - (void)createIcon
 {
     self.iconBackground = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:CGSizeMake(60, 60)];
     
     [self addChild:self.iconBackground];
+}
+
+/// Updates the display of this ActionIconView
+- (void)updateDisplay
+{
+    if(!self.enabled)
+    {
+        self.alpha = 0.5;
+    }
+    else
+    {
+        self.alpha = 1;
+    }
 }
 
 - (void)setOnTapped:(ActionIconViewTapped)onTappedBlock

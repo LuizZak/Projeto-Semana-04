@@ -16,6 +16,8 @@
     SKSpriteNode *chargeBarBackgroundNode;
     /// The charge bar's fill node
     SKSpriteNode *chargeBarFillNode;
+    /// The timer bar fill node
+    SKSpriteNode *timeBarFillNode;
 }
 
 @end
@@ -44,14 +46,22 @@
     return self;
 }
 
+- (CGFloat)barWidth
+{
+    return currentSceneSize.width - 60;
+}
 
 - (void)initializeView
 {
     chargeBarBackgroundNode = [[SKSpriteNode alloc] initWithColor:[[UIColor orangeColor] colorWithAlphaComponent:0.3] size:currentSceneSize];
     chargeBarFillNode = [[SKSpriteNode alloc] initWithColor:[UIColor orangeColor] size:currentSceneSize];
+    timeBarFillNode = [[SKSpriteNode alloc] initWithColor:[UIColor redColor] size:currentSceneSize];
     
     [self addChild:chargeBarBackgroundNode];
     [self addChild:chargeBarFillNode];
+    [self addChild:timeBarFillNode];
+    
+    timeBarFillNode.hidden = YES;
 }
 
 - (void)updateBarView:(NSTimeInterval)timestep
@@ -63,6 +73,14 @@
     
     // Update the charge bar's scale
     chargeBarFillNode.xScale = self.actionBarManager.chargePercentage;
+    
+    timeBarFillNode.hidden = !self.actionBarManager.actionRunTimer.isPerformingAction;
+    if(self.actionBarManager.actionRunTimer.isPerformingAction)
+    {
+        timeBarFillNode.position = CGPointMake(chargeBarFillNode.position.y + (chargeBarFillNode.size.width / chargeBarFillNode.xScale) * chargeBarFillNode.xScale, timeBarFillNode.position.y);
+        timeBarFillNode.xScale = 1 - self.actionBarManager.actionRunTimer.percentageDone;
+        timeBarFillNode.xScale *= (self.actionBarManager.lastAction.actionCharge / self.actionBarManager.totalCharge);
+    }
 }
 
 - (void)updateBarSize
@@ -76,6 +94,10 @@
     chargeBarFillNode.size = CGSizeMake(currentSceneSize.width - 60, 60);
     chargeBarFillNode.position = CGPointMake(30, 30);
     chargeBarFillNode.anchorPoint = CGPointZero;
+    
+    timeBarFillNode.size = CGSizeMake(currentSceneSize.width - 60, 60);
+    timeBarFillNode.position = CGPointMake(30, 30);
+    timeBarFillNode.anchorPoint = CGPointZero;
 }
 
 @end

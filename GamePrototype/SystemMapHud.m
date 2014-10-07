@@ -10,7 +10,7 @@
 #import "GameData.h"
 #import "GFXBuilder.h"
 
-const int depthHud = 1000;
+const int depthHud = 100;
 
 @implementation SystemMapHud
 

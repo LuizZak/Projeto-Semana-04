@@ -113,36 +113,38 @@
 // Som de derrota
 - (AVAudioPlayer *)tocarSomGameOver
 {
-    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"gameOver" withExtension:@"wav"]:NO];
+    return [self playSound:[[NSBundle mainBundle] URLForResource:@"gameOver" withExtension:@"wav"] loop:NO];
 }
 
 // Som de vitoria
 - (AVAudioPlayer *)tocarSomVitoria
 {
-    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"Vitoria" withExtension:@"wav"]:NO];
+    return [self playSound:[[NSBundle mainBundle] URLForResource:@"Vitoria" withExtension:@"wav"] loop:NO];
 }
 
 // Som de fundo so mundo
 - (AVAudioPlayer *)tocarSomMundo
 {
-    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"MundoMusica" withExtension:@"wav"]:YES];
+    return [self playSound:[[NSBundle mainBundle] URLForResource:@"MundoMusica" withExtension:@"wav"] loop:YES];
 }
 
 // Som de fundo so mundo
 - (AVAudioPlayer *)tocarSomBatalha
 {
-    return [self tocarSom:[[NSBundle mainBundle] URLForResource:@"BatalhaMusica" withExtension:@"wav"]:YES];
+    return [self playSound:[[NSBundle mainBundle] URLForResource:@"BatalhaMusica" withExtension:@"wav"] loop:YES];
 }
 
 // Metodo que toca os sons
-- (AVAudioPlayer *)tocarSom:(NSURL*)URL :(BOOL)loop
+- (AVAudioPlayer *)playSound:(NSURL*)URL loop:(BOOL)loop
 {
     NSError *error;
     self.som = [[AVAudioPlayer alloc] initWithContentsOfURL:URL error:&error];
+    
     if (loop)
         self.som.numberOfLoops = -1;
     else
         self.som.numberOfLoops = 0;
+    
     [self.som prepareToPlay];
     [self.som play];
     

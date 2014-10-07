@@ -142,7 +142,7 @@
     if (loop)
         self.som.numberOfLoops = -1;
     else
-        self.som.numberOfLoops = 1;
+        self.som.numberOfLoops = 0;
     [self.som prepareToPlay];
     [self.som play];
     

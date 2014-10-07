@@ -17,8 +17,10 @@
     {
         self.enabled = YES;
         self.action = action;
+        self.displayLabels = YES;
         self.userInteractionEnabled = YES;
         [self createIcon];
+        [self createLabels];
         [self updateDisplay];
     }
     return self;
@@ -44,6 +46,17 @@
     [self addChild:self.iconBackground];
 }
 
+/// Creates the labels for this ActionIconView
+- (void)createLabels
+{
+    lblCharge = [SKLabelNode labelNodeWithFontNamed:@"Avenir-Black"];
+    lblCharge.text = [NSString stringWithFormat:@"%.0lf", self.action.actionCharge];
+    lblCharge.position = CGPointMake(0, self.iconBackground.size.height / 2 + 3);
+    lblCharge.fontColor = [UIColor orangeColor];
+    lblCharge.fontSize = 25;
+    [self addChild:lblCharge];
+}
+
 /// Updates the display of this ActionIconView
 - (void)updateDisplay
 {
@@ -55,6 +68,8 @@
     {
         self.iconBackground.texture = self.action.actionIconTexture;
     }
+    
+    lblCharge.hidden = self.displayCategoryOnly || !self.displayLabels;
     
     if(!self.enabled)
     {
@@ -69,6 +84,13 @@
 - (void)setOnTapped:(ActionIconViewTapped)onTappedBlock
 {
     self->onTapped = onTappedBlock;
+}
+
+- (void)setDisplayLabels:(BOOL)displayLabels
+{
+    self->_displayLabels = displayLabels;
+    
+    [self updateDisplay];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

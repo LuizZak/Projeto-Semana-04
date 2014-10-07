@@ -16,6 +16,9 @@ typedef void(^ActionIconViewTapped)(void);
 {
     /// Block called whenever the action view has been tapped
     ActionIconViewTapped onTapped;
+    
+    /// Label used to display the needed charge for this action
+    SKLabelNode *lblCharge;
 }
 
 /// The action to load on this icon
@@ -26,6 +29,9 @@ typedef void(^ActionIconViewTapped)(void);
 
 /// Whether this ActionIconView is used to display the category of the battle action only
 @property BOOL displayCategoryOnly;
+
+/// Whether to display the labels binded on this ActionIconView
+@property (nonatomic) BOOL displayLabels;
 
 /// The backgound image of the icon to display
 @property SKSpriteNode *iconBackground;

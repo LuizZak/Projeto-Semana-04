@@ -71,6 +71,7 @@
 - (void)viewQueueAction:(BattleAction*)action
 {
     ActionIconView *view = [[ActionIconView alloc] initWithAction:action];
+    view.displayLabels = NO;
     [self.actionIcons addObject:view];
     [self addChild:view];
     

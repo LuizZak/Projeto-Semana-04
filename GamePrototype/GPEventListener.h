@@ -11,6 +11,8 @@
 
 @protocol GPEventListener <NSObject>
 
+@optional
+
 - (void)receiveEvent:(GPEvent*)event;
 
 @end

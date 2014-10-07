@@ -31,6 +31,10 @@
         for (id<GPEventListener> listener in listenerArray)
         {
             [listener receiveEvent:event];
+            if([listener respondsToSelector:@selector(receiveEvent:)])
+            {
+                [listener receiveEvent:event];
+            }
         }
     }
 }

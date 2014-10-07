@@ -15,7 +15,7 @@
     self = [super init];
     if (self)
     {
-        eventDictionary = [NSDictionary dictionary];
+        eventDictionary = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -30,7 +30,6 @@
     {
         for (id<GPEventListener> listener in listenerArray)
         {
-            [listener receiveEvent:event];
             if([listener respondsToSelector:@selector(receiveEvent:)])
             {
                 [listener receiveEvent:event];
@@ -46,7 +45,7 @@
     
     NSMutableArray *listenersArray = [eventDictionary objectForKey:hashKey];
     
-    if(listenersArray == nil)
+    if(listenersArray != nil)
     {
         if(![listenersArray containsObject:listener])
         {
@@ -57,8 +56,7 @@
     {
         listenersArray = [NSMutableArray array];
         [listenersArray addObject:listener];
-        
-        [eventDictionary setValue:listenersArray forKey:hashKey];
+        [eventDictionary setObject:listenersArray forKey:hashKey];
     }
 }
 

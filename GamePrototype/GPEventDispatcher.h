@@ -13,7 +13,7 @@
 /// Represents a class used to handle dispatching of eventss
 @interface GPEventDispatcher : NSObject
 {
-    NSDictionary *eventDictionary;
+    NSMutableDictionary *eventDictionary;
 }
 
 /// Dispatches an event so all listeners bind to it can receive it

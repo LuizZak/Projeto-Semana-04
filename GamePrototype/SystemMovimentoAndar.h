@@ -8,6 +8,7 @@
 
 #import "GPSystem.h"
 #import "CommonImports.h"
+#import "GPEventListener.h"
 
 @interface SystemMovimentoAndar : GPSystem
 

@@ -12,6 +12,7 @@
 #import "ComponentMovement.h"
 #import "WorldMap.h"
 #import "CommonImports.h"
+#import "SystemDialog.h"
 
 @implementation SystemMovimentoAndar
 
@@ -37,9 +38,19 @@
         self.dPad.hidden = YES;
         self.dPad.size = CGSizeMake(200.0, 200.0);
         self.dPad.zPosition = 10;
+        
+        [gameScene.eventDispatcher registerListener:self forEventType:[EventDialogOpened class]];
     }
     
     return self;
+}
+
+- (void)receiveEvent:(GPEvent *)event
+{
+    if([event isKindOfClass:[EventDialogOpened class]])
+    {
+        [self stopMovement];
+    }
 }
 
 - (BOOL)gameSceneDidAddEntity:(GPGameScene *)gameScene entity:(GPEntity *)entity
@@ -157,6 +168,12 @@
 }
 
 - (void)gameSceneWillBeMovedFromView:(GPGameScene *)gameScene
+{
+    [self stopMovement];
+}
+
+/// Stops the movement with the touch
+- (void)stopMovement
 {
     self.dPad.hidden = YES;
     self.holdingTouch = NO;

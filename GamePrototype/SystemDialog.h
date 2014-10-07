@@ -9,6 +9,12 @@
 #import "GPSystem.h"
 #import "ComponentDialog.h"
 #import "DSMultilineLabelNode.h"
+#import "GPEvent.h"
+
+/// Event that is used to notify when a dialog box has been opened
+@interface EventDialogOpened : GPEvent
+
+@end
 
 // Sistema que cuida dos diálogos do jogo
 @interface SystemDialog : GPSystem

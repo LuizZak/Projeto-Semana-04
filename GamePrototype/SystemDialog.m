@@ -9,7 +9,11 @@
 #import "SystemDialog.h"
 #import "ComponentDialog.h"
 
-const int depthDialog = 2000;
+const int depthDialog = 20000;
+
+@implementation EventDialogOpened
+
+@end
 
 @implementation SystemDialog
 
@@ -194,12 +198,11 @@ const int depthDialog = 2000;
     
     self.continueLabelAction = [SKAction repeatActionForever:[SKAction sequence:@[[SKAction waitForDuration:0.5f], [SKAction fadeAlphaTo:0 duration:0], [SKAction waitForDuration:0.5f], [SKAction fadeAlphaTo:1 duration:0]]]];
     
-    self.dialogNode.zPosition = depthDialog;
-    self.avatarNode.zPosition = depthDialog + 1;
-    textNode.zPosition = depthDialog + 2;
-    self.tapToContinueNode.zPosition = depthDialog + 3;
-    
-    //[self.gameScene addChild:self.dialogNode];
+    bgNode.zPosition = depthDialog;
+    self.dialogNode.zPosition = depthDialog + 1;
+    self.avatarNode.zPosition = depthDialog + 2;
+    textNode.zPosition = depthDialog + 3;
+    self.tapToContinueNode.zPosition = depthDialog + 4;
 }
 
 // Destroi a caixa de diálogo
@@ -312,6 +315,7 @@ const int depthDialog = 2000;
     }
     
     [self.gameScene addChild:self.dialogNode];
+    [self.gameScene.eventDispatcher dispatchEvent:[[EventDialogOpened alloc] init]];
 }
 
 - (void)hideDialog

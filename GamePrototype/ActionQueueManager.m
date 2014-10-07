@@ -103,6 +103,7 @@
 - (void)removeAction:(BattleAction*)action
 {
     [self.actionQueue removeObject:action];
+    [self.actionQueueView viewDequeueAction:action];
 }
 
 @end

@@ -108,4 +108,18 @@
     return !self.actionRunTimer.isPerformingAction;
 }
 
+/// Removes all actions that are currently targeting a specific action target
+- (void)clearActionsForTarget:(id)actionTarget
+{
+    // Remove all actions that target this entity
+    for (int i = 0; i < self.actionQueueManager.queueLength; i++)
+    {
+        if([self.actionQueueManager.actionQueue[i] actionTarget] == actionTarget)
+        {
+            [self.actionQueueManager removeAction:self.actionQueueManager.actionQueue[i]];
+            i--;
+        }
+    }
+}
+
 @end

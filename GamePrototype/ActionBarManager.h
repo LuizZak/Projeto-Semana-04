@@ -60,4 +60,7 @@
 /// Returns whether a given action can be performed on this ActionBarManager
 - (BOOL)canPerformAction:(BattleAction*)action;
 
+/// Removes all actions that are currently targeting a specific action target
+- (void)clearActionsForTarget:(id)actionTarget;
+
 @end

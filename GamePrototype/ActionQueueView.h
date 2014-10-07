@@ -25,7 +25,7 @@
 /// Called to notify when a new battle action has been queued
 - (void)viewQueueAction:(BattleAction*)action;
 
-/// Called to notify when the the next available action on the queue has been dequeued
+/// Called to notify when an action on the queue has been dequeued
 - (void)viewDequeueAction:(BattleAction*)action;
 
 @end

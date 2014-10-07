@@ -559,6 +559,8 @@
     }
     else
     {
+        [self.playerActionBar clearActionsForTarget:entity];
+        
         [[Som som] tocarSomMorteHomem];
         
         [[Ranking lista] setCurrentPlayerScore:[[Ranking lista] currentPlayerScore] + 10];

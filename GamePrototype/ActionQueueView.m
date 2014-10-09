@@ -73,10 +73,15 @@
 {
     // Find the icon view that matches the action
     ActionIconView *view = [self actionIconViewForAction:action];
-    [view removeFromParent];
-    [self.actionIcons removeObject:view];
     
-    [self updateIcons];
+    if(view == nil)
+        return;
+    
+    [view runAction:[self actionForActionQueueIconRemove:context] completion:^{
+        [view removeFromParent];
+    }];
+    
+    [self.actionIcons removeObject:view];
 }
 
 /// Returns an ActionIconView on this ActionQueueView that matches the passed BattleAction, or nil, if none was found
@@ -91,6 +96,24 @@
     }
     
     return nil;
+}
+
+/// Creates an action for a type of ActionQueueIconRemove
+- (SKAction*)actionForActionQueueIconRemove:(ActionQueueIconRemove)context
+{
+    NSTimeInterval animInterval = 0.2;
+    SKAction *action = [SKAction waitForDuration:0];
+    
+    if(context == ActionQueueIconRemove_ActionPerformed)
+    {
+        action = [SKAction group:@[[SKAction moveByX:0 y:10 duration:animInterval], [SKAction fadeOutWithDuration:animInterval], [SKAction scaleBy:1.2 duration:animInterval]]];
+    }
+    else if(context == ActionQueueIconRemove_ActionCanceled)
+    {
+        action = [SKAction sequence:@[[SKAction moveByX:0 y:-3 duration:animInterval / 10], [SKAction group:@[[SKAction fadeOutWithDuration:animInterval], [SKAction colorizeWithColor:[UIColor redColor] colorBlendFactor:1 duration:0]]]]];
+    }
+    
+    return action;
 }
 
 @end

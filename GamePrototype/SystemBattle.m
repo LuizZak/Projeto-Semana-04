@@ -56,6 +56,7 @@
         // Load up the player action bar
         self.playerActionBar = [[ActionBarManager alloc] init];
         self.playerActionBar.actionRunner = self;
+        self.playerActionBar.totalCharge = [GameController gameController].actionCharge;
         
         playerSkills = [[GameController gameController] getPlayerSkills];
         

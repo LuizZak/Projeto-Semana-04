@@ -16,6 +16,9 @@
 {
     /// The current size of this ActionBarView
     CGSize currentSceneSize;
+    
+    /// The list of sprites for the section
+    NSMutableArray *sections;
 }
 
 /// The width of the bar to display on screen
@@ -32,5 +35,8 @@
 
 /// Updates this ActionBarView
 - (void)updateBarView:(NSTimeInterval)timestep;
+
+/// Creates the charge bar sections
+- (void)createChargeBarSections;
 
 @end

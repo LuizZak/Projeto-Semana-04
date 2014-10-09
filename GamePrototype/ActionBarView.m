@@ -37,6 +37,7 @@
     if (self)
     {
         currentSceneSize = CGSizeZero;
+        sections = [NSMutableArray array];
         self.chargeBarSectionSize = 25;
     }
     return self;
@@ -77,18 +78,26 @@
     [chargeBarCropNode addChild:chargeBarFillNode];
     [chargeBarCropNode addChild:timeBarFillNode];
     
-    [self createCharteBarSections];
+    [self createChargeBarSections];
 }
 
 /// Creates the charge bar sections
-- (void)createCharteBarSections
+- (void)createChargeBarSections
 {
+    for (SKNode *node in sections)
+    {
+        [node removeFromParent];
+    }
+    
+    sections = [NSMutableArray array];
+    
     for (CGFloat step = 0; step < self.actionBarManager.totalCharge; step += self.chargeBarSectionSize)
     {
         SKSpriteNode *node = [SKSpriteNode spriteNodeWithImageNamed:@"commandBarSection"];
         node.position = CGPointMake(chargeBarFrame.size.width * (step / self.actionBarManager.totalCharge), 4);
         node.anchorPoint = CGPointMake(0.5, 0);
         
+        [sections addObject:node];
         [chargeBarCropNode addChild:node];
     }
 }

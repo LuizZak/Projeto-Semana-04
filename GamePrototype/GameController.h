@@ -41,6 +41,9 @@
     NSMutableArray *observers;
 }
 
+/// Gets the action charge for the player
+@property (readonly) CGFloat actionCharge;
+
 // Pega uma instância do controller
 + (GameController*)gameController;
 

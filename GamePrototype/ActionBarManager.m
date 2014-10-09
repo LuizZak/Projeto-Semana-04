@@ -35,6 +35,13 @@
     return self.charge / self.totalCharge;
 }
 
+- (void)setTotalCharge:(CGFloat)totalCharge
+{
+    _totalCharge = totalCharge;
+    
+    [self.actionBarView createChargeBarSections];
+}
+
 - (void)update:(NSTimeInterval)timestep
 {
     if(!self.paused)

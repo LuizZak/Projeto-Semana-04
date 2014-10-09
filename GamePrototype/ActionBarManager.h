@@ -20,7 +20,7 @@
 @property CGFloat charge;
 
 /// The bar's total charge
-@property CGFloat totalCharge;
+@property (nonatomic) CGFloat totalCharge;
 
 /// The rate at which this ActionBarManager should replenish the charge
 @property CGFloat chargeRate;

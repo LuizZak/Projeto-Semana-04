@@ -9,6 +9,14 @@
 #import <SpriteKit/SpriteKit.h>
 #import "BattleAction.h"
 
+/// Enum used to define the context of an action leaving the ActionQueueManager
+typedef enum ActionQueueIconRemoveEnum {
+    /// Specifies a context in which the action is being chosen to be performed
+    ActionQueueIconRemove_ActionPerformed,
+    /// Specifies a context in which the action is being canceled
+    ActionQueueIconRemove_ActionCanceled
+} ActionQueueIconRemove;
+
 @class ActionQueueManager;
 /// Represents a view that displays the contents of an ActionQueueManager
 @interface ActionQueueView : SKNode
@@ -26,6 +34,6 @@
 - (void)viewQueueAction:(BattleAction*)action;
 
 /// Called to notify when an action on the queue has been dequeued
-- (void)viewDequeueAction:(BattleAction*)action;
+- (void)viewDequeueAction:(BattleAction*)action context:(ActionQueueIconRemove)context;
 
 @end

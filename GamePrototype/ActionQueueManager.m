@@ -79,7 +79,7 @@
     BattleAction *action = self.actionQueue[0];
     
     [self.actionQueue removeObjectAtIndex:0];
-    [self.actionQueueView viewDequeueAction:action];
+    [self.actionQueueView viewDequeueAction:action context:ActionQueueIconRemove_ActionPerformed];
     
     return action;
 }
@@ -106,7 +106,7 @@
 - (void)removeAction:(BattleAction*)action
 {
     [self.actionQueue removeObject:action];
-    [self.actionQueueView viewDequeueAction:action];
+    [self.actionQueueView viewDequeueAction:action context:ActionQueueIconRemove_ActionCanceled];
 }
 
 @end

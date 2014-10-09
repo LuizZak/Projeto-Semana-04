@@ -68,7 +68,8 @@
     [self updateIcons];
 }
 
-- (void)viewQueueAction:(BattleAction*)action
+/// Called to notify when an action on the queue has been dequeued
+- (void)viewDequeueAction:(BattleAction*)action context:(ActionQueueIconRemove)context;
 {
     ActionIconView *view = [[ActionIconView alloc] initWithAction:action];
     view.displayLabels = NO;

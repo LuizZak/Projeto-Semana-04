@@ -58,12 +58,12 @@
     }
 }
 
-- (void)viewDequeueAction:(BattleAction*)action
+- (void)viewQueueAction:(BattleAction*)action
 {
-    // Find the icon view that matches the action
-    ActionIconView *view = [self actionIconViewForAction:action];
-    [view removeFromParent];
-    [self.actionIcons removeObject:view];
+    ActionIconView *view = [[ActionIconView alloc] initWithAction:action];
+    view.displayLabels = NO;
+    [self.actionIcons addObject:view];
+    [self addChild:view];
     
     [self updateIcons];
 }
@@ -71,10 +71,10 @@
 /// Called to notify when an action on the queue has been dequeued
 - (void)viewDequeueAction:(BattleAction*)action context:(ActionQueueIconRemove)context;
 {
-    ActionIconView *view = [[ActionIconView alloc] initWithAction:action];
-    view.displayLabels = NO;
-    [self.actionIcons addObject:view];
-    [self addChild:view];
+    // Find the icon view that matches the action
+    ActionIconView *view = [self actionIconViewForAction:action];
+    [view removeFromParent];
+    [self.actionIcons removeObject:view];
     
     [self updateIcons];
 }

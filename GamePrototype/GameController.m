@@ -41,6 +41,16 @@
     return self;
 }
 
+/// Gets the action charge for the player
+- (CGFloat)actionCharge
+{
+    CGFloat charge = 50;
+    
+    charge += 50 * [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] floatValue];
+    
+    return charge;
+}
+
 - (void)addObserver:(id<GameControllerObserver>)observer
 {
     [observers addObject:observer];

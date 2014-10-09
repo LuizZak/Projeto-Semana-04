@@ -87,7 +87,7 @@
 
 - (void)clearAllListeners
 {
-    eventDictionary = [NSDictionary dictionary];
+    eventDictionary = [NSMutableDictionary dictionary];
 }
 
 // Internal method that removes an event listener bonded to a given event type hash

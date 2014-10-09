@@ -23,10 +23,12 @@ typedef enum CharacterSkillTypeEnum {
 /// The unique identifier for this skill
 @property NSInteger skillId;
 
-/// Defines the cooldown for the skill
-@property float skillCooldown;
+/// Defines the charge required to perform the skill
+@property CGFloat skillCharge;
+/// Defines the time to wait while the skill is performed
+@property NSTimeInterval skillDuration;
 /// Defines the damage for the skill
-@property float damage;
+@property CGFloat damage;
 
 /// Defines a friednly name for the skill
 @property NSString *skillName;
@@ -34,7 +36,7 @@ typedef enum CharacterSkillTypeEnum {
 /// Defines the type of this skill
 @property CharacterSkillType skillType;
 
-- (id)initWithSkillId:(NSInteger)skillId cooldown:(float)skillCooldown damage:(float)damage skillType:(CharacterSkillType)skillType skillName:(NSString*)skillName;
+- (id)initWithSkillId:(NSInteger)skillId charge:(CGFloat)charge duration:(NSTimeInterval)duration damage:(CGFloat)damage skillType:(CharacterSkillType)skillType skillName:(NSString*)skillName;
 
 /// Generates and returns a battle action based on the status of this CharacterSkill
 - (BattleAction*)generateBattleAction;

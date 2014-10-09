@@ -11,14 +11,15 @@
 
 @implementation CharacterSkill
 
-- (id)initWithSkillId:(NSInteger)skillId cooldown:(float)skillCooldown damage:(float)damage skillType:(CharacterSkillType)skillType skillName:(NSString *)skillName
+- (id)initWithSkillId:(NSInteger)skillId charge:(CGFloat)charge duration:(NSTimeInterval)duration damage:(CGFloat)damage skillType:(CharacterSkillType)skillType skillName:(NSString *)skillName
 {
     self = [super init];
     
     if(self)
     {
         self.skillId = skillId;
-        self.skillCooldown = skillCooldown;
+        self.skillCharge = charge;
+        self.skillDuration = duration;
         self.damage = damage;
         self.skillType = skillType;
         self.skillName = skillName;
@@ -34,8 +35,8 @@
     [action addComponent:[[BattleComponentDamage alloc] initWithDamage:self.damage]];
     [action addComponent:[[BattleComponentAnimation alloc] initWithAnimationName:[CharacterSkillController animationForSkill:self]]];
     
-    action.actionCharge = [CharacterSkillController actionChargeForSkill:self];
-    action.actionDuration = [CharacterSkillController timeIntervalForSkill:self];
+    action.actionCharge = self.skillCharge;
+    action.actionDuration = self.skillDuration;
     action.actionId = self.skillId;
     
     action.actionIconTexture = [SKTexture textureWithImageNamed:[CharacterSkillController imageForSkill:self]];

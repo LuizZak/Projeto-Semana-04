@@ -61,6 +61,14 @@
 - (void)viewQueueAction:(BattleAction*)action
 {
     ActionIconView *view = [[ActionIconView alloc] initWithAction:action];
+    
+    [view setOnTapped:^{
+        if([self.actionQueueManager.actionQueue containsObject:action])
+        {
+            [self.actionQueueManager removeAction:action];
+        }
+    }];
+    
     view.displayLabels = NO;
     [self.actionIcons addObject:view];
     [self addChild:view];

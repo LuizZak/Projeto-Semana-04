@@ -127,8 +127,8 @@
     int currentXP = [[[GameData gameData].data objectForKey:KEY_PLAYER_EXP] intValue];
     int currentLevel = [[[GameData gameData].data objectForKey:KEY_PLAYER_LEVEL] intValue];
     
-    int levelCount = 5;
-    int xpLevels[] = { 0, 100, 200, 400, 800, 1200 };
+    int levelCount = 6;
+    int xpLevels[] = { 0, 100, 200, 400, 800, 1200, 2000 };
     int nextLevel;
     
     // Checa se o nível mudou de índice

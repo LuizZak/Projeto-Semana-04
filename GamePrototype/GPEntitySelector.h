@@ -9,11 +9,10 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GPEntity.h"
 
-// Define uma regrapara o seletor de entidades
+// Define uma regra para o seletor de entidades
 @interface GPSelectorRule : NSObject
 
-// Aplica a regra atual para a entidade fornecida e retorna se a entidade
-// passou na regra ou não
+// Aplica a regra atual para a entidade fornecida e retorna se a entidade passou na regra ou não
 - (BOOL)applyRule:(GPEntity*)entity;
 
 @end
@@ -27,12 +26,11 @@
 // Inicia uma nova instância da classe GPEntitySelector com a regra de seleção fornecida
 - (id)initWithRule:(GPSelectorRule*)rule;
 
-// Aplica a regra to selecionador atual na lista de entidades fornecida, e retorna
-// uma nova array contendo as entidades que passaram na regra de seleção
+// Aplica a regra to selecionador atual na lista de entidades fornecida, e retorna uma nova array
+// contendo as entidades que passaram na regra de seleção
 - (NSArray*)applyRuleToArray:(NSArray*)entitiesArray;
 
-// Aplica a regra do selecionador atual na entidade fornecida, e retorna se a
-// entidade passou na regra ou não
+// Aplica a regra do seletor atual na entidade fornecida, e retorna se a entidade passou na regra ou não
 - (BOOL)applyRuleToEntity:(GPEntity*)entity;
 
 @end

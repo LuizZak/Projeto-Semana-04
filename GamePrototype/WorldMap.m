@@ -254,7 +254,7 @@
             
             ComponentDialog *dialog = [[ComponentDialog alloc] init];
             
-            dialog.textDialog = @"Vida revitalizada!";
+            dialog.textDialog = @"Life restored!";
             
             GPEntity *entity = [[GPEntity alloc] initWithNode:[SKNode node]];
             [entity addComponent:dialog];

@@ -253,15 +253,15 @@
 		A0D9F62E19E216C50077CB4A /* ActionPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionPieView.h; sourceTree = "<group>"; };
 		A0D9F62F19E216C50077CB4A /* ActionPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionPieView.m; sourceTree = "<group>"; };
 		B3133189190EF345009C29BA /* TimeBall.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = TimeBall.atlas; sourceTree = "<group>"; };
-		B32AE32618F465CB006F8635 /* GamePrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GamePrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32AE32618F465CB006F8635 /* Dragon's Rage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dragon's Rage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE32918F465CB006F8635 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B32AE32B18F465CB006F8635 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B32AE32D18F465CB006F8635 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B32AE32F18F465CC006F8635 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
-		B32AE33318F465CC006F8635 /* GamePrototype-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GamePrototype-Info.plist"; sourceTree = "<group>"; };
+		B32AE33318F465CC006F8635 /* Dragon's Rage-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dragon's Rage-Info.plist"; sourceTree = "<group>"; };
 		B32AE33518F465CC006F8635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B32AE33718F465CC006F8635 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B32AE33918F465CC006F8635 /* GamePrototype-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GamePrototype-Prefix.pch"; sourceTree = "<group>"; };
+		B32AE33918F465CC006F8635 /* Dragon's Rage-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dragon's Rage-Prefix.pch"; sourceTree = "<group>"; };
 		B32AE33A18F465CC006F8635 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B32AE33B18F465CC006F8635 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B32AE33E18F465CC006F8635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -271,9 +271,9 @@
 		B32AE34618F465CC006F8635 /* SceneBattle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneBattle.h; sourceTree = "<group>"; };
 		B32AE34718F465CC006F8635 /* SceneBattle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneBattle.m; sourceTree = "<group>"; };
 		B32AE34B18F465CC006F8635 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B32AE35118F465CC006F8635 /* GamePrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GamePrototypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B32AE35118F465CC006F8635 /* Dragon's RageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dragon's RageTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B32AE35218F465CC006F8635 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B32AE35A18F465CC006F8635 /* GamePrototypeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GamePrototypeTests-Info.plist"; sourceTree = "<group>"; };
+		B32AE35A18F465CC006F8635 /* Dragon's RageTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Dragon's RageTests-Info.plist"; sourceTree = "<group>"; };
 		B32AE35C18F465CC006F8635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B32AE35E18F465CC006F8635 /* GamePrototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GamePrototypeTests.m; sourceTree = "<group>"; };
 		B32AE36918F46736006F8635 /* GPEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEntity.h; sourceTree = "<group>"; };
@@ -695,8 +695,8 @@
 		B32AE32718F465CB006F8635 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B32AE32618F465CB006F8635 /* GamePrototype.app */,
-				B32AE35118F465CC006F8635 /* GamePrototypeTests.xctest */,
+				B32AE32618F465CB006F8635 /* Dragon's Rage.app */,
+				B32AE35118F465CC006F8635 /* Dragon's RageTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -742,10 +742,10 @@
 		B32AE33218F465CC006F8635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B32AE33318F465CC006F8635 /* GamePrototype-Info.plist */,
+				B32AE33318F465CC006F8635 /* Dragon's Rage-Info.plist */,
 				B32AE33418F465CC006F8635 /* InfoPlist.strings */,
 				B32AE33718F465CC006F8635 /* main.m */,
-				B32AE33918F465CC006F8635 /* GamePrototype-Prefix.pch */,
+				B32AE33918F465CC006F8635 /* Dragon's Rage-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -762,7 +762,7 @@
 		B32AE35918F465CC006F8635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B32AE35A18F465CC006F8635 /* GamePrototypeTests-Info.plist */,
+				B32AE35A18F465CC006F8635 /* Dragon's RageTests-Info.plist */,
 				B32AE35B18F465CC006F8635 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -857,9 +857,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B32AE32518F465CB006F8635 /* GamePrototype */ = {
+		B32AE32518F465CB006F8635 /* Dragon's Rage */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B32AE36218F465CC006F8635 /* Build configuration list for PBXNativeTarget "GamePrototype" */;
+			buildConfigurationList = B32AE36218F465CC006F8635 /* Build configuration list for PBXNativeTarget "Dragon's Rage" */;
 			buildPhases = (
 				B32AE32218F465CB006F8635 /* Sources */,
 				B32AE32318F465CB006F8635 /* Frameworks */,
@@ -869,14 +869,14 @@
 			);
 			dependencies = (
 			);
-			name = GamePrototype;
+			name = "Dragon's Rage";
 			productName = GamePrototype;
-			productReference = B32AE32618F465CB006F8635 /* GamePrototype.app */;
+			productReference = B32AE32618F465CB006F8635 /* Dragon's Rage.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B32AE35018F465CC006F8635 /* GamePrototypeTests */ = {
+		B32AE35018F465CC006F8635 /* Dragon's RageTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B32AE36518F465CC006F8635 /* Build configuration list for PBXNativeTarget "GamePrototypeTests" */;
+			buildConfigurationList = B32AE36518F465CC006F8635 /* Build configuration list for PBXNativeTarget "Dragon's RageTests" */;
 			buildPhases = (
 				B32AE34D18F465CC006F8635 /* Sources */,
 				B32AE34E18F465CC006F8635 /* Frameworks */,
@@ -887,9 +887,9 @@
 			dependencies = (
 				B32AE35718F465CC006F8635 /* PBXTargetDependency */,
 			);
-			name = GamePrototypeTests;
+			name = "Dragon's RageTests";
 			productName = GamePrototypeTests;
-			productReference = B32AE35118F465CC006F8635 /* GamePrototypeTests.xctest */;
+			productReference = B32AE35118F465CC006F8635 /* Dragon's RageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -909,7 +909,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B32AE32118F465CB006F8635 /* Build configuration list for PBXProject "GamePrototype" */;
+			buildConfigurationList = B32AE32118F465CB006F8635 /* Build configuration list for PBXProject "Dragon's Rage" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -922,8 +922,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B32AE32518F465CB006F8635 /* GamePrototype */,
-				B32AE35018F465CC006F8635 /* GamePrototypeTests */,
+				B32AE32518F465CB006F8635 /* Dragon's Rage */,
+				B32AE35018F465CC006F8635 /* Dragon's RageTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1093,7 +1093,7 @@
 /* Begin PBXTargetDependency section */
 		B32AE35718F465CC006F8635 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B32AE32518F465CB006F8635 /* GamePrototype */;
+			target = B32AE32518F465CB006F8635 /* Dragon's Rage */;
 			targetProxy = B32AE35618F465CC006F8635 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1214,10 +1214,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
-				INFOPLIST_FILE = "GamePrototype/GamePrototype-Info.plist";
+				GCC_PREFIX_HEADER = "GamePrototype/Dragon's Rage-Prefix.pch";
+				INFOPLIST_FILE = "GamePrototype/Dragon's Rage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dragon's Rage";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1233,10 +1233,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
-				INFOPLIST_FILE = "GamePrototype/GamePrototype-Info.plist";
+				GCC_PREFIX_HEADER = "GamePrototype/Dragon's Rage-Prefix.pch";
+				INFOPLIST_FILE = "GamePrototype/Dragon's Rage-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Dragon's Rage";
 				PROVISIONING_PROFILE = "";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1259,8 +1259,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "GamePrototypeTests/GamePrototypeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "GamePrototypeTests/Dragon's RageTests-Info.plist";
+				PRODUCT_NAME = "Dragon's RageTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1277,8 +1277,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GamePrototype/GamePrototype-Prefix.pch";
-				INFOPLIST_FILE = "GamePrototypeTests/GamePrototypeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "GamePrototypeTests/Dragon's RageTests-Info.plist";
+				PRODUCT_NAME = "Dragon's RageTests";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -1287,7 +1287,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B32AE32118F465CB006F8635 /* Build configuration list for PBXProject "GamePrototype" */ = {
+		B32AE32118F465CB006F8635 /* Build configuration list for PBXProject "Dragon's Rage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B32AE36018F465CC006F8635 /* Debug */,
@@ -1296,7 +1296,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B32AE36218F465CC006F8635 /* Build configuration list for PBXNativeTarget "GamePrototype" */ = {
+		B32AE36218F465CC006F8635 /* Build configuration list for PBXNativeTarget "Dragon's Rage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B32AE36318F465CC006F8635 /* Debug */,
@@ -1305,7 +1305,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B32AE36518F465CC006F8635 /* Build configuration list for PBXNativeTarget "GamePrototypeTests" */ = {
+		B32AE36518F465CC006F8635 /* Build configuration list for PBXNativeTarget "Dragon's RageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B32AE36618F465CC006F8635 /* Debug */,

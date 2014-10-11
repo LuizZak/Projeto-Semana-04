@@ -47,7 +47,7 @@ typedef unsigned long long entitytype_t;
 
 // Retorna a instância de componente presente nesta entidade que corresponde ao tipo de classe passada.
 // Se nenhum componente do tipo fornecido for encontrado, nil é retornado
-- (GPComponent*)getComponent:(Class)componentClass;
+- (id)getComponent:(Class)componentClass;
 
 // Retorna uma array de componentes presentes nesta entidade que correspondem ao tipo de classe passada.
 // Se nenum componente do tipo fornecido for encontrado, uma array vazia é retornada

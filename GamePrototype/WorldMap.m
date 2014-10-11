@@ -222,7 +222,7 @@
     
     if(tileID == TILE_EARTH)
     {
-        random = arc4random() % 30;
+        random = arc4random() % 20;
         
         if(random == 0)
         {
@@ -231,7 +231,7 @@
     }
     else if(tileID == TILE_GRASS)
     {
-        random = arc4random() % 200;
+        random = arc4random() % 40;
         
         if(random == 0)
         {

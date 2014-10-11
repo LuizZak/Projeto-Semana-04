@@ -42,6 +42,7 @@
 		A02127E61909F41B00D67A8B /* tile-earthTransitionCorner.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E31909F41B00D67A8B /* tile-earthTransitionCorner.png */; };
 		A02127E71909F41B00D67A8B /* tile-earthTransitionL.png in Resources */ = {isa = PBXBuildFile; fileRef = A02127E41909F41B00D67A8B /* tile-earthTransitionL.png */; };
 		A02B81C21902201900D5A417 /* ComponentMapMovement.m in Sources */ = {isa = PBXBuildFile; fileRef = A02B81C11902201900D5A417 /* ComponentMapMovement.m */; };
+		A068439219E953CA00A21881 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A068439119E953CA00A21881 /* icon.png */; };
 		A09A05EF190C471200ACEAB8 /* BattleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = A09A05EE190C471200ACEAB8 /* BattleConfig.m */; };
 		A0B0B53619E331D600D46A0E /* ActionPieContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B53519E331D600D46A0E /* ActionPieContainerView.m */; };
 		A0B0B53919E3904700D46A0E /* CharacterSkill.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B0B53819E3904700D46A0E /* CharacterSkill.m */; };
@@ -207,6 +208,8 @@
 		A02127E81909F43400D67A8B /* dragon-perfil.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = "dragon-perfil.fla"; sourceTree = "<group>"; };
 		A02B81C01902201900D5A417 /* ComponentMapMovement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentMapMovement.h; sourceTree = "<group>"; };
 		A02B81C11902201900D5A417 /* ComponentMapMovement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentMapMovement.m; sourceTree = "<group>"; };
+		A068439019E953BF00A21881 /* icon.fla */ = {isa = PBXFileReference; lastKnownFileType = file; path = icon.fla; sourceTree = "<group>"; };
+		A068439119E953CA00A21881 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		A09A05ED190C471200ACEAB8 /* BattleConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BattleConfig.h; sourceTree = "<group>"; };
 		A09A05EE190C471200ACEAB8 /* BattleConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BattleConfig.m; sourceTree = "<group>"; };
 		A0B0B53419E331D600D46A0E /* ActionPieContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionPieContainerView.h; sourceTree = "<group>"; };
@@ -437,10 +440,12 @@
 				FC3F73C818FF264D00949342 /* dragon.fla */,
 				A0005D691904405A003A60F1 /* dragonAvatar.fla */,
 				A02127E81909F43400D67A8B /* dragon-perfil.fla */,
+				A068439019E953BF00A21881 /* icon.fla */,
 				FC8E1CD4190070FE00D24C87 /* tiles.fla */,
 				FCCD027E1906F17300FFE9DB /* Knight.fla */,
 				FCCD027F1906F55600FFE9DB /* ataqueFogo.fla */,
 				FC141497190AF49F00B398CE /* Menu.fla */,
+				A068439119E953CA00A21881 /* icon.png */,
 				FC7732FE190EDD7C008A7E39 /* tile-grassCanto.png */,
 				FC7732FF190EDD7C008A7E39 /* tile-earthBaixo.png */,
 				FC773300190EDD7C008A7E39 /* tile-grassL.png */,
@@ -992,6 +997,7 @@
 				A0005D6B19044064003A60F1 /* dragonAvatar.png in Resources */,
 				B313318A190EF345009C29BA /* TimeBall.atlas in Resources */,
 				FC77330A190EDD7C008A7E39 /* tile-earthU.png in Resources */,
+				A068439219E953CA00A21881 /* icon.png in Resources */,
 				FC8E1CDF1900712C00D24C87 /* tile-mountain.png in Resources */,
 				5EBB788A1906F4CE001D961C /* background.psd in Resources */,
 				A0B0B55319E4683200D46A0E /* actionIcon-Magic3@2x.png in Resources */,

@@ -35,7 +35,7 @@
     [components removeObject:component];
 }
 
-- (GPComponent*)getComponent:(Class)componentClass
+- (id)getComponent:(Class)componentClass
 {
     for(GPComponent *component in components)
     {

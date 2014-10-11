@@ -16,7 +16,7 @@
     NSMutableDictionary *eventDictionary;
 }
 
-/// Dispatches an event so all listeners bind to it can receive it
+/// Dispatches an event so all listeners that are registered to it can receive it
 - (void)dispatchEvent:(GPEvent*)event;
 
 /// Registers an event listener for receiving a type of event
@@ -28,7 +28,7 @@
 /// Unregisters an event listener from all events it's currently listening to
 - (void)unregisterListenerFromAllEvents:(id<GPEventListener>)listener;
 
-/// Clears the list of event listeners currently deployed to this GPEventDispatcher
+/// Clears the list of event listeners from all listeners currently listed to this GPEventDispatcher
 - (void)clearAllListeners;
 
 @end
